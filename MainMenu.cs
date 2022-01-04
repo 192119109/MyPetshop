@@ -109,9 +109,12 @@ namespace PetShop
 
         private void LblBantuan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form frmBantuan = new FrmBantuan();
+            //Form frmBantuan = new FrmBantuan();
 
-            frmBantuan.ShowDialog();
+            //frmBantuan.ShowDialog();
+            String openPDFFile = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Help.pdf";//PDF DOc name
+            System.IO.File.WriteAllBytes(openPDFFile, global::PetShop.Properties.Resources.Help);//the resource automatically creates            
+            System.Diagnostics.Process.Start(openPDFFile);
         }
 
         private void FrmMenu_Load(object sender, EventArgs e)

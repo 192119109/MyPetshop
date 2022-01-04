@@ -51,6 +51,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(411, 20);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.TextChanged += new System.EventHandler(this.TxtUsername_TextChanged);
             // 
             // txtOldPass
             // 
@@ -76,6 +77,7 @@
             this.chkShowOldPass.TabIndex = 4;
             this.chkShowOldPass.Text = "Tampilkan Kata Sandi Lama";
             this.chkShowOldPass.UseVisualStyleBackColor = true;
+            this.chkShowOldPass.CheckedChanged += new System.EventHandler(this.ChkShowOldPass_CheckedChanged);
             // 
             // chkShowNewPass
             // 
@@ -86,6 +88,7 @@
             this.chkShowNewPass.TabIndex = 5;
             this.chkShowNewPass.Text = "Tampilkan Kata Sandi Baru";
             this.chkShowNewPass.UseVisualStyleBackColor = true;
+            this.chkShowNewPass.CheckedChanged += new System.EventHandler(this.ChkShowNewPass_CheckedChanged);
             // 
             // btnUbah
             // 
@@ -96,6 +99,7 @@
             this.btnUbah.TabIndex = 6;
             this.btnUbah.Text = "Ubah";
             this.btnUbah.UseVisualStyleBackColor = false;
+            this.btnUbah.Click += new System.EventHandler(this.BtnUbah_Click);
             // 
             // label1
             // 

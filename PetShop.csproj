@@ -68,12 +68,6 @@
     <Compile Include="FrmAkun.Designer.cs">
       <DependentUpon>FrmAkun.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmBantuan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmBantuan.Designer.cs">
-      <DependentUpon>FrmBantuan.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Splash.cs">
@@ -102,9 +96,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAkun.resx">
       <DependentUpon>FrmAkun.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmBantuan.resx">
-      <DependentUpon>FrmBantuan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>

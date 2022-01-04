@@ -12,7 +12,6 @@ D:\Project PetShop\PetShop\bin\Debug\AxInterop.AcroPDFLib.dll
 D:\Project PetShop\PetShop\obj\Debug\Interop.AcroPDFLib.dll
 D:\Project PetShop\PetShop\obj\Debug\AxInterop.AcroPDFLib.dll
 D:\Project PetShop\PetShop\obj\Debug\PetShop.csproj.ResolveComReference.cache
-D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBantuan.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.Autentikasi.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.SecretKeyLogger.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmAkun.resources

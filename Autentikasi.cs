@@ -10,6 +10,7 @@ using System.Threading;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using static PetShop.Crypto;
+using static PetShop.Global;
 
 namespace PetShop
 {
@@ -33,12 +34,12 @@ namespace PetShop
             
             try
             {
-                Global.cmd = new SqlCommand("select pass from Pengguna where username = @username", Global.con);
-                Global.cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-                Global.reader = Global.cmd.ExecuteReader();
-                if(Global.reader.Read())
+                cmd = new SqlCommand("select pass from Pengguna where username = @username", con);
+                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                reader = cmd.ExecuteReader();
+                if(reader.Read())
                 {
-                    if (txtPassword.Text == Crypto.DecryptPassword(Global.reader["pass"].ToString()))
+                    if (txtPassword.Text == DecryptPassword(reader["pass"].ToString()))
                     {
                         Form MainMenu = new FrmMenu();
 
@@ -54,11 +55,13 @@ namespace PetShop
                 {
                     MessageBox.Show("Username atau Password salah");
                 }
-                Global.reader.Close();
+
+                reader.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                reader.Close();
             }
         }
 
