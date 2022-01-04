@@ -19,3 +19,5 @@ create table SecretKeylogger
 
 insert into SecretKeylogger Values ('SEFhiaxxxk=')
 select * from SecretKeylogger
+
+update SecretKeylogger set keylogger='ePRDkUP97bzhYM4vT/b4Uw==' where keylogger = 'SEFhiaxxxk='
