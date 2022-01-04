@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using static PetShop.Crypto;
 
 namespace PetShop
 {
     public partial class Autentikasi : Form
     {
-        string username = "admin123", password = "12345";
         public Autentikasi()
         {
             //Thread thread = new Thread(new ThreadStart(StartForm));
@@ -29,16 +30,35 @@ namespace PetShop
 
         private void BtnLogin_Click(object sender, EventArgs e)
         {
-            if(username==txtUsername.Text && password==txtPassword.Text)
+            
+            try
             {
-                Form MainMenu = new FrmMenu();
+                Global.cmd = new SqlCommand("select pass from Pengguna where username = @username", Global.con);
+                Global.cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                Global.reader = Global.cmd.ExecuteReader();
+                if(Global.reader.Read())
+                {
+                    if (txtPassword.Text == Crypto.DecryptPassword(Global.reader["pass"].ToString()))
+                    {
+                        Form MainMenu = new FrmMenu();
 
-                MainMenu.Show();
-                this.Hide();
+                        MainMenu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username atau Password salah");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Username atau Password salah");
+                }
+                Global.reader.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Username atau Password salah");
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -71,6 +91,7 @@ namespace PetShop
         private void Autentikasi_Load(object sender, EventArgs e)
         {
             btnLogin.Enabled = false;
+            Global.BuatKoneksi();
         }
     }
 }

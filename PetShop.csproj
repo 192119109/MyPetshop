@@ -54,6 +54,8 @@
     <Compile Include="Autentikasi.Designer.cs">
       <DependentUpon>Autentikasi.cs</DependentUpon>
     </Compile>
+    <Compile Include="Crypto.cs" />
+    <Compile Include="Global.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
     </Compile>

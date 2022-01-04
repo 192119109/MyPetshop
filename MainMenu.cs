@@ -116,7 +116,11 @@ namespace PetShop
 
         private void FrmMenu_Load(object sender, EventArgs e)
         {
-
+            btnAccount.BackColor = Color.White;
+            btnLaporan.BackColor = Color.White;
+            btnPenjualan.BackColor = Color.White;
+            btnPersediaan.BackColor = Color.White;
+            btnBiayaTambahan.BackColor = Color.White;
         }
 
         private void BtnAccount_Click(object sender, EventArgs e)
