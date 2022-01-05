@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -55,6 +70,24 @@
       <DependentUpon>Autentikasi.cs</DependentUpon>
     </Compile>
     <Compile Include="Crypto.cs" />
+    <Compile Include="FrmLaporan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLaporan.designer.cs">
+      <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPenjualan.designer.cs">
+      <DependentUpon>FrmPenjualan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStock.designer.cs">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="MainMenu.cs">
       <SubType>Form</SubType>
@@ -91,6 +124,15 @@
     <EmbeddedResource Include="Autentikasi.resx">
       <DependentUpon>Autentikasi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmLaporan.resx">
+      <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPenjualan.resx">
+      <DependentUpon>FrmPenjualan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStock.resx">
+      <DependentUpon>FrmStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainMenu.resx">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +167,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\BebasNeueBold.ttf" />
     <None Include="Resources\Help.pdf" />
   </ItemGroup>
   <ItemGroup>
@@ -186,12 +229,49 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+    <None Include="Resources\user.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\transaction-history.png" />
+    <None Include="Resources\transaction.png" />
+    <None Include="Resources\stock.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\sales.png" />
+    <None Include="Resources\sales %282%29.png" />
+    <None Include="Resources\sales %281%29.png" />
+    <None Include="Resources\report1.png" />
+    <None Include="Resources\printer.png" />
+    <None Include="Resources\power-off.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\petshop1.gif" />
+    <None Include="Resources\pet-shop.png" />
+    <None Include="Resources\petshop.gif" />
+    <None Include="Resources\more.png" />
+    <None Include="Resources\magnifier.png" />
     <None Include="Resources\back.png" />
     <None Include="Resources\back1.png" />
     <Content Include="Iconka-Saint-Whiskers-Cat-food-hearts.ico" />
+    <None Include="Resources\barcode-scanner.png" />
+    <None Include="Resources\checkout1.png" />
+    <None Include="Resources\files1.png" />
+    <None Include="Resources\history.png" />
+    <None Include="Resources\home-address.png" />
+    <None Include="Resources\in.png" />
     <Content Include="Resources\kittyAccount.png" />
     <None Include="Resources\Splash.png" />
     <None Include="Resources\kittyAccount1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

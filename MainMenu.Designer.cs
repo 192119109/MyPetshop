@@ -109,6 +109,7 @@ namespace PetShop
             this.btnLaporan.Size = new System.Drawing.Size(208, 170);
             this.btnLaporan.TabIndex = 4;
             this.btnLaporan.UseVisualStyleBackColor = true;
+            this.btnLaporan.Click += new System.EventHandler(this.BtnLaporan_Click);
             this.btnLaporan.MouseEnter += new System.EventHandler(this.BtnLaporan_MouseEnter);
             this.btnLaporan.MouseLeave += new System.EventHandler(this.BtnLaporan_MouseLeave);
             // 
@@ -133,6 +134,7 @@ namespace PetShop
             this.btnPersediaan.Size = new System.Drawing.Size(208, 170);
             this.btnPersediaan.TabIndex = 2;
             this.btnPersediaan.UseVisualStyleBackColor = true;
+            this.btnPersediaan.Click += new System.EventHandler(this.BtnPersediaan_Click);
             this.btnPersediaan.MouseEnter += new System.EventHandler(this.BtnPersediaan_MouseEnter);
             this.btnPersediaan.MouseLeave += new System.EventHandler(this.BtnPersediaan_MouseLeave);
             // 
@@ -145,6 +147,7 @@ namespace PetShop
             this.btnPenjualan.Size = new System.Drawing.Size(208, 170);
             this.btnPenjualan.TabIndex = 1;
             this.btnPenjualan.UseVisualStyleBackColor = true;
+            this.btnPenjualan.Click += new System.EventHandler(this.BtnPenjualan_Click);
             this.btnPenjualan.MouseEnter += new System.EventHandler(this.BtnPenjualan_MouseEnter);
             this.btnPenjualan.MouseLeave += new System.EventHandler(this.BtnPenjualan_MouseLeave);
             // 

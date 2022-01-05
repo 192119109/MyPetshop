@@ -18,3 +18,6 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmAkun.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.Resources.SplashScreen.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.Splash.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.csprojAssemblyReference.cache
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReport.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmPenjualan.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmStock.resources

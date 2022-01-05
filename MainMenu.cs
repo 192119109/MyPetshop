@@ -132,5 +132,26 @@ namespace PetShop
             frmAkun.Show();
             this.Hide();
         }
+
+        private void BtnPenjualan_Click(object sender, EventArgs e)
+        {
+            FrmPenjualan frmPenjualan = new FrmPenjualan();
+            frmPenjualan.Show();
+            this.Hide();
+        }
+
+        private void BtnPersediaan_Click(object sender, EventArgs e)
+        {
+            FrmStock frmStock = new FrmStock();
+            frmStock.Show();
+            this.Hide();
+        }
+
+        private void BtnLaporan_Click(object sender, EventArgs e)
+        {
+            FrmReport frmReport = new FrmReport();
+            frmReport.Show();
+            this.Hide();
+        }
     }
 }
