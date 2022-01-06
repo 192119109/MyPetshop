@@ -21,3 +21,10 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.csprojAssemblyReference.cache
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReport.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmPenjualan.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmStock.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.InputBarang.resources
+D:\Project PetShop\PetShop\bin\Debug\zxing.dll
+D:\Project PetShop\PetShop\bin\Debug\zxing.presentation.dll
+D:\Project PetShop\PetShop\bin\Debug\zxing.xml
+D:\Project PetShop\PetShop\bin\Debug\zxing.presentation.xml
+D:\Project PetShop\PetShop\obj\Debug\PetShop.BarcodeTest.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.csproj.CopyComplete

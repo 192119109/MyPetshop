@@ -22,5 +22,13 @@ namespace PetShop
             FrmMenu menu = new FrmMenu();
             menu.Show();
         }
+
+        private void TxtQty2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

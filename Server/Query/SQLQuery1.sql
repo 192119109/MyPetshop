@@ -21,3 +21,10 @@ insert into SecretKeylogger Values ('SEFhiaxxxk=')
 select * from SecretKeylogger
 
 update SecretKeylogger set keylogger='ePRDkUP97bzhYM4vT/b4Uw==' where keylogger = 'SEFhiaxxxk='
+
+create table Barang 
+(id_barang varChar(900) Not Null Primary Key, nama_barang varChar(25), qty int, harga_beli money, harga_jual money, barcode varChar(100))
+
+drop table Barang
+
+select * from Barang
