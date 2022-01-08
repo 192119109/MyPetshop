@@ -169,11 +169,6 @@ namespace PetShop
             
         }
 
-        private void DgvBarang_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void BtnClear_Click(object sender, EventArgs e)
         {
             txtSearch.Clear();
@@ -237,6 +232,16 @@ namespace PetShop
                     ad.Update(ds, "Barang");
                     MessageBox.Show("Data berhasil diubah");
                 }
+            }
+        }
+
+        private void BtnGenerateCode_Click(object sender, EventArgs e)
+        {
+            arRecord = ds.Tables["Barang"].Select("id_barang = '" + txtIdBarang.Text + "'");
+            if (arRecord.Length != 0)
+            { 
+                SampleBarcode frmBarcode = new SampleBarcode(arRecord[0]["barcode"].ToString());
+                frmBarcode.ShowDialog();
             }
         }
     }

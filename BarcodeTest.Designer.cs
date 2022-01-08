@@ -100,6 +100,7 @@
             this.Controls.Add(this.pbBarcode);
             this.Name = "BarcodeTest";
             this.Text = "BarcodeTest";
+            this.Load += new System.EventHandler(this.BarcodeTest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbBarcode)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,5 +18,6 @@ namespace PetShop
             con = new SqlConnection("data source=localhost; initial catalog=db_petshop; integrated security=true");
             con.Open();
         }
+
     }
 }

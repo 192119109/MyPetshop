@@ -30,7 +30,12 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.dgvBarang = new System.Windows.Forms.DataGridView();
+            this.nudQty = new System.Windows.Forms.NumericUpDown();
+            this.btnUbah = new System.Windows.Forms.Button();
+            this.btnHapus = new System.Windows.Forms.Button();
+            this.btnSimpan = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
+            this.btnTambah = new System.Windows.Forms.Button();
             this.txtHargaJual = new System.Windows.Forms.TextBox();
             this.txtHargaBeli = new System.Windows.Forms.TextBox();
             this.txtNamaBarang = new System.Windows.Forms.TextBox();
@@ -39,17 +44,12 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.btnTambah = new System.Windows.Forms.Button();
-            this.btnSimpan = new System.Windows.Forms.Button();
-            this.btnHapus = new System.Windows.Forms.Button();
-            this.btnUbah = new System.Windows.Forms.Button();
-            this.nudQty = new System.Windows.Forms.NumericUpDown();
+            this.dgvBarang = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -96,13 +96,79 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informasi Barang";
             // 
-            // dgvBarang
+            // nudQty
             // 
-            this.dgvBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBarang.Location = new System.Drawing.Point(12, 125);
-            this.dgvBarang.Name = "dgvBarang";
-            this.dgvBarang.Size = new System.Drawing.Size(603, 400);
-            this.dgvBarang.TabIndex = 3;
+            this.nudQty.Location = new System.Drawing.Point(152, 178);
+            this.nudQty.Name = "nudQty";
+            this.nudQty.Size = new System.Drawing.Size(120, 26);
+            this.nudQty.TabIndex = 36;
+            // 
+            // btnUbah
+            // 
+            this.btnUbah.BackColor = System.Drawing.Color.Tomato;
+            this.btnUbah.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.btnUbah.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUbah.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUbah.Location = new System.Drawing.Point(164, 313);
+            this.btnUbah.Name = "btnUbah";
+            this.btnUbah.Size = new System.Drawing.Size(123, 40);
+            this.btnUbah.TabIndex = 35;
+            this.btnUbah.Text = "Ubah";
+            this.btnUbah.UseVisualStyleBackColor = false;
+            this.btnUbah.Click += new System.EventHandler(this.BtnUbah_Click);
+            // 
+            // btnHapus
+            // 
+            this.btnHapus.BackColor = System.Drawing.Color.Red;
+            this.btnHapus.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.btnHapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHapus.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnHapus.Location = new System.Drawing.Point(293, 313);
+            this.btnHapus.Name = "btnHapus";
+            this.btnHapus.Size = new System.Drawing.Size(123, 40);
+            this.btnHapus.TabIndex = 34;
+            this.btnHapus.Text = "Hapus";
+            this.btnHapus.UseVisualStyleBackColor = false;
+            this.btnHapus.Click += new System.EventHandler(this.BtnHapus_Click);
+            // 
+            // btnSimpan
+            // 
+            this.btnSimpan.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnSimpan.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSimpan.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSimpan.Location = new System.Drawing.Point(35, 361);
+            this.btnSimpan.Name = "btnSimpan";
+            this.btnSimpan.Size = new System.Drawing.Size(381, 40);
+            this.btnSimpan.TabIndex = 33;
+            this.btnSimpan.Text = "Simpan";
+            this.btnSimpan.UseVisualStyleBackColor = false;
+            this.btnSimpan.Click += new System.EventHandler(this.BtnSimpan_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label8.Location = new System.Drawing.Point(74, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(45, 20);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Qty : ";
+            // 
+            // btnTambah
+            // 
+            this.btnTambah.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnTambah.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTambah.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnTambah.Location = new System.Drawing.Point(35, 313);
+            this.btnTambah.Name = "btnTambah";
+            this.btnTambah.Size = new System.Drawing.Size(123, 40);
+            this.btnTambah.TabIndex = 32;
+            this.btnTambah.Text = "Tambah";
+            this.btnTambah.UseVisualStyleBackColor = false;
+            this.btnTambah.Click += new System.EventHandler(this.BtnTambah_Click);
             // 
             // txtHargaJual
             // 
@@ -143,6 +209,7 @@
             this.txtIdBrg.Name = "txtIdBrg";
             this.txtIdBrg.Size = new System.Drawing.Size(265, 27);
             this.txtIdBrg.TabIndex = 25;
+            this.txtIdBrg.TextChanged += new System.EventHandler(this.TxtIdBrg_TextChanged);
             // 
             // label11
             // 
@@ -177,17 +244,6 @@
             this.label9.TabIndex = 22;
             this.label9.Text = "Nama Barang:";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(74, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 20);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Qty : ";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -210,66 +266,14 @@
             this.label6.TabIndex = 19;
             this.label6.Text = "Id :";
             // 
-            // btnTambah
+            // dgvBarang
             // 
-            this.btnTambah.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnTambah.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.btnTambah.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTambah.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnTambah.Location = new System.Drawing.Point(35, 313);
-            this.btnTambah.Name = "btnTambah";
-            this.btnTambah.Size = new System.Drawing.Size(123, 40);
-            this.btnTambah.TabIndex = 32;
-            this.btnTambah.Text = "Tambah";
-            this.btnTambah.UseVisualStyleBackColor = false;
-            this.btnTambah.Click += new System.EventHandler(this.BtnTambah_Click);
-            // 
-            // btnSimpan
-            // 
-            this.btnSimpan.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnSimpan.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.btnSimpan.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSimpan.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSimpan.Location = new System.Drawing.Point(35, 361);
-            this.btnSimpan.Name = "btnSimpan";
-            this.btnSimpan.Size = new System.Drawing.Size(381, 40);
-            this.btnSimpan.TabIndex = 33;
-            this.btnSimpan.Text = "Simpan";
-            this.btnSimpan.UseVisualStyleBackColor = false;
-            this.btnSimpan.Click += new System.EventHandler(this.BtnSimpan_Click);
-            // 
-            // btnHapus
-            // 
-            this.btnHapus.BackColor = System.Drawing.Color.Red;
-            this.btnHapus.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.btnHapus.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHapus.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnHapus.Location = new System.Drawing.Point(293, 313);
-            this.btnHapus.Name = "btnHapus";
-            this.btnHapus.Size = new System.Drawing.Size(123, 40);
-            this.btnHapus.TabIndex = 34;
-            this.btnHapus.Text = "Hapus";
-            this.btnHapus.UseVisualStyleBackColor = false;
-            // 
-            // btnUbah
-            // 
-            this.btnUbah.BackColor = System.Drawing.Color.Tomato;
-            this.btnUbah.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.btnUbah.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUbah.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUbah.Location = new System.Drawing.Point(164, 313);
-            this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(123, 40);
-            this.btnUbah.TabIndex = 35;
-            this.btnUbah.Text = "Ubah";
-            this.btnUbah.UseVisualStyleBackColor = false;
-            // 
-            // nudQty
-            // 
-            this.nudQty.Location = new System.Drawing.Point(152, 178);
-            this.nudQty.Name = "nudQty";
-            this.nudQty.Size = new System.Drawing.Size(120, 26);
-            this.nudQty.TabIndex = 36;
+            this.dgvBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBarang.Location = new System.Drawing.Point(12, 125);
+            this.dgvBarang.Name = "dgvBarang";
+            this.dgvBarang.Size = new System.Drawing.Size(603, 400);
+            this.dgvBarang.TabIndex = 3;
+            this.dgvBarang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBarang_CellClick);
             // 
             // InputBarang
             // 
@@ -285,8 +289,8 @@
             this.Load += new System.EventHandler(this.InputBarang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             this.ResumeLayout(false);
 
         }

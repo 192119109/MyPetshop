@@ -24,5 +24,10 @@ namespace PetShop
             pbBarcode.Image = writer.Write(txtEncode.Text);
 
         }
+
+        private void BarcodeTest_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
