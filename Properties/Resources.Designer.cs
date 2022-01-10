@@ -113,6 +113,16 @@ namespace PetShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap barcode {
+            get {
+                object obj = ResourceManager.GetObject("barcode", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap barcode_scanner {
             get {
                 object obj = ResourceManager.GetObject("barcode-scanner", resourceCulture);
@@ -127,6 +137,26 @@ namespace PetShop.Properties {
             get {
                 object obj = ResourceManager.GetObject("BebasNeueBold", resourceCulture);
                 return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap browse {
+            get {
+                object obj = ResourceManager.GetObject("browse", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap browsing {
+            get {
+                object obj = ResourceManager.GetObject("browsing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -166,6 +196,16 @@ namespace PetShop.Properties {
         public static System.Drawing.Bitmap checkout {
             get {
                 object obj = ResourceManager.GetObject("checkout", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap checkout1 {
+            get {
+                object obj = ResourceManager.GetObject("checkout1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

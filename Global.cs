@@ -12,6 +12,8 @@ namespace PetShop
         public static SqlConnection con;
         public static SqlCommand cmd;
         public static SqlDataReader reader;
+        public static string getBarcode="";
+        public static bool checkoutBerhasil = false;
 
         public static void BuatKoneksi()
         {

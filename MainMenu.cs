@@ -135,7 +135,7 @@ namespace PetShop
 
         private void BtnPenjualan_Click(object sender, EventArgs e)
         {
-            FrmPenjualan frmPenjualan = new FrmPenjualan();
+            FrmPenjualan frmPenjualan= new FrmPenjualan();
             frmPenjualan.Show();
             this.Hide();
         }

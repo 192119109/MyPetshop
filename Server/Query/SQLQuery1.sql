@@ -28,3 +28,18 @@ create table Barang
 drop table Barang
 
 select * from Barang
+
+select sum(harga_beli) as 'harga' from Barang
+
+create table Penjualan
+(id_penjualan varChar(19) Not Null Primary Key, tgl_transaksi datetime, total_harga money)
+
+create table Penjualan_Detail
+(id_penjualan varChar(19) Not Null, id_barang varChar(900) Not Null, qty_jual int, sub_total int,
+Constraint Fk_TblPenjualanDetail Foreign Key (id_penjualan) references Penjualan (id_penjualan),
+Constraint Fk_TblPenjualanDetailBarang Foreign Key (id_barang) references Barang (id_barang)
+)
+
+SELECT TOP 1 id_barang FROM Barang ORDER BY id_barang DESC
+
+SELECT TOP 1 id_penjualan FROM Penjualan ORDER BY id_penjualan DESC

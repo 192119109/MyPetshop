@@ -29,3 +29,12 @@ D:\Project PetShop\PetShop\bin\Debug\zxing.presentation.xml
 D:\Project PetShop\PetShop\obj\Debug\PetShop.BarcodeTest.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.csproj.CopyComplete
 D:\Project PetShop\PetShop\obj\Debug\PetShop.SampleBarcode.resources
+D:\Project PetShop\PetShop\bin\Debug\AForge.dll
+D:\Project PetShop\PetShop\bin\Debug\AForge.Video.DirectShow.dll
+D:\Project PetShop\PetShop\bin\Debug\AForge.Video.dll
+D:\Project PetShop\PetShop\bin\Debug\AForge.xml
+D:\Project PetShop\PetShop\bin\Debug\AForge.Video.xml
+D:\Project PetShop\PetShop\bin\Debug\AForge.Video.DirectShow.xml
+D:\Project PetShop\PetShop\obj\Debug\PetShop.Scanner.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmCari.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmCheckout.resources

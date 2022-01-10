@@ -50,6 +50,15 @@
     <ApplicationIcon>Iconka-Saint-Whiskers-Cat-food-hearts.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -82,6 +91,18 @@
       <DependentUpon>BarcodeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Crypto.cs" />
+    <Compile Include="FrmCari.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCari.Designer.cs">
+      <DependentUpon>FrmCari.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCheckout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCheckout.Designer.cs">
+      <DependentUpon>FrmCheckout.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLaporan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +148,12 @@
     <Compile Include="SampleBarcode.Designer.cs">
       <DependentUpon>SampleBarcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="Scanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Scanner.Designer.cs">
+      <DependentUpon>Scanner.cs</DependentUpon>
+    </Compile>
     <Compile Include="Splash.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +177,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarcodeTest.resx">
       <DependentUpon>BarcodeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCari.resx">
+      <DependentUpon>FrmCari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCheckout.resx">
+      <DependentUpon>FrmCheckout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLaporan.resx">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
@@ -181,6 +214,9 @@
     </Compile>
     <EmbeddedResource Include="SampleBarcode.resx">
       <DependentUpon>SampleBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Scanner.resx">
+      <DependentUpon>Scanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Splash.resx">
       <DependentUpon>Splash.cs</DependentUpon>
@@ -291,6 +327,10 @@
     <None Include="Resources\history.png" />
     <None Include="Resources\home-address.png" />
     <None Include="Resources\in.png" />
+    <None Include="Resources\barcode.png" />
+    <None Include="Resources\browsing.png" />
+    <None Include="Resources\browse.png" />
+    <None Include="Resources\checkout2.png" />
     <Content Include="Resources\kittyAccount.png" />
     <None Include="Resources\Splash.png" />
     <None Include="Resources\kittyAccount1.png" />
