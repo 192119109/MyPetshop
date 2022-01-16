@@ -60,6 +60,8 @@ namespace PetShop
             txtTotalBarang.Text = "0";
             txtTotalHarga.Text = "Rp.0";
             btnCheckout.Enabled = false;
+            nudPotongan.Minimum = 0;
+            nudPotongan.Value = 0;
         }
 
         private void getInvoiceId()
@@ -206,12 +208,13 @@ namespace PetShop
         private void BtnClear_Click(object sender, EventArgs e)
         {
             ds.Tables["CheckoutItem"].Clear();
+            txtBarcode.Focus();
             Tampil();
         }
 
         private void BtnCheckout_Click(object sender, EventArgs e)
         {
-            FrmCheckout frmCheckout = new FrmCheckout(txtTotalHarga.Text.ToString());
+            FrmCheckout frmCheckout = new FrmCheckout(txtTotal.Text.ToString());
             frmCheckout.ShowDialog();
 
             string TotalHarga = txtTotalHarga.Text.Replace("Rp", "");
@@ -222,20 +225,34 @@ namespace PetShop
                 //simpan ke tabel Penjualan
                 cmd = new SqlCommand("insert into Penjualan Values (@id,@tgl,@total)", con);
                 cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
-                cmd.Parameters.AddWithValue("@tgl", DateTime.Now.ToString("dd/MM/yyyy"));
+                cmd.Parameters.AddWithValue("@tgl", DateTime.Now);
                 cmd.Parameters.AddWithValue("@total", Convert.ToInt32(TotalHarga.Replace(".", "")));
                 cmd.ExecuteNonQuery();
 
                 ////MessageBox.Show(ds.Tables["CheckoutItem"].Rows.Count.ToString());
-                //simpan ke tabel Penjualan_Detail
+                //simpan ke tabel Penjualan_Detail + Kurangi qty di tabel barang
                 for(int i=0;i<ds.Tables["CheckoutItem"].Rows.Count;i++)
                 {
-                    cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal)", con);
+                    cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@harga)", con);
                     cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
                     cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value);
                     cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString()));
                     cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@harga", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[3].Value.ToString()));
                     cmd.ExecuteNonQuery();
+
+
+                    cmd = new SqlCommand("select qty from Barang where id_barang=@id", con);
+                    cmd.Parameters.AddWithValue("@id", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
+                    int qtyDB = Convert.ToInt32(cmd.ExecuteScalar());
+                       int  qtyAfterTransaction = qtyDB-Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString());
+                        //kurangi qty barang
+                        cmd = new SqlCommand("update Barang set qty=@qty where id_barang = @idBrg", con);
+                        cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
+                        cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(qtyAfterTransaction));
+                        cmd.ExecuteNonQuery();
+
+                   
                 }
 
                 ds.Tables["CheckoutItem"].Clear();
@@ -246,6 +263,11 @@ namespace PetShop
             }
 
         }
-        
+
+        private void NudQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+                txtBarcode.Focus();
+        }
     }
 }

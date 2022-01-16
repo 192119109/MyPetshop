@@ -31,6 +31,7 @@ namespace PetShop
             nudDibayarkan.Increment = 1000;
             nudDibayarkan.Maximum = 90000000;
             txtKembalian.Text = "0";
+            nudDibayarkan.Focus();
         }
 
         private void NudDibayarkan_ValueChanged(object sender, EventArgs e)
