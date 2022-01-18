@@ -14,6 +14,9 @@ namespace PetShop
         public static SqlDataReader reader;
         public static string getBarcode="";
         public static bool checkoutBerhasil = false;
+        public static int Dibayarkan;
+        public static int Kembalian;
+
 
         public static void BuatKoneksi()
         {

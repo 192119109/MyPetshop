@@ -45,7 +45,7 @@ namespace PetShop
             dt.Columns.Add(new DataColumn("ID Barang", typeof(string)));
             dt.Columns.Add(new DataColumn("Nama Barang", typeof(string)));
             dt.Columns.Add(new DataColumn("Qty", typeof(int)));
-            //dt.Columns.Add(new DataColumn("harga_beli", typeof(string)));
+            dt.Columns.Add(new DataColumn("Harga Beli", typeof(string)));
             dt.Columns.Add(new DataColumn("Harga Satuan", typeof(int)));
             dt.Columns.Add(new DataColumn("SubTotal", typeof(int)));
             //dt.Columns.Add(new DataColumn("barcode", typeof(string)));
@@ -62,12 +62,13 @@ namespace PetShop
             btnCheckout.Enabled = false;
             nudPotongan.Minimum = 0;
             nudPotongan.Value = 0;
+            nudPotongan.Maximum = Int32.MaxValue;
+            nudPotongan.ThousandsSeparator = true;
+            txtTotal.Text = "Rp. 0";
         }
 
         private void getInvoiceId()
         {
-            
-
             cmd = new SqlCommand("SELECT TOP 1 id_penjualan FROM Penjualan ORDER BY id_penjualan DESC", con);
             var maxId = cmd.ExecuteScalar() as string;
 
@@ -87,27 +88,29 @@ namespace PetShop
             
         }
 
+
         private void Tampil()
         {
             dgvCheckoutItem.DataSource = ds.Tables["CheckoutItem"];
+            dgvCheckoutItem.Columns["Harga Beli"].Visible = false;
 
             if(ds.Tables["CheckoutItem"].Rows.Count >0)
             {
                 ///tampilkan Total harga
-                object sumHarga;
-                sumHarga = ds.Tables["CheckoutItem"].Compute("Sum(SubTotal)", string.Empty);
-                txtTotalHarga.Text = String.Format("{0:c0}", Convert.ToInt32(sumHarga.ToString()));
+                HitungTotal();
 
                 //Tampilkan jumlah barang
                 object sumJlhBarang;
                 sumJlhBarang = ds.Tables["CheckoutItem"].Compute("Sum(qty)", string.Empty);
                 txtTotalBarang.Text = sumJlhBarang.ToString();
                 btnCheckout.Enabled = true;
+
             }
             else
             {
                 txtTotalBarang.Text = "0";
-                txtTotalHarga.Text = "Rp.0";
+                txtTotalHarga.Text = "Rp0";
+                txtTotal.Text = "Rp0";
                 btnCheckout.Enabled = false;
             }
            
@@ -130,6 +133,7 @@ namespace PetShop
                     dr["ID Barang"] = arRecord[0]["id_barang"];
                     dr["Nama Barang"] = arRecord[0]["nama_barang"];
                     dr["Qty"] = nudQty.Value;
+                    dr["Harga Beli"] = Convert.ToInt32(arRecord[0]["harga_beli"]);
                     dr["Harga Satuan"] = arRecord[0]["harga_jual"];
                     dr["SubTotal"] = Convert.ToInt32(arRecord[0]["harga_jual"]) * nudQty.Value;
                     ds.Tables["CheckoutItem"].Rows.Add(dr);
@@ -218,27 +222,33 @@ namespace PetShop
             frmCheckout.ShowDialog();
 
             string TotalHarga = txtTotalHarga.Text.Replace("Rp", "");
+            string GrandTotal = txtTotal.Text.Replace("Rp", "");
 
             if(Global.checkoutBerhasil)
             {
                 //Proses Simpan data ke database
                 //simpan ke tabel Penjualan
-                cmd = new SqlCommand("insert into Penjualan Values (@id,@tgl,@total)", con);
+                cmd = new SqlCommand("insert into Penjualan Values (@id,@tgl,@total,@potongan,@grandTotal,@dibayarkan,@kembalian)", con);
                 cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
                 cmd.Parameters.AddWithValue("@tgl", DateTime.Now);
                 cmd.Parameters.AddWithValue("@total", Convert.ToInt32(TotalHarga.Replace(".", "")));
+                cmd.Parameters.AddWithValue("@potongan", Convert.ToInt32(nudPotongan.Value));
+                cmd.Parameters.AddWithValue("@grandTotal", Convert.ToInt32(GrandTotal.Replace(".", "")));
+                cmd.Parameters.AddWithValue("@dibayarkan", Dibayarkan);
+                cmd.Parameters.AddWithValue("@kembalian", Kembalian);
                 cmd.ExecuteNonQuery();
 
                 ////MessageBox.Show(ds.Tables["CheckoutItem"].Rows.Count.ToString());
                 //simpan ke tabel Penjualan_Detail + Kurangi qty di tabel barang
                 for(int i=0;i<ds.Tables["CheckoutItem"].Rows.Count;i++)
                 {
-                    cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@harga)", con);
+                    cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@hargaJual,@hargaBeli)", con);
                     cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
                     cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value);
                     cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString()));
-                    cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
-                    cmd.Parameters.AddWithValue("@harga", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[3].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[5].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@hargaJual", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
+                    cmd.Parameters.AddWithValue("@hargaBeli", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[3].Value.ToString()));
                     cmd.ExecuteNonQuery();
 
 
@@ -259,7 +269,11 @@ namespace PetShop
                 getInvoiceId();
                 txtBarcode.Focus();
                 txtTotalBarang.Text = 0.ToString();
-                txtTotalHarga.Text = 0.ToString();
+                txtTotalHarga.Text = "Rp0";
+                txtTotal.Text = "Rp0";
+                nudPotongan.Value = 0;
+                Dibayarkan = 0;
+                Kembalian = 0;
             }
 
         }
@@ -268,6 +282,39 @@ namespace PetShop
         {
             if (e.KeyChar == 13)
                 txtBarcode.Focus();
+        }
+
+        private void HitungTotal()
+        {
+            object sumHarga;
+            if(ds.Tables["CheckoutItem"].Rows.Count!=0)
+            {
+                sumHarga = ds.Tables["CheckoutItem"].Compute("Sum(SubTotal)", string.Empty);
+                txtTotalHarga.Text = String.Format("{0:c0}", Convert.ToInt32(sumHarga.ToString()));
+                txtTotal.Text = String.Format("{0:c0}", Convert.ToInt32(sumHarga) - (int)nudPotongan.Value);
+            }
+            else
+            {
+                txtTotalHarga.Text = "Rp0";
+                txtTotal.Text = "Rp0";
+            }
+           
+        }
+
+        private void TxtTotalHarga_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void NudPotongan_ValueChanged(object sender, EventArgs e)
+        {
+            HitungTotal();
+        }
+
+        private void BtnHistory_Click(object sender, EventArgs e)
+        {
+            FrmHistory frmHistory = new FrmHistory();
+            frmHistory.ShowDialog();
         }
     }
 }

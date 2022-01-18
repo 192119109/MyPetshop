@@ -103,6 +103,12 @@
     <Compile Include="FrmCheckout.Designer.cs">
       <DependentUpon>FrmCheckout.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistory.Designer.cs">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLaporan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCheckout.resx">
       <DependentUpon>FrmCheckout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistory.resx">
+      <DependentUpon>FrmHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLaporan.resx">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
@@ -299,6 +308,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Square44x44Logo.targetsize-321.png" />
+    <None Include="Resources\Square44x44Logo.targetsize-32.png" />
     <None Include="Resources\warehouse.png" />
     <None Include="Resources\user.png" />
     <None Include="Resources\trash.png" />
@@ -331,6 +342,7 @@
     <None Include="Resources\browsing.png" />
     <None Include="Resources\browse.png" />
     <None Include="Resources\checkout2.png" />
+    <None Include="Resources\bill.png" />
     <Content Include="Resources\kittyAccount.png" />
     <None Include="Resources\Splash.png" />
     <None Include="Resources\kittyAccount1.png" />

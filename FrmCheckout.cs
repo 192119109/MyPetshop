@@ -49,6 +49,8 @@ namespace PetShop
             {
 
                 MessageBox.Show("Pembayaran Berhasil");
+                Dibayarkan = Convert.ToInt32(nudDibayarkan.Value);
+                Kembalian = Convert.ToInt32(txtKembalian.Text.Replace(".", ""));
                 checkOutVerified = true;
                 this.Close();
             }

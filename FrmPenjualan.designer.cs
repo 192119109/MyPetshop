@@ -29,8 +29,8 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,6 +55,11 @@ namespace PetShop
             this.label2 = new System.Windows.Forms.Label();
             this.dgvCheckoutItem = new System.Windows.Forms.DataGridView();
             this.btnHapus = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.nudPotongan = new System.Windows.Forms.NumericUpDown();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
@@ -62,11 +67,6 @@ namespace PetShop
             this.btnCari = new System.Windows.Forms.Button();
             this.btnCheckout = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.nudPotongan = new System.Windows.Forms.NumericUpDown();
-            this.txtTotal = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCheckoutItem)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPotongan)).BeginInit();
@@ -329,23 +329,23 @@ namespace PetShop
             // 
             this.dgvCheckoutItem.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvCheckoutItem.BackgroundColor = System.Drawing.Color.Silver;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCheckoutItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCheckoutItem.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvCheckoutItem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvCheckoutItem.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCheckoutItem.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCheckoutItem.GridColor = System.Drawing.SystemColors.Control;
             this.dgvCheckoutItem.Location = new System.Drawing.Point(2, 210);
             this.dgvCheckoutItem.Margin = new System.Windows.Forms.Padding(2);
@@ -366,11 +366,67 @@ namespace PetShop
             this.btnHapus.UseVisualStyleBackColor = true;
             this.btnHapus.Click += new System.EventHandler(this.BtnHapus_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.BurlyWood;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(1069, 372);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(123, 18);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "Potongan (Rp.)";
+            // 
+            // nudPotongan
+            // 
+            this.nudPotongan.Location = new System.Drawing.Point(1205, 366);
+            this.nudPotongan.Margin = new System.Windows.Forms.Padding(2);
+            this.nudPotongan.Name = "nudPotongan";
+            this.nudPotongan.Size = new System.Drawing.Size(139, 29);
+            this.nudPotongan.TabIndex = 52;
+            this.nudPotongan.ValueChanged += new System.EventHandler(this.NudPotongan_ValueChanged);
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Enabled = false;
+            this.txtTotal.Location = new System.Drawing.Point(1177, 287);
+            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(166, 29);
+            this.txtTotal.TabIndex = 53;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.BurlyWood;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(1080, 243);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(100, 20);
+            this.label4.TabIndex = 54;
+            this.label4.Text = "Total Harga :";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.BackColor = System.Drawing.Color.BurlyWood;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(1074, 294);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 18);
+            this.label8.TabIndex = 55;
+            this.label8.Text = "Total (-Pot)";
+            // 
             // btnHistory
             // 
             this.btnHistory.BackColor = System.Drawing.Color.BurlyWood;
             this.btnHistory.BackgroundImage = global::PetShop.Properties.Resources.history;
             this.btnHistory.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnHistory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnHistory.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.btnHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
@@ -380,12 +436,14 @@ namespace PetShop
             this.btnHistory.Size = new System.Drawing.Size(73, 74);
             this.btnHistory.TabIndex = 43;
             this.btnHistory.UseVisualStyleBackColor = false;
+            this.btnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
             // 
             // btnPrint
             // 
             this.btnPrint.BackColor = System.Drawing.Color.BurlyWood;
             this.btnPrint.BackgroundImage = global::PetShop.Properties.Resources.files;
             this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
@@ -401,6 +459,7 @@ namespace PetShop
             this.btnClear.BackColor = System.Drawing.Color.BurlyWood;
             this.btnClear.BackgroundImage = global::PetShop.Properties.Resources.trash;
             this.btnClear.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClear.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClear.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.btnClear.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnClear.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
@@ -417,6 +476,7 @@ namespace PetShop
             this.btnAdmin.BackColor = System.Drawing.Color.BurlyWood;
             this.btnAdmin.BackgroundImage = global::PetShop.Properties.Resources.user;
             this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdmin.FlatAppearance.BorderSize = 0;
             this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
@@ -432,6 +492,7 @@ namespace PetShop
             this.btnCari.BackColor = System.Drawing.Color.BurlyWood;
             this.btnCari.BackgroundImage = global::PetShop.Properties.Resources.search;
             this.btnCari.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCari.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCari.FlatAppearance.BorderSize = 0;
             this.btnCari.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnCari.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
@@ -448,6 +509,7 @@ namespace PetShop
             this.btnCheckout.BackColor = System.Drawing.Color.BurlyWood;
             this.btnCheckout.BackgroundImage = global::PetShop.Properties.Resources.checkout;
             this.btnCheckout.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCheckout.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCheckout.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.btnCheckout.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnCheckout.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
@@ -476,61 +538,6 @@ namespace PetShop
             this.button1.TabIndex = 0;
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.BurlyWood;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(1069, 372);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(123, 18);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "Potongan (Rp.)";
-            // 
-            // nudPotongan
-            // 
-            this.nudPotongan.Location = new System.Drawing.Point(1205, 366);
-            this.nudPotongan.Margin = new System.Windows.Forms.Padding(2);
-            this.nudPotongan.Name = "nudPotongan";
-            this.nudPotongan.Size = new System.Drawing.Size(139, 29);
-            this.nudPotongan.TabIndex = 52;
-            // 
-            // txtTotal
-            // 
-            this.txtTotal.Enabled = false;
-            this.txtTotal.Location = new System.Drawing.Point(1177, 287);
-            this.txtTotal.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTotal.Name = "txtTotal";
-            this.txtTotal.ReadOnly = true;
-            this.txtTotal.Size = new System.Drawing.Size(166, 29);
-            this.txtTotal.TabIndex = 53;
-            this.txtTotal.Text = "Rp. 0";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.BurlyWood;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(1080, 243);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
-            this.label4.TabIndex = 54;
-            this.label4.Text = "Total Harga :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.BurlyWood;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(1074, 294);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 18);
-            this.label8.TabIndex = 55;
-            this.label8.Text = "Total (-Pot)";
             // 
             // FrmPenjualan
             // 
