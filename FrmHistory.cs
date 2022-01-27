@@ -32,13 +32,23 @@ namespace PetShop
             BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Transaksi"] != null) ds.Tables["Transaksi"].Clear();
-            ad = new SqlDataAdapter("Select * from Penjualan", con);
+            ad = new SqlDataAdapter("Select * from Penjualan order by id_penjualan asc", con);
             ad.Fill(ds, "Transaksi");
             Tampil();
             dgvDetail.AllowUserToAddRows = false;
             dgvTransaksi.AllowUserToAddRows = false;
             lblJumlahRec.Text = ds.Tables["Transaksi"].Rows.Count.ToString() ;
+            dgvDetail.ReadOnly = true;
             con.Close();
+            dtpFilter1.MaxDate = DateTime.Now.Date;
+            dtpFilter2.MaxDate = DateTime.Now.Date;
+            dtpFilter2.Value = DateTime.Now.Date;
+
+            //filter date
+            dtpFilter1.MinDate = Convert.ToDateTime(ds.Tables["Transaksi"].Rows[0]["tgl_transaksi"].ToString());
+            dtpFilter1.Value = dtpFilter1.MinDate;
+
+            dtpFilter2.MinDate = dtpFilter1.Value;
         }
 
         private void Tampil()
@@ -52,7 +62,10 @@ namespace PetShop
             dgvTransaksi.Columns[4].HeaderText = "Grand Total";
             dgvTransaksi.Columns[5].HeaderText = "Dibayarkan";
             dgvTransaksi.Columns[6].HeaderText = "Kembalian";
-
+            for (int i = 2; i <= 6; i++)
+            {
+                dgvTransaksi.Columns[i].DefaultCellStyle.Format = "c";
+            }
             //Header Properties
             dgvTransaksi.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             
@@ -67,6 +80,8 @@ namespace PetShop
             ad.Fill(ds, "DetailBarang");
 
             dgvDetail.DataSource = ds.Tables["DetailBarang"];
+            dgvDetail.Columns[3].DefaultCellStyle.Format = "c";
+            dgvDetail.Columns[4].DefaultCellStyle.Format = "c";
         }
 
         private void DgvTransaksi_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -99,6 +114,19 @@ namespace PetShop
         private void DgvDetail_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             
+        }
+
+        private void TxtCari_TextChanged(object sender, EventArgs e)
+        {
+            ds.Tables["Transaksi"].DefaultView.RowFilter = "id_penjualan LIKE '%" + txtCari.Text + "%'";
+            lblJumlahRec.Text = dgvTransaksi.Rows.Count.ToString();
+        }
+
+        private void DtpFilter1_ValueChanged(object sender, EventArgs e)
+        {
+            ds.Tables["Transaksi"].DefaultView.RowFilter = "tgl_transaksi >='" + dtpFilter1.Value.Date.ToString("d")  + "' and tgl_transaksi <= '" + dtpFilter2.Value.Date.ToString("d") + " 23:59:59" + "'";
+            dtpFilter2.MinDate = dtpFilter1.Value;
+            lblJumlahRec.Text = dgvTransaksi.Rows.Count.ToString();
         }
     }
 }

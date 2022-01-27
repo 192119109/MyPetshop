@@ -17,7 +17,7 @@ namespace PetShop
         DataSet ds;
         SqlDataAdapter ad;
         DataRow dr;
-        DataRow[] arRecord;
+        DataRow[] arRecord,CheckoutRecord;
         SqlCommandBuilder clb;
         int selectedRow;
         string invId;
@@ -126,20 +126,30 @@ namespace PetShop
         {
             if(e.KeyChar == 13)
             {
+
                 arRecord = ds.Tables["Barang"].Select("barcode='" + txtBarcode.Text + "'");
                 if(arRecord.Length!=0)
                 {
-                    dr = ds.Tables["CheckoutItem"].NewRow();
-                    dr["ID Barang"] = arRecord[0]["id_barang"];
-                    dr["Nama Barang"] = arRecord[0]["nama_barang"];
-                    dr["Qty"] = nudQty.Value;
-                    dr["Harga Beli"] = Convert.ToInt32(arRecord[0]["harga_beli"]);
-                    dr["Harga Satuan"] = arRecord[0]["harga_jual"];
-                    dr["SubTotal"] = Convert.ToInt32(arRecord[0]["harga_jual"]) * nudQty.Value;
-                    ds.Tables["CheckoutItem"].Rows.Add(dr);
-                    Tampil();
-                    txtBarcode.Clear();
-                    nudQty.Value = 1;
+                    CheckoutRecord = ds.Tables["CheckoutItem"].Select("[ID Barang] = '" + arRecord[0]["id_barang"] + "'");
+                    if (CheckoutRecord.Length != 0)
+                    {
+                        MessageBox.Show("Barang sudah ada dalam daftar checkout");
+                    }
+                    else
+                    {
+                        dr = ds.Tables["CheckoutItem"].NewRow();
+                        dr["ID Barang"] = arRecord[0]["id_barang"];
+                        dr["Nama Barang"] = arRecord[0]["nama_barang"];
+                        dr["Qty"] = nudQty.Value;
+                        dr["Harga Beli"] = Convert.ToInt32(arRecord[0]["harga_beli"]);
+                        dr["Harga Satuan"] = arRecord[0]["harga_jual"];
+                        dr["SubTotal"] = Convert.ToInt32(arRecord[0]["harga_jual"]) * nudQty.Value;
+                        ds.Tables["CheckoutItem"].Rows.Add(dr);
+                        Tampil();
+                        txtBarcode.Clear();
+                        nudQty.Value = 1;
+                    }
+                    
                 }
                 else
                 {

@@ -28,23 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTransaksi = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.txtCari = new System.Windows.Forms.TextBox();
             this.cboKategori = new System.Windows.Forms.ComboBox();
+            this.txtCari = new System.Windows.Forms.TextBox();
             this.btnCetak = new System.Windows.Forms.Button();
             this.btnTampil = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.lblJumlahRec = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilter2 = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.dtpFilter1 = new System.Windows.Forms.DateTimePicker();
             this.lblJlhBarang = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblJlhJenisBarang = new System.Windows.Forms.Label();
@@ -52,30 +51,30 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvTransaksi
             // 
             this.dgvTransaksi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTransaksi.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTransaksi.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvTransaksi.Location = new System.Drawing.Point(12, 77);
             this.dgvTransaksi.MultiSelect = false;
             this.dgvTransaksi.Name = "dgvTransaksi";
@@ -97,24 +96,25 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cari";
             // 
+            // cboKategori
+            // 
+            this.cboKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboKategori.Enabled = false;
+            this.cboKategori.FormattingEnabled = true;
+            this.cboKategori.Items.AddRange(new object[] {
+            "by- Invoice ID"});
+            this.cboKategori.Location = new System.Drawing.Point(626, 23);
+            this.cboKategori.Name = "cboKategori";
+            this.cboKategori.Size = new System.Drawing.Size(186, 28);
+            this.cboKategori.TabIndex = 1;
+            // 
             // txtCari
             // 
             this.txtCari.Location = new System.Drawing.Point(6, 23);
             this.txtCari.Name = "txtCari";
             this.txtCari.Size = new System.Drawing.Size(614, 26);
             this.txtCari.TabIndex = 0;
-            // 
-            // cboKategori
-            // 
-            this.cboKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboKategori.FormattingEnabled = true;
-            this.cboKategori.Items.AddRange(new object[] {
-            "by- Invoice ID",
-            "by- Date/Time"});
-            this.cboKategori.Location = new System.Drawing.Point(626, 23);
-            this.cboKategori.Name = "cboKategori";
-            this.cboKategori.Size = new System.Drawing.Size(186, 28);
-            this.cboKategori.TabIndex = 1;
+            this.txtCari.TextChanged += new System.EventHandler(this.TxtCari_TextChanged);
             // 
             // btnCetak
             // 
@@ -157,6 +157,17 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Detail";
             // 
+            // dgvDetail
+            // 
+            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvDetail.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Location = new System.Drawing.Point(6, 25);
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.Size = new System.Drawing.Size(591, 433);
+            this.dgvDetail.TabIndex = 0;
+            this.dgvDetail.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetail_CellValueChanged);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -179,9 +190,9 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Controls.Add(this.dtpFilter2);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.dateTimePicker1);
+            this.groupBox3.Controls.Add(this.dtpFilter1);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(854, 13);
             this.groupBox3.Name = "groupBox3";
@@ -190,12 +201,13 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Filter";
             // 
-            // dateTimePicker1
+            // dtpFilter2
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(19, 22);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpFilter2.Location = new System.Drawing.Point(261, 22);
+            this.dtpFilter2.Name = "dtpFilter2";
+            this.dtpFilter2.Size = new System.Drawing.Size(200, 26);
+            this.dtpFilter2.TabIndex = 2;
+            this.dtpFilter2.ValueChanged += new System.EventHandler(this.DtpFilter1_ValueChanged);
             // 
             // label3
             // 
@@ -206,31 +218,13 @@
             this.label3.TabIndex = 1;
             this.label3.Text = "s/d";
             // 
-            // dateTimePicker2
+            // dtpFilter1
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(261, 22);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 2;
-            // 
-            // dgvDetail
-            // 
-            this.dgvDetail.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvDetail.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDetail.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDetail.Location = new System.Drawing.Point(6, 25);
-            this.dgvDetail.Name = "dgvDetail";
-            this.dgvDetail.Size = new System.Drawing.Size(591, 433);
-            this.dgvDetail.TabIndex = 0;
-            this.dgvDetail.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDetail_CellValueChanged);
+            this.dtpFilter1.Location = new System.Drawing.Point(19, 22);
+            this.dtpFilter1.Name = "dtpFilter1";
+            this.dtpFilter1.Size = new System.Drawing.Size(200, 26);
+            this.dtpFilter1.TabIndex = 0;
+            this.dtpFilter1.ValueChanged += new System.EventHandler(this.DtpFilter1_ValueChanged);
             // 
             // lblJlhBarang
             // 
@@ -300,9 +294,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -320,9 +314,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblJumlahRec;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpFilter2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFilter1;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.Label lblJlhBarang;
         private System.Windows.Forms.Label label4;
