@@ -47,6 +47,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvBarang = new System.Windows.Forms.DataGridView();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
@@ -275,12 +276,27 @@
             this.dgvBarang.TabIndex = 3;
             this.dgvBarang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvBarang_CellClick);
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.Location = new System.Drawing.Point(908, 68);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(146, 40);
+            this.btnClear.TabIndex = 34;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
             // InputBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(1071, 537);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.dgvBarang);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -316,5 +332,6 @@
         private System.Windows.Forms.Button btnSimpan;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.NumericUpDown nudQty;
+        private System.Windows.Forms.Button btnClear;
     }
 }

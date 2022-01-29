@@ -91,6 +91,12 @@
       <DependentUpon>BarcodeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Crypto.cs" />
+    <Compile Include="FrmAddSup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddSup.Designer.cs">
+      <DependentUpon>FrmAddSup.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCari.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,12 @@
     </Compile>
     <Compile Include="FrmStock.designer.cs">
       <DependentUpon>FrmStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSupplier.Designer.cs">
+      <DependentUpon>FrmSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="InputBarang.cs">
@@ -184,6 +196,9 @@
     <EmbeddedResource Include="BarcodeTest.resx">
       <DependentUpon>BarcodeTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddSup.resx">
+      <DependentUpon>FrmAddSup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmCari.resx">
       <DependentUpon>FrmCari.cs</DependentUpon>
     </EmbeddedResource>
@@ -201,6 +216,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSupplier.resx">
+      <DependentUpon>FrmSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InputBarang.resx">
       <DependentUpon>InputBarang.cs</DependentUpon>
@@ -308,6 +326,9 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\manufacture.png" />
+    <None Include="Resources\supplier_blur.jpg" />
+    <None Include="Resources\supplier.png" />
     <None Include="Resources\Square44x44Logo.targetsize-321.png" />
     <None Include="Resources\Square44x44Logo.targetsize-32.png" />
     <None Include="Resources\warehouse.png" />

@@ -39,3 +39,5 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.Scanner.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmCari.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmCheckout.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmHistory.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmSupplier.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmAddSup.resources

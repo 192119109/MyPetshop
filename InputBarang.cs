@@ -21,7 +21,7 @@ namespace PetShop
         DataColumn[] dc;
         SqlCommandBuilder clb;
         DataTable dt;
-
+        string idBrg;
 
         public InputBarang()
         {
@@ -30,6 +30,8 @@ namespace PetShop
 
         private void InputBarang_Load(object sender, EventArgs e)
         {
+            GetIdBarang();
+            txtIdBrg.Enabled = false;
             nudQty.Minimum = 0;
             ds = new DataSet();
             dt = new DataTable("Barang");
@@ -46,6 +48,37 @@ namespace PetShop
             btnSimpan.Enabled = false;
             btnHapus.Enabled = false;
             btnUbah.Enabled = false;
+
+            dgvBarang.AllowUserToAddRows = false;
+        }
+        
+        private void GetIdBarang()
+        {
+            if(dgvBarang.Rows.Count<1)
+            {
+                cmd = new SqlCommand("SELECT TOP 1 id_barang FROM Barang ORDER BY id_barang DESC", con);
+                var maxId = cmd.ExecuteScalar() as string;
+
+                if (maxId == null)
+                {
+                    idBrg = "BRG0001";
+                    txtIdBrg.Text = idBrg.ToString();
+                }
+                else
+                {
+                    int intval = int.Parse(maxId.Substring(3, 4));
+                    intval++;
+                    idBrg = String.Format("BRG{0:0000}", intval);
+                    txtIdBrg.Text = idBrg;
+                }
+            }
+            else
+            {
+                int intval = int.Parse(dgvBarang.Rows[0].Cells[0].Value.ToString().Substring(3, 4));
+                intval++;
+                idBrg= String.Format("BRG{0:0000}", intval);
+                txtIdBrg.Text = idBrg;
+            }
         }
 
         private void Tampil()
@@ -103,6 +136,7 @@ namespace PetShop
             ds.Tables["Barang"].Rows.Add(dr);
             ValidasiBtnSimpan();
             Reset();
+            GetIdBarang();
         }
 
         private void BtnSimpan_Click(object sender, EventArgs e)
@@ -143,25 +177,36 @@ namespace PetShop
 
         private void Validasi()
         {
-            arrRow = ds.Tables["Barang"].Select("id_barang = '" + txtIdBrg.Text + "'");
-            if (arrRow.Length != 0)
+            try
             {
-                btnTambah.Enabled = false;
-                btnHapus.Enabled = true;
-                btnUbah.Enabled = true;
-                txtNamaBarang.Text = arrRow[0]["nama_barang"].ToString();
-                txtBarcode.Text = arrRow[0]["barcode"].ToString();
-                nudQty.Value = Convert.ToInt32(arrRow[0]["qty"]);
-                txtHargaBeli.Text = string.Format("{0:n0}", float.Parse(arrRow[0]["harga_beli"].ToString()));
-                txtHargaJual.Text = string.Format("{0:n0}", float.Parse(arrRow[0]["harga_jual"].ToString()));
+                if (ds.Tables["Barang"] != null)
+                {
+                    arrRow = ds.Tables["Barang"].Select("id_barang = '" + txtIdBrg.Text + "'");
+                    if (arrRow.Length != 0)
+                    {
+                        btnTambah.Enabled = false;
+                        btnHapus.Enabled = true;
+                        btnUbah.Enabled = true;
+                        txtNamaBarang.Text = arrRow[0]["nama_barang"].ToString();
+                        txtBarcode.Text = arrRow[0]["barcode"].ToString();
+                        nudQty.Value = Convert.ToInt32(arrRow[0]["qty"]);
+                        txtHargaBeli.Text = string.Format("{0:n0}", float.Parse(arrRow[0]["harga_beli"].ToString()));
+                        txtHargaJual.Text = string.Format("{0:n0}", float.Parse(arrRow[0]["harga_jual"].ToString()));
+                    }
+                    else
+                    {
+                        btnTambah.Enabled = true;
+                        btnHapus.Enabled = false;
+                        btnUbah.Enabled = false;
+
+                    }
+                }
             }
-            else
+            catch
             {
-                btnTambah.Enabled = true;
-                btnHapus.Enabled = false;
-                btnUbah.Enabled = false;
-               
+
             }
+            
 
         }
 
@@ -212,6 +257,17 @@ namespace PetShop
                 }
             }
             ValidasiBtnSimpan();
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            txtNamaBarang.Clear();
+            txtHargaJual.Clear();
+            txtHargaBeli.Clear();
+            txtBarcode.Clear();
+            nudQty.Value = 0;
+            dgvBarang.ClearSelection();
+            GetIdBarang();
         }
     }
 }

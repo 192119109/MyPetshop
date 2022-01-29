@@ -43,3 +43,12 @@ Constraint Fk_TblPenjualanDetailBarang Foreign Key (id_barang) references Barang
 SELECT TOP 1 id_barang FROM Barang ORDER BY id_barang DESC
 
 SELECT TOP 1 id_penjualan FROM Penjualan ORDER BY id_penjualan DESC
+
+create table Suppliers
+(
+	id_supplier varChar(7) Not Null Primary Key, nama varChar(50), alamat text, provinsi varChar(50), kota varChar(50), telp varchar(12), email varChar(100), deskripsi text
+)
+
+drop table Suppliers
+
+select * from Barang
