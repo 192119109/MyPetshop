@@ -23,6 +23,7 @@ namespace PetShop
         SqlCommandBuilder clb;
         DataTable dt;
         DataSet ds;
+        int selectedRowIndex;
         public FrmAddSup()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace PetShop
             ValidasiBtnSimpan();
             btnUbah.Enabled = false;
             btnHapus.Enabled = false;
+            txtNoTelp.MaxLength = 12;
         }
 
         private void GetSupplierID()
@@ -70,7 +72,7 @@ namespace PetShop
             }
             else
             {
-                int intval = int.Parse(dgvSupplier.Rows[0].Cells[0].Value.ToString().Substring(3, 4));
+                int intval = int.Parse(dgvSupplier.Rows[dgvSupplier.Rows.Count-1].Cells[0].Value.ToString().Substring(3, 4));
                 intval++;
                 supID = String.Format("SUP{0:0000}", intval);
                 txtIdSupplier.Text = supID;
@@ -152,6 +154,7 @@ namespace PetShop
                 {
                     dgvSupplier.CurrentRow.Selected = true;
                     txtIdSupplier.Text = dgvSupplier.Rows[e.RowIndex].Cells["id_supplier"].Value.ToString();
+                    selectedRowIndex = e.RowIndex;
 
                 }
             }
@@ -198,9 +201,60 @@ namespace PetShop
 
         private void BtnClear_Click(object sender, EventArgs e)
         {
-            GetSupplierID();
             Reset();
+            GetSupplierID();
             
+            
+        }
+
+        private void BtnUbah_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda yakin ingin mengubah item ?", this.Text, MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                arrRow = ds.Tables["Suppliers"].Select("id_supplier = '" + txtIdSupplier.Text + "'");
+                if (arrRow.Length != 0)
+                {
+                    dr["id_supplier"] = txtIdSupplier.Text;
+                    dr["nama"] = txtNamaSupplier.Text;
+                    dr["alamat"] = txtAlamat.Text;
+                    dr["provinsi"] = txtProvinsi.Text;
+                    dr["kota"] = txtKota.Text;
+                    dr["telp"] = txtNoTelp.Text;
+                    dr["email"] = txtEmail.Text;
+                    dr["deskripsi"] = txtDeskripsi.Text;
+                    MessageBox.Show("Data berhasil diubah");
+                    Tampil();
+                }
+            }
+            ValidasiBtnSimpan();
+            Reset();
+            GetSupplierID();
+        }
+
+        private void BtnHapus_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda yakin ingin menghapus item ?", this.Text, MessageBoxButtons.YesNo,
+               MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                arrRow = ds.Tables["Suppliers"].Select("id_supplier = '" + txtIdSupplier.Text + "'");
+                if (arrRow.Length != 0)
+                {
+                    if(selectedRowIndex != dgvSupplier.Rows.Count-1)
+                    {
+                        ds.Tables["Suppliers"].Rows[selectedRowIndex+1]["id_supplier"] = txtIdSupplier.Text;
+                    }
+                    arrRow[0].Delete();
+                    Reset();
+                    GetSupplierID();
+                    MessageBox.Show("Data berhasil dihapus");
+                    Tampil();
+                    btnHapus.Enabled = false;
+                    btnUbah.Enabled = false;
+                    btnTambah.Enabled = true;
+                }
+            }
+            ValidasiBtnSimpan();
         }
     }
 }

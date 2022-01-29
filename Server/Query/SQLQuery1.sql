@@ -35,7 +35,7 @@ create table Penjualan
 (id_penjualan varChar(19) Not Null Primary Key, tgl_transaksi datetime, total_harga money)
 
 create table Penjualan_Detail
-(id_penjualan varChar(19) Not Null, id_barang varChar(900) Not Null, qty_jual int, sub_total int,
+(id_penjualan varChar(19) Not Null, id_barang varChar(7) Not Null, qty_jual int, sub_total int,
 Constraint Fk_TblPenjualanDetail Foreign Key (id_penjualan) references Penjualan (id_penjualan),
 Constraint Fk_TblPenjualanDetailBarang Foreign Key (id_barang) references Barang (id_barang)
 )
@@ -52,3 +52,14 @@ create table Suppliers
 drop table Suppliers
 
 select * from Barang
+
+alter table Barang alter column id_barang varChar(7)
+
+alter table Penjualan_Detail drop Constraint Fk_TblPenjualanDetailBarang
+
+alter table Barang alter column id_barang varChar(7) Not null
+alter table Barang add constraint PK_Barang Primary Key (id_barang)
+alter table Penjualan_Detail alter column id_barang varChar (7) Not Null
+
+alter table Barang alter column barcode varChar(13) Not Null
+alter table Penjualan_Detail add Constraint Fk_TblPenjualanDetailBarang Foreign Key (id_barang) references Barang (id_barang)
