@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnClear = new System.Windows.Forms.Button();
@@ -64,18 +64,18 @@
             this.dgvSupplier.AllowUserToAddRows = false;
             this.dgvSupplier.AllowUserToDeleteRows = false;
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSupplier.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplier.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvSupplier.Location = new System.Drawing.Point(12, 125);
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.Size = new System.Drawing.Size(578, 501);
-            this.dgvSupplier.TabIndex = 4;
+            this.dgvSupplier.TabIndex = 14;
             this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSupplier_CellClick);
             // 
             // groupBox1
@@ -118,7 +118,7 @@
             this.btnClear.Location = new System.Drawing.Point(297, 33);
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(151, 40);
-            this.btnClear.TabIndex = 60;
+            this.btnClear.TabIndex = 13;
             this.btnClear.Text = "Clear";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
@@ -132,7 +132,7 @@
             this.btnUbah.Location = new System.Drawing.Point(196, 407);
             this.btnUbah.Name = "btnUbah";
             this.btnUbah.Size = new System.Drawing.Size(123, 40);
-            this.btnUbah.TabIndex = 59;
+            this.btnUbah.TabIndex = 10;
             this.btnUbah.Text = "Ubah";
             this.btnUbah.UseVisualStyleBackColor = false;
             this.btnUbah.Click += new System.EventHandler(this.BtnUbah_Click);
@@ -146,7 +146,7 @@
             this.btnHapus.Location = new System.Drawing.Point(325, 407);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(123, 40);
-            this.btnHapus.TabIndex = 58;
+            this.btnHapus.TabIndex = 11;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = false;
             this.btnHapus.Click += new System.EventHandler(this.BtnHapus_Click);
@@ -160,7 +160,7 @@
             this.btnSimpan.Location = new System.Drawing.Point(67, 455);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(381, 40);
-            this.btnSimpan.TabIndex = 57;
+            this.btnSimpan.TabIndex = 12;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
             this.btnSimpan.Click += new System.EventHandler(this.BtnSimpan_Click);
@@ -174,7 +174,7 @@
             this.btnTambah.Location = new System.Drawing.Point(67, 407);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(123, 40);
-            this.btnTambah.TabIndex = 56;
+            this.btnTambah.TabIndex = 9;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = false;
             this.btnTambah.Click += new System.EventHandler(this.BtnTambah_Click);
@@ -187,7 +187,7 @@
             this.txtDeskripsi.Name = "txtDeskripsi";
             this.txtDeskripsi.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDeskripsi.Size = new System.Drawing.Size(347, 83);
-            this.txtDeskripsi.TabIndex = 55;
+            this.txtDeskripsi.TabIndex = 8;
             // 
             // lbldeskripsi
             // 
@@ -205,7 +205,7 @@
             this.txtEmail.Location = new System.Drawing.Point(104, 283);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(347, 29);
-            this.txtEmail.TabIndex = 53;
+            this.txtEmail.TabIndex = 7;
             // 
             // label8
             // 
@@ -223,7 +223,7 @@
             this.txtProvinsi.Location = new System.Drawing.Point(104, 178);
             this.txtProvinsi.Name = "txtProvinsi";
             this.txtProvinsi.Size = new System.Drawing.Size(244, 29);
-            this.txtProvinsi.TabIndex = 51;
+            this.txtProvinsi.TabIndex = 4;
             // 
             // label5
             // 
@@ -241,7 +241,7 @@
             this.txtKota.Location = new System.Drawing.Point(104, 213);
             this.txtKota.Name = "txtKota";
             this.txtKota.Size = new System.Drawing.Size(215, 29);
-            this.txtKota.TabIndex = 49;
+            this.txtKota.TabIndex = 5;
             // 
             // label4
             // 
@@ -259,7 +259,7 @@
             this.txtNoTelp.Location = new System.Drawing.Point(104, 248);
             this.txtNoTelp.Name = "txtNoTelp";
             this.txtNoTelp.Size = new System.Drawing.Size(244, 29);
-            this.txtNoTelp.TabIndex = 47;
+            this.txtNoTelp.TabIndex = 6;
             // 
             // txtAlamat
             // 
@@ -268,7 +268,7 @@
             this.txtAlamat.Multiline = true;
             this.txtAlamat.Name = "txtAlamat";
             this.txtAlamat.Size = new System.Drawing.Size(353, 54);
-            this.txtAlamat.TabIndex = 46;
+            this.txtAlamat.TabIndex = 3;
             // 
             // txtNamaSupplier
             // 
@@ -276,7 +276,7 @@
             this.txtNamaSupplier.Location = new System.Drawing.Point(104, 83);
             this.txtNamaSupplier.Name = "txtNamaSupplier";
             this.txtNamaSupplier.Size = new System.Drawing.Size(353, 29);
-            this.txtNamaSupplier.TabIndex = 45;
+            this.txtNamaSupplier.TabIndex = 2;
             // 
             // txtIdSupplier
             // 
@@ -285,7 +285,7 @@
             this.txtIdSupplier.Location = new System.Drawing.Point(104, 38);
             this.txtIdSupplier.Name = "txtIdSupplier";
             this.txtIdSupplier.Size = new System.Drawing.Size(132, 29);
-            this.txtIdSupplier.TabIndex = 44;
+            this.txtIdSupplier.TabIndex = 1;
             this.txtIdSupplier.TextChanged += new System.EventHandler(this.TxtIdSupplier_TextChanged);
             // 
             // label10

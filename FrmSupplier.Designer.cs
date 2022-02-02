@@ -28,25 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDeskripsi = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtProvinsi = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtKota = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtHargaBeli = new System.Windows.Forms.TextBox();
-            this.txtNamaBarang = new System.Windows.Forms.TextBox();
-            this.txtBarcode = new System.Windows.Forms.TextBox();
-            this.txtIdBarang = new System.Windows.Forms.TextBox();
+            this.txtTelp = new System.Windows.Forms.TextBox();
+            this.txtAlamat = new System.Windows.Forms.TextBox();
+            this.txtNama = new System.Windows.Forms.TextBox();
+            this.txtIdSupplier = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,7 +57,7 @@
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lblJlhSup = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.btnPrint = new System.Windows.Forms.Button();
@@ -85,45 +84,45 @@
             this.dgvSupplier.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSupplier.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvSupplier.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvSupplier.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvSupplier.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvSupplier.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvSupplier.Location = new System.Drawing.Point(22, 206);
             this.dgvSupplier.MultiSelect = false;
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.Size = new System.Drawing.Size(823, 450);
             this.dgvSupplier.TabIndex = 12;
+            this.dgvSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvSupplier_CellClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnDelete);
             this.groupBox1.Controls.Add(this.btnUpdate);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtDeskripsi);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtEmail);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.txtProvinsi);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtKota);
             this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.txtHargaBeli);
-            this.groupBox1.Controls.Add(this.txtNamaBarang);
-            this.groupBox1.Controls.Add(this.txtBarcode);
-            this.groupBox1.Controls.Add(this.txtIdBarang);
+            this.groupBox1.Controls.Add(this.txtTelp);
+            this.groupBox1.Controls.Add(this.txtAlamat);
+            this.groupBox1.Controls.Add(this.txtNama);
+            this.groupBox1.Controls.Add(this.txtIdSupplier);
             this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
@@ -136,41 +135,28 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informasi Supplier";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.Red;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.Location = new System.Drawing.Point(250, 431);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(123, 40);
-            this.btnDelete.TabIndex = 57;
-            this.btnDelete.Text = "Hapus";
-            this.btnDelete.UseVisualStyleBackColor = false;
-            // 
             // btnUpdate
             // 
-            this.btnUpdate.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnUpdate.BackColor = System.Drawing.Color.MediumSeaGreen;
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.Location = new System.Drawing.Point(104, 431);
+            this.btnUpdate.Location = new System.Drawing.Point(328, 431);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 40);
-            this.btnUpdate.TabIndex = 56;
+            this.btnUpdate.TabIndex = 8;
             this.btnUpdate.Text = "Ubah";
             this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.BtnUpdate_Click);
             // 
-            // textBox4
+            // txtDeskripsi
             // 
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(104, 318);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(347, 98);
-            this.textBox4.TabIndex = 55;
+            this.txtDeskripsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeskripsi.Location = new System.Drawing.Point(104, 318);
+            this.txtDeskripsi.Multiline = true;
+            this.txtDeskripsi.Name = "txtDeskripsi";
+            this.txtDeskripsi.Size = new System.Drawing.Size(347, 98);
+            this.txtDeskripsi.TabIndex = 7;
             // 
             // label11
             // 
@@ -182,14 +168,13 @@
             this.label11.TabIndex = 54;
             this.label11.Text = "Deskripsi :";
             // 
-            // textBox3
+            // txtEmail
             // 
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(104, 283);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(244, 29);
-            this.textBox3.TabIndex = 53;
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(104, 283);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(347, 29);
+            this.txtEmail.TabIndex = 6;
             // 
             // label8
             // 
@@ -201,14 +186,13 @@
             this.label8.TabIndex = 52;
             this.label8.Text = "Email :";
             // 
-            // textBox2
+            // txtProvinsi
             // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(104, 178);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(244, 29);
-            this.textBox2.TabIndex = 51;
+            this.txtProvinsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtProvinsi.Location = new System.Drawing.Point(104, 178);
+            this.txtProvinsi.Name = "txtProvinsi";
+            this.txtProvinsi.Size = new System.Drawing.Size(244, 29);
+            this.txtProvinsi.TabIndex = 3;
             // 
             // label5
             // 
@@ -220,14 +204,13 @@
             this.label5.TabIndex = 50;
             this.label5.Text = "Provinsi :";
             // 
-            // textBox1
+            // txtKota
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(104, 213);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 29);
-            this.textBox1.TabIndex = 49;
+            this.txtKota.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtKota.Location = new System.Drawing.Point(104, 213);
+            this.txtKota.Name = "txtKota";
+            this.txtKota.Size = new System.Drawing.Size(215, 29);
+            this.txtKota.TabIndex = 4;
             // 
             // label4
             // 
@@ -239,42 +222,40 @@
             this.label4.TabIndex = 48;
             this.label4.Text = "Kota :";
             // 
-            // txtHargaBeli
+            // txtTelp
             // 
-            this.txtHargaBeli.Enabled = false;
-            this.txtHargaBeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHargaBeli.Location = new System.Drawing.Point(104, 248);
-            this.txtHargaBeli.Name = "txtHargaBeli";
-            this.txtHargaBeli.Size = new System.Drawing.Size(244, 29);
-            this.txtHargaBeli.TabIndex = 47;
+            this.txtTelp.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelp.Location = new System.Drawing.Point(104, 248);
+            this.txtTelp.Name = "txtTelp";
+            this.txtTelp.Size = new System.Drawing.Size(244, 29);
+            this.txtTelp.TabIndex = 5;
             // 
-            // txtNamaBarang
+            // txtAlamat
             // 
-            this.txtNamaBarang.Enabled = false;
-            this.txtNamaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaBarang.Location = new System.Drawing.Point(104, 118);
-            this.txtNamaBarang.Multiline = true;
-            this.txtNamaBarang.Name = "txtNamaBarang";
-            this.txtNamaBarang.Size = new System.Drawing.Size(353, 54);
-            this.txtNamaBarang.TabIndex = 46;
+            this.txtAlamat.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAlamat.Location = new System.Drawing.Point(104, 118);
+            this.txtAlamat.Multiline = true;
+            this.txtAlamat.Name = "txtAlamat";
+            this.txtAlamat.Size = new System.Drawing.Size(353, 54);
+            this.txtAlamat.TabIndex = 2;
             // 
-            // txtBarcode
+            // txtNama
             // 
-            this.txtBarcode.Enabled = false;
-            this.txtBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarcode.Location = new System.Drawing.Point(104, 83);
-            this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(353, 29);
-            this.txtBarcode.TabIndex = 45;
+            this.txtNama.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNama.Location = new System.Drawing.Point(104, 83);
+            this.txtNama.Name = "txtNama";
+            this.txtNama.Size = new System.Drawing.Size(353, 29);
+            this.txtNama.TabIndex = 1;
             // 
-            // txtIdBarang
+            // txtIdSupplier
             // 
-            this.txtIdBarang.Enabled = false;
-            this.txtIdBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdBarang.Location = new System.Drawing.Point(104, 38);
-            this.txtIdBarang.Name = "txtIdBarang";
-            this.txtIdBarang.Size = new System.Drawing.Size(132, 29);
-            this.txtIdBarang.TabIndex = 44;
+            this.txtIdSupplier.Enabled = false;
+            this.txtIdSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdSupplier.Location = new System.Drawing.Point(104, 38);
+            this.txtIdSupplier.Name = "txtIdSupplier";
+            this.txtIdSupplier.Size = new System.Drawing.Size(132, 29);
+            this.txtIdSupplier.TabIndex = 44;
+            this.txtIdSupplier.TextChanged += new System.EventHandler(this.TxtIdSupplier_TextChanged);
             // 
             // label10
             // 
@@ -331,13 +312,20 @@
             // 
             // cbSearchBy
             // 
-            this.cbSearchBy.Enabled = false;
-            this.cbSearchBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSearchBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearchBy.FormattingEnabled = true;
-            this.cbSearchBy.Location = new System.Drawing.Point(611, 28);
+            this.cbSearchBy.Items.AddRange(new object[] {
+            "By- Kode Supplier",
+            "By- Nama Supplier",
+            "By- Alamat",
+            "By- Provinsi",
+            "By- Kota"});
+            this.cbSearchBy.Location = new System.Drawing.Point(611, 30);
             this.cbSearchBy.Name = "cbSearchBy";
-            this.cbSearchBy.Size = new System.Drawing.Size(342, 32);
+            this.cbSearchBy.Size = new System.Drawing.Size(342, 28);
             this.cbSearchBy.TabIndex = 9;
+            this.cbSearchBy.SelectedIndexChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // btnSearch
             // 
@@ -355,11 +343,13 @@
             // 
             // txtSearch
             // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.ForeColor = System.Drawing.SystemColors.InfoText;
             this.txtSearch.Location = new System.Drawing.Point(44, 32);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(561, 29);
+            this.txtSearch.Size = new System.Drawing.Size(561, 26);
             this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // btnClear
             // 
@@ -389,6 +379,7 @@
             this.btnRefresh.TabIndex = 11;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.BtnRefresh_Click);
             // 
             // label12
             // 
@@ -401,14 +392,14 @@
             this.label12.TabIndex = 18;
             this.label12.Text = "Tambah Supplier";
             // 
-            // label3
+            // lblJlhSup
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(112, 670);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(13, 13);
-            this.label3.TabIndex = 20;
-            this.label3.Text = "0";
+            this.lblJlhSup.AutoSize = true;
+            this.lblJlhSup.Location = new System.Drawing.Point(112, 670);
+            this.lblJlhSup.Name = "lblJlhSup";
+            this.lblJlhSup.Size = new System.Drawing.Size(13, 13);
+            this.lblJlhSup.TabIndex = 20;
+            this.lblJlhSup.Text = "0";
             // 
             // label1
             // 
@@ -481,7 +472,7 @@
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lblJlhSup);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.btnNewStock);
@@ -521,27 +512,26 @@
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Button btnRefresh;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDeskripsi;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtProvinsi;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtKota;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtHargaBeli;
-        private System.Windows.Forms.TextBox txtNamaBarang;
-        private System.Windows.Forms.TextBox txtBarcode;
-        private System.Windows.Forms.TextBox txtIdBarang;
+        private System.Windows.Forms.TextBox txtTelp;
+        private System.Windows.Forms.TextBox txtAlamat;
+        private System.Windows.Forms.TextBox txtNama;
+        private System.Windows.Forms.TextBox txtIdSupplier;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnNewStock;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblJlhSup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button btnPrint;
