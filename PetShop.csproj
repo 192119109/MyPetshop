@@ -91,11 +91,29 @@
       <DependentUpon>BarcodeTest.cs</DependentUpon>
     </Compile>
     <Compile Include="Crypto.cs" />
+    <Compile Include="FrmAddPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddPembelian.Designer.cs">
+      <DependentUpon>FrmAddPembelian.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddSup.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAddSup.Designer.cs">
       <DependentUpon>FrmAddSup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBrowseBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBrowseBarang.Designer.cs">
+      <DependentUpon>FrmBrowseBarang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBrowseSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBrowseSupplier.Designer.cs">
+      <DependentUpon>FrmBrowseSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmCari.cs">
       <SubType>Form</SubType>
@@ -120,6 +138,12 @@
     </Compile>
     <Compile Include="FrmLaporan.designer.cs">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPembelian.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPembelian.Designer.cs">
+      <DependentUpon>FrmPembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPenjualan.cs">
       <SubType>Form</SubType>
@@ -196,8 +220,17 @@
     <EmbeddedResource Include="BarcodeTest.resx">
       <DependentUpon>BarcodeTest.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddPembelian.resx">
+      <DependentUpon>FrmAddPembelian.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddSup.resx">
       <DependentUpon>FrmAddSup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBrowseBarang.resx">
+      <DependentUpon>FrmBrowseBarang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBrowseSupplier.resx">
+      <DependentUpon>FrmBrowseSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCari.resx">
       <DependentUpon>FrmCari.cs</DependentUpon>
@@ -210,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLaporan.resx">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPembelian.resx">
+      <DependentUpon>FrmPembelian.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPenjualan.resx">
       <DependentUpon>FrmPenjualan.cs</DependentUpon>
@@ -326,6 +362,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Square71x71Logo.scale-125.png" />
+    <None Include="Resources\shopping-bag.png" />
     <None Include="Resources\manufacture.png" />
     <None Include="Resources\supplier_blur.jpg" />
     <None Include="Resources\supplier.png" />
@@ -364,6 +402,9 @@
     <None Include="Resources\browse.png" />
     <None Include="Resources\checkout2.png" />
     <None Include="Resources\bill.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\add_Ypb_icon.ico" />
+    <None Include="Resources\edit_AeQ_icon.ico" />
     <Content Include="Resources\kittyAccount.png" />
     <None Include="Resources\Splash.png" />
     <None Include="Resources\kittyAccount1.png" />

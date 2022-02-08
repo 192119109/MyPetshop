@@ -17,6 +17,10 @@ namespace PetShop
         public static int Dibayarkan;
         public static int Kembalian;
 
+        //Pembelian
+        public static string getIdSup = "", getIdBrg = "";
+        public static string getNamaSup = "", getNamaBrg = "";
+
 
         public static void BuatKoneksi()
         {

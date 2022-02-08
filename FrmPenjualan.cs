@@ -69,7 +69,7 @@ namespace PetShop
 
         private void getInvoiceId()
         {
-            cmd = new SqlCommand("SELECT TOP 1 id_penjualan FROM Penjualan ORDER BY id_penjualan DESC", con);
+            cmd = new SqlCommand("SELECT TOP 1 id_penjualan FROM Penjualan ORDER BY tgl_transaksi DESC", con);
             var maxId = cmd.ExecuteScalar() as string;
 
             if (maxId == null|| Convert.ToInt32(DateTime.Now.ToString("MM")) != int.Parse(maxId.Substring(12, 2)))

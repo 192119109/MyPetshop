@@ -32,7 +32,7 @@ namespace PetShop
             BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Transaksi"] != null) ds.Tables["Transaksi"].Clear();
-            ad = new SqlDataAdapter("Select * from Penjualan order by id_penjualan asc", con);
+            ad = new SqlDataAdapter("Select * from Penjualan order by tgl_transaksi asc", con);
             ad.Fill(ds, "Transaksi");
             Tampil();
             dgvDetail.AllowUserToAddRows = false;

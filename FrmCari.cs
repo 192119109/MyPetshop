@@ -41,10 +41,11 @@ namespace PetShop
 
         private void FrmCari_Load(object sender, EventArgs e)
         {
+            BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();
             ad = new SqlDataAdapter("select id_barang, nama_barang, qty, harga_jual, barcode from Barang where qty>0", con);
-            ad.Fill(ds, "Barang"); BuatKoneksi();
+            ad.Fill(ds, "Barang");
             Tampil();
             cbSearchBy.SelectedIndex = 1;
         }

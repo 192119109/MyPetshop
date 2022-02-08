@@ -244,5 +244,12 @@ namespace PetShop
                 frmBarcode.ShowDialog();
             }
         }
+
+        private void BtnStockIn_Click(object sender, EventArgs e)
+        {
+            FrmPembelian frmPembelian = new FrmPembelian();
+            frmPembelian.Show();
+            this.Hide();
+        }
     }
 }

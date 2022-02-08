@@ -41,3 +41,7 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmCheckout.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmHistory.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmSupplier.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmAddSup.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmPembelian.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmAddPembelian.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBrowseBarang.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBrowseSupplier.resources

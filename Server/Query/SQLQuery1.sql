@@ -63,3 +63,33 @@ alter table Penjualan_Detail alter column id_barang varChar (7) Not Null
 
 alter table Barang alter column barcode varChar(13) Not Null
 alter table Penjualan_Detail add Constraint Fk_TblPenjualanDetailBarang Foreign Key (id_barang) references Barang (id_barang)
+
+
+/*Create tabel Pembelian*/
+create table Pembelian
+(
+	id_pembelian varChar(19) not null primary key,
+	id_supplier varChar(7) not null,
+	tgl_pembelian datetime, 
+	grandTotal money,
+	Constraint Fk_TblSupplierPembelian Foreign Key (id_supplier) References Suppliers (id_supplier)
+)
+
+create table Pembelian_Detail
+(
+	id_pembelian varChar(19) Not Null,
+	id_barang varChar(7) Not Null,
+	[harga/pcs] money,
+	subTotal money,
+	Constraint FK_TblPembelianDetail Foreign Key (id_pembelian) references Pembelian (id_pembelian),
+	Constraint FK_TblPembelianDetailBarang Foreign key (id_barang) references Barang (id_barang)
+)
+
+Create table Stock
+(
+	id_barang varChar(7) Not null,
+	id_pembelian varChar(19) Not Null,
+	stock int,
+	Constraint FK_StockTblBarang Foreign Key (id_barang) references Barang (id_barang),
+	Constraint FK_StockPembelian Foreign Key (id_pembelian) references Pembelian (id_pembelian)
+)

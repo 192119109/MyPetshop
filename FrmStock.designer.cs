@@ -455,6 +455,7 @@ namespace PetShop
             this.btnStockIn.Size = new System.Drawing.Size(153, 67);
             this.btnStockIn.TabIndex = 3;
             this.btnStockIn.UseVisualStyleBackColor = true;
+            this.btnStockIn.Click += new System.EventHandler(this.BtnStockIn_Click);
             // 
             // btnNewStock
             // 
