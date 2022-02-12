@@ -57,11 +57,12 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label11 = new System.Windows.Forms.Label();
             this.nudQty = new System.Windows.Forms.NumericUpDown();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lblJlhPembelian = new System.Windows.Forms.Label();
+            this.lblGrandTotal = new System.Windows.Forms.Label();
             this.txtCatatan = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPembelian)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -99,6 +100,9 @@
             this.dgvPembelian.Name = "dgvPembelian";
             this.dgvPembelian.Size = new System.Drawing.Size(488, 469);
             this.dgvPembelian.TabIndex = 6;
+            this.dgvPembelian.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPembelian_CellClick);
+            this.dgvPembelian.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPembelian_CellValueChanged);
+            this.dgvPembelian.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.DgvPembelian_ColumnAdded);
             // 
             // label1
             // 
@@ -285,6 +289,7 @@
             this.btnUbah.TabIndex = 39;
             this.btnUbah.Text = "Ubah";
             this.btnUbah.UseVisualStyleBackColor = false;
+            this.btnUbah.Click += new System.EventHandler(this.BtnUbah_Click);
             // 
             // btnHapus
             // 
@@ -377,23 +382,23 @@
             0,
             0});
             // 
-            // label13
+            // lblJlhPembelian
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(119, 597);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(13, 13);
-            this.label13.TabIndex = 46;
-            this.label13.Text = "0";
+            this.lblJlhPembelian.AutoSize = true;
+            this.lblJlhPembelian.Location = new System.Drawing.Point(119, 597);
+            this.lblJlhPembelian.Name = "lblJlhPembelian";
+            this.lblJlhPembelian.Size = new System.Drawing.Size(36, 13);
+            this.lblJlhPembelian.TabIndex = 46;
+            this.lblJlhPembelian.Text = "0 Item";
             // 
-            // label14
+            // lblGrandTotal
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(100, 625);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(13, 13);
-            this.label14.TabIndex = 47;
-            this.label14.Text = "0";
+            this.lblGrandTotal.AutoSize = true;
+            this.lblGrandTotal.Location = new System.Drawing.Point(100, 625);
+            this.lblGrandTotal.Name = "lblGrandTotal";
+            this.lblGrandTotal.Size = new System.Drawing.Size(13, 13);
+            this.lblGrandTotal.TabIndex = 47;
+            this.lblGrandTotal.Text = "0";
             // 
             // txtCatatan
             // 
@@ -424,16 +429,31 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // btnClear
+            // 
+            this.btnClear.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnClear.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.btnClear.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClear.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnClear.Location = new System.Drawing.Point(366, 597);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(140, 40);
+            this.btnClear.TabIndex = 57;
+            this.btnClear.Text = "Clear";
+            this.btnClear.UseVisualStyleBackColor = false;
+            this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
+            // 
             // FrmAddPembelian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(969, 647);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.txtCatatan);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.label14);
-            this.Controls.Add(this.label13);
+            this.Controls.Add(this.lblGrandTotal);
+            this.Controls.Add(this.lblJlhPembelian);
             this.Controls.Add(this.nudQty);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.label12);
@@ -505,9 +525,10 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.NumericUpDown nudQty;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lblJlhPembelian;
+        private System.Windows.Forms.Label lblGrandTotal;
         private System.Windows.Forms.TextBox txtCatatan;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button btnClear;
     }
 }

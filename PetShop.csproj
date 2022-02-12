@@ -94,7 +94,7 @@
     <Compile Include="FrmAddPembelian.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAddPembelian.Designer.cs">
+    <Compile Include="FrmAddPembelian.designer.cs">
       <DependentUpon>FrmAddPembelian.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmAddSup.cs">

@@ -18,6 +18,8 @@ namespace PetShop
         DataTable dt;
         DataRow dr;
         string idPembelian="";
+        int selectedRowIndex;
+        DataRow[] arrRow;
 
         public FrmAddPembelian()
         {
@@ -40,17 +42,22 @@ namespace PetShop
             
         }
 
+        private void ClearContent()
+        {
+            txtCatatan.Clear();
+            txtIdBarang.Clear();
+            txtNamaBarang.Clear();
+            nudHarga.Value = 0;
+            nudQty.Value = 1;
+            dgvPembelian.ClearSelection();
+            btnBrowseBarang.Enabled = true;
+            btnHapus.Enabled = false;
+            btnUbah.Enabled = false;
+            btnTambah.Enabled = true;
+        }
+
         private void Tampil()
         {
-            if (dgvPembelian.Rows.Count > 1)
-            {
-                btnBrowseSupplier.Enabled = false;
-            }
-            else
-            {
-                btnBrowseSupplier.Enabled = true;
-            }
-
             dgvPembelian.DataSource = ds.Tables["Pembelian"];
             ValidasiBtnSimpan();
         }
@@ -59,10 +66,12 @@ namespace PetShop
             if (ds.Tables["Pembelian"].Rows.Count < 1)
             {
                 btnSimpan.Enabled = false;
+                btnBrowseSupplier.Enabled = true;
             }
             else
             {
                 btnSimpan.Enabled = true;
+                btnBrowseSupplier.Enabled = false;
             }
         }
 
@@ -86,6 +95,7 @@ namespace PetShop
             if(txtIdSupplier.Text==""||txtIdSupplier.Text==null)
             {
                 btnBrowseBarang.Enabled = false;
+                
             }
             else
             {
@@ -126,6 +136,7 @@ namespace PetShop
             dt.Columns.Add(new DataColumn("id_pembelian", typeof(string)));
             dt.Columns.Add(new DataColumn("id_supplier", typeof(string)));
             dt.Columns.Add(new DataColumn("id_barang", typeof(string)));
+            dt.Columns.Add(new DataColumn("nama_barang", typeof(string)));
             dt.Columns.Add(new DataColumn("qty", typeof(string)));
             dt.Columns.Add(new DataColumn("harga/pcs", typeof(string)));
             dt.Columns.Add(new DataColumn("total", typeof(string)));
@@ -138,23 +149,43 @@ namespace PetShop
             btnUbah.Enabled = false;
             nudHarga.Maximum = ulong.MaxValue;
             nudHarga.Minimum = 0;
-            nudQty.Minimum = 0;
+            nudQty.Minimum = 1;
             nudQty.Maximum = int.MaxValue;
+            dgvPembelian.AllowUserToAddRows = false;
+            nudHarga.Increment = 1000;
+            dgvPembelian.ReadOnly = true;
         }
 
         private void BtnTambah_Click(object sender, EventArgs e)
         {
-            dr = ds.Tables["Pembelian"].NewRow();
-            dr["id_pembelian"] = txtIdPembelian.Text;
-            dr["id_supplier"] = txtIdSupplier.Text;
-            dr["id_barang"] = txtIdBarang.Text;
-            dr["qty"] = nudQty.Value;
-            dr["harga/pcs"] = nudHarga.Value;
-            dr["total"] = (nudHarga.Value * nudQty.Value);
-            dr["catatan"] = txtCatatan.Text;
-            ds.Tables["Pembelian"].Rows.Add(dr);
-            Tampil();
-
+            arrRow = ds.Tables["Pembelian"].Select("id_barang = '" + txtIdBarang.Text + "'");
+            if(arrRow.Length!=0)
+            {
+                MessageBox.Show("Barang sudah ada dalam pembelian, silahkan ubah apabila ingin mengubah info pembelian barang");
+            }
+            else
+            {
+                if(txtIdBarang.Text==""||txtIdBarang.Text==null)
+                {
+                    MessageBox.Show("Silahkan pilih barang terlebih dahulu");
+                }
+                else
+                {
+                    dr = ds.Tables["Pembelian"].NewRow();
+                    dr["id_pembelian"] = txtIdPembelian.Text;
+                    dr["id_supplier"] = txtIdSupplier.Text;
+                    dr["id_barang"] = txtIdBarang.Text;
+                    dr["nama_barang"] = txtNamaBarang.Text;
+                    dr["qty"] = nudQty.Value;
+                    dr["harga/pcs"] = nudHarga.Value;
+                    dr["total"] = (nudHarga.Value * nudQty.Value);
+                    dr["catatan"] = txtCatatan.Text;
+                    ds.Tables["Pembelian"].Rows.Add(dr);
+                    Tampil();
+                    ClearContent();
+                }
+                
+            }
         }
 
         private void ValidasiBtnTambah()
@@ -172,6 +203,78 @@ namespace PetShop
         private void TxtIdBarang_TextChanged(object sender, EventArgs e)
         {
             ValidasiBtnTambah();
+        }
+
+        private void DgvPembelian_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                if (dgvPembelian.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
+                {
+                    dgvPembelian.CurrentRow.Selected = true;
+                    txtIdBarang.Text = dgvPembelian.Rows[e.RowIndex].Cells["id_barang"].Value.ToString();
+                    txtCatatan.Text = dgvPembelian.Rows[e.RowIndex].Cells["catatan"].Value.ToString();
+                    txtNamaBarang.Text = dgvPembelian.Rows[e.RowIndex].Cells["nama_barang"].Value.ToString();
+                    nudHarga.Value = Convert.ToInt32(dgvPembelian.Rows[e.RowIndex].Cells["harga/pcs"].Value);
+                    nudQty.Value = Convert.ToInt32(dgvPembelian.Rows[e.RowIndex].Cells["qty"].Value);
+                    selectedRowIndex = e.RowIndex;
+                    btnTambah.Enabled = false;
+                    btnHapus.Enabled = true;
+                    btnUbah.Enabled = true;
+                    btnBrowseBarang.Enabled = false;
+                }
+                else
+                {
+                    btnTambah.Enabled = true;
+                    btnHapus.Enabled = true;
+                    btnUbah.Enabled = true;
+                    btnBrowseBarang.Enabled = false;
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void BtnClear_Click(object sender, EventArgs e)
+        {
+            ClearContent();
+            btnTambah.Enabled = true;
+        }
+
+        private void BtnUbah_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Apakah anda yakin ingin mengubah item ?", this.Text, MessageBoxButtons.YesNo,
+              MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                arrRow = ds.Tables["Pembelian"].Select("id_barang = '" + txtIdBarang.Text + "'");
+                if (arrRow.Length != 0)
+                {
+                    dr["qty"] = nudQty.Value;
+                    dr["harga/pcs"] = nudHarga.Value;
+                    dr["Catatan"] = txtCatatan.Text;
+                    dr["total"] = nudQty.Value * nudHarga.Value;
+                    MessageBox.Show("Data berhasil diubah");
+                    Tampil();
+                    ClearContent();
+
+                }
+            }
+        }
+
+        private void DgvPembelian_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void DgvPembelian_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+            lblJlhPembelian.Text = dgvPembelian.Rows.Count.ToString() + " Item";
+
+            //object sumHarga;
+            //sumHarga = ds.Tables["Pembelian"].Compute("Sum(total)", string.Empty);
+            //lblGrandTotal.Text = String.Format("{0:n0}", Convert.ToInt32(sumHarga.ToString()));
         }
     }
 }
