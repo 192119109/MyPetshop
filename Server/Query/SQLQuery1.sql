@@ -75,6 +75,9 @@ create table Pembelian
 	Constraint Fk_TblSupplierPembelian Foreign Key (id_supplier) References Suppliers (id_supplier)
 )
 
+/*Tambahkan kolom catatan ke Pembelian*/
+alter table Pembelian Add Catatan Text
+
 create table Pembelian_Detail
 (
 	id_pembelian varChar(19) Not Null,
@@ -85,6 +88,11 @@ create table Pembelian_Detail
 	Constraint FK_TblPembelianDetailBarang Foreign key (id_barang) references Barang (id_barang)
 )
 
+/*Tambahkan qty ke tabel Pembelian*/
+alter table Pembelian_Detail add Qty int
+
+select * from Pembelian_Detail
+
 Create table Stock
 (
 	id_barang varChar(7) Not null,
@@ -93,3 +101,10 @@ Create table Stock
 	Constraint FK_StockTblBarang Foreign Key (id_barang) references Barang (id_barang),
 	Constraint FK_StockPembelian Foreign Key (id_pembelian) references Pembelian (id_pembelian)
 )
+
+select * from Pembelian
+select * from Pembelian_Detail
+select * from Stock
+
+delete from Pembelian
+delete from Pembelian_Detail

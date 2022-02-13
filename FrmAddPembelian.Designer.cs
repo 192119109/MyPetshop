@@ -101,8 +101,7 @@
             this.dgvPembelian.Size = new System.Drawing.Size(488, 469);
             this.dgvPembelian.TabIndex = 6;
             this.dgvPembelian.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPembelian_CellClick);
-            this.dgvPembelian.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPembelian_CellValueChanged);
-            this.dgvPembelian.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.DgvPembelian_ColumnAdded);
+            this.dgvPembelian.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.DgvPembelian_CellValidating);
             // 
             // label1
             // 
@@ -303,6 +302,7 @@
             this.btnHapus.TabIndex = 38;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = false;
+            this.btnHapus.Click += new System.EventHandler(this.BtnHapus_Click);
             // 
             // btnSimpan
             // 
@@ -316,6 +316,7 @@
             this.btnSimpan.TabIndex = 37;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
+            this.btnSimpan.Click += new System.EventHandler(this.BtnSimpan_Click);
             // 
             // btnTambah
             // 

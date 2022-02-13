@@ -20,6 +20,8 @@ namespace PetShop
         string idPembelian="";
         int selectedRowIndex;
         DataRow[] arrRow;
+        SqlDataAdapter ad;
+        SqlCommandBuilder clb;
 
         public FrmAddPembelian()
         {
@@ -263,18 +265,72 @@ namespace PetShop
             }
         }
 
-        private void DgvPembelian_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        private void BtnHapus_Click(object sender, EventArgs e)
         {
-            
+            if (selectedRowIndex > -1)
+            {
+                if (MessageBox.Show("Apakah anda yakin ingin menghapus item ?", this.Text, MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    ds.Tables["Pembelian"].Rows[selectedRowIndex].Delete();
+                    MessageBox.Show("Item berhasil dihapus");
+                    selectedRowIndex = -1;
+                    Tampil();
+                    ClearContent();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tidak ada item yang dipilih");
+            }
         }
 
-        private void DgvPembelian_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        private void BtnSimpan_Click(object sender, EventArgs e)
+        {
+            BuatKoneksi();
+            //Simpan di tabel Pembelian
+            cmd = new SqlCommand("insert into Pembelian Values (@idPembelian,@idSupplier,@tglPembelian,@grandTotal,@Catatan)", con);
+            cmd.Parameters.AddWithValue("@idPembelian", txtIdPembelian.Text);
+            cmd.Parameters.AddWithValue("@idSupplier", txtIdSupplier.Text);
+            cmd.Parameters.AddWithValue("@tglPembelian", DateTime.Now);
+            cmd.Parameters.AddWithValue("@grandTotal", lblGrandTotal.Text);
+            cmd.Parameters.AddWithValue("@Catatan", txtCatatan.Text);
+            cmd.ExecuteNonQuery();
+
+            //Simpan di tabel Pembelian Detail dan tabel stock
+            for(int i=0;i<ds.Tables["Pembelian"].Rows.Count;i++)
+            {
+                //Pembelian_Detail
+                cmd = new SqlCommand("insert into Pembelian_Detail Values (@idPembelian,@idBarang,@hargaPcs,@subtotal,@qty)",con);
+                cmd.Parameters.AddWithValue("@idPembelian", txtIdPembelian.Text);
+                cmd.Parameters.AddWithValue("@idBarang", dgvPembelian.Rows[i].Cells[2].Value.ToString());
+                cmd.Parameters.AddWithValue("@hargaPcs", dgvPembelian.Rows[i].Cells[5].Value.ToString());
+                cmd.Parameters.AddWithValue("@subTotal", dgvPembelian.Rows[i].Cells[6].Value.ToString());
+                cmd.Parameters.AddWithValue("@qty", dgvPembelian.Rows[i].Cells[4].Value.ToString());
+                cmd.ExecuteNonQuery();
+
+                //Stock
+                cmd = new SqlCommand("Insert into Stock Values (@idBarang,@idPembelian,@stock)", con);
+                cmd.Parameters.AddWithValue("@idBarang", dgvPembelian.Rows[i].Cells[2].Value.ToString());
+                cmd.Parameters.AddWithValue("@idPembelian", txtIdPembelian.Text);
+                cmd.Parameters.AddWithValue("@stock", dgvPembelian.Rows[i].Cells[4].Value.ToString());
+                cmd.ExecuteNonQuery();
+            }
+            MessageBox.Show("Data Pembelian Berhasil Disimpan");
+            this.Close();
+        }
+
+        private void DgvPembelian_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             lblJlhPembelian.Text = dgvPembelian.Rows.Count.ToString() + " Item";
 
-            //object sumHarga;
-            //sumHarga = ds.Tables["Pembelian"].Compute("Sum(total)", string.Empty);
-            //lblGrandTotal.Text = String.Format("{0:n0}", Convert.ToInt32(sumHarga.ToString()));
+            ulong grandTotal=0;
+            for (int i = 0; i < dgvPembelian.Rows.Count; ++i)
+            {
+                grandTotal += Convert.ToUInt64(dgvPembelian.Rows[i].Cells[6].Value);
+            }
+            //lblGrandTotal.Text = "Rp. " + String.Format("{0:n0}",grandTotal);
+            lblGrandTotal.Text = grandTotal.ToString();
         }
     }
 }
