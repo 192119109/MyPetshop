@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPembelian = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbFilter = new System.Windows.Forms.ComboBox();
             this.txtCari = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTampil = new System.Windows.Forms.Button();
@@ -43,8 +43,8 @@
             this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilter2 = new System.Windows.Forms.DateTimePicker();
+            this.dtpFilter1 = new System.Windows.Forms.DateTimePicker();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPembelian)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -70,32 +70,33 @@
             this.dgvPembelian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPembelian.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPembelian.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPembelian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPembelian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPembelian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPembelian.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPembelian.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvPembelian.Location = new System.Drawing.Point(12, 139);
             this.dgvPembelian.MultiSelect = false;
             this.dgvPembelian.Name = "dgvPembelian";
             this.dgvPembelian.Size = new System.Drawing.Size(823, 543);
             this.dgvPembelian.TabIndex = 13;
+            this.dgvPembelian.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPembelian_CellClick);
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cbFilter);
             this.groupBox1.Controls.Add(this.txtCari);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(841, 139);
@@ -105,14 +106,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cari";
             // 
-            // comboBox1
+            // cbFilter
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(7, 52);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(484, 28);
-            this.comboBox1.TabIndex = 1;
+            this.cbFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFilter.FormattingEnabled = true;
+            this.cbFilter.Items.AddRange(new object[] {
+            "By- Id Pembelian",
+            "By- Id Supplier"});
+            this.cbFilter.Location = new System.Drawing.Point(7, 52);
+            this.cbFilter.Name = "cbFilter";
+            this.cbFilter.Size = new System.Drawing.Size(484, 28);
+            this.cbFilter.TabIndex = 1;
+            this.cbFilter.SelectedIndexChanged += new System.EventHandler(this.TxtCari_TextChanged);
             // 
             // txtCari
             // 
@@ -120,6 +125,7 @@
             this.txtCari.Name = "txtCari";
             this.txtCari.Size = new System.Drawing.Size(485, 26);
             this.txtCari.TabIndex = 0;
+            this.txtCari.TextChanged += new System.EventHandler(this.TxtCari_TextChanged);
             // 
             // groupBox2
             // 
@@ -148,6 +154,7 @@
             this.btnTampil.Text = "Preview";
             this.btnTampil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTampil.UseVisualStyleBackColor = false;
+            this.btnTampil.Click += new System.EventHandler(this.BtnTampil_Click);
             // 
             // btnUbah
             // 
@@ -198,8 +205,8 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.dateTimePicker2);
-            this.groupBox4.Controls.Add(this.dateTimePicker1);
+            this.groupBox4.Controls.Add(this.dtpFilter2);
+            this.groupBox4.Controls.Add(this.dtpFilter1);
             this.groupBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.Location = new System.Drawing.Point(847, 236);
             this.groupBox4.Name = "groupBox4";
@@ -217,19 +224,20 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "s/d";
             // 
-            // dateTimePicker2
+            // dtpFilter2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(279, 25);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dtpFilter2.Location = new System.Drawing.Point(279, 25);
+            this.dtpFilter2.Name = "dtpFilter2";
+            this.dtpFilter2.Size = new System.Drawing.Size(200, 26);
+            this.dtpFilter2.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dtpFilter1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(7, 26);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 26);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dtpFilter1.Location = new System.Drawing.Point(7, 26);
+            this.dtpFilter1.Name = "dtpFilter1";
+            this.dtpFilter1.Size = new System.Drawing.Size(200, 26);
+            this.dtpFilter1.TabIndex = 0;
+            this.dtpFilter1.ValueChanged += new System.EventHandler(this.DtpFilter1_ValueChanged);
             // 
             // pictureBox1
             // 
@@ -279,7 +287,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvPembelian;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbFilter;
         private System.Windows.Forms.TextBox txtCari;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -288,8 +296,8 @@
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.Button btnTampil;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFilter2;
+        private System.Windows.Forms.DateTimePicker dtpFilter1;
         private System.Windows.Forms.Label label3;
     }
 }

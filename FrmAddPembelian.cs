@@ -289,24 +289,24 @@ namespace PetShop
         {
             BuatKoneksi();
             //Simpan di tabel Pembelian
-            cmd = new SqlCommand("insert into Pembelian Values (@idPembelian,@idSupplier,@tglPembelian,@grandTotal,@Catatan)", con);
+            cmd = new SqlCommand("insert into Pembelian Values (@idPembelian,@idSupplier,@tglPembelian,@grandTotal)", con);
             cmd.Parameters.AddWithValue("@idPembelian", txtIdPembelian.Text);
             cmd.Parameters.AddWithValue("@idSupplier", txtIdSupplier.Text);
             cmd.Parameters.AddWithValue("@tglPembelian", DateTime.Now);
             cmd.Parameters.AddWithValue("@grandTotal", lblGrandTotal.Text);
-            cmd.Parameters.AddWithValue("@Catatan", txtCatatan.Text);
             cmd.ExecuteNonQuery();
 
             //Simpan di tabel Pembelian Detail dan tabel stock
             for(int i=0;i<ds.Tables["Pembelian"].Rows.Count;i++)
             {
                 //Pembelian_Detail
-                cmd = new SqlCommand("insert into Pembelian_Detail Values (@idPembelian,@idBarang,@hargaPcs,@subtotal,@qty)",con);
+                cmd = new SqlCommand("insert into Pembelian_Detail Values (@idPembelian,@idBarang,@hargaPcs,@subtotal,@qty,@Catatan)",con);
                 cmd.Parameters.AddWithValue("@idPembelian", txtIdPembelian.Text);
                 cmd.Parameters.AddWithValue("@idBarang", dgvPembelian.Rows[i].Cells[2].Value.ToString());
                 cmd.Parameters.AddWithValue("@hargaPcs", dgvPembelian.Rows[i].Cells[5].Value.ToString());
                 cmd.Parameters.AddWithValue("@subTotal", dgvPembelian.Rows[i].Cells[6].Value.ToString());
                 cmd.Parameters.AddWithValue("@qty", dgvPembelian.Rows[i].Cells[4].Value.ToString());
+                cmd.Parameters.AddWithValue("@Catatan", dgvPembelian.Rows[i].Cells[7].Value.ToString());
                 cmd.ExecuteNonQuery();
 
                 //Stock

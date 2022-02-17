@@ -75,8 +75,8 @@ create table Pembelian
 	Constraint Fk_TblSupplierPembelian Foreign Key (id_supplier) References Suppliers (id_supplier)
 )
 
-/*Tambahkan kolom catatan ke Pembelian*/
-alter table Pembelian Add Catatan Text
+/*Tambahkan kolom catatan ke Pembelian Detail*/
+alter table Pembelian_Detail Add Catatan Text
 
 create table Pembelian_Detail
 (
@@ -102,9 +102,23 @@ Create table Stock
 	Constraint FK_StockPembelian Foreign Key (id_pembelian) references Pembelian (id_pembelian)
 )
 
+/*hapus kolom catatan pada tabel pembelian*/
+
+alter table Pembelian drop column Catatan
+
+
 select * from Pembelian
 select * from Pembelian_Detail
 select * from Stock
+select * from Suppliers
+select * from Barang
 
 delete from Pembelian
 delete from Pembelian_Detail
+delete from Stock
+
+/*tampil list pembelian*/
+select t1.id_pembelian, t1.id_supplier, t2.nama as [Nama Supplier], t1.tgl_pembelian, t1.grandTotal from Pembelian t1 inner join Suppliers t2 on t1.id_supplier = t2.id_supplier
+
+/*tamppil list pembelian detail yang dipilih*/
+select t1.id_pembelian, t1.id_barang, t2.nama_barang as [Nama Barang], t1.[harga/pcs], t1.subTotal, t1.Qty, t1.Catatan from Pembelian_Detail t1 inner join Barang t2 on t1.id_barang=t2.id_barang 
