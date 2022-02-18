@@ -29,8 +29,8 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbSearchProduct = new System.Windows.Forms.GroupBox();
             this.cbSearchBy = new System.Windows.Forms.ComboBox();
             this.btnSearch = new System.Windows.Forms.Button();
@@ -40,17 +40,13 @@ namespace PetShop
             this.dgvBarang = new System.Windows.Forms.DataGridView();
             this.gbProductInformation = new System.Windows.Forms.GroupBox();
             this.txtHargaJual = new System.Windows.Forms.TextBox();
-            this.txtHargaBeli = new System.Windows.Forms.TextBox();
             this.txtNamaBarang = new System.Windows.Forms.TextBox();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.txtIdBarang = new System.Windows.Forms.TextBox();
-            this.nudQty = new System.Windows.Forms.NumericUpDown();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -64,10 +60,14 @@ namespace PetShop
             this.btnStockIn = new System.Windows.Forms.Button();
             this.btnNewStock = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.txtDeskripsi = new System.Windows.Forms.TextBox();
+            this.txtDiscontinued = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnDiscontinued = new System.Windows.Forms.Button();
             this.gbSearchProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             this.gbProductInformation.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             this.SuspendLayout();
             // 
             // gbSearchProduct
@@ -85,13 +85,17 @@ namespace PetShop
             // 
             // cbSearchBy
             // 
-            this.cbSearchBy.Enabled = false;
+            this.cbSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSearchBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearchBy.FormattingEnabled = true;
+            this.cbSearchBy.Items.AddRange(new object[] {
+            "By- Id Barang",
+            "By- Nama Barang"});
             this.cbSearchBy.Location = new System.Drawing.Point(828, 29);
             this.cbSearchBy.Name = "cbSearchBy";
             this.cbSearchBy.Size = new System.Drawing.Size(408, 32);
             this.cbSearchBy.TabIndex = 9;
+            this.cbSearchBy.SelectedIndexChanged += new System.EventHandler(this.TxtSearch_TextChanged);
             // 
             // btnSearch
             // 
@@ -149,23 +153,23 @@ namespace PetShop
             this.dgvBarang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvBarang.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvBarang.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvBarang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvBarang.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvBarang.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgvBarang.Location = new System.Drawing.Point(25, 277);
             this.dgvBarang.MultiSelect = false;
             this.dgvBarang.Name = "dgvBarang";
@@ -175,24 +179,25 @@ namespace PetShop
             // 
             // gbProductInformation
             // 
+            this.gbProductInformation.Controls.Add(this.btnDiscontinued);
+            this.gbProductInformation.Controls.Add(this.txtDiscontinued);
+            this.gbProductInformation.Controls.Add(this.label12);
+            this.gbProductInformation.Controls.Add(this.txtDeskripsi);
+            this.gbProductInformation.Controls.Add(this.label10);
             this.gbProductInformation.Controls.Add(this.txtHargaJual);
-            this.gbProductInformation.Controls.Add(this.txtHargaBeli);
             this.gbProductInformation.Controls.Add(this.txtNamaBarang);
             this.gbProductInformation.Controls.Add(this.txtBarcode);
             this.gbProductInformation.Controls.Add(this.txtIdBarang);
-            this.gbProductInformation.Controls.Add(this.nudQty);
             this.gbProductInformation.Controls.Add(this.btnDelete);
             this.gbProductInformation.Controls.Add(this.btnUpdate);
             this.gbProductInformation.Controls.Add(this.label11);
-            this.gbProductInformation.Controls.Add(this.label10);
             this.gbProductInformation.Controls.Add(this.label9);
-            this.gbProductInformation.Controls.Add(this.label8);
             this.gbProductInformation.Controls.Add(this.label7);
             this.gbProductInformation.Controls.Add(this.label6);
             this.gbProductInformation.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbProductInformation.Location = new System.Drawing.Point(854, 277);
             this.gbProductInformation.Name = "gbProductInformation";
-            this.gbProductInformation.Size = new System.Drawing.Size(419, 368);
+            this.gbProductInformation.Size = new System.Drawing.Size(419, 440);
             this.gbProductInformation.TabIndex = 10;
             this.gbProductInformation.TabStop = false;
             this.gbProductInformation.Text = "Informasi Produk";
@@ -201,25 +206,16 @@ namespace PetShop
             // 
             this.txtHargaJual.Enabled = false;
             this.txtHargaJual.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHargaJual.Location = new System.Drawing.Point(143, 233);
+            this.txtHargaJual.Location = new System.Drawing.Point(142, 151);
             this.txtHargaJual.Name = "txtHargaJual";
             this.txtHargaJual.Size = new System.Drawing.Size(265, 29);
             this.txtHargaJual.TabIndex = 40;
-            // 
-            // txtHargaBeli
-            // 
-            this.txtHargaBeli.Enabled = false;
-            this.txtHargaBeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHargaBeli.Location = new System.Drawing.Point(143, 193);
-            this.txtHargaBeli.Name = "txtHargaBeli";
-            this.txtHargaBeli.Size = new System.Drawing.Size(265, 29);
-            this.txtHargaBeli.TabIndex = 39;
             // 
             // txtNamaBarang
             // 
             this.txtNamaBarang.Enabled = false;
             this.txtNamaBarang.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamaBarang.Location = new System.Drawing.Point(143, 158);
+            this.txtNamaBarang.Location = new System.Drawing.Point(143, 116);
             this.txtNamaBarang.Name = "txtNamaBarang";
             this.txtNamaBarang.Size = new System.Drawing.Size(265, 29);
             this.txtNamaBarang.TabIndex = 38;
@@ -244,21 +240,13 @@ namespace PetShop
             this.txtIdBarang.TextChanged += new System.EventHandler(this.TxtIdBarang_TextChanged);
             this.txtIdBarang.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtIdBarang_KeyPress_1);
             // 
-            // nudQty
-            // 
-            this.nudQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudQty.Location = new System.Drawing.Point(143, 118);
-            this.nudQty.Name = "nudQty";
-            this.nudQty.Size = new System.Drawing.Size(120, 29);
-            this.nudQty.TabIndex = 37;
-            // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnDelete.BackColor = System.Drawing.Color.Red;
             this.btnDelete.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.Location = new System.Drawing.Point(239, 322);
+            this.btnDelete.Location = new System.Drawing.Point(237, 382);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(123, 40);
             this.btnDelete.TabIndex = 18;
@@ -272,7 +260,7 @@ namespace PetShop
             this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
             this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnUpdate.Location = new System.Drawing.Point(93, 322);
+            this.btnUpdate.Location = new System.Drawing.Point(97, 382);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(123, 40);
             this.btnUpdate.TabIndex = 17;
@@ -284,41 +272,21 @@ namespace PetShop
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(13, 239);
+            this.label11.Location = new System.Drawing.Point(14, 155);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 20);
             this.label11.TabIndex = 5;
             this.label11.Text = "Harga Jual :";
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(17, 199);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 20);
-            this.label10.TabIndex = 4;
-            this.label10.Text = "Harga Beli :";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(49, 164);
+            this.label9.Location = new System.Drawing.Point(48, 116);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(59, 20);
             this.label9.TabIndex = 3;
             this.label9.Text = "Nama :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 123);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(82, 20);
-            this.label8.TabIndex = 2;
-            this.label8.Text = "Qty Desc :";
             // 
             // label7
             // 
@@ -491,6 +459,60 @@ namespace PetShop
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(25, 199);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(82, 20);
+            this.label10.TabIndex = 41;
+            this.label10.Text = "Deskripsi :";
+            // 
+            // txtDeskripsi
+            // 
+            this.txtDeskripsi.Enabled = false;
+            this.txtDeskripsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeskripsi.Location = new System.Drawing.Point(143, 193);
+            this.txtDeskripsi.Multiline = true;
+            this.txtDeskripsi.Name = "txtDeskripsi";
+            this.txtDeskripsi.Size = new System.Drawing.Size(265, 98);
+            this.txtDeskripsi.TabIndex = 42;
+            // 
+            // txtDiscontinued
+            // 
+            this.txtDiscontinued.Location = new System.Drawing.Point(143, 314);
+            this.txtDiscontinued.Multiline = true;
+            this.txtDiscontinued.Name = "txtDiscontinued";
+            this.txtDiscontinued.ReadOnly = true;
+            this.txtDiscontinued.Size = new System.Drawing.Size(110, 27);
+            this.txtDiscontinued.TabIndex = 44;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(6, 314);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(110, 20);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "Discontinued :";
+            // 
+            // btnDiscontinued
+            // 
+            this.btnDiscontinued.BackColor = System.Drawing.Color.OliveDrab;
+            this.btnDiscontinued.FlatAppearance.BorderColor = System.Drawing.SystemColors.ControlText;
+            this.btnDiscontinued.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDiscontinued.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDiscontinued.Location = new System.Drawing.Point(259, 314);
+            this.btnDiscontinued.Name = "btnDiscontinued";
+            this.btnDiscontinued.Size = new System.Drawing.Size(88, 29);
+            this.btnDiscontinued.TabIndex = 45;
+            this.btnDiscontinued.Text = "Set Ready";
+            this.btnDiscontinued.UseVisualStyleBackColor = false;
+            this.btnDiscontinued.Click += new System.EventHandler(this.BtnDiscontinued_Click);
+            // 
             // FrmStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,7 +545,6 @@ namespace PetShop
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             this.gbProductInformation.ResumeLayout(false);
             this.gbProductInformation.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQty)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,16 +574,17 @@ namespace PetShop
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown nudQty;
         private System.Windows.Forms.TextBox txtIdBarang;
         private System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.TextBox txtHargaJual;
-        private System.Windows.Forms.TextBox txtHargaBeli;
         private System.Windows.Forms.TextBox txtNamaBarang;
+        private System.Windows.Forms.TextBox txtDeskripsi;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox txtDiscontinued;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Button btnDiscontinued;
     }
 }

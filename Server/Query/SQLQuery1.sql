@@ -112,13 +112,29 @@ select * from Pembelian_Detail
 select * from Stock
 select * from Suppliers
 select * from Barang
+select * from Penjualan
+select * from Penjualan_Detail
+
 
 delete from Pembelian
 delete from Pembelian_Detail
 delete from Stock
+delete from Barang
+delete from Penjualan_Detail
+delete from Penjualan
+
 
 /*tampil list pembelian*/
 select t1.id_pembelian, t1.id_supplier, t2.nama as [Nama Supplier], t1.tgl_pembelian, t1.grandTotal from Pembelian t1 inner join Suppliers t2 on t1.id_supplier = t2.id_supplier
 
 /*tamppil list pembelian detail yang dipilih*/
 select t1.id_pembelian, t1.id_barang, t2.nama_barang as [Nama Barang], t1.[harga/pcs], t1.subTotal, t1.Qty, t1.Catatan from Pembelian_Detail t1 inner join Barang t2 on t1.id_barang=t2.id_barang 
+
+/*Hapus kolom qty, dan harga beli pada tabell barang*/
+Alter table Barang Drop Column qty, harga_beli
+
+/*Tambah kolom deskripsi pada tabel barang*/
+Alter table Barang add deskripsi text
+
+/*Tambah Kolom discontinued pada tabel barang  rules 1=true, 0=false*/
+Alter table Barang add discontinued BIT

@@ -37,15 +37,16 @@ namespace PetShop
             //dgvBarang.ColumnCount = 6;
             dgvBarang.DataSource = ds.Tables["Barang"];
             dgvBarang.Columns["harga_jual"].DefaultCellStyle.Format = "c";
-            dgvBarang.Columns["harga_beli"].DefaultCellStyle.Format = "c";
             dgvBarang.Columns[0].HeaderText = "Id Barang";
             dgvBarang.Columns[1].HeaderText = "Nama Barang";
-            dgvBarang.Columns[2].HeaderText = "Qty";
-            dgvBarang.Columns[3].HeaderText = "Harga Beli";
-            dgvBarang.Columns[4].HeaderText = "Harga Jual";
-            dgvBarang.Columns[5].HeaderText = "Barcode";
+            dgvBarang.Columns[2].HeaderText = "Harga Jual";
+            dgvBarang.Columns[3].HeaderText = "Barcode";
+            dgvBarang.Columns[4].HeaderText = "Deskripsi";
+            dgvBarang.Columns[5].HeaderText = "Discontinued";
             dgvBarang.ReadOnly = true;
             dgvBarang.AllowUserToAddRows = false;
+
+
         }
 
         private void Validasi()
@@ -66,15 +67,13 @@ namespace PetShop
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;
                 txtBarcode.Enabled = false;
-                txtHargaBeli.Enabled = false;
+                txtDeskripsi.Enabled = false;
                 txtHargaJual.Enabled = false;
                 txtNamaBarang.Enabled = false;
-                nudQty.Enabled = false;
+                btnDiscontinued.Enabled = false;
                 txtIdBarang.Clear();
                 txtBarcode.Clear();
-                txtHargaBeli.Clear();
                 txtHargaJual.Clear();
-                nudQty.Value = 0;
                 txtNamaBarang.Clear();
 
             }
@@ -85,18 +84,27 @@ namespace PetShop
                 {
                     txtNamaBarang.Text = arRecord[0]["nama_barang"].ToString();
                     txtBarcode.Text = arRecord[0]["barcode"].ToString();
-                    nudQty.Value = Convert.ToInt32(arRecord[0]["qty"]);
-                    txtHargaBeli.Text = string.Format("{0:n0}", float.Parse(arRecord[0]["harga_beli"].ToString()));
                     txtHargaJual.Text = string.Format("{0:n0}", float.Parse(arRecord[0]["harga_jual"].ToString()));
+                    txtDeskripsi.Text = arRecord[0]["deskripsi"].ToString();
+                    if(arRecord[0]["discontinued"].ToString()=="True")
+                    {
+                        txtDiscontinued.Text = "Ya";
+                        btnDelete.Enabled = false;
+                        btnDiscontinued.Enabled = true;
+                    }
+                    else
+                    {
+                        txtDiscontinued.Text = "Tidak";
+                        btnDelete.Enabled = true;
+                        btnDiscontinued.Enabled = false;
+                    }
                     //txtIdBarang.Text = arRecord[0]["id_barang"].ToString();
                 }
-                btnDelete.Enabled = true;
                 btnUpdate.Enabled = true;
                 txtBarcode.Enabled = true;
-                txtHargaBeli.Enabled = true;
+                txtDeskripsi.Enabled = true;
                 txtHargaJual.Enabled = true;
                 txtNamaBarang.Enabled = true;
-                nudQty.Enabled = true;
             }
         }
 
@@ -109,6 +117,7 @@ namespace PetShop
             ad.Fill(ds, "Barang");
             Tampil();
             Validasi();
+            cbSearchBy.SelectedIndex = 1;
         }
 
         private void BtnNewStock_Click(object sender, EventArgs e)
@@ -175,32 +184,46 @@ namespace PetShop
             Tampil();
             txtIdBarang.Clear();
             txtBarcode.Clear();
-            txtHargaBeli.Clear();
+            txtDeskripsi.Clear();
             txtHargaJual.Clear();
-            nudQty.Value = 0;
+            txtDiscontinued.Clear();
             txtNamaBarang.Clear();
+            dgvBarang.ClearSelection();
         }
 
         private void MuatUlang()
         {
             ds.Tables["Barang"].Clear();
             ad.Fill(ds, "Barang");
-
+            txtSearch.Clear();
+            Tampil();
+            txtIdBarang.Clear();
+            txtBarcode.Clear();
+            txtDeskripsi.Clear();
+            txtHargaJual.Clear();
+            txtDiscontinued.Clear();
+            txtNamaBarang.Clear();
+            dgvBarang.ClearSelection();
         }
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            //ds.Tables["Barang"].DefaultView.RowFilter = string.Format("nama_barang LIKE '%{0}%'",txtSearch.Text);
-            ds.Tables["Barang"].DefaultView.RowFilter = "nama_barang LIKE '%" + txtSearch.Text + "%'";
-            //dgvBarang.DataSource = ds.Tables["Barang"]; 
+            if (cbSearchBy.SelectedIndex == 1)
+            {
+                ds.Tables["Barang"].DefaultView.RowFilter = "nama_barang LIKE '%" + txtSearch.Text + "%'";
+            }
+            else if (cbSearchBy.SelectedIndex == 0)
+            {
+                ds.Tables["Barang"].DefaultView.RowFilter = "id_barang LIKE '%" + txtSearch.Text + "%'";
+            }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Apakah anda yakin ingin menghapus item ?",this.Text, MessageBoxButtons.YesNo,
+            if(MessageBox.Show("Barang yang dihapus tetap ada dalam database tetapi status akan menjadi discontinued. Apakah ingin melanjutkan ?",this.Text, MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question)==DialogResult.Yes)
             {
-                cmd = new SqlCommand("delete from Barang where id_barang=@id", con);
+                cmd = new SqlCommand("update Barang set discontinued = 1 where id_barang=@id", con);
                 cmd.Parameters.AddWithValue("@id", txtIdBarang.Text);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Item berhasil dihapus");
@@ -224,9 +247,8 @@ namespace PetShop
                 {
                     arRecord[0]["barcode"] = txtBarcode.Text;
                     arRecord[0]["nama_barang"] = txtNamaBarang.Text;
-                    arRecord[0]["qty"] = nudQty.Value.ToString();
-                    arRecord[0]["harga_beli"] = int.Parse(txtHargaBeli.Text.Replace(".", ""));
                     arRecord[0]["harga_jual"] = int.Parse(txtHargaJual.Text.Replace(".", ""));
+                    arRecord[0]["deskripsi"] = txtDeskripsi.Text;
                     clb = new SqlCommandBuilder(ad);
                     ad = clb.DataAdapter;
                     ad.Update(ds, "Barang");
@@ -250,6 +272,20 @@ namespace PetShop
             FrmPembelian frmPembelian = new FrmPembelian();
             frmPembelian.Show();
             this.Hide();
+        }
+
+        private void BtnDiscontinued_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Status barang akan diubah menjadi tersedia kembali. Apakah ingin melanjutkan ?", this.Text, MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                cmd = new SqlCommand("update Barang set discontinued = 0 where id_barang=@id", con);
+                cmd.Parameters.AddWithValue("@id", txtIdBarang.Text);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Barang tersedia kembali");
+                MuatUlang();
+                Tampil();
+            }
         }
     }
 }

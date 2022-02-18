@@ -30,26 +30,23 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.nudQty = new System.Windows.Forms.NumericUpDown();
             this.btnUbah = new System.Windows.Forms.Button();
             this.btnHapus = new System.Windows.Forms.Button();
             this.btnSimpan = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnTambah = new System.Windows.Forms.Button();
             this.txtHargaJual = new System.Windows.Forms.TextBox();
-            this.txtHargaBeli = new System.Windows.Forms.TextBox();
             this.txtNamaBarang = new System.Windows.Forms.TextBox();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.txtIdBrg = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dgvBarang = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtDeskripsi = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,19 +69,17 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.nudQty);
+            this.groupBox1.Controls.Add(this.txtDeskripsi);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnUbah);
             this.groupBox1.Controls.Add(this.btnHapus);
             this.groupBox1.Controls.Add(this.btnSimpan);
-            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnTambah);
             this.groupBox1.Controls.Add(this.txtHargaJual);
-            this.groupBox1.Controls.Add(this.txtHargaBeli);
             this.groupBox1.Controls.Add(this.txtNamaBarang);
             this.groupBox1.Controls.Add(this.txtBarcode);
             this.groupBox1.Controls.Add(this.txtIdBrg);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Controls.Add(this.label10);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
@@ -96,13 +91,6 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informasi Barang";
-            // 
-            // nudQty
-            // 
-            this.nudQty.Location = new System.Drawing.Point(152, 178);
-            this.nudQty.Name = "nudQty";
-            this.nudQty.Size = new System.Drawing.Size(120, 26);
-            this.nudQty.TabIndex = 36;
             // 
             // btnUbah
             // 
@@ -146,17 +134,6 @@
             this.btnSimpan.UseVisualStyleBackColor = false;
             this.btnSimpan.Click += new System.EventHandler(this.BtnSimpan_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Location = new System.Drawing.Point(74, 176);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(45, 20);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Qty : ";
-            // 
             // btnTambah
             // 
             this.btnTambah.BackColor = System.Drawing.Color.LimeGreen;
@@ -173,23 +150,15 @@
             // 
             // txtHargaJual
             // 
-            this.txtHargaJual.Location = new System.Drawing.Point(152, 253);
+            this.txtHargaJual.Location = new System.Drawing.Point(150, 161);
             this.txtHargaJual.Multiline = true;
             this.txtHargaJual.Name = "txtHargaJual";
             this.txtHargaJual.Size = new System.Drawing.Size(265, 27);
             this.txtHargaJual.TabIndex = 29;
             // 
-            // txtHargaBeli
-            // 
-            this.txtHargaBeli.Location = new System.Drawing.Point(152, 210);
-            this.txtHargaBeli.Multiline = true;
-            this.txtHargaBeli.Name = "txtHargaBeli";
-            this.txtHargaBeli.Size = new System.Drawing.Size(265, 27);
-            this.txtHargaBeli.TabIndex = 28;
-            // 
             // txtNamaBarang
             // 
-            this.txtNamaBarang.Location = new System.Drawing.Point(151, 139);
+            this.txtNamaBarang.Location = new System.Drawing.Point(150, 118);
             this.txtNamaBarang.Multiline = true;
             this.txtNamaBarang.Name = "txtNamaBarang";
             this.txtNamaBarang.Size = new System.Drawing.Size(265, 27);
@@ -197,7 +166,7 @@
             // 
             // txtBarcode
             // 
-            this.txtBarcode.Location = new System.Drawing.Point(152, 93);
+            this.txtBarcode.Location = new System.Drawing.Point(151, 72);
             this.txtBarcode.Multiline = true;
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(265, 27);
@@ -205,7 +174,7 @@
             // 
             // txtIdBrg
             // 
-            this.txtIdBrg.Location = new System.Drawing.Point(152, 53);
+            this.txtIdBrg.Location = new System.Drawing.Point(151, 32);
             this.txtIdBrg.Multiline = true;
             this.txtIdBrg.Name = "txtIdBrg";
             this.txtIdBrg.Size = new System.Drawing.Size(265, 27);
@@ -217,29 +186,18 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(25, 256);
+            this.label11.Location = new System.Drawing.Point(24, 161);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(94, 20);
             this.label11.TabIndex = 24;
             this.label11.Text = "Harga Jual :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label10.Location = new System.Drawing.Point(28, 217);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(91, 20);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Harga Beli :";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label9.Location = new System.Drawing.Point(8, 142);
+            this.label9.Location = new System.Drawing.Point(7, 121);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(111, 20);
             this.label9.TabIndex = 22;
@@ -250,7 +208,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label7.Location = new System.Drawing.Point(42, 96);
+            this.label7.Location = new System.Drawing.Point(41, 75);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 20;
@@ -261,7 +219,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(88, 59);
+            this.label6.Location = new System.Drawing.Point(87, 38);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(31, 20);
             this.label6.TabIndex = 19;
@@ -290,6 +248,26 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(36, 194);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(82, 20);
+            this.label1.TabIndex = 37;
+            this.label1.Text = "Deskripsi :";
+            // 
+            // txtDeskripsi
+            // 
+            this.txtDeskripsi.Location = new System.Drawing.Point(150, 194);
+            this.txtDeskripsi.Multiline = true;
+            this.txtDeskripsi.Name = "txtDeskripsi";
+            this.txtDeskripsi.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.txtDeskripsi.Size = new System.Drawing.Size(266, 72);
+            this.txtDeskripsi.TabIndex = 38;
+            // 
             // InputBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,7 +283,6 @@
             this.Load += new System.EventHandler(this.InputBarang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudQty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             this.ResumeLayout(false);
 
@@ -317,21 +294,19 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvBarang;
         private System.Windows.Forms.TextBox txtHargaJual;
-        private System.Windows.Forms.TextBox txtHargaBeli;
         private System.Windows.Forms.TextBox txtNamaBarang;
         private System.Windows.Forms.TextBox txtBarcode;
         private System.Windows.Forms.TextBox txtIdBrg;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnUbah;
         private System.Windows.Forms.Button btnHapus;
         private System.Windows.Forms.Button btnSimpan;
         private System.Windows.Forms.Button btnTambah;
-        private System.Windows.Forms.NumericUpDown nudQty;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.TextBox txtDeskripsi;
+        private System.Windows.Forms.Label label1;
     }
 }

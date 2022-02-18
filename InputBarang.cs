@@ -32,15 +32,14 @@ namespace PetShop
         {
             GetIdBarang();
             txtIdBrg.Enabled = false;
-            nudQty.Minimum = 0;
             ds = new DataSet();
             dt = new DataTable("Barang");
             dt.Columns.Add(new DataColumn("id_barang", typeof(string)));
             dt.Columns.Add(new DataColumn("nama_barang", typeof(string)));
-            dt.Columns.Add(new DataColumn("qty", typeof(int)));
-            dt.Columns.Add(new DataColumn("harga_beli", typeof(string)));
-            dt.Columns.Add(new DataColumn("harga_jual", typeof(string)));
+            dt.Columns.Add(new DataColumn("harga_jual", typeof(int)));
             dt.Columns.Add(new DataColumn("barcode", typeof(string)));
+            dt.Columns.Add(new DataColumn("deskripsi", typeof(string)));
+            dt.Columns.Add(new DataColumn("discontinued", typeof(byte)));
             ds.Tables.Add(dt);
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();
             Tampil();
@@ -86,6 +85,7 @@ namespace PetShop
             //dgvBarang.ColumnCount = 6;
 
             dgvBarang.DataSource = ds.Tables["Barang"];
+            dgvBarang.Columns["discontinued"].Visible = false;
             //dgvBarang.Columns[0].HeaderText = "Id Barang";
             //dgvBarang.Columns[1].HeaderText = "Nama Barang";
             //dgvBarang.Columns[2].HeaderText = "Qty";
@@ -116,11 +116,10 @@ namespace PetShop
         private void Reset()
         {
             txtBarcode.Clear();
-            txtHargaBeli.Clear();
+            txtDeskripsi.Clear();
             txtHargaJual.Clear();
             txtIdBrg.Clear();
             txtNamaBarang.Clear();
-            nudQty.Value = 0;
             txtIdBrg.Focus();
         }
 
@@ -129,10 +128,10 @@ namespace PetShop
             dr = ds.Tables["Barang"].NewRow();
             dr["id_barang"] = txtIdBrg.Text;
             dr["nama_barang"] = txtNamaBarang.Text;
-            dr["qty"] = nudQty.Value;
-            dr["harga_beli"] = txtHargaBeli.Text;
             dr["harga_jual"] = txtHargaJual.Text;
             dr["barcode"] = txtBarcode.Text;
+            dr["deskripsi"] = txtDeskripsi.Text;
+            dr["discontinued"] = 0.ToString();
             ds.Tables["Barang"].Rows.Add(dr);
             ValidasiBtnSimpan();
             Reset();
@@ -159,14 +158,6 @@ namespace PetShop
                 {
                     dgvBarang.CurrentRow.Selected = true;
                     txtIdBrg.Text = dgvBarang.Rows[e.RowIndex].Cells["id_barang"].Value.ToString();
-                    //txtBarcode.Text = dgvBarang.Rows[e.RowIndex].Cells["barcode"].Value.ToString();
-                    //txtNamaBarang.Text = dgvBarang.Rows[e.RowIndex].Cells["nama_barang"].Value.ToString();
-                    //nudQty.Value = Convert.ToInt32(dgvBarang.Rows[e.RowIndex].Cells["qty"].Value);
-                    //txtHargaBeli.Text = dgvBarang.Rows[e.RowIndex].Cells["harga_beli"].Value.ToString();
-                    //txtHargaBeli.Text = string.Format("{0:c}", float.Parse(txtHargaBeli.Text));
-                    //txtHargaJual.Text = dgvBarang.Rows[e.RowIndex].Cells["harga_jual"].Value.ToString();
-                    //txtHargaJual.Text = string.Format("{0:c}", float.Parse(txtHargaJual.Text));
-
                 }
             }
             catch
@@ -188,10 +179,9 @@ namespace PetShop
                         btnHapus.Enabled = true;
                         btnUbah.Enabled = true;
                         txtNamaBarang.Text = arrRow[0]["nama_barang"].ToString();
-                        txtBarcode.Text = arrRow[0]["barcode"].ToString();
-                        nudQty.Value = Convert.ToInt32(arrRow[0]["qty"]);
-                        txtHargaBeli.Text = string.Format("{0:n0}", float.Parse(arrRow[0]["harga_beli"].ToString()));
                         txtHargaJual.Text = string.Format("{0:n0}", float.Parse(arrRow[0]["harga_jual"].ToString()));
+                        txtBarcode.Text = arrRow[0]["barcode"].ToString();
+                        txtDeskripsi.Text = arrRow[0]["deskripsi"].ToString();
                     }
                     else
                     {
@@ -225,9 +215,8 @@ namespace PetShop
                 {
                     arrRow[0]["barcode"] = txtBarcode.Text;
                     arrRow[0]["nama_barang"] = txtNamaBarang.Text;
-                    arrRow[0]["qty"] = nudQty.Value.ToString();
-                    arrRow[0]["harga_beli"] = int.Parse(txtHargaBeli.Text.Replace(".", ""));
                     arrRow[0]["harga_jual"] = int.Parse(txtHargaJual.Text.Replace(".", ""));
+                    arrRow[0]["deskripsi"] = txtDeskripsi.Text;
                     MessageBox.Show("Data berhasil diubah");
                     Tampil();
                 }
@@ -246,9 +235,8 @@ namespace PetShop
                     arrRow[0].Delete();
                     txtNamaBarang.Clear();
                     txtBarcode.Clear();
-                    txtHargaBeli.Clear();
+                    txtDeskripsi.Clear();
                     txtHargaJual.Clear();
-                    nudQty.Value = 0;
                     MessageBox.Show("Data berhasil dihapus");
                     Tampil();
                     btnHapus.Enabled = false;
@@ -263,9 +251,8 @@ namespace PetShop
         {
             txtNamaBarang.Clear();
             txtHargaJual.Clear();
-            txtHargaBeli.Clear();
+            txtDeskripsi.Clear();
             txtBarcode.Clear();
-            nudQty.Value = 0;
             dgvBarang.ClearSelection();
             GetIdBarang();
         }
