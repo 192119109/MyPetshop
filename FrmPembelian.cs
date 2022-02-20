@@ -49,7 +49,15 @@ namespace PetShop
             dtpFilter2.Value = DateTime.Now.Date;
 
             //filter date
-            dtpFilter1.MinDate = Convert.ToDateTime(ds.Tables["Pembelian"].Rows[ds.Tables["Pembelian"].Rows.Count - 1]["tgl_pembelian"]);
+            if(ds.Tables["Pembelian"].Rows.Count==0)
+            {
+                dtpFilter1.MinDate = DateTime.Now.Date;
+            }
+            else
+            {
+                dtpFilter1.MinDate = Convert.ToDateTime(ds.Tables["Pembelian"].Rows[ds.Tables["Pembelian"].Rows.Count - 1]["tgl_pembelian"]);
+            }
+            
             dtpFilter1.Value = dtpFilter1.MinDate;
 
             dtpFilter2.MinDate = dtpFilter1.Value;

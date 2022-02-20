@@ -22,6 +22,7 @@ namespace PetShop
         SqlCommandBuilder clb;
         DataTable dt;
         string idBrg;
+        int selectedRowIndex;
 
         public InputBarang()
         {
@@ -73,7 +74,7 @@ namespace PetShop
             }
             else
             {
-                int intval = int.Parse(dgvBarang.Rows[0].Cells[0].Value.ToString().Substring(3, 4));
+                int intval = int.Parse(dgvBarang.Rows[dgvBarang.Rows.Count - 1].Cells[0].Value.ToString().Substring(3, 4));
                 intval++;
                 idBrg= String.Format("BRG{0:0000}", intval);
                 txtIdBrg.Text = idBrg;
@@ -158,6 +159,7 @@ namespace PetShop
                 {
                     dgvBarang.CurrentRow.Selected = true;
                     txtIdBrg.Text = dgvBarang.Rows[e.RowIndex].Cells["id_barang"].Value.ToString();
+                    selectedRowIndex = e.RowIndex;
                 }
             }
             catch
@@ -232,6 +234,10 @@ namespace PetShop
                 arrRow = ds.Tables["Barang"].Select("id_barang = '" + txtIdBrg.Text + "'");
                 if (arrRow.Length != 0)
                 {
+                    if (selectedRowIndex != dgvBarang.Rows.Count - 1)
+                    {
+                        ds.Tables["Barang"].Rows[selectedRowIndex + 1]["id_barang"] = txtIdBrg.Text;
+                    }
                     arrRow[0].Delete();
                     txtNamaBarang.Clear();
                     txtBarcode.Clear();
@@ -254,6 +260,9 @@ namespace PetShop
             txtDeskripsi.Clear();
             txtBarcode.Clear();
             dgvBarang.ClearSelection();
+            btnTambah.Enabled = true;
+            btnUbah.Enabled = false;
+            btnHapus.Enabled = false;
             GetIdBarang();
         }
     }

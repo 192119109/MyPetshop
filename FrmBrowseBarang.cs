@@ -26,7 +26,7 @@ namespace PetShop
             BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();
-            ad = new SqlDataAdapter("select id_barang, nama_barang, qty, harga_jual,harga_beli, barcode from Barang", con);
+            ad = new SqlDataAdapter("select id_barang, nama_barang, harga_jual,barcode,deskripsi from Barang where discontinued=0", con);
             ad.Fill(ds, "Barang");
             Tampil();
             cboKategori.SelectedIndex = 0;
@@ -37,13 +37,11 @@ namespace PetShop
         {
             dgvBarang.DataSource = ds.Tables["Barang"];
             dgvBarang.Columns["harga_jual"].DefaultCellStyle.Format = "c";
-            dgvBarang.Columns["harga_beli"].DefaultCellStyle.Format = "c";
             dgvBarang.Columns[0].HeaderText = "Id Barang";
             dgvBarang.Columns[1].HeaderText = "Nama Barang";
-            dgvBarang.Columns[2].HeaderText = "Qty";
-            dgvBarang.Columns[3].HeaderText = "Harga Jual";
-            dgvBarang.Columns[4].HeaderText = "Harga Beli";
-            dgvBarang.Columns[5].HeaderText = "Barcode";
+            dgvBarang.Columns[2].HeaderText = "Harga Jual";
+            dgvBarang.Columns[3].HeaderText = "Barcode";
+            dgvBarang.Columns[4].HeaderText = "Deskripsi";
             dgvBarang.ReadOnly = true;
             dgvBarang.AllowUserToAddRows = false;
         }

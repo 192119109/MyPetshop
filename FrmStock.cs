@@ -40,9 +40,10 @@ namespace PetShop
             dgvBarang.Columns[0].HeaderText = "Id Barang";
             dgvBarang.Columns[1].HeaderText = "Nama Barang";
             dgvBarang.Columns[2].HeaderText = "Harga Jual";
-            dgvBarang.Columns[3].HeaderText = "Barcode";
-            dgvBarang.Columns[4].HeaderText = "Deskripsi";
+            dgvBarang.Columns[3].HeaderText = "Stock";
+            dgvBarang.Columns[4].HeaderText = "Barcode";
             dgvBarang.Columns[5].HeaderText = "Discontinued";
+            dgvBarang.Columns[6].HeaderText = "Deskripsi";
             dgvBarang.ReadOnly = true;
             dgvBarang.AllowUserToAddRows = false;
 
@@ -113,7 +114,7 @@ namespace PetShop
             BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();
-            ad = new SqlDataAdapter("select * from Barang", con);
+            ad = new SqlDataAdapter("select t1.id_barang, t1.nama_barang, t1.harga_jual, Sum(t2.stock) as 'stock' ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 inner join Stock t2 on t1.id_barang=t2.id_barang Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi", con);
             ad.Fill(ds, "Barang");
             Tampil();
             Validasi();

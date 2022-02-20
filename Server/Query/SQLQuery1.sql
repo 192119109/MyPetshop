@@ -138,3 +138,8 @@ Alter table Barang add deskripsi text
 
 /*Tambah Kolom discontinued pada tabel barang  rules 1=true, 0=false*/
 Alter table Barang add discontinued BIT
+
+/*Ubah deskripsi text menjadi varchar*/
+Alter table Barang alter column deskripsi varChar(1000)
+
+select t1.id_barang, t1.nama_barang, t1.harga_jual, Sum(t2.stock) as 'stock' ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 inner join Stock t2 on t1.id_barang=t2.id_barang Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi
