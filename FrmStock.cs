@@ -114,7 +114,7 @@ namespace PetShop
             BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();
-            ad = new SqlDataAdapter("select t1.id_barang, t1.nama_barang, t1.harga_jual, Sum(t2.stock) as 'stock' ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 inner join Stock t2 on t1.id_barang=t2.id_barang Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi", con);
+            ad = new SqlDataAdapter("select t1.id_barang, t1.nama_barang, t1.harga_jual, isnull(Sum(t2.stock),0) as 'stock' ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 left outer join Stock t2 on t1.id_barang=t2.id_barang Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi", con);
             ad.Fill(ds, "Barang");
             Tampil();
             Validasi();

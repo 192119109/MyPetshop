@@ -132,7 +132,7 @@ namespace PetShop
             dr["harga_jual"] = txtHargaJual.Text;
             dr["barcode"] = txtBarcode.Text;
             dr["deskripsi"] = txtDeskripsi.Text;
-            dr["discontinued"] = 0.ToString();
+            dr["discontinued"] = 0;
             ds.Tables["Barang"].Rows.Add(dr);
             ValidasiBtnSimpan();
             Reset();
@@ -142,7 +142,7 @@ namespace PetShop
         private void BtnSimpan_Click(object sender, EventArgs e)
         {
             BuatKoneksi();
-            ad = new SqlDataAdapter("Select * from barang",con);
+            ad = new SqlDataAdapter("Select * from Barang",con);
             clb = new SqlCommandBuilder(ad);
             ad = clb.DataAdapter;
             ad.Update(ds, "Barang");
