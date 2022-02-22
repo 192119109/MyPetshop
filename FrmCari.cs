@@ -32,9 +32,10 @@ namespace PetShop
             dgvBarang.Columns["harga_jual"].DefaultCellStyle.Format = "c";
             dgvBarang.Columns[0].HeaderText = "Id Barang";
             dgvBarang.Columns[1].HeaderText = "Nama Barang";
-            dgvBarang.Columns[2].HeaderText = "Qty";
-            dgvBarang.Columns[3].HeaderText = "Harga";
+            dgvBarang.Columns[2].HeaderText = "Harga Jual";
+            dgvBarang.Columns[3].HeaderText = "Stock";
             dgvBarang.Columns[4].HeaderText = "Barcode";
+            dgvBarang.Columns[5].HeaderText = "Deskripsi";
             dgvBarang.ReadOnly = true;
             dgvBarang.AllowUserToAddRows = false;
         }
@@ -44,7 +45,7 @@ namespace PetShop
             BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();
-            ad = new SqlDataAdapter("select id_barang, nama_barang, qty, harga_jual, barcode from Barang where qty>0", con);
+            ad = new SqlDataAdapter("select t1.id_barang, t1.nama_barang, t1.harga_jual, ISNull(Sum(t2.stock),0) as 'stock' ,t1.barcode, t1.deskripsi from Barang t1 Left Outer join Stock t2 on t1.id_barang=t2.id_barang where t1.discontinued=0 Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi Having ISNull(Sum(t2.stock),0) >0", con);
             ad.Fill(ds, "Barang");
             Tampil();
             cbSearchBy.SelectedIndex = 1;

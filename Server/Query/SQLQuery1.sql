@@ -142,4 +142,30 @@ Alter table Barang add discontinued BIT
 /*Ubah deskripsi text menjadi varchar*/
 Alter table Barang alter column deskripsi varChar(1000)
 
-select t1.id_barang, t1.nama_barang, t1.harga_jual, Sum(t2.stock) as 'stock' ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 inner join Stock t2 on t1.id_barang=t2.id_barang Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi
+select t1.id_barang, t1.nama_barang, t1.harga_jual, ISNull(Sum(t2.stock),0) as 'stock' ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 Left Outer join Stock t2 on t1.id_barang=t2.id_barang Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi
+
+
+/*Ubah max value nama barang pada tabel barang */
+ALter table Barang alter column nama_barang varChar(100)
+
+select * from Stock
+select * from Pembelian_Detail
+
+select t1.id_barang, t1.stock, t2.tgl_pembelian, t3.[harga/pcs] from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian inner join Pembelian_Detail t3 on t2.id_pembelian=t3.id_pembelian where t1.id_barang='BRG0001' and t1.stock>0 order by tgl_pembelian asc
+
+/*tampilkan browse barang di penjualan*/
+select t1.id_barang, t1.nama_barang, t1.harga_jual, ISNull(Sum(t2.stock),0) as 'stock' ,t1.barcode, t1.deskripsi from Barang t1 Left Outer join Stock t2 on t1.id_barang=t2.id_barang where t1.discontinued=0 Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi Having ISNull(Sum(t2.stock),0) >0
+
+--select t1.id_barang, t1.nama_barang, t1.harga_jual, Sum(t2.stock) as Stock, t3.tgl_pembelian, t4.[harga/pcs] ,t1.barcode, t1.deskripsi from Barang t1 inner join Stock t2 on t1.id_barang=t2.id_barang inner join Pembelian t3 on t2.id_pembelian=t3.id_pembelian inner join Pembelian_Detail t4 on t3.id_pembelian=t4.id_pembelian where t1.discontinued=0 Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi, t3.tgl_pembelian,t4.[harga/pcs] Having ISNull(Sum(t2.stock),0) >0 
+
+select  t1.id_barang, t1.stock, t2.tgl_pembelian, t3.[harga/pcs] from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian inner join Pembelian_Detail t3 on t2.id_pembelian=t3.id_pembelian where t1.id_barang='BRG0001' and t1.stock>0 order by tgl_pembelian asc
+
+select * from Penjualan
+select * from Penjualan_Detail
+
+--ambil data stock sekarang ketika sebelum pembelian terjadi
+select top 1 t1.stock,t1.id_pembelian from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian where id_barang='BRG0001' Order by t2.tgl_pembelian asc
+
+
+----kurangi stock barang ketika terjadi pembelian
+select * from stock order by id_pembelian
