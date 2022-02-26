@@ -164,8 +164,9 @@ select * from Penjualan
 select * from Penjualan_Detail
 
 --ambil data stock sekarang ketika sebelum pembelian terjadi
-select top 1 t1.stock,t1.id_pembelian from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian where id_barang='BRG0001' Order by t2.tgl_pembelian asc
+select top 2 t1.stock,t1.id_pembelian from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian where id_barang='BRG0001' Order by t2.tgl_pembelian asc
 
 
 ----kurangi stock barang ketika terjadi pembelian
 select * from stock order by id_pembelian
+

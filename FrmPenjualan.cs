@@ -131,34 +131,40 @@ namespace PetShop
                 arRecord = ds.Tables["Barang"].Select("barcode='" + txtBarcode.Text + "'");
                 if(arRecord.Length!=0)
                 {
-                    CheckoutRecord = ds.Tables["CheckoutItem"].Select("[ID Barang] = '" + arRecord[0]["id_barang"] + "'");
-                    if (CheckoutRecord.Length != 0)
+                    if(Convert.ToInt32(arRecord[0]["stock"])<nudQty.Value)
                     {
-                        MessageBox.Show("Barang sudah ada dalam daftar checkout");
+                        MessageBox.Show("Stok tidak mencukupi");
                     }
                     else
                     {
-                        //Ambil harga beli barang
-                        cmd = new SqlCommand("select top 1 t1.id_barang, t1.stock, t2.tgl_pembelian, t3.[harga/pcs] from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian inner join Pembelian_Detail t3 on t2.id_pembelian=t3.id_pembelian where t1.id_barang=@idBRG and t1.stock>0 order by tgl_pembelian asc", con);
-                        cmd.Parameters.AddWithValue("@idBRG", arRecord[0]["id_barang"]);
-                        dataRead=cmd.ExecuteReader();
-                        if (dataRead.Read())
+                        CheckoutRecord = ds.Tables["CheckoutItem"].Select("[ID Barang] = '" + arRecord[0]["id_barang"] + "'");
+                        if (CheckoutRecord.Length != 0)
                         {
-                            dr = ds.Tables["CheckoutItem"].NewRow();
-                            dr["ID Barang"] = arRecord[0]["id_barang"];
-                            dr["Nama Barang"] = arRecord[0]["nama_barang"];
-                            dr["Qty"] = nudQty.Value;
-                            dr["Harga Beli"] = Convert.ToInt32(dataRead["harga/pcs"]);
-                            dr["Harga Satuan"] = arRecord[0]["harga_jual"];
-                            dr["SubTotal"] = Convert.ToInt32(arRecord[0]["harga_jual"]) * nudQty.Value;
-                            ds.Tables["CheckoutItem"].Rows.Add(dr);
-                            Tampil();
-                            txtBarcode.Clear();
-                            nudQty.Value = 1;
+                            MessageBox.Show("Barang sudah ada dalam daftar checkout");
                         }
-                        dataRead.Close();
+                        else
+                        {
+                            //Ambil harga beli barang
+                            cmd = new SqlCommand("select top 1 t1.id_barang, t1.stock, t2.tgl_pembelian, t3.[harga/pcs] from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian inner join Pembelian_Detail t3 on t2.id_pembelian=t3.id_pembelian where t1.id_barang=@idBRG and t1.stock>0 order by tgl_pembelian asc", con);
+                            cmd.Parameters.AddWithValue("@idBRG", arRecord[0]["id_barang"]);
+                            dataRead = cmd.ExecuteReader();
+                            if (dataRead.Read())
+                            {
+                                dr = ds.Tables["CheckoutItem"].NewRow();
+                                dr["ID Barang"] = arRecord[0]["id_barang"];
+                                dr["Nama Barang"] = arRecord[0]["nama_barang"];
+                                dr["Qty"] = nudQty.Value;
+                                dr["Harga Beli"] = Convert.ToInt32(dataRead["harga/pcs"]);
+                                dr["Harga Satuan"] = arRecord[0]["harga_jual"];
+                                dr["SubTotal"] = Convert.ToInt32(arRecord[0]["harga_jual"]) * nudQty.Value;
+                                ds.Tables["CheckoutItem"].Rows.Add(dr);
+                                Tampil();
+                                txtBarcode.Clear();
+                                nudQty.Value = 1;
+                            }
+                            dataRead.Close();
+                        }
                     }
-                    
                 }
                 else
                 {
@@ -281,16 +287,14 @@ namespace PetShop
                         int qtyAfterTransaction = qtyDB - Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString());
                         dataRead.Close();
 
-                        //kurangi qty barang
-                        cmd = new SqlCommand("update Stock set stock =@qty where id_barang=@idBrg and id_pembelian=@idPemb", con);
-                        cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
-                        cmd.Parameters.AddWithValue("@idPemb", idPembelian);
-                        cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(qtyAfterTransaction));
-                        cmd.ExecuteNonQuery();
+                            //kurangi qty barang
+                            cmd = new SqlCommand("update Stock set stock =@qty where id_barang=@idBrg and id_pembelian=@idPemb", con);
+                            cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
+                            cmd.Parameters.AddWithValue("@idPemb", idPembelian);
+                            cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(qtyAfterTransaction));
+                            cmd.ExecuteNonQuery();
                     }
-                    
 
-                   
                 }
 
                 ds.Tables["CheckoutItem"].Clear();
