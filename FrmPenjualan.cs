@@ -277,21 +277,45 @@ namespace PetShop
                     cmd.ExecuteNonQuery();
 
 
-                    cmd = new SqlCommand("select top 1 t1.stock,t1.id_pembelian from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian where id_barang=@id Order by t2.tgl_pembelian asc", con);
-                    cmd.Parameters.AddWithValue("@id", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
-                    dataRead = cmd.ExecuteReader();
-                    if(dataRead.Read())
-                    {
-                        int qtyDB = Convert.ToInt32(dataRead["stock"]);
-                        string idPembelian = dataRead["id_pembelian"].ToString();
-                        int qtyAfterTransaction = qtyDB - Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString());
-                        dataRead.Close();
-
+                    if (ds.Tables["Stocklist"] != null) ds.Tables["Stocklist"].Clear();
+                    ad = new SqlDataAdapter("select t1.stock,t1.id_pembelian from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian where id_barang=@id Order by t2.tgl_pembelian asc", con);
+                    ad.SelectCommand.Parameters.AddWithValue("@id", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
+                    ad.Fill(ds, "Stocklist");
+                        int qtyCO = Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString());
+                        int qtyDB = Convert.ToInt32(ds.Tables["Stocklist"].Rows[0]["stock"]);
+                        if(qtyDB<qtyCO)
+                        {
+                            int x = 0;
+                            int stockDibutuhkan = qtyCO;
+                            while(stockDibutuhkan> 0)
+                            {
+                                int tempStockDibutuhkan = stockDibutuhkan;
+                                stockDibutuhkan = stockDibutuhkan-Convert.ToInt32(ds.Tables["Stocklist"].Rows[x]["stock"]);
+                                if(stockDibutuhkan>0)
+                                {
+                                    ds.Tables["Stocklist"].Rows[x]["stock"] = 0;
+                                }
+                                else
+                                {
+                                    ds.Tables["Stocklist"].Rows[x]["stock"] = Convert.ToInt32(ds.Tables["Stocklist"].Rows[x]["stock"]) - tempStockDibutuhkan;
+                                }
+                                //kurangi qty barang
+                                cmd = new SqlCommand("update Stock set stock =@qty where id_barang=@idBrg and id_pembelian=@idPemb", con);
+                                cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
+                                cmd.Parameters.AddWithValue("@idPemb", ds.Tables["Stocklist"].Rows[x]["id_pembelian"].ToString());
+                                cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(ds.Tables["Stocklist"].Rows[x]["stock"]));
+                                cmd.ExecuteNonQuery();
+                                x++;
+                            }
+                        }
+                        else
+                        {
+                            ds.Tables["Stocklist"].Rows[0]["stock"] = qtyDB - qtyCO;
                             //kurangi qty barang
                             cmd = new SqlCommand("update Stock set stock =@qty where id_barang=@idBrg and id_pembelian=@idPemb", con);
                             cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
-                            cmd.Parameters.AddWithValue("@idPemb", idPembelian);
-                            cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(qtyAfterTransaction));
+                            cmd.Parameters.AddWithValue("@idPemb", ds.Tables["Stocklist"].Rows[0]["id_pembelian"].ToString());
+                            cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(ds.Tables["Stocklist"].Rows[0]["stock"]));
                             cmd.ExecuteNonQuery();
                     }
 
