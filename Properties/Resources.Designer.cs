@@ -133,6 +133,26 @@ namespace PetShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap backup_file {
+            get {
+                object obj = ResourceManager.GetObject("backup-file", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap backup_file_blur {
+            get {
+                object obj = ResourceManager.GetObject("backup_file_blur", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap barcode {
             get {
                 object obj = ResourceManager.GetObject("barcode", resourceCulture);
@@ -236,6 +256,46 @@ namespace PetShop.Properties {
         public static System.Drawing.Bitmap checkout1 {
             get {
                 object obj = ResourceManager.GetObject("checkout1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap data_recovery {
+            get {
+                object obj = ResourceManager.GetObject("data-recovery", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap data_recovery__1_ {
+            get {
+                object obj = ResourceManager.GetObject("data-recovery (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap data_recovery__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("data-recovery (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap data_recovery__2_ {
+            get {
+                object obj = ResourceManager.GetObject("data-recovery (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -436,6 +496,16 @@ namespace PetShop.Properties {
         public static System.Drawing.Bitmap report1 {
             get {
                 object obj = ResourceManager.GetObject("report1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap restore__1_ {
+            get {
+                object obj = ResourceManager.GetObject("restore (1)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

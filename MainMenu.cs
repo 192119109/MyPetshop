@@ -125,6 +125,7 @@ namespace PetShop
             btnPersediaan.BackColor = Color.White;
             btnBiayaTambahan.BackColor = Color.White;
             btnSupplier.BackColor = Color.White;
+            btnManageData.BackColor = Color.White;
         }
 
         private void BtnAccount_Click(object sender, EventArgs e)
@@ -173,6 +174,27 @@ namespace PetShop
         {
             FrmSupplier frmSupplier = new FrmSupplier();
             frmSupplier.Show();
+            this.Hide();
+        }
+
+        private void BtnManageData_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageData.Text = "";
+            btnManageData.BackgroundImage = Properties.Resources.backup_file;
+        }
+
+        private void BtnManageData_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageData.Text = "Kelola Database";
+            btnManageData.Font = new Font("Mircorsoft YaHei", 25, FontStyle.Bold);
+            btnManageData.BackgroundImage = Properties.Resources.backup_file_blur;
+            btnManageData.ForeColor = Color.DarkOrange;
+        }
+
+        private void BtnManageData_Click(object sender, EventArgs e)
+        {
+            FrmBackupData frmBackupDB = new FrmBackupData();
+            frmBackupDB.Show();
             this.Hide();
         }
     }

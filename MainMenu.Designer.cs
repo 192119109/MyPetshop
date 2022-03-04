@@ -32,6 +32,7 @@ namespace PetShop
             this.lblTutupApps = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblBantuan = new System.Windows.Forms.LinkLabel();
+            this.btnManageData = new System.Windows.Forms.Button();
             this.btnSupplier = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAccount = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@ namespace PetShop
             // 
             // lblTutupApps
             // 
+            this.lblTutupApps.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblTutupApps.Font = new System.Drawing.Font("Microsoft YaHei", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTutupApps.Location = new System.Drawing.Point(1225, 42);
             this.lblTutupApps.Name = "lblTutupApps";
@@ -78,10 +80,25 @@ namespace PetShop
             this.lblBantuan.VisitedLinkColor = System.Drawing.Color.Gray;
             this.lblBantuan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblBantuan_LinkClicked);
             // 
+            // btnManageData
+            // 
+            this.btnManageData.BackgroundImage = global::PetShop.Properties.Resources.backup_file;
+            this.btnManageData.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnManageData.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageData.Location = new System.Drawing.Point(442, 411);
+            this.btnManageData.Name = "btnManageData";
+            this.btnManageData.Size = new System.Drawing.Size(208, 170);
+            this.btnManageData.TabIndex = 10;
+            this.btnManageData.UseVisualStyleBackColor = true;
+            this.btnManageData.Click += new System.EventHandler(this.BtnManageData_Click);
+            this.btnManageData.MouseEnter += new System.EventHandler(this.BtnManageData_MouseEnter);
+            this.btnManageData.MouseLeave += new System.EventHandler(this.BtnManageData_MouseLeave);
+            // 
             // btnSupplier
             // 
             this.btnSupplier.BackgroundImage = global::PetShop.Properties.Resources.supplier;
             this.btnSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSupplier.Location = new System.Drawing.Point(207, 411);
             this.btnSupplier.Name = "btnSupplier";
             this.btnSupplier.Size = new System.Drawing.Size(208, 170);
@@ -105,7 +122,8 @@ namespace PetShop
             // 
             this.btnAccount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAccount.BackgroundImage")));
             this.btnAccount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAccount.Location = new System.Drawing.Point(442, 411);
+            this.btnAccount.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAccount.Location = new System.Drawing.Point(680, 411);
             this.btnAccount.Name = "btnAccount";
             this.btnAccount.Size = new System.Drawing.Size(208, 170);
             this.btnAccount.TabIndex = 5;
@@ -118,6 +136,7 @@ namespace PetShop
             // 
             this.btnLaporan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLaporan.BackgroundImage")));
             this.btnLaporan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLaporan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLaporan.Location = new System.Drawing.Point(917, 184);
             this.btnLaporan.Name = "btnLaporan";
             this.btnLaporan.Size = new System.Drawing.Size(208, 170);
@@ -131,6 +150,7 @@ namespace PetShop
             // 
             this.btnBiayaTambahan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnBiayaTambahan.BackgroundImage")));
             this.btnBiayaTambahan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnBiayaTambahan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBiayaTambahan.Location = new System.Drawing.Point(680, 184);
             this.btnBiayaTambahan.Name = "btnBiayaTambahan";
             this.btnBiayaTambahan.Size = new System.Drawing.Size(208, 170);
@@ -143,6 +163,7 @@ namespace PetShop
             // 
             this.btnPersediaan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPersediaan.BackgroundImage")));
             this.btnPersediaan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPersediaan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPersediaan.Location = new System.Drawing.Point(442, 184);
             this.btnPersediaan.Name = "btnPersediaan";
             this.btnPersediaan.Size = new System.Drawing.Size(208, 170);
@@ -156,6 +177,7 @@ namespace PetShop
             // 
             this.btnPenjualan.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPenjualan.BackgroundImage")));
             this.btnPenjualan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnPenjualan.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPenjualan.Location = new System.Drawing.Point(207, 184);
             this.btnPenjualan.Name = "btnPenjualan";
             this.btnPenjualan.Size = new System.Drawing.Size(208, 170);
@@ -169,6 +191,7 @@ namespace PetShop
             // 
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnManageData);
             this.Controls.Add(this.btnSupplier);
             this.Controls.Add(this.lblBantuan);
             this.Controls.Add(this.label1);
@@ -203,6 +226,7 @@ namespace PetShop
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel lblBantuan;
         private System.Windows.Forms.Button btnSupplier;
+        private System.Windows.Forms.Button btnManageData;
     }
 }
 

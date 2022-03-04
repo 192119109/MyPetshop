@@ -45,3 +45,16 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmPembelian.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmAddPembelian.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBrowseBarang.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBrowseSupplier.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBackupData.resources
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.Dmf.Common.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.Diagnostics.STrace.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.SqlTDiagM.dll
+D:\Project PetShop\PetShop\obj\Debug\PetShop.ProccesAnimate.resources
