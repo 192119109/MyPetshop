@@ -267,18 +267,19 @@ namespace PetShop
                 //simpan ke tabel Penjualan_Detail + Kurangi qty di tabel barang
                 for(int i=0;i<ds.Tables["CheckoutItem"].Rows.Count;i++)
                 {
-                    cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@hargaJual,@hargaBeli)", con);
-                    cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
-                    cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value);
-                    cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString()));
-                    cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[5].Value.ToString()));
-                    cmd.Parameters.AddWithValue("@hargaJual", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
-                    cmd.Parameters.AddWithValue("@hargaBeli", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[3].Value.ToString()));
-                    cmd.ExecuteNonQuery();
+                    //cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@hargaJual,@hargaBeli)", con);
+                    //cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
+                    //cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value);
+                    //cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString()));
+                    //cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[5].Value.ToString()));
+                    //cmd.Parameters.AddWithValue("@hargaJual", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
+                    //cmd.Parameters.AddWithValue("@hargaBeli", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[3].Value.ToString()));
+                    //cmd.ExecuteNonQuery();
 
 
                     if (ds.Tables["Stocklist"] != null) ds.Tables["Stocklist"].Clear();
-                    ad = new SqlDataAdapter("select t1.stock,t1.id_pembelian from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian where id_barang=@id Order by t2.tgl_pembelian asc", con);
+                    //ad = new SqlDataAdapter("select t1.stock,t1.id_pembelian from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian where id_barang=@id and stock>0 Order by t2.tgl_pembelian asc", con);
+                    ad = new SqlDataAdapter("select t1.id_barang, t1.stock,t1.id_pembelian, t3.[harga/pcs] as hargaBeli from Stock t1 inner join Pembelian t2 on t1.id_pembelian=t2.id_pembelian inner join Pembelian_Detail t3 on t2.id_pembelian=t3.id_pembelian where t1.id_barang=@id and stock >0 Order by t2.tgl_pembelian asc", con);
                     ad.SelectCommand.Parameters.AddWithValue("@id", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
                     ad.Fill(ds, "Stocklist");
                         int qtyCO = Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString());
@@ -293,13 +294,38 @@ namespace PetShop
                                 stockDibutuhkan = stockDibutuhkan-Convert.ToInt32(ds.Tables["Stocklist"].Rows[x]["stock"]);
                                 if(stockDibutuhkan>0)
                                 {
+                                    //simpan ke penjualan detail
+                                    cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@hargaJual,@hargaBeli)", con);
+                                    cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
+                                    cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value);
+                                    cmd.Parameters.AddWithValue("@qty", qtyDB);
+                                    cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[5].Value.ToString()));
+                                    cmd.Parameters.AddWithValue("@hargaJual", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
+                                    cmd.Parameters.AddWithValue("@hargaBeli", Convert.ToInt32(ds.Tables["Stocklist"].Rows[x]["hargaBeli"]));
+                                    cmd.ExecuteNonQuery();
+                                    //set stock
                                     ds.Tables["Stocklist"].Rows[x]["stock"] = 0;
+                               
                                 }
                                 else
                                 {
+                                    //simpan ke penjualan detail
+                                    cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@hargaJual,@hargaBeli)", con);
+                                    cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
+                                    cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value);
+                                    cmd.Parameters.AddWithValue("@qty", tempStockDibutuhkan);
+                                    cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[5].Value.ToString()));
+                                    cmd.Parameters.AddWithValue("@hargaJual", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
+                                    cmd.Parameters.AddWithValue("@hargaBeli", Convert.ToInt32(ds.Tables["Stocklist"].Rows[x]["hargaBeli"]));
+                                    cmd.ExecuteNonQuery();
+                                    //set stock
                                     ds.Tables["Stocklist"].Rows[x]["stock"] = Convert.ToInt32(ds.Tables["Stocklist"].Rows[x]["stock"]) - tempStockDibutuhkan;
-                                }
-                                //kurangi qty barang
+                                
+                            }
+
+                           
+
+                            //kurangi qty barang
                                 cmd = new SqlCommand("update Stock set stock =@qty where id_barang=@idBrg and id_pembelian=@idPemb", con);
                                 cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
                                 cmd.Parameters.AddWithValue("@idPemb", ds.Tables["Stocklist"].Rows[x]["id_pembelian"].ToString());

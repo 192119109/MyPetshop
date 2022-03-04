@@ -76,7 +76,7 @@ namespace PetShop
         {
             BuatKoneksi();
             if (ds.Tables["DetailBarang"] != null) ds.Tables["DetailBarang"].Clear();
-            ad = new SqlDataAdapter("select t1.id_barang as ID, t2.nama_barang as Nama, t1.qty_jual as Qty, t1.harga_jual as Harga, t1.sub_total as SubTotal from Penjualan_Detail t1 inner join Barang t2 on t1.id_barang = t2.id_barang where id_penjualan = '" + invID + "'", con);
+            ad = new SqlDataAdapter("select t1.id_barang as ID, t2.nama_barang as Nama, sum(t1.qty_jual) as Qty, t1.harga_jual as Harga, t1.sub_total as SubTotal from Penjualan_Detail t1 inner join Barang t2 on t1.id_barang = t2.id_barang where id_penjualan = '" + invID + "' group by t1.id_barang,t2.nama_barang,t1.harga_jual,t1.sub_total", con);
             ad.Fill(ds, "DetailBarang");
 
             dgvDetail.DataSource = ds.Tables["DetailBarang"];
