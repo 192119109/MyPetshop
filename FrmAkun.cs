@@ -66,10 +66,12 @@ namespace PetShop
 
         private void UpdatePassword()
         {
+            BuatKoneksi();
             cmd = new SqlCommand("update Pengguna set pass=@password where username=@username",con);
             cmd.Parameters.AddWithValue("@password", EncryptPassword(txtNewPass.Text));
             cmd.Parameters.AddWithValue("@username", txtUsername.Text);
             cmd.ExecuteNonQuery();
+            con.Close();
             MessageBox.Show("Data Berhasil Diubah");
         }
 
@@ -129,6 +131,7 @@ namespace PetShop
                 MessageBox.Show("Pengguna tidak ditemukan");
                 reader.Close();
             }
+            con.Close();
         }
 
         private void TxtUsername_TextChanged(object sender, EventArgs e)

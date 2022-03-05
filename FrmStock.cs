@@ -116,6 +116,7 @@ namespace PetShop
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();
             ad = new SqlDataAdapter("select t1.id_barang, t1.nama_barang, t1.harga_jual, isnull(Sum(t2.stock),0) as 'stock' ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 left outer join Stock t2 on t1.id_barang=t2.id_barang Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi", con);
             ad.Fill(ds, "Barang");
+            con.Close();
             Tampil();
             Validasi();
             cbSearchBy.SelectedIndex = 1;
@@ -224,9 +225,11 @@ namespace PetShop
             if(MessageBox.Show("Barang yang dihapus tetap ada dalam database tetapi status akan menjadi discontinued. Apakah ingin melanjutkan ?",this.Text, MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question)==DialogResult.Yes)
             {
+                BuatKoneksi();
                 cmd = new SqlCommand("update Barang set discontinued = 1 where id_barang=@id", con);
                 cmd.Parameters.AddWithValue("@id", txtIdBarang.Text);
                 cmd.ExecuteNonQuery();
+                con.Close();
                 MessageBox.Show("Item berhasil dihapus");
                 MuatUlang();
                 Tampil();
@@ -280,9 +283,11 @@ namespace PetShop
             if (MessageBox.Show("Status barang akan diubah menjadi tersedia kembali. Apakah ingin melanjutkan ?", this.Text, MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
+                BuatKoneksi();
                 cmd = new SqlCommand("update Barang set discontinued = 0 where id_barang=@id", con);
                 cmd.Parameters.AddWithValue("@id", txtIdBarang.Text);
                 cmd.ExecuteNonQuery();
+                con.Close();
                 MessageBox.Show("Barang tersedia kembali");
                 MuatUlang();
                 Tampil();

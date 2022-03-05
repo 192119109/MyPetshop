@@ -31,6 +31,7 @@ namespace PetShop
             Tampil();
             cboKategori.SelectedIndex = 0;
             txtCari.Focus();
+            con.Close();
         }
 
         private void Tampil()

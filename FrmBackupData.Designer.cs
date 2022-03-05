@@ -32,12 +32,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPath = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.lblLastBackup = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.BtnRestore = new System.Windows.Forms.Button();
             this.btnBackup = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblPath = new System.Windows.Forms.Label();
             this.flowLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -87,6 +87,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "INFO";
             // 
+            // lblPath
+            // 
+            this.lblPath.AutoSize = true;
+            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPath.Location = new System.Drawing.Point(64, 46);
+            this.lblPath.Name = "lblPath";
+            this.lblPath.Size = new System.Drawing.Size(17, 15);
+            this.lblPath.TabIndex = 7;
+            this.lblPath.Text = " - ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(17, 46);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 15);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Path : ";
+            // 
             // lblLastBackup
             // 
             this.lblLastBackup.AutoSize = true;
@@ -120,6 +140,7 @@
             this.BtnRestore.Text = "Restore Database";
             this.BtnRestore.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtnRestore.UseVisualStyleBackColor = false;
+            this.BtnRestore.Click += new System.EventHandler(this.BtnRestore_Click);
             // 
             // btnBackup
             // 
@@ -135,26 +156,6 @@
             this.btnBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBackup.UseVisualStyleBackColor = false;
             this.btnBackup.Click += new System.EventHandler(this.BtnBackup_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 46);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Path : ";
-            // 
-            // lblPath
-            // 
-            this.lblPath.AutoSize = true;
-            this.lblPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPath.Location = new System.Drawing.Point(64, 46);
-            this.lblPath.Name = "lblPath";
-            this.lblPath.Size = new System.Drawing.Size(17, 15);
-            this.lblPath.TabIndex = 7;
-            this.lblPath.Text = " - ";
             // 
             // FrmBackupData
             // 

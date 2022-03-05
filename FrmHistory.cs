@@ -82,6 +82,7 @@ namespace PetShop
             dgvDetail.DataSource = ds.Tables["DetailBarang"];
             dgvDetail.Columns[3].DefaultCellStyle.Format = "c";
             dgvDetail.Columns[4].DefaultCellStyle.Format = "c";
+            con.Close();
         }
 
         private void DgvTransaksi_CellClick(object sender, DataGridViewCellEventArgs e)

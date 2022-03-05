@@ -30,6 +30,7 @@ namespace PetShop
 
         private void FrmPenjualan_FormClosed(object sender, FormClosedEventArgs e)
         {
+            con.Close();
             FrmMenu menu = new FrmMenu();
             menu.Show();
         }
@@ -337,12 +338,22 @@ namespace PetShop
                         else
                         {
                             ds.Tables["Stocklist"].Rows[0]["stock"] = qtyDB - qtyCO;
-                            //kurangi qty barang
-                            cmd = new SqlCommand("update Stock set stock =@qty where id_barang=@idBrg and id_pembelian=@idPemb", con);
+                        cmd = new SqlCommand("insert into Penjualan_Detail Values (@id,@idBrg,@qty,@subTotal,@hargaJual,@hargaBeli)", con);
+                        cmd.Parameters.AddWithValue("@id", txtInvoiceNum.Text);
+                        cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value);
+                        cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[2].Value.ToString()));
+                        cmd.Parameters.AddWithValue("@subTotal", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[5].Value.ToString()));
+                        cmd.Parameters.AddWithValue("@hargaJual", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[4].Value.ToString()));
+                        cmd.Parameters.AddWithValue("@hargaBeli", Convert.ToInt32(dgvCheckoutItem.Rows[i].Cells[3].Value.ToString()));
+                        cmd.ExecuteNonQuery();
+                        //kurangi qty barang
+                        cmd = new SqlCommand("update Stock set stock =@qty where id_barang=@idBrg and id_pembelian=@idPemb", con);
                             cmd.Parameters.AddWithValue("@idBrg", dgvCheckoutItem.Rows[i].Cells[0].Value.ToString());
                             cmd.Parameters.AddWithValue("@idPemb", ds.Tables["Stocklist"].Rows[0]["id_pembelian"].ToString());
                             cmd.Parameters.AddWithValue("@qty", Convert.ToInt32(ds.Tables["Stocklist"].Rows[0]["stock"]));
                             cmd.ExecuteNonQuery();
+                        
+
                     }
 
                 }

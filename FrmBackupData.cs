@@ -55,5 +55,11 @@ namespace PetShop
         {
             refreshForm();
         }
+
+        private void BtnRestore_Click(object sender, EventArgs e)
+        {
+            RestoreDB restoreDB = new RestoreDB();
+            restoreDB.ShowDialog();
+        }
     }
 }

@@ -24,7 +24,8 @@ namespace PetShop
 
         private void LblTutupApps_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            //Application.Exit();
+            Environment.Exit(0);
         }
 
         private void LblTutupApps_MouseEnter(object sender, EventArgs e)

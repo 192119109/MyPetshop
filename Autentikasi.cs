@@ -34,6 +34,7 @@ namespace PetShop
             
             try
             {
+                Global.BuatKoneksi();
                 cmd = new SqlCommand("select pass from Pengguna where username = @username", con);
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text);
                 reader = cmd.ExecuteReader();
@@ -57,6 +58,7 @@ namespace PetShop
                 }
 
                 reader.Close();
+                con.Close();
             }
             catch (Exception ex)
             {
@@ -94,7 +96,7 @@ namespace PetShop
         private void Autentikasi_Load(object sender, EventArgs e)
         {
             btnLogin.Enabled = false;
-            Global.BuatKoneksi();
+            
         }
     }
 }

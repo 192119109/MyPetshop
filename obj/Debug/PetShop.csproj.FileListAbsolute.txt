@@ -58,3 +58,5 @@ D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
 D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
 D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.SqlTDiagM.dll
 D:\Project PetShop\PetShop\obj\Debug\PetShop.ProccesAnimate.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.RestoreDB.resources
+D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll

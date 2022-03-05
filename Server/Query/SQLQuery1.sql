@@ -181,3 +181,16 @@ select t1.id_barang, t1.stock,t1.id_pembelian, t3.[harga/pcs] from Stock t1 inne
 
 ---ambil data untuk history penjualan
 select t1.id_barang as ID, t2.nama_barang as Nama, sum(t1.qty_jual) as Qty, t1.harga_jual as Harga, t1.sub_total as SubTotal from Penjualan_Detail t1 inner join Barang t2 on t1.id_barang = t2.id_barang where id_penjualan = 'PJ000006/04/03/2022' group by t1.id_barang,t2.nama_barang,t1.harga_jual,t1.sub_total
+
+
+---Buat Tabel Backup Record
+Create Table BackupTrackRecord 
+( 
+	backupID int not null IDENTITY (1,1) PRIMARY KEY,
+	tgl_backup datetime,
+	file_path text
+)
+
+select * from BackupTrackRecord
+
+select Top 1 tgl_backup from BackupTrackRecord order by tgl_backup DESC

@@ -54,6 +54,7 @@ namespace PetShop
         {
             if(dgvSupplier.Rows.Count<1)
             {
+                BuatKoneksi();
                 cmd = new SqlCommand("SELECT TOP 1 id_supplier FROM Suppliers ORDER BY id_supplier DESC", con);
                 var maxId = cmd.ExecuteScalar() as string;
 
@@ -69,6 +70,7 @@ namespace PetShop
                     supID = String.Format("SUP{0:0000}", intval);
                     txtIdSupplier.Text = supID;
                 }
+                con.Close();
             }
             else
             {
@@ -142,6 +144,7 @@ namespace PetShop
             clb = new SqlCommandBuilder(ad);
             ad = clb.DataAdapter;
             ad.Update(ds, "Suppliers");
+            con.Close();
             MessageBox.Show("Data Berhasil Disimpan");
             this.Close();
         }

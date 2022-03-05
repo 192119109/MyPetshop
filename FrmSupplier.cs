@@ -39,7 +39,7 @@ namespace PetShop
 
         private void FrmSupplier_Load(object sender, EventArgs e)
         {
-            BuatKoneksi();
+            
             ds = new DataSet();
             RefreshData();
             cbSearchBy.SelectedIndex = 0;
@@ -56,10 +56,12 @@ namespace PetShop
 
         private void RefreshData()
         {
+            BuatKoneksi();
             if (ds.Tables["Suppliers"] != null) ds.Tables["Suppliers"].Clear();
             ad = new SqlDataAdapter("select * from Suppliers", con);
             ad.Fill(ds, "Suppliers");
             tampil();
+            con.Close();
         }
 
         private void BtnClear_Click(object sender, EventArgs e)

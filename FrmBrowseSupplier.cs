@@ -32,6 +32,7 @@ namespace PetShop
             ad.Fill(ds, "Suppliers");
             Tampil();
             cboKategori.SelectedIndex = 0;
+            con.Close();
         }
 
         private void Tampil()

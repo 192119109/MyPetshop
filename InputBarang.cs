@@ -54,8 +54,10 @@ namespace PetShop
         
         private void GetIdBarang()
         {
+            
             if(dgvBarang.Rows.Count<1)
             {
+                BuatKoneksi();
                 cmd = new SqlCommand("SELECT TOP 1 id_barang FROM Barang ORDER BY id_barang DESC", con);
                 var maxId = cmd.ExecuteScalar() as string;
 
@@ -71,6 +73,7 @@ namespace PetShop
                     idBrg = String.Format("BRG{0:0000}", intval);
                     txtIdBrg.Text = idBrg;
                 }
+                con.Close();
             }
             else
             {
@@ -141,7 +144,6 @@ namespace PetShop
 
         private void BtnSimpan_Click(object sender, EventArgs e)
         {
-            BuatKoneksi();
             ad = new SqlDataAdapter("Select * from Barang",con);
             clb = new SqlCommandBuilder(ad);
             ad = clb.DataAdapter;
