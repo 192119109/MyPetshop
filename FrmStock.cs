@@ -293,5 +293,11 @@ namespace PetShop
                 Tampil();
             }
         }
+
+        private void BtnMoreDetail_Click(object sender, EventArgs e)
+        {
+            FrmMoreDetail moreDetailMenu = new FrmMoreDetail();
+            moreDetailMenu.ShowDialog();
+        }
     }
 }

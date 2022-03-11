@@ -194,3 +194,35 @@ Create Table BackupTrackRecord
 select * from BackupTrackRecord
 
 select Top 1 tgl_backup from BackupTrackRecord order by tgl_backup DESC
+
+use db_petshop
+
+select t1.id_barang , t2.nama_barang, sum(t1.stock) as Qty from Stock t1 inner join Barang t2 on t1.id_barang=t2.id_barang group by t1.id_barang,t2.nama_barang having sum(t1.stock)>0 
+
+select * from Stock
+select * from Pembelian
+select * from Suppliers
+select * from Pembelian_Detail
+
+
+select t1.id_pembelian, t4.nama as 'Nama Supplier', t1.stock, t3.[harga/pcs], t3.Catatan from Stock t1 inner join Pembelian t2 on t1.id_pembelian = t2.id_pembelian
+inner join Suppliers t4 on t2.id_supplier = t4.id_supplier inner join Pembelian_Detail t3 on t2.id_pembelian= t3.id_pembelian where t1.stock>0 
+
+
+---Buat Tabel Pengurangan Stock
+Create Table Pengurangan_Stock 
+(
+	id_pengurangan varChar(19) Not Null Primary Key,
+	id_barang varChar(7) Not Null,
+	id_pembelian varChar(19) Not Null,
+	tglPengurangan datetime,
+	qtyAwal int,
+	qtyAkhir int,
+	jlhPengurangan int,
+	Keterangan Text,
+	Constraint FK_PenguranganBarang Foreign Key (id_barang) References Barang (id_barang),
+	Constraint FK_PenguranganPembelian Foreign Key (id_pembelian) References Pembelian (id_pembelian)
+)
+
+select * from Pengurangan_Stock
+

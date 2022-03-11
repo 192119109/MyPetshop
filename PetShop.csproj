@@ -65,6 +65,7 @@
     <Reference Include="Microsoft.SqlServer.SmoExtended, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -107,6 +108,12 @@
     <Compile Include="FrmAddSup.Designer.cs">
       <DependentUpon>FrmAddSup.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdjustStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdjustStock.Designer.cs">
+      <DependentUpon>FrmAdjustStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBackupData.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,11 +150,23 @@
     <Compile Include="FrmHistory.Designer.cs">
       <DependentUpon>FrmHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmHistoryPengurangan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmHistoryPengurangan.Designer.cs">
+      <DependentUpon>FrmHistoryPengurangan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLaporan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmLaporan.designer.cs">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMoreDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMoreDetail.Designer.cs">
+      <DependentUpon>FrmMoreDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPembelian.cs">
       <SubType>Form</SubType>
@@ -248,6 +267,9 @@
     <EmbeddedResource Include="FrmAddSup.resx">
       <DependentUpon>FrmAddSup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdjustStock.resx">
+      <DependentUpon>FrmAdjustStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBackupData.resx">
       <DependentUpon>FrmBackupData.cs</DependentUpon>
     </EmbeddedResource>
@@ -266,8 +288,14 @@
     <EmbeddedResource Include="FrmHistory.resx">
       <DependentUpon>FrmHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmHistoryPengurangan.resx">
+      <DependentUpon>FrmHistoryPengurangan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLaporan.resx">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMoreDetail.resx">
+      <DependentUpon>FrmMoreDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPembelian.resx">
       <DependentUpon>FrmPembelian.cs</DependentUpon>
@@ -393,6 +421,8 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\PenguranganStock.png" />
+    <None Include="Resources\stock1.png" />
     <None Include="Resources\restore %281%29.png" />
     <None Include="Resources\Square71x71Logo.scale-125.png" />
     <None Include="Resources\shopping-bag.png" />

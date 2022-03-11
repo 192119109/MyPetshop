@@ -60,3 +60,6 @@ D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.SqlTDiagM.dll
 D:\Project PetShop\PetShop\obj\Debug\PetShop.ProccesAnimate.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.RestoreDB.resources
 D:\Project PetShop\PetShop\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmAdjustStock.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmHistoryPengurangan.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmMoreDetail.resources
