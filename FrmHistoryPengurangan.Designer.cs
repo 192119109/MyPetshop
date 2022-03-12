@@ -30,9 +30,9 @@
         {
             this.gbSearchProduct = new System.Windows.Forms.GroupBox();
             this.cbSearchBy = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvHistoryPengurangan = new System.Windows.Forms.DataGridView();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.gbSearchProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryPengurangan)).BeginInit();
             this.SuspendLayout();
@@ -56,30 +56,15 @@
             this.cbSearchBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSearchBy.FormattingEnabled = true;
             this.cbSearchBy.Items.AddRange(new object[] {
+            "By ID Pengurangan",
             "By ID Barang",
-            "By Nama Barang"});
-            this.cbSearchBy.Location = new System.Drawing.Point(590, 34);
+            "By ID Pembelian",
+            "By Nama Barang",
+            "By Nama Supplier"});
+            this.cbSearchBy.Location = new System.Drawing.Point(592, 32);
             this.cbSearchBy.Name = "cbSearchBy";
             this.cbSearchBy.Size = new System.Drawing.Size(223, 26);
             this.cbSearchBy.TabIndex = 9;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.txtSearch.Location = new System.Drawing.Point(44, 32);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(540, 29);
-            this.txtSearch.TabIndex = 0;
-            // 
-            // dgvHistoryPengurangan
-            // 
-            this.dgvHistoryPengurangan.AllowUserToAddRows = false;
-            this.dgvHistoryPengurangan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistoryPengurangan.Location = new System.Drawing.Point(15, 88);
-            this.dgvHistoryPengurangan.Name = "dgvHistoryPengurangan";
-            this.dgvHistoryPengurangan.ReadOnly = true;
-            this.dgvHistoryPengurangan.Size = new System.Drawing.Size(816, 404);
-            this.dgvHistoryPengurangan.TabIndex = 18;
             // 
             // btnSearch
             // 
@@ -94,6 +79,26 @@
             this.btnSearch.Size = new System.Drawing.Size(36, 35);
             this.btnSearch.TabIndex = 8;
             this.btnSearch.UseVisualStyleBackColor = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.ForeColor = System.Drawing.SystemColors.InfoText;
+            this.txtSearch.Location = new System.Drawing.Point(44, 32);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(540, 26);
+            this.txtSearch.TabIndex = 0;
+            this.txtSearch.TextChanged += new System.EventHandler(this.TxtSearch_TextChanged);
+            // 
+            // dgvHistoryPengurangan
+            // 
+            this.dgvHistoryPengurangan.AllowUserToAddRows = false;
+            this.dgvHistoryPengurangan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoryPengurangan.Location = new System.Drawing.Point(15, 88);
+            this.dgvHistoryPengurangan.Name = "dgvHistoryPengurangan";
+            this.dgvHistoryPengurangan.ReadOnly = true;
+            this.dgvHistoryPengurangan.Size = new System.Drawing.Size(816, 404);
+            this.dgvHistoryPengurangan.TabIndex = 18;
             // 
             // FrmHistoryPengurangan
             // 
