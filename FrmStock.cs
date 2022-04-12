@@ -266,7 +266,7 @@ namespace PetShop
             arRecord = ds.Tables["Barang"].Select("id_barang = '" + txtIdBarang.Text + "'");
             if (arRecord.Length != 0)
             { 
-                SampleBarcode frmBarcode = new SampleBarcode(arRecord[0]["barcode"].ToString());
+                PrintBarcode frmBarcode = new PrintBarcode (arRecord[0]["barcode"].ToString());
                 frmBarcode.ShowDialog();
             }
         }
