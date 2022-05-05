@@ -33,6 +33,7 @@ namespace PetShop
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.gbSearchProduct = new System.Windows.Forms.GroupBox();
             this.cbSearchBy = new System.Windows.Forms.ComboBox();
+            this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@ namespace PetShop
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnSearch = new System.Windows.Forms.Button();
             this.btnPrint = new System.Windows.Forms.Button();
             this.btnMoreDetail = new System.Windows.Forms.Button();
             this.btnGenerateCode = new System.Windows.Forms.Button();
@@ -96,6 +96,20 @@ namespace PetShop
             this.cbSearchBy.Size = new System.Drawing.Size(408, 32);
             this.cbSearchBy.TabIndex = 9;
             this.cbSearchBy.SelectedIndexChanged += new System.EventHandler(this.TxtSearch_TextChanged);
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackgroundImage = global::PetShop.Properties.Resources.magnifier;
+            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSearch.FlatAppearance.BorderSize = 0;
+            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearch.Location = new System.Drawing.Point(3, 28);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(36, 35);
+            this.btnSearch.TabIndex = 8;
+            this.btnSearch.UseVisualStyleBackColor = true;
             // 
             // txtSearch
             // 
@@ -403,20 +417,6 @@ namespace PetShop
             this.label5.TabIndex = 16;
             this.label5.Text = "Print";
             // 
-            // btnSearch
-            // 
-            this.btnSearch.BackgroundImage = global::PetShop.Properties.Resources.magnifier;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnSearch.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(3, 28);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(36, 35);
-            this.btnSearch.TabIndex = 8;
-            this.btnSearch.UseVisualStyleBackColor = true;
-            // 
             // btnPrint
             // 
             this.btnPrint.BackgroundImage = global::PetShop.Properties.Resources.printer;
@@ -431,6 +431,7 @@ namespace PetShop
             this.btnPrint.Size = new System.Drawing.Size(64, 61);
             this.btnPrint.TabIndex = 6;
             this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // btnMoreDetail
             // 

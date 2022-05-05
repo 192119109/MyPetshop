@@ -202,5 +202,12 @@ namespace PetShop
                 }
             }
         }
+
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            SupplierReportPreview SuppliersDraft = new SupplierReportPreview();
+
+            SuppliersDraft.ShowDialog();
+        }
     }
 }

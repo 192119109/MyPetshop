@@ -299,5 +299,11 @@ namespace PetShop
             FrmMoreDetail moreDetailMenu = new FrmMoreDetail();
             moreDetailMenu.ShowDialog();
         }
+
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            ReportBarangViewer rptBarang = new ReportBarangViewer();
+            rptBarang.ShowDialog();
+        }
     }
 }

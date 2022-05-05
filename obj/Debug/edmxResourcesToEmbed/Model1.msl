@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="db_petshopModelStoreContainer" CdmEntityContainer="db_petshopEntities1">
+    <EntitySetMapping Name="BackupTrackRecords">
+      <EntityTypeMapping TypeName="db_petshopModel.BackupTrackRecord">
+        <MappingFragment StoreEntitySet="BackupTrackRecord">
+          <ScalarProperty Name="backupID" ColumnName="backupID" />
+          <ScalarProperty Name="tgl_backup" ColumnName="tgl_backup" />
+          <ScalarProperty Name="file_path" ColumnName="file_path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Barangs">
+      <EntityTypeMapping TypeName="db_petshopModel.Barang">
+        <MappingFragment StoreEntitySet="Barang">
+          <ScalarProperty Name="id_barang" ColumnName="id_barang" />
+          <ScalarProperty Name="nama_barang" ColumnName="nama_barang" />
+          <ScalarProperty Name="harga_jual" ColumnName="harga_jual" />
+          <ScalarProperty Name="barcode" ColumnName="barcode" />
+          <ScalarProperty Name="deskripsi" ColumnName="deskripsi" />
+          <ScalarProperty Name="discontinued" ColumnName="discontinued" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pembelians">
+      <EntityTypeMapping TypeName="db_petshopModel.Pembelian">
+        <MappingFragment StoreEntitySet="Pembelian">
+          <ScalarProperty Name="id_pembelian" ColumnName="id_pembelian" />
+          <ScalarProperty Name="id_supplier" ColumnName="id_supplier" />
+          <ScalarProperty Name="tgl_pembelian" ColumnName="tgl_pembelian" />
+          <ScalarProperty Name="grandTotal" ColumnName="grandTotal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penggunas">
+      <EntityTypeMapping TypeName="db_petshopModel.Pengguna">
+        <MappingFragment StoreEntitySet="Pengguna">
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="pass" ColumnName="pass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pengurangan_Stock">
+      <EntityTypeMapping TypeName="db_petshopModel.Pengurangan_Stock">
+        <MappingFragment StoreEntitySet="Pengurangan_Stock">
+          <ScalarProperty Name="id_pengurangan" ColumnName="id_pengurangan" />
+          <ScalarProperty Name="id_barang" ColumnName="id_barang" />
+          <ScalarProperty Name="id_pembelian" ColumnName="id_pembelian" />
+          <ScalarProperty Name="tglPengurangan" ColumnName="tglPengurangan" />
+          <ScalarProperty Name="qtyAwal" ColumnName="qtyAwal" />
+          <ScalarProperty Name="qtyAkhir" ColumnName="qtyAkhir" />
+          <ScalarProperty Name="jlhPengurangan" ColumnName="jlhPengurangan" />
+          <ScalarProperty Name="Keterangan" ColumnName="Keterangan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penjualans">
+      <EntityTypeMapping TypeName="db_petshopModel.Penjualan">
+        <MappingFragment StoreEntitySet="Penjualan">
+          <ScalarProperty Name="id_penjualan" ColumnName="id_penjualan" />
+          <ScalarProperty Name="tgl_transaksi" ColumnName="tgl_transaksi" />
+          <ScalarProperty Name="total_harga" ColumnName="total_harga" />
+          <ScalarProperty Name="potongan" ColumnName="potongan" />
+          <ScalarProperty Name="grand_total" ColumnName="grand_total" />
+          <ScalarProperty Name="dibayarkan" ColumnName="dibayarkan" />
+          <ScalarProperty Name="kembalian" ColumnName="kembalian" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="db_petshopModel.Supplier">
+        <MappingFragment StoreEntitySet="Suppliers">
+          <ScalarProperty Name="id_supplier" ColumnName="id_supplier" />
+          <ScalarProperty Name="nama" ColumnName="nama" />
+          <ScalarProperty Name="alamat" ColumnName="alamat" />
+          <ScalarProperty Name="provinsi" ColumnName="provinsi" />
+          <ScalarProperty Name="kota" ColumnName="kota" />
+          <ScalarProperty Name="telp" ColumnName="telp" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="deskripsi" ColumnName="deskripsi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pembelian_Detail">
+      <EntityTypeMapping TypeName="db_petshopModel.Pembelian_Detail">
+        <MappingFragment StoreEntitySet="Pembelian_Detail">
+          <ScalarProperty Name="id_pembelian" ColumnName="id_pembelian" />
+          <ScalarProperty Name="id_barang" ColumnName="id_barang" />
+          <ScalarProperty Name="harga_pcs" ColumnName="harga/pcs" />
+          <ScalarProperty Name="subTotal" ColumnName="subTotal" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Catatan" ColumnName="Catatan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Penjualan_Detail">
+      <EntityTypeMapping TypeName="db_petshopModel.Penjualan_Detail">
+        <MappingFragment StoreEntitySet="Penjualan_Detail">
+          <ScalarProperty Name="id_penjualan" ColumnName="id_penjualan" />
+          <ScalarProperty Name="id_barang" ColumnName="id_barang" />
+          <ScalarProperty Name="qty_jual" ColumnName="qty_jual" />
+          <ScalarProperty Name="sub_total" ColumnName="sub_total" />
+          <ScalarProperty Name="harga_jual" ColumnName="harga_jual" />
+          <ScalarProperty Name="harga_beli" ColumnName="harga_beli" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Stocks">
+      <EntityTypeMapping TypeName="db_petshopModel.Stock">
+        <MappingFragment StoreEntitySet="Stock">
+          <ScalarProperty Name="id_barang" ColumnName="id_barang" />
+          <ScalarProperty Name="id_pembelian" ColumnName="id_pembelian" />
+          <ScalarProperty Name="stock1" ColumnName="stock" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

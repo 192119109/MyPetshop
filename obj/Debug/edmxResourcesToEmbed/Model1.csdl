@@ -1,0 +1,283 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_petshopModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BackupTrackRecord">
+    <Key>
+      <PropertyRef Name="backupID" />
+    </Key>
+    <Property Name="backupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tgl_backup" Type="DateTime" Precision="3" />
+    <Property Name="file_path" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Barang">
+    <Key>
+      <PropertyRef Name="id_barang" />
+    </Key>
+    <Property Name="id_barang" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nama_barang" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="harga_jual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="barcode" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="deskripsi" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="discontinued" Type="Boolean" />
+    <NavigationProperty Name="Pengurangan_Stock" Relationship="Self.FK_PenguranganBarang" FromRole="Barang" ToRole="Pengurangan_Stock" />
+    <NavigationProperty Name="Stocks" Relationship="Self.FK_StockTblBarang" FromRole="Barang" ToRole="Stock" />
+    <NavigationProperty Name="Pembelian_Detail" Relationship="Self.FK_TblPembelianDetailBarang" FromRole="Barang" ToRole="Pembelian_Detail" />
+    <NavigationProperty Name="Penjualan_Detail" Relationship="Self.Fk_TblPenjualanDetailBarang" FromRole="Barang" ToRole="Penjualan_Detail" />
+  </EntityType>
+  <EntityType Name="Pembelian">
+    <Key>
+      <PropertyRef Name="id_pembelian" />
+    </Key>
+    <Property Name="id_pembelian" Type="String" MaxLength="19" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_supplier" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tgl_pembelian" Type="DateTime" Precision="3" />
+    <Property Name="grandTotal" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Pengurangan_Stock" Relationship="Self.FK_PenguranganPembelian" FromRole="Pembelian" ToRole="Pengurangan_Stock" />
+    <NavigationProperty Name="Stocks" Relationship="Self.FK_StockPembelian" FromRole="Pembelian" ToRole="Stock" />
+    <NavigationProperty Name="Pembelian_Detail" Relationship="Self.FK_TblPembelianDetail" FromRole="Pembelian" ToRole="Pembelian_Detail" />
+    <NavigationProperty Name="Supplier" Relationship="Self.Fk_TblSupplierPembelian" FromRole="Pembelian" ToRole="Suppliers" />
+  </EntityType>
+  <EntityType Name="Pengguna">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="pass" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pengurangan_Stock">
+    <Key>
+      <PropertyRef Name="id_pengurangan" />
+    </Key>
+    <Property Name="id_pengurangan" Type="String" MaxLength="19" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_barang" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_pembelian" Type="String" MaxLength="19" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tglPengurangan" Type="DateTime" Precision="3" />
+    <Property Name="qtyAwal" Type="Int32" />
+    <Property Name="qtyAkhir" Type="Int32" />
+    <Property Name="jlhPengurangan" Type="Int32" />
+    <Property Name="Keterangan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Barang" Relationship="Self.FK_PenguranganBarang" FromRole="Pengurangan_Stock" ToRole="Barang" />
+    <NavigationProperty Name="Pembelian" Relationship="Self.FK_PenguranganPembelian" FromRole="Pengurangan_Stock" ToRole="Pembelian" />
+  </EntityType>
+  <EntityType Name="Penjualan">
+    <Key>
+      <PropertyRef Name="id_penjualan" />
+    </Key>
+    <Property Name="id_penjualan" Type="String" MaxLength="19" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="tgl_transaksi" Type="DateTime" Precision="3" />
+    <Property Name="total_harga" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="potongan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="grand_total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="dibayarkan" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="kembalian" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Penjualan_Detail" Relationship="Self.Fk_TblPenjualanDetail" FromRole="Penjualan" ToRole="Penjualan_Detail" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="id_supplier" />
+    </Key>
+    <Property Name="id_supplier" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nama" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="alamat" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="provinsi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kota" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="telp" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="deskripsi" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Pembelians" Relationship="Self.Fk_TblSupplierPembelian" FromRole="Suppliers" ToRole="Pembelian" />
+  </EntityType>
+  <EntityType Name="Pembelian_Detail">
+    <Key>
+      <PropertyRef Name="id_pembelian" />
+      <PropertyRef Name="id_barang" />
+    </Key>
+    <Property Name="id_pembelian" Type="String" MaxLength="19" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_barang" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="harga_pcs" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="subTotal" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="Catatan" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Barang" Relationship="Self.FK_TblPembelianDetailBarang" FromRole="Pembelian_Detail" ToRole="Barang" />
+    <NavigationProperty Name="Pembelian" Relationship="Self.FK_TblPembelianDetail" FromRole="Pembelian_Detail" ToRole="Pembelian" />
+  </EntityType>
+  <EntityType Name="Penjualan_Detail">
+    <Key>
+      <PropertyRef Name="id_penjualan" />
+      <PropertyRef Name="id_barang" />
+    </Key>
+    <Property Name="id_penjualan" Type="String" MaxLength="19" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_barang" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="qty_jual" Type="Int32" />
+    <Property Name="sub_total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="harga_jual" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="harga_beli" Type="Decimal" Precision="19" Scale="4" />
+    <NavigationProperty Name="Barang" Relationship="Self.Fk_TblPenjualanDetailBarang" FromRole="Penjualan_Detail" ToRole="Barang" />
+    <NavigationProperty Name="Penjualan" Relationship="Self.Fk_TblPenjualanDetail" FromRole="Penjualan_Detail" ToRole="Penjualan" />
+  </EntityType>
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="id_barang" />
+      <PropertyRef Name="id_pembelian" />
+    </Key>
+    <Property Name="id_barang" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_pembelian" Type="String" MaxLength="19" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="stock1" Type="Int32" />
+    <NavigationProperty Name="Barang" Relationship="Self.FK_StockTblBarang" FromRole="Stock" ToRole="Barang" />
+    <NavigationProperty Name="Pembelian" Relationship="Self.FK_StockPembelian" FromRole="Stock" ToRole="Pembelian" />
+  </EntityType>
+  <Association Name="FK_PenguranganBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Pengurangan_Stock" Type="Self.Pengurangan_Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Pengurangan_Stock">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockTblBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPembelianDetailBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Pembelian_Detail" Type="Self.Pembelian_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Pembelian_Detail">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_TblPenjualanDetailBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Penjualan_Detail" Type="Self.Penjualan_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Penjualan_Detail">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PenguranganPembelian">
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="1" />
+    <End Role="Pengurangan_Stock" Type="Self.Pengurangan_Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pembelian">
+        <PropertyRef Name="id_pembelian" />
+      </Principal>
+      <Dependent Role="Pengurangan_Stock">
+        <PropertyRef Name="id_pembelian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockPembelian">
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pembelian">
+        <PropertyRef Name="id_pembelian" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="id_pembelian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPembelianDetail">
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="1" />
+    <End Role="Pembelian_Detail" Type="Self.Pembelian_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pembelian">
+        <PropertyRef Name="id_pembelian" />
+      </Principal>
+      <Dependent Role="Pembelian_Detail">
+        <PropertyRef Name="id_pembelian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_TblSupplierPembelian">
+    <End Role="Suppliers" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="id_supplier" />
+      </Principal>
+      <Dependent Role="Pembelian">
+        <PropertyRef Name="id_supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_TblPenjualanDetail">
+    <End Role="Penjualan" Type="Self.Penjualan" Multiplicity="1" />
+    <End Role="Penjualan_Detail" Type="Self.Penjualan_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Penjualan">
+        <PropertyRef Name="id_penjualan" />
+      </Principal>
+      <Dependent Role="Penjualan_Detail">
+        <PropertyRef Name="id_penjualan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_petshopEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BackupTrackRecords" EntityType="Self.BackupTrackRecord" />
+    <EntitySet Name="Barangs" EntityType="Self.Barang" />
+    <EntitySet Name="Pembelians" EntityType="Self.Pembelian" />
+    <EntitySet Name="Penggunas" EntityType="Self.Pengguna" />
+    <EntitySet Name="Pengurangan_Stock" EntityType="Self.Pengurangan_Stock" />
+    <EntitySet Name="Penjualans" EntityType="Self.Penjualan" />
+    <EntitySet Name="Suppliers" EntityType="Self.Supplier" />
+    <EntitySet Name="Pembelian_Detail" EntityType="Self.Pembelian_Detail" />
+    <EntitySet Name="Penjualan_Detail" EntityType="Self.Penjualan_Detail" />
+    <EntitySet Name="Stocks" EntityType="Self.Stock" />
+    <AssociationSet Name="FK_PenguranganBarang" Association="Self.FK_PenguranganBarang">
+      <End Role="Barang" EntitySet="Barangs" />
+      <End Role="Pengurangan_Stock" EntitySet="Pengurangan_Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockTblBarang" Association="Self.FK_StockTblBarang">
+      <End Role="Barang" EntitySet="Barangs" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPembelianDetailBarang" Association="Self.FK_TblPembelianDetailBarang">
+      <End Role="Barang" EntitySet="Barangs" />
+      <End Role="Pembelian_Detail" EntitySet="Pembelian_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_TblPenjualanDetailBarang" Association="Self.Fk_TblPenjualanDetailBarang">
+      <End Role="Barang" EntitySet="Barangs" />
+      <End Role="Penjualan_Detail" EntitySet="Penjualan_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PenguranganPembelian" Association="Self.FK_PenguranganPembelian">
+      <End Role="Pembelian" EntitySet="Pembelians" />
+      <End Role="Pengurangan_Stock" EntitySet="Pengurangan_Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockPembelian" Association="Self.FK_StockPembelian">
+      <End Role="Pembelian" EntitySet="Pembelians" />
+      <End Role="Stock" EntitySet="Stocks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPembelianDetail" Association="Self.FK_TblPembelianDetail">
+      <End Role="Pembelian" EntitySet="Pembelians" />
+      <End Role="Pembelian_Detail" EntitySet="Pembelian_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_TblSupplierPembelian" Association="Self.Fk_TblSupplierPembelian">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Pembelian" EntitySet="Pembelians" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_TblPenjualanDetail" Association="Self.Fk_TblPenjualanDetail">
+      <End Role="Penjualan" EntitySet="Penjualans" />
+      <End Role="Penjualan_Detail" EntitySet="Penjualan_Detail" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

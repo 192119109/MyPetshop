@@ -1,0 +1,300 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="db_petshopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BackupTrackRecord">
+    <Key>
+      <PropertyRef Name="backupID" />
+    </Key>
+    <Property Name="backupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="tgl_backup" Type="datetime" />
+    <Property Name="file_path" Type="text" />
+  </EntityType>
+  <EntityType Name="Barang">
+    <Key>
+      <PropertyRef Name="id_barang" />
+    </Key>
+    <Property Name="id_barang" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="nama_barang" Type="varchar" MaxLength="100" />
+    <Property Name="harga_jual" Type="money" />
+    <Property Name="barcode" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="deskripsi" Type="varchar" MaxLength="1000" />
+    <Property Name="discontinued" Type="bit" />
+  </EntityType>
+  <EntityType Name="Pembelian">
+    <Key>
+      <PropertyRef Name="id_pembelian" />
+    </Key>
+    <Property Name="id_pembelian" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="id_supplier" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="tgl_pembelian" Type="datetime" />
+    <Property Name="grandTotal" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db_petshop.dbo.Pembelian_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Pembelian_Detail">
+    <Key>
+      <PropertyRef Name="id_pembelian" />
+      <PropertyRef Name="id_barang" />
+    </Key>
+    <Property Name="id_pembelian" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="id_barang" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="harga/pcs" Type="money" />
+    <Property Name="subTotal" Type="money" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="Catatan" Type="text" />
+  </EntityType>
+  <EntityType Name="Pengguna">
+    <Key>
+      <PropertyRef Name="username" />
+    </Key>
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="pass" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pengurangan_Stock">
+    <Key>
+      <PropertyRef Name="id_pengurangan" />
+    </Key>
+    <Property Name="id_pengurangan" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="id_barang" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="id_pembelian" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="tglPengurangan" Type="datetime" />
+    <Property Name="qtyAwal" Type="int" />
+    <Property Name="qtyAkhir" Type="int" />
+    <Property Name="jlhPengurangan" Type="int" />
+    <Property Name="Keterangan" Type="text" />
+  </EntityType>
+  <EntityType Name="Penjualan">
+    <Key>
+      <PropertyRef Name="id_penjualan" />
+    </Key>
+    <Property Name="id_penjualan" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="tgl_transaksi" Type="datetime" />
+    <Property Name="total_harga" Type="money" />
+    <Property Name="potongan" Type="money" />
+    <Property Name="grand_total" Type="money" />
+    <Property Name="dibayarkan" Type="money" />
+    <Property Name="kembalian" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db_petshop.dbo.Penjualan_Detail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Penjualan_Detail">
+    <Key>
+      <PropertyRef Name="id_penjualan" />
+      <PropertyRef Name="id_barang" />
+    </Key>
+    <Property Name="id_penjualan" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="id_barang" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="qty_jual" Type="int" />
+    <Property Name="sub_total" Type="money" />
+    <Property Name="harga_jual" Type="money" />
+    <Property Name="harga_beli" Type="money" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'db_petshop.dbo.SecretKeylogger' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="SecretKeylogger">
+          <Property Name="keylogger" Type="varchar" MaxLength="50" />
+        </EntityType>-->
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db_petshop.dbo.Stock' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Stock">
+    <Key>
+      <PropertyRef Name="id_barang" />
+      <PropertyRef Name="id_pembelian" />
+    </Key>
+    <Property Name="id_barang" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="id_pembelian" Type="varchar" MaxLength="19" Nullable="false" />
+    <Property Name="stock" Type="int" />
+  </EntityType>
+  <EntityType Name="Suppliers">
+    <Key>
+      <PropertyRef Name="id_supplier" />
+    </Key>
+    <Property Name="id_supplier" Type="varchar" MaxLength="7" Nullable="false" />
+    <Property Name="nama" Type="varchar" MaxLength="50" />
+    <Property Name="alamat" Type="text" />
+    <Property Name="provinsi" Type="varchar" MaxLength="50" />
+    <Property Name="kota" Type="varchar" MaxLength="50" />
+    <Property Name="telp" Type="varchar" MaxLength="12" />
+    <Property Name="email" Type="varchar" MaxLength="100" />
+    <Property Name="deskripsi" Type="text" />
+  </EntityType>
+  <Association Name="FK_PenguranganBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Pengurangan_Stock" Type="Self.Pengurangan_Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Pengurangan_Stock">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PenguranganPembelian">
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="1" />
+    <End Role="Pengurangan_Stock" Type="Self.Pengurangan_Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pembelian">
+        <PropertyRef Name="id_pembelian" />
+      </Principal>
+      <Dependent Role="Pengurangan_Stock">
+        <PropertyRef Name="id_pembelian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockPembelian">
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pembelian">
+        <PropertyRef Name="id_pembelian" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="id_pembelian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockTblBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Stock" Type="Self.Stock" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Stock">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPembelianDetail">
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="1" />
+    <End Role="Pembelian_Detail" Type="Self.Pembelian_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pembelian">
+        <PropertyRef Name="id_pembelian" />
+      </Principal>
+      <Dependent Role="Pembelian_Detail">
+        <PropertyRef Name="id_pembelian" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblPembelianDetailBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Pembelian_Detail" Type="Self.Pembelian_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Pembelian_Detail">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_TblPenjualanDetail">
+    <End Role="Penjualan" Type="Self.Penjualan" Multiplicity="1" />
+    <End Role="Penjualan_Detail" Type="Self.Penjualan_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Penjualan">
+        <PropertyRef Name="id_penjualan" />
+      </Principal>
+      <Dependent Role="Penjualan_Detail">
+        <PropertyRef Name="id_penjualan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_TblPenjualanDetailBarang">
+    <End Role="Barang" Type="Self.Barang" Multiplicity="1" />
+    <End Role="Penjualan_Detail" Type="Self.Penjualan_Detail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Barang">
+        <PropertyRef Name="id_barang" />
+      </Principal>
+      <Dependent Role="Penjualan_Detail">
+        <PropertyRef Name="id_barang" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="Fk_TblSupplierPembelian">
+    <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="1" />
+    <End Role="Pembelian" Type="Self.Pembelian" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Suppliers">
+        <PropertyRef Name="id_supplier" />
+      </Principal>
+      <Dependent Role="Pembelian">
+        <PropertyRef Name="id_supplier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="db_petshopModelStoreContainer">
+    <EntitySet Name="BackupTrackRecord" EntityType="Self.BackupTrackRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Barang" EntityType="Self.Barang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pembelian" EntityType="Self.Pembelian" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pengguna" EntityType="Self.Pengguna" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pengurangan_Stock" EntityType="Self.Pengurangan_Stock" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Penjualan" EntityType="Self.Penjualan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pembelian_Detail" EntityType="Self.Pembelian_Detail" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Pembelian_Detail].[id_pembelian] AS [id_pembelian], 
+[Pembelian_Detail].[id_barang] AS [id_barang], 
+[Pembelian_Detail].[harga/pcs] AS [harga/pcs], 
+[Pembelian_Detail].[subTotal] AS [subTotal], 
+[Pembelian_Detail].[Qty] AS [Qty], 
+[Pembelian_Detail].[Catatan] AS [Catatan]
+FROM [dbo].[Pembelian_Detail] AS [Pembelian_Detail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Penjualan_Detail" EntityType="Self.Penjualan_Detail" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Penjualan_Detail].[id_penjualan] AS [id_penjualan], 
+[Penjualan_Detail].[id_barang] AS [id_barang], 
+[Penjualan_Detail].[qty_jual] AS [qty_jual], 
+[Penjualan_Detail].[sub_total] AS [sub_total], 
+[Penjualan_Detail].[harga_jual] AS [harga_jual], 
+[Penjualan_Detail].[harga_beli] AS [harga_beli]
+FROM [dbo].[Penjualan_Detail] AS [Penjualan_Detail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Stock" EntityType="Self.Stock" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Stock].[id_barang] AS [id_barang], 
+[Stock].[id_pembelian] AS [id_pembelian], 
+[Stock].[stock] AS [stock]
+FROM [dbo].[Stock] AS [Stock]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_PenguranganBarang" Association="Self.FK_PenguranganBarang">
+      <End Role="Barang" EntitySet="Barang" />
+      <End Role="Pengurangan_Stock" EntitySet="Pengurangan_Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PenguranganPembelian" Association="Self.FK_PenguranganPembelian">
+      <End Role="Pembelian" EntitySet="Pembelian" />
+      <End Role="Pengurangan_Stock" EntitySet="Pengurangan_Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockPembelian" Association="Self.FK_StockPembelian">
+      <End Role="Pembelian" EntitySet="Pembelian" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockTblBarang" Association="Self.FK_StockTblBarang">
+      <End Role="Barang" EntitySet="Barang" />
+      <End Role="Stock" EntitySet="Stock" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPembelianDetail" Association="Self.FK_TblPembelianDetail">
+      <End Role="Pembelian" EntitySet="Pembelian" />
+      <End Role="Pembelian_Detail" EntitySet="Pembelian_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblPembelianDetailBarang" Association="Self.FK_TblPembelianDetailBarang">
+      <End Role="Barang" EntitySet="Barang" />
+      <End Role="Pembelian_Detail" EntitySet="Pembelian_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_TblPenjualanDetail" Association="Self.Fk_TblPenjualanDetail">
+      <End Role="Penjualan" EntitySet="Penjualan" />
+      <End Role="Penjualan_Detail" EntitySet="Penjualan_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_TblPenjualanDetailBarang" Association="Self.Fk_TblPenjualanDetailBarang">
+      <End Role="Barang" EntitySet="Barang" />
+      <End Role="Penjualan_Detail" EntitySet="Penjualan_Detail" />
+    </AssociationSet>
+    <AssociationSet Name="Fk_TblSupplierPembelian" Association="Self.Fk_TblSupplierPembelian">
+      <End Role="Suppliers" EntitySet="Suppliers" />
+      <End Role="Pembelian" EntitySet="Pembelian" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
