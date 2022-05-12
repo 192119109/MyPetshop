@@ -48,7 +48,6 @@ namespace PetShop
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtInvoiceNum = new System.Windows.Forms.TextBox();
             this.nudQty = new System.Windows.Forms.NumericUpDown();
@@ -61,7 +60,6 @@ namespace PetShop
             this.label4 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.btnHistory = new System.Windows.Forms.Button();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.btnCari = new System.Windows.Forms.Button();
@@ -191,9 +189,9 @@ namespace PetShop
             this.label18.Location = new System.Drawing.Point(1074, 415);
             this.label18.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(106, 18);
+            this.label18.Size = new System.Drawing.Size(54, 18);
             this.label18.TabIndex = 30;
-            this.label18.Text = "Nama Kasir :";
+            this.label18.Text = "User :";
             // 
             // txtNamaKasir
             // 
@@ -268,26 +266,13 @@ namespace PetShop
             this.label22.TabIndex = 40;
             this.label22.Text = "Clear";
             // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.BackColor = System.Drawing.Color.BurlyWood;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Navy;
-            this.label23.Location = new System.Drawing.Point(1199, 629);
-            this.label23.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(37, 15);
-            this.label23.TabIndex = 42;
-            this.label23.Text = "Print";
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.BackColor = System.Drawing.Color.BurlyWood;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Navy;
-            this.label24.Location = new System.Drawing.Point(1285, 629);
+            this.label24.Location = new System.Drawing.Point(1188, 624);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 15);
@@ -430,29 +415,13 @@ namespace PetShop
             this.btnHistory.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.btnHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.btnHistory.Location = new System.Drawing.Point(1268, 559);
+            this.btnHistory.Location = new System.Drawing.Point(1171, 554);
             this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(73, 74);
             this.btnHistory.TabIndex = 43;
             this.btnHistory.UseVisualStyleBackColor = false;
             this.btnHistory.Click += new System.EventHandler(this.BtnHistory_Click);
-            // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.BurlyWood;
-            this.btnPrint.BackgroundImage = global::PetShop.Properties.Resources.files;
-            this.btnPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnPrint.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnPrint.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnPrint.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
-            this.btnPrint.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.btnPrint.Location = new System.Drawing.Point(1171, 559);
-            this.btnPrint.Margin = new System.Windows.Forms.Padding(2);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(73, 74);
-            this.btnPrint.TabIndex = 41;
-            this.btnPrint.UseVisualStyleBackColor = false;
             // 
             // btnClear
             // 
@@ -556,8 +525,6 @@ namespace PetShop
             this.Controls.Add(this.txtInvoiceNum);
             this.Controls.Add(this.label24);
             this.Controls.Add(this.btnHistory);
-            this.Controls.Add(this.label23);
-            this.Controls.Add(this.btnPrint);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.label21);
@@ -621,8 +588,6 @@ namespace PetShop
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button btnPrint;
-        private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox txtInvoiceNum;

@@ -286,3 +286,5 @@ D:\Project PetShop\PetShop\bin\Debug\EntityFramework.dll
 D:\Project PetShop\PetShop\bin\Debug\EntityFramework.xml
 D:\Project PetShop\PetShop\obj\Debug\PetShop.ReportBarangViewer.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.ReportPembelianPreview.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmManageUser.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBiayaTambahan.resources

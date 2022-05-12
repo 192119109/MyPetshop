@@ -127,6 +127,12 @@ namespace PetShop
             btnBiayaTambahan.BackColor = Color.White;
             btnSupplier.BackColor = Color.White;
             btnManageData.BackColor = Color.White;
+            btnManageUser.BackColor = Color.White;
+
+            if (Global.statusUser != "superadmin")
+            {
+                btnManageUser.Hide();
+            }
         }
 
         private void BtnAccount_Click(object sender, EventArgs e)
@@ -196,6 +202,34 @@ namespace PetShop
         {
             FrmBackupData frmBackupDB = new FrmBackupData();
             frmBackupDB.Show();
+            this.Hide();
+        }
+
+        private void BtnManageUser_Click(object sender, EventArgs e)
+        {
+            FrmManageUser frmuser = new FrmManageUser();
+            frmuser.Show();
+            this.Hide();
+        }
+
+        private void BtnManageUser_MouseEnter(object sender, EventArgs e)
+        {
+            btnManageUser.Text = "Kelola Pengguna";
+            btnManageUser.Font = new Font("Mircorsoft YaHei", 25, FontStyle.Bold);
+            btnManageUser.BackgroundImage = Properties.Resources.user_blur;
+            btnManageUser.ForeColor = Color.PaleVioletRed;
+        }
+
+        private void BtnManageUser_MouseLeave(object sender, EventArgs e)
+        {
+            btnManageUser.Text = "";
+            btnManageUser.BackgroundImage = Properties.Resources.user;
+        }
+
+        private void BtnBiayaTambahan_Click(object sender, EventArgs e)
+        {
+            FrmBiayaTambahan frmBiayaTambahan = new FrmBiayaTambahan();
+            frmBiayaTambahan.Show();
             this.Hide();
         }
     }

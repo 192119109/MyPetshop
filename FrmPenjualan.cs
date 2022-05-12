@@ -38,6 +38,7 @@ namespace PetShop
 
         private void FrmPenjualan_Load(object sender, EventArgs e)
         {
+            txtNamaKasir.Text = user;
             BuatKoneksi();
             ds = new DataSet();
             if (ds.Tables["Barang"] != null) ds.Tables["Barang"].Clear();

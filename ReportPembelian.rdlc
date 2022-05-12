@@ -2,45 +2,11 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Laporan Pembelian</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.17639cm</Top>
-        <Left>6.4947cm</Left>
-        <Height>0.81167cm</Height>
-        <Width>5.04cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.33167cm</Width>
+              <Width>1.59719cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.48501cm</Width>
@@ -687,7 +653,7 @@
           <TablixMembers>
             <TablixMember>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>2.43024cm</Size>
                 <CellContents>
                   <Textbox Name="Textbox26">
                     <CanGrow>true</CanGrow>
@@ -738,7 +704,7 @@
                 </SortExpression>
               </SortExpressions>
               <TablixHeader>
-                <Size>2.5cm</Size>
+                <Size>2.43024cm</Size>
                 <CellContents>
                   <Textbox Name="id_pembelian1">
                     <CanGrow>true</CanGrow>
@@ -782,11 +748,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.48195cm</Top>
-        <Left>0.17802cm</Left>
+        <Top>0.17639cm</Top>
+        <Left>0.1821cm</Left>
         <Height>1.8cm</Height>
-        <Width>16.71854cm</Width>
-        <ZIndex>1</ZIndex>
+        <Width>15.91431cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -811,11 +776,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox39</rd:DefaultName>
-        <Top>3.42306cm</Top>
-        <Left>10.43424cm</Left>
+        <Top>2.18777cm</Top>
+        <Left>9.17047cm</Left>
         <Height>0.6cm</Height>
         <Width>3.11975cm</Width>
-        <ZIndex>2</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -845,11 +810,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox40</rd:DefaultName>
-        <Top>3.42306cm</Top>
-        <Left>13.62454cm</Left>
+        <Top>2.15278cm</Top>
+        <Left>12.36077cm</Left>
         <Height>0.6cm</Height>
         <Width>3.27611cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -862,13 +827,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.61502in</Height>
+    <Height>1.19835in</Height>
     <Style />
   </Body>
-  <Width>6.76425in</Width>
+  <Width>6.358in</Width>
   <Page>
     <PageHeader>
-      <Height>1.49641cm</Height>
+      <Height>2.42245cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -909,7 +874,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Height>1.235cm</Height>
-          <Width>17.1812cm</Width>
+          <Width>16.09641cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -923,7 +888,7 @@
         <Line Name="Line1">
           <Top>1.30556cm</Top>
           <Height>0cm</Height>
-          <Width>17.1812cm</Width>
+          <Width>16.09641cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -931,6 +896,41 @@
             </Border>
           </Style>
         </Line>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Laporan Pembelian</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.61078cm</Top>
+          <Left>5.69454cm</Left>
+          <Height>0.81167cm</Height>
+          <Width>5.04cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -959,7 +959,7 @@
           </Paragraphs>
           <rd:DefaultName>Textbox19</rd:DefaultName>
           <Top>0.17639cm</Top>
-          <Left>13.87136cm</Left>
+          <Left>13.13688cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>

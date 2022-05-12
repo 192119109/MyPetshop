@@ -215,6 +215,12 @@
     <Compile Include="FrmBackupData.Designer.cs">
       <DependentUpon>FrmBackupData.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBiayaTambahan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBiayaTambahan.designer.cs">
+      <DependentUpon>FrmBiayaTambahan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBrowseBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,6 +262,12 @@
     </Compile>
     <Compile Include="FrmLaporan.designer.cs">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmManageUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmManageUser.designer.cs">
+      <DependentUpon>FrmManageUser.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMoreDetail.cs">
       <SubType>Form</SubType>
@@ -438,6 +450,9 @@
     <EmbeddedResource Include="FrmBackupData.resx">
       <DependentUpon>FrmBackupData.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmBiayaTambahan.resx">
+      <DependentUpon>FrmBiayaTambahan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBrowseBarang.resx">
       <DependentUpon>FrmBrowseBarang.cs</DependentUpon>
     </EmbeddedResource>
@@ -458,6 +473,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLaporan.resx">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmManageUser.resx">
+      <DependentUpon>FrmManageUser.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmMoreDetail.resx">
       <DependentUpon>FrmMoreDetail.cs</DependentUpon>
@@ -662,6 +680,9 @@
       <DependentUpon>Model1.edmx</DependentUpon>
       <LastGenOutput>Model1.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\minus.png" />
+    <None Include="Resources\user_blur.png" />
+    <None Include="Resources\cashless-payment.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

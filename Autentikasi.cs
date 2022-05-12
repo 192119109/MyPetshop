@@ -35,7 +35,7 @@ namespace PetShop
             try
             {
                 Global.BuatKoneksi();
-                cmd = new SqlCommand("select pass from Pengguna where username = @username", con);
+                cmd = new SqlCommand("select username, pass,status from Pengguna where username = @username", con);
                 cmd.Parameters.AddWithValue("@username", txtUsername.Text);
                 reader = cmd.ExecuteReader();
                 if(reader.Read())
@@ -43,7 +43,8 @@ namespace PetShop
                     if (txtPassword.Text == DecryptPassword(reader["pass"].ToString()))
                     {
                         Form MainMenu = new FrmMenu();
-
+                        statusUser = reader["status"].ToString();
+                        user = reader["username"].ToString();
                         MainMenu.Show();
                         this.Hide();
                     }

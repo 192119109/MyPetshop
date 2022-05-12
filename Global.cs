@@ -16,6 +16,8 @@ namespace PetShop
         public static bool checkoutBerhasil = false;
         public static int Dibayarkan;
         public static int Kembalian;
+        public static string statusUser;
+        public static string user;
 
         //Pembelian
         public static string getIdSup = "", getIdBrg = "";

@@ -32,6 +32,7 @@ namespace PetShop
             this.lblTutupApps = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblBantuan = new System.Windows.Forms.LinkLabel();
+            this.btnManageUser = new System.Windows.Forms.Button();
             this.btnManageData = new System.Windows.Forms.Button();
             this.btnSupplier = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -80,6 +81,20 @@ namespace PetShop
             this.lblBantuan.VisitedLinkColor = System.Drawing.Color.Gray;
             this.lblBantuan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LblBantuan_LinkClicked);
             // 
+            // btnManageUser
+            // 
+            this.btnManageUser.BackgroundImage = global::PetShop.Properties.Resources.user;
+            this.btnManageUser.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnManageUser.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnManageUser.Location = new System.Drawing.Point(917, 411);
+            this.btnManageUser.Name = "btnManageUser";
+            this.btnManageUser.Size = new System.Drawing.Size(208, 170);
+            this.btnManageUser.TabIndex = 11;
+            this.btnManageUser.UseVisualStyleBackColor = true;
+            this.btnManageUser.Click += new System.EventHandler(this.BtnManageUser_Click);
+            this.btnManageUser.MouseEnter += new System.EventHandler(this.BtnManageUser_MouseEnter);
+            this.btnManageUser.MouseLeave += new System.EventHandler(this.BtnManageUser_MouseLeave);
+            // 
             // btnManageData
             // 
             this.btnManageData.BackgroundImage = global::PetShop.Properties.Resources.backup_file;
@@ -112,9 +127,9 @@ namespace PetShop
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(1068, 504);
+            this.pictureBox1.Location = new System.Drawing.Point(1126, 624);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(286, 252);
+            this.pictureBox1.Size = new System.Drawing.Size(228, 132);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
@@ -156,6 +171,7 @@ namespace PetShop
             this.btnBiayaTambahan.Size = new System.Drawing.Size(208, 170);
             this.btnBiayaTambahan.TabIndex = 3;
             this.btnBiayaTambahan.UseVisualStyleBackColor = true;
+            this.btnBiayaTambahan.Click += new System.EventHandler(this.BtnBiayaTambahan_Click);
             this.btnBiayaTambahan.MouseEnter += new System.EventHandler(this.BtnBiayaTambahan_MouseEnter);
             this.btnBiayaTambahan.MouseLeave += new System.EventHandler(this.BtnBiayaTambahan_MouseLeave);
             // 
@@ -191,6 +207,7 @@ namespace PetShop
             // 
             this.BackColor = System.Drawing.Color.PapayaWhip;
             this.ClientSize = new System.Drawing.Size(1366, 768);
+            this.Controls.Add(this.btnManageUser);
             this.Controls.Add(this.btnManageData);
             this.Controls.Add(this.btnSupplier);
             this.Controls.Add(this.lblBantuan);
@@ -227,6 +244,7 @@ namespace PetShop
         private System.Windows.Forms.LinkLabel lblBantuan;
         private System.Windows.Forms.Button btnSupplier;
         private System.Windows.Forms.Button btnManageData;
+        private System.Windows.Forms.Button btnManageUser;
     }
 }
 
