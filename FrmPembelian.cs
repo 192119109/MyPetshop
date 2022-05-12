@@ -148,5 +148,11 @@ namespace PetShop
             ds.Tables["Pembelian"].DefaultView.RowFilter = "tgl_pembelian >='" + dtpFilter1.Value.Date.ToString("d") + "' and tgl_pembelian <= '" + dtpFilter2.Value.Date.ToString("d") + " 23:59:59" + "'";
             //dtpFilter2.MinDate = dtpFilter1.Value;
         }
+
+        private void BtnCetak_Click(object sender, EventArgs e)
+        {
+            ReportPembelianPreview reportPembelianPreview = new ReportPembelianPreview();
+            reportPembelianPreview.ShowDialog();
+        }
     }
 }

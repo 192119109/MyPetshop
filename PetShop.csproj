@@ -182,6 +182,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_petshopBarang.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_petshopPembelian.cs">
+      <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_petshopPembelian.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EAN13Barcode.cs" />
     <Compile Include="FrmAddPembelian.cs">
       <SubType>Form</SubType>
@@ -357,6 +365,12 @@
     <Compile Include="ReportBarangViewer.Designer.cs">
       <DependentUpon>ReportBarangViewer.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportPembelianPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPembelianPreview.Designer.cs">
+      <DependentUpon>ReportPembelianPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestoreDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -493,6 +507,10 @@
     <EmbeddedResource Include="ReportBarangViewer.resx">
       <DependentUpon>ReportBarangViewer.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPembelian.rdlc" />
+    <EmbeddedResource Include="ReportPembelianPreview.resx">
+      <DependentUpon>ReportPembelianPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RestoreDB.resx">
       <DependentUpon>RestoreDB.cs</DependentUpon>
     </EmbeddedResource>
@@ -540,6 +558,17 @@
     </None>
     <None Include="db_petshopBarang.xss">
       <DependentUpon>db_petshopBarang.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopPembelian.xsc">
+      <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopPembelian.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_petshopPembelian.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_petshopPembelian.xss">
+      <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
     </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>

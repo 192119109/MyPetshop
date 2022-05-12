@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dgvPembelian = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -37,7 +37,7 @@
             this.txtCari = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnTampil = new System.Windows.Forms.Button();
-            this.btnUbah = new System.Windows.Forms.Button();
+            this.btnCetak = new System.Windows.Forms.Button();
             this.btnTambah = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
@@ -70,23 +70,23 @@
             this.dgvPembelian.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvPembelian.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPembelian.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPembelian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPembelian.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPembelian.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPembelian.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPembelian.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPembelian.Location = new System.Drawing.Point(12, 139);
             this.dgvPembelian.MultiSelect = false;
             this.dgvPembelian.Name = "dgvPembelian";
@@ -130,7 +130,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnTampil);
-            this.groupBox2.Controls.Add(this.btnUbah);
+            this.groupBox2.Controls.Add(this.btnCetak);
             this.groupBox2.Controls.Add(this.btnTambah);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(848, 309);
@@ -156,18 +156,19 @@
             this.btnTampil.UseVisualStyleBackColor = false;
             this.btnTampil.Click += new System.EventHandler(this.BtnTampil_Click);
             // 
-            // btnUbah
+            // btnCetak
             // 
-            this.btnUbah.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnUbah.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUbah.Image = global::PetShop.Properties.Resources.edit_AeQ_icon;
-            this.btnUbah.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUbah.Location = new System.Drawing.Point(6, 68);
-            this.btnUbah.Name = "btnUbah";
-            this.btnUbah.Size = new System.Drawing.Size(229, 38);
-            this.btnUbah.TabIndex = 16;
-            this.btnUbah.Text = "Ubah";
-            this.btnUbah.UseVisualStyleBackColor = false;
+            this.btnCetak.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnCetak.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCetak.Image = global::PetShop.Properties.Resources.edit_AeQ_icon;
+            this.btnCetak.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCetak.Location = new System.Drawing.Point(6, 68);
+            this.btnCetak.Name = "btnCetak";
+            this.btnCetak.Size = new System.Drawing.Size(229, 38);
+            this.btnCetak.TabIndex = 16;
+            this.btnCetak.Text = "Cetak Laporan";
+            this.btnCetak.UseVisualStyleBackColor = false;
+            this.btnCetak.Click += new System.EventHandler(this.BtnCetak_Click);
             // 
             // btnTambah
             // 
@@ -291,7 +292,7 @@
         private System.Windows.Forms.TextBox txtCari;
         private System.Windows.Forms.Button btnTambah;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button btnUbah;
+        private System.Windows.Forms.Button btnCetak;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.Button btnTampil;
