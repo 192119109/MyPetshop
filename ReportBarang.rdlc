@@ -2,40 +2,6 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Textbox Name="Textbox2">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Laporan Barang</Value>
-                <Style>
-                  <FontStyle>Normal</FontStyle>
-                  <FontSize>14pt</FontSize>
-                  <FontWeight>Bold</FontWeight>
-                  <TextDecoration>Underline</TextDecoration>
-                </Style>
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox2</rd:DefaultName>
-        <Top>0.62272cm</Top>
-        <Left>6.25094cm</Left>
-        <Height>0.81167cm</Height>
-        <Width>4.21979cm</Width>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
       <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
@@ -491,29 +457,16 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>dsBarang</DataSetName>
-        <Top>3.5184cm</Top>
+        <Top>2.22194cm</Top>
         <Left>0.27222cm</Left>
         <Height>1.2cm</Height>
         <Width>16.37135cm</Width>
-        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Line Name="Line1">
-        <Top>0.17639cm</Top>
-        <Left>0.02328cm</Left>
-        <Height>0cm</Height>
-        <Width>16.48672cm</Width>
-        <ZIndex>2</ZIndex>
-        <Style>
-          <Border>
-            <Style>Solid</Style>
-          </Border>
-        </Style>
-      </Line>
       <Textbox Name="Textbox16">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
@@ -529,11 +482,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>1.70751cm</Top>
+        <Top>0.41105cm</Top>
         <Left>0.45614cm</Left>
         <Height>0.6cm</Height>
         <Width>3.53597cm</Width>
-        <ZIndex>3</ZIndex>
+        <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -559,11 +512,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>1.70751cm</Top>
+        <Top>0.41105cm</Top>
         <Left>4.16851cm</Left>
         <Height>0.6cm</Height>
         <Width>0.42333cm</Width>
-        <ZIndex>4</ZIndex>
+        <ZIndex>2</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -589,11 +542,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox16</rd:DefaultName>
-        <Top>2.4839cm</Top>
+        <Top>1.18744cm</Top>
         <Left>0.45614cm</Left>
         <Height>0.6cm</Height>
         <Width>2.10723cm</Width>
-        <ZIndex>5</ZIndex>
+        <ZIndex>3</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -623,11 +576,11 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox17</rd:DefaultName>
-        <Top>2.4839cm</Top>
+        <Top>1.18744cm</Top>
         <Left>2.73976cm</Left>
         <Height>0.63528cm</Height>
         <Width>3.81cm</Width>
-        <ZIndex>6</ZIndex>
+        <ZIndex>4</ZIndex>
         <Style>
           <Border>
             <Style>None</Style>
@@ -640,13 +593,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>2.0625in</Height>
+    <Height>1.4375in</Height>
     <Style />
   </Body>
   <Width>6.63292in</Width>
   <Page>
     <PageHeader>
-      <Height>1.81391cm</Height>
+      <Height>2.95162cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -689,7 +642,53 @@
           <Top>0.30854cm</Top>
           <Left>0.13864cm</Left>
           <Height>1.235cm</Height>
-          <Width>16.23271cm</Width>
+          <Width>16.50493cm</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>1.71993cm</Top>
+          <Height>0cm</Height>
+          <Width>16.64357cm</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Laporan Barang</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>14pt</FontSize>
+                    <FontWeight>Bold</FontWeight>
+                    <TextDecoration>Underline</TextDecoration>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>1.9812cm</Top>
+          <Left>6.25094cm</Left>
+          <Height>0.81167cm</Height>
+          <Width>4.21979cm</Width>
+          <ZIndex>2</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>

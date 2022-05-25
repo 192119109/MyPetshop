@@ -182,6 +182,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_petshopBarang.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_petshopBiayaLain.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_petshopBiayaLain.xsd</DependentUpon>
+    </Compile>
     <Compile Include="db_petshopPembelian.cs">
       <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
     </Compile>
@@ -389,6 +394,12 @@
     <Compile Include="RestoreDB.Designer.cs">
       <DependentUpon>RestoreDB.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptBiayaLainPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptBiayaLainPreview.Designer.cs">
+      <DependentUpon>rptBiayaLainPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="SampleBarcode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -532,6 +543,10 @@
     <EmbeddedResource Include="RestoreDB.resx">
       <DependentUpon>RestoreDB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptBiayaLain.rdlc" />
+    <EmbeddedResource Include="rptBiayaLainPreview.resx">
+      <DependentUpon>rptBiayaLainPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SampleBarcode.resx">
       <DependentUpon>SampleBarcode.cs</DependentUpon>
     </EmbeddedResource>
@@ -576,6 +591,17 @@
     </None>
     <None Include="db_petshopBarang.xss">
       <DependentUpon>db_petshopBarang.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopBiayaLain.xsc">
+      <DependentUpon>db_petshopBiayaLain.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopBiayaLain.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_petshopBiayaLain.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_petshopBiayaLain.xss">
+      <DependentUpon>db_petshopBiayaLain.xsd</DependentUpon>
     </None>
     <None Include="db_petshopPembelian.xsc">
       <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
