@@ -288,5 +288,5 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.ReportBarangViewer.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.ReportPembelianPreview.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmManageUser.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBiayaTambahan.resources
-D:\Project PetShop\PetShop\obj\Debug\PetShop.csprojAssemblyReference.cache
 D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBiayaLainPreview.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.rptReceiptPreview.resources

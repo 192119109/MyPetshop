@@ -195,6 +195,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_petshopReceipt.cs">
+      <DependentUpon>db_petshopReceipt.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_petshopReceipt.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_petshopReceipt.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EAN13Barcode.cs" />
     <Compile Include="FrmAddPembelian.cs">
       <SubType>Form</SubType>
@@ -400,6 +408,12 @@
     <Compile Include="rptBiayaLainPreview.Designer.cs">
       <DependentUpon>rptBiayaLainPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="rptReceiptPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptReceiptPreview.Designer.cs">
+      <DependentUpon>rptReceiptPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="SampleBarcode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -547,6 +561,10 @@
     <EmbeddedResource Include="rptBiayaLainPreview.resx">
       <DependentUpon>rptBiayaLainPreview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="rptReceipt.rdlc" />
+    <EmbeddedResource Include="rptReceiptPreview.resx">
+      <DependentUpon>rptReceiptPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SampleBarcode.resx">
       <DependentUpon>SampleBarcode.cs</DependentUpon>
     </EmbeddedResource>
@@ -613,6 +631,17 @@
     </None>
     <None Include="db_petshopPembelian.xss">
       <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopReceipt.xsc">
+      <DependentUpon>db_petshopReceipt.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopReceipt.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_petshopReceipt.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_petshopReceipt.xss">
+      <DependentUpon>db_petshopReceipt.xsd</DependentUpon>
     </None>
     <None Include="Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>

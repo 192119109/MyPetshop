@@ -28,14 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvTransaksi = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.cboKategori = new System.Windows.Forms.ComboBox();
             this.txtCari = new System.Windows.Forms.TextBox();
-            this.btnCetak = new System.Windows.Forms.Button();
-            this.btnTampil = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dgvDetail = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -48,6 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lblJlhJenisBarang = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnCetak = new System.Windows.Forms.Button();
+            this.btnTampil = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTransaksi)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -58,23 +58,23 @@
             // dgvTransaksi
             // 
             this.dgvTransaksi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTransaksi.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvTransaksi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvTransaksi.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTransaksi.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvTransaksi.Location = new System.Drawing.Point(12, 77);
             this.dgvTransaksi.MultiSelect = false;
             this.dgvTransaksi.Name = "dgvTransaksi";
@@ -115,36 +115,6 @@
             this.txtCari.Size = new System.Drawing.Size(614, 26);
             this.txtCari.TabIndex = 0;
             this.txtCari.TextChanged += new System.EventHandler(this.TxtCari_TextChanged);
-            // 
-            // btnCetak
-            // 
-            this.btnCetak.BackColor = System.Drawing.Color.Tomato;
-            this.btnCetak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnCetak.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCetak.Image = global::PetShop.Properties.Resources.Square44x44Logo_targetsize_32;
-            this.btnCetak.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCetak.Location = new System.Drawing.Point(1108, 547);
-            this.btnCetak.Name = "btnCetak";
-            this.btnCetak.Size = new System.Drawing.Size(220, 50);
-            this.btnCetak.TabIndex = 4;
-            this.btnCetak.Text = "Cetak Struk";
-            this.btnCetak.UseVisualStyleBackColor = false;
-            // 
-            // btnTampil
-            // 
-            this.btnTampil.BackColor = System.Drawing.Color.YellowGreen;
-            this.btnTampil.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTampil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTampil.Image = global::PetShop.Properties.Resources.Square44x44Logo1;
-            this.btnTampil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTampil.Location = new System.Drawing.Point(997, 547);
-            this.btnTampil.Name = "btnTampil";
-            this.btnTampil.Size = new System.Drawing.Size(105, 50);
-            this.btnTampil.TabIndex = 3;
-            this.btnTampil.Text = "Preview";
-            this.btnTampil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTampil.UseVisualStyleBackColor = false;
             // 
             // groupBox2
             // 
@@ -265,6 +235,38 @@
             this.label6.Size = new System.Drawing.Size(104, 16);
             this.label6.TabIndex = 11;
             this.label6.Text = "Jumlah Barang :";
+            // 
+            // btnCetak
+            // 
+            this.btnCetak.BackColor = System.Drawing.Color.Tomato;
+            this.btnCetak.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnCetak.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCetak.Enabled = false;
+            this.btnCetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCetak.Image = global::PetShop.Properties.Resources.Square44x44Logo_targetsize_32;
+            this.btnCetak.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCetak.Location = new System.Drawing.Point(1108, 547);
+            this.btnCetak.Name = "btnCetak";
+            this.btnCetak.Size = new System.Drawing.Size(220, 50);
+            this.btnCetak.TabIndex = 4;
+            this.btnCetak.Text = "Cetak Struk";
+            this.btnCetak.UseVisualStyleBackColor = false;
+            this.btnCetak.Click += new System.EventHandler(this.BtnCetak_Click);
+            // 
+            // btnTampil
+            // 
+            this.btnTampil.BackColor = System.Drawing.Color.YellowGreen;
+            this.btnTampil.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTampil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTampil.Image = global::PetShop.Properties.Resources.Square44x44Logo1;
+            this.btnTampil.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTampil.Location = new System.Drawing.Point(997, 547);
+            this.btnTampil.Name = "btnTampil";
+            this.btnTampil.Size = new System.Drawing.Size(105, 50);
+            this.btnTampil.TabIndex = 3;
+            this.btnTampil.Text = "Preview";
+            this.btnTampil.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTampil.UseVisualStyleBackColor = false;
             // 
             // FrmHistory
             // 

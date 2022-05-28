@@ -18,6 +18,7 @@ namespace PetShop
         public static int Kembalian;
         public static string statusUser;
         public static string user;
+        public static string receiptInv;
 
         //Pembelian
         public static string getIdSup = "", getIdBrg = "";

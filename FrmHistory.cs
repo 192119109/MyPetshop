@@ -93,8 +93,14 @@ namespace PetShop
                 {
                     dgvTransaksi.CurrentRow.Selected = true;
                     invID = dgvTransaksi.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    receiptInv = invID;
                     TampilDetailBarang();
                     lblJlhJenisBarang.Text = dgvDetail.Rows.Count.ToString();
+
+                    if(receiptInv=="")
+                        btnCetak.Enabled = false;
+                    else
+                        btnCetak.Enabled = true;
 
                     object sumJlhBarang;
                     sumJlhBarang = ds.Tables["DetailBarang"].Compute("Sum(Qty)", string.Empty);
@@ -128,6 +134,12 @@ namespace PetShop
             ds.Tables["Transaksi"].DefaultView.RowFilter = "tgl_transaksi >='" + dtpFilter1.Value.Date.ToString("d")  + "' and tgl_transaksi <= '" + dtpFilter2.Value.Date.ToString("d") + " 23:59:59" + "'";
             dtpFilter2.MinDate = dtpFilter1.Value;
             lblJumlahRec.Text = dgvTransaksi.Rows.Count.ToString();
+        }
+
+        private void BtnCetak_Click(object sender, EventArgs e)
+        {
+            rptReceiptPreview receiptPrint = new rptReceiptPreview();
+            receiptPrint.ShowDialog();
         }
     }
 }

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="db_petshopReceipt" targetNamespace="http://tempuri.org/db_petshopReceipt.xsd" xmlns:mstns="http://tempuri.org/db_petshopReceipt.xsd" xmlns="http://tempuri.org/db_petshopReceipt.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="db_petshopBarang" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="db_petshopBarang (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.PetShop.Properties.Settings.GlobalReference.Default.db_petshopBarang" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="db_petshopReceipt" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="db_petshopReceipt" msprop:Generator_UserDSName="db_petshopReceipt">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DataTable1" msprop:Generator_TableClassName="DataTable1DataTable" msprop:Generator_TableVarName="tableDataTable1" msprop:Generator_TablePropName="DataTable1" msprop:Generator_RowDeletingName="DataTable1RowDeleting" msprop:Generator_RowChangingName="DataTable1RowChanging" msprop:Generator_RowEvHandlerName="DataTable1RowChangeEventHandler" msprop:Generator_RowDeletedName="DataTable1RowDeleted" msprop:Generator_UserTableName="DataTable1" msprop:Generator_RowChangedName="DataTable1RowChanged" msprop:Generator_RowEvArgName="DataTable1RowChangeEvent" msprop:Generator_RowClassName="DataTable1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_penjualan" msprop:Generator_ColumnVarNameInTable="columnid_penjualan" msprop:Generator_ColumnPropNameInRow="id_penjualan" msprop:Generator_ColumnPropNameInTable="id_penjualanColumn" msprop:Generator_UserColumnName="id_penjualan" type="xs:string" minOccurs="0" />
+              <xs:element name="tgl_transaksi" msprop:Generator_ColumnVarNameInTable="columntgl_transaksi" msprop:Generator_ColumnPropNameInRow="tgl_transaksi" msprop:Generator_ColumnPropNameInTable="tgl_transaksiColumn" msprop:Generator_UserColumnName="tgl_transaksi" type="xs:string" minOccurs="0" />
+              <xs:element name="total_harga" msprop:Generator_ColumnVarNameInTable="columntotal_harga" msprop:Generator_ColumnPropNameInRow="total_harga" msprop:Generator_ColumnPropNameInTable="total_hargaColumn" msprop:Generator_UserColumnName="total_harga" type="xs:string" minOccurs="0" />
+              <xs:element name="potongan" msprop:Generator_ColumnVarNameInTable="columnpotongan" msprop:Generator_ColumnPropNameInRow="potongan" msprop:Generator_ColumnPropNameInTable="potonganColumn" msprop:Generator_UserColumnName="potongan" type="xs:string" minOccurs="0" />
+              <xs:element name="grand_total" msprop:Generator_ColumnVarNameInTable="columngrand_total" msprop:Generator_ColumnPropNameInRow="grand_total" msprop:Generator_ColumnPropNameInTable="grand_totalColumn" msprop:Generator_UserColumnName="grand_total" type="xs:string" minOccurs="0" />
+              <xs:element name="dibayarkan" msprop:Generator_ColumnVarNameInTable="columndibayarkan" msprop:Generator_ColumnPropNameInRow="dibayarkan" msprop:Generator_ColumnPropNameInTable="dibayarkanColumn" msprop:Generator_UserColumnName="dibayarkan" type="xs:string" minOccurs="0" />
+              <xs:element name="kembalian" msprop:Generator_ColumnVarNameInTable="columnkembalian" msprop:Generator_ColumnPropNameInRow="kembalian" msprop:Generator_ColumnPropNameInTable="kembalianColumn" msprop:Generator_UserColumnName="kembalian" type="xs:string" minOccurs="0" />
+              <xs:element name="id_barang" msprop:Generator_ColumnVarNameInTable="columnid_barang" msprop:Generator_ColumnPropNameInRow="id_barang" msprop:Generator_ColumnPropNameInTable="id_barangColumn" msprop:Generator_UserColumnName="id_barang" type="xs:string" minOccurs="0" />
+              <xs:element name="nama_barang" msprop:Generator_ColumnVarNameInTable="columnnama_barang" msprop:Generator_ColumnPropNameInRow="nama_barang" msprop:Generator_ColumnPropNameInTable="nama_barangColumn" msprop:Generator_UserColumnName="nama_barang" type="xs:string" minOccurs="0" />
+              <xs:element name="qty" msprop:Generator_ColumnVarNameInTable="columnqty" msprop:Generator_ColumnPropNameInRow="qty" msprop:Generator_ColumnPropNameInTable="qtyColumn" msprop:Generator_UserColumnName="qty" type="xs:string" minOccurs="0" />
+              <xs:element name="harga" msprop:Generator_ColumnVarNameInTable="columnharga" msprop:Generator_ColumnPropNameInRow="harga" msprop:Generator_ColumnPropNameInTable="hargaColumn" msprop:Generator_UserColumnName="harga" type="xs:string" minOccurs="0" />
+              <xs:element name="SubTotal" msprop:Generator_ColumnVarNameInTable="columnSubTotal" msprop:Generator_ColumnPropNameInRow="SubTotal" msprop:Generator_ColumnPropNameInTable="SubTotalColumn" msprop:Generator_UserColumnName="SubTotal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
