@@ -11,6 +11,7 @@
               <TextRun>
                 <Value>Invoice Id  : </Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -20,7 +21,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
         <Top>0.31433cm</Top>
-        <Left>0.42015cm</Left>
+        <Left>0.30361cm</Left>
         <Height>0.6cm</Height>
         <Width>2.15604cm</Width>
         <Style>
@@ -42,6 +43,7 @@
               <TextRun>
                 <Value>Tanggal  : </Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -51,7 +53,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
         <Top>1.22135cm</Top>
-        <Left>0.42015cm</Left>
+        <Left>0.30361cm</Left>
         <Height>0.6cm</Height>
         <Width>2.15604cm</Width>
         <ZIndex>1</ZIndex>
@@ -73,7 +75,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!id_penjualan.Value, "ds_Receipt")</Value>
-                <Style />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -81,9 +85,9 @@
         </Paragraphs>
         <rd:DefaultName>id_penjualan</rd:DefaultName>
         <Top>0.31433cm</Top>
-        <Left>3.11891cm</Left>
+        <Left>3.00237cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.42125cm</Width>
+        <Width>5.2508cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
           <Border>
@@ -103,7 +107,9 @@
             <TextRuns>
               <TextRun>
                 <Value>=First(Fields!tgl_transaksi.Value, "ds_Receipt")</Value>
-                <Style />
+                <Style>
+                  <FontSize>9pt</FontSize>
+                </Style>
               </TextRun>
             </TextRuns>
             <Style />
@@ -111,9 +117,9 @@
         </Paragraphs>
         <rd:DefaultName>tgl_transaksi</rd:DefaultName>
         <Top>1.22135cm</Top>
-        <Left>3.11891cm</Left>
+        <Left>3.00237cm</Left>
         <Height>0.6cm</Height>
-        <Width>7.42125cm</Width>
+        <Width>5.2508cm</Width>
         <ZIndex>3</ZIndex>
         <Style>
           <Border>
@@ -129,16 +135,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>3.40927cm</Width>
+              <Width>2.7319cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.25865cm</Width>
+              <Width>2.04602cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.59719cm</Width>
+              <Width>1.02509cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.8549cm</Width>
+              <Width>2.43137cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -156,6 +162,7 @@
                             <TextRun>
                               <Value>Produk</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -190,6 +197,7 @@
                             <TextRun>
                               <Value>Harga</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -222,8 +230,9 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Jumlah</Value>
+                              <Value>Qty</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -258,6 +267,7 @@
                             <TextRun>
                               <Value>Sub Total</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -296,7 +306,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!nama_barang.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -329,6 +341,7 @@
                             <TextRun>
                               <Value>=Fields!harga.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <Format>'Rp'#,0.00;('Rp'#,0.00)</Format>
                               </Style>
                             </TextRun>
@@ -363,7 +376,9 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!qty.Value</Value>
-                              <Style />
+                              <Style>
+                                <FontSize>9pt</FontSize>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -396,6 +411,7 @@
                             <TextRun>
                               <Value>=Fields!SubTotal.Value</Value>
                               <Style>
+                                <FontSize>9pt</FontSize>
                                 <Format>'Rp'0.00;'Rp'0.00-</Format>
                               </Style>
                             </TextRun>
@@ -444,9 +460,9 @@
         </TablixRowHierarchy>
         <DataSetName>ds_Receipt</DataSetName>
         <Top>2.48391cm</Top>
-        <Left>0.42015cm</Left>
+        <Left>0.30361cm</Left>
         <Height>1.2cm</Height>
-        <Width>10.12001cm</Width>
+        <Width>8.23437cm</Width>
         <ZIndex>4</ZIndex>
         <Style>
           <Border>
@@ -463,6 +479,7 @@
               <TextRun>
                 <Value>=First(Fields!total_harga.Value, "ds_Receipt")</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <Format>'Rp' #,0.00;'Rp' #,0.00-</Format>
                 </Style>
               </TextRun>
@@ -472,9 +489,9 @@
         </Paragraphs>
         <rd:DefaultName>total_harga</rd:DefaultName>
         <Top>4.17724cm</Top>
-        <Left>5.19149cm</Left>
+        <Left>4.14867cm</Left>
         <Height>0.6cm</Height>
-        <Width>5.34867cm</Width>
+        <Width>4.36286cm</Width>
         <ZIndex>5</ZIndex>
         <Style>
           <Border>
@@ -496,6 +513,7 @@
               <TextRun>
                 <Value>Total : </Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -507,7 +525,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
         <Top>4.17724cm</Top>
-        <Left>3.30908cm</Left>
+        <Left>2.29272cm</Left>
         <Height>0.6cm</Height>
         <Width>1.49458cm</Width>
         <ZIndex>6</ZIndex>
@@ -530,6 +548,7 @@
               <TextRun>
                 <Value>Potongan :</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -539,7 +558,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
         <Top>5.1901cm</Top>
-        <Left>3.30908cm</Left>
+        <Left>2.29272cm</Left>
         <Height>0.6cm</Height>
         <Width>2.25864cm</Width>
         <ZIndex>7</ZIndex>
@@ -562,6 +581,7 @@
               <TextRun>
                 <Value>=First(Fields!potongan.Value, "ds_Receipt")</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <Format>'Rp' #,0.00;'Rp' #,0.00-</Format>
                 </Style>
               </TextRun>
@@ -571,9 +591,9 @@
         </Paragraphs>
         <rd:DefaultName>potongan</rd:DefaultName>
         <Top>5.1901cm</Top>
-        <Left>5.74412cm</Left>
+        <Left>4.7013cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.79604cm</Width>
+        <Width>3.81023cm</Width>
         <ZIndex>8</ZIndex>
         <Style>
           <Border>
@@ -595,6 +615,7 @@
               <TextRun>
                 <Value>=First(Fields!grand_total.Value, "ds_Receipt")</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <Format>'Rp' #,0.00;'Rp' #,0.00-</Format>
                 </Style>
               </TextRun>
@@ -604,9 +625,9 @@
         </Paragraphs>
         <rd:DefaultName>grand_total</rd:DefaultName>
         <Top>6.1087cm</Top>
-        <Left>6.08808cm</Left>
+        <Left>5.04526cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.45208cm</Width>
+        <Width>3.46627cm</Width>
         <ZIndex>9</ZIndex>
         <Style>
           <Border>
@@ -628,6 +649,7 @@
               <TextRun>
                 <Value>Grand Total :</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -637,7 +659,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
         <Top>6.1087cm</Top>
-        <Left>3.30908cm</Left>
+        <Left>2.29272cm</Left>
         <Height>0.6cm</Height>
         <Width>2.6026cm</Width>
         <ZIndex>10</ZIndex>
@@ -660,6 +682,7 @@
               <TextRun>
                 <Value>Dibayarkan :</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -669,7 +692,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
         <Top>7.04219cm</Top>
-        <Left>3.30908cm</Left>
+        <Left>2.29272cm</Left>
         <Height>0.6cm</Height>
         <Width>2.25864cm</Width>
         <ZIndex>11</ZIndex>
@@ -692,6 +715,7 @@
               <TextRun>
                 <Value>Kembalian :</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <FontWeight>Bold</FontWeight>
                 </Style>
               </TextRun>
@@ -701,7 +725,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox25</rd:DefaultName>
         <Top>8.06069cm</Top>
-        <Left>3.30909cm</Left>
+        <Left>2.29273cm</Left>
         <Height>0.6cm</Height>
         <Width>2.25864cm</Width>
         <ZIndex>12</ZIndex>
@@ -724,6 +748,7 @@
               <TextRun>
                 <Value>=First(Fields!kembalian.Value, "ds_Receipt")</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <Format>'Rp' #,0.00;'Rp' #,0.00-</Format>
                 </Style>
               </TextRun>
@@ -733,9 +758,9 @@
         </Paragraphs>
         <rd:DefaultName>kembalian</rd:DefaultName>
         <Top>8.06069cm</Top>
-        <Left>5.74412cm</Left>
+        <Left>4.72776cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.79604cm</Width>
+        <Width>3.78377cm</Width>
         <ZIndex>13</ZIndex>
         <Style>
           <Border>
@@ -757,6 +782,7 @@
               <TextRun>
                 <Value>=First(Fields!dibayarkan.Value, "ds_Receipt")</Value>
                 <Style>
+                  <FontSize>9pt</FontSize>
                   <Format>'Rp' #,0.00;'Rp' #,0.00-</Format>
                 </Style>
               </TextRun>
@@ -766,9 +792,9 @@
         </Paragraphs>
         <rd:DefaultName>dibayarkan</rd:DefaultName>
         <Top>7.04219cm</Top>
-        <Left>5.74412cm</Left>
+        <Left>4.72776cm</Left>
         <Height>0.6cm</Height>
-        <Width>4.79604cm</Width>
+        <Width>3.81023cm</Width>
         <ZIndex>14</ZIndex>
         <Style>
           <Border>
@@ -782,13 +808,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>3.57872in</Height>
+    <Height>4in</Height>
     <Style />
   </Body>
-  <Width>4.34176in</Width>
+  <Width>3.5in</Width>
   <Page>
     <PageHeader>
-      <Height>2.40771cm</Height>
+      <Height>0.94792in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -802,7 +828,7 @@
                   <Value>JAYA PETSHOP</Value>
                   <Style>
                     <FontStyle>Normal</FontStyle>
-                    <FontSize>14pt</FontSize>
+                    <FontSize>9pt</FontSize>
                     <FontWeight>Bold</FontWeight>
                     <TextDecoration>None</TextDecoration>
                   </Style>
@@ -818,6 +844,7 @@
                   <Value>Kompleks tasbi blok c no. 1, Jl. Chrysant Raya No.v, Tanjung Rejo, Medan Sunggal, Medan City, North Sumatra 20131</Value>
                   <Style>
                     <FontStyle>Normal</FontStyle>
+                    <FontSize>9pt</FontSize>
                     <TextDecoration>None</TextDecoration>
                   </Style>
                 </TextRun>
@@ -829,9 +856,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
           <Top>0.21594cm</Top>
-          <Left>0cm</Left>
-          <Height>1.76417cm</Height>
-          <Width>11.02806cm</Width>
+          <Left>0.30361cm</Left>
+          <Height>1.83899cm</Height>
+          <Width>8.23437cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -842,11 +869,10 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
-        <Line Name="Line1">
+        <Line Name="Line3">
           <Top>2.23132cm</Top>
-          <Left>0cm</Left>
           <Height>0cm</Height>
-          <Width>11.02806cm</Width>
+          <Width>8.89cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -862,7 +888,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.48167cm</Height>
+      <Height>0.58333in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -886,9 +912,9 @@
           </Paragraphs>
           <rd:DefaultName>Textbox34</rd:DefaultName>
           <Top>0.35278cm</Top>
-          <Left>1.65984cm</Left>
+          <Left>1.3884cm</Left>
           <Height>0.97042cm</Height>
-          <Width>8.02979cm</Width>
+          <Width>5.88581cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -903,7 +929,7 @@
           <Top>0.17639cm</Top>
           <Left>0cm</Left>
           <Height>0cm</Height>
-          <Width>11.02806cm</Width>
+          <Width>8.89cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -918,13 +944,9 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
-    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <PageHeight>8in</PageHeight>
+    <PageWidth>3.5in</PageWidth>
+    <ColumnSpacing>0.05118in</ColumnSpacing>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -1003,6 +1025,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>3d175ad0-019d-4272-b984-8b562609383a</rd:ReportID>
 </Report>
