@@ -93,15 +93,37 @@ namespace PetShop
             dtp1.Value = dtp1.MinDate;
 
             dtp2.MinDate = dtp1.Value;
+            GetBiayaBulanIni();
+
+            
+        }
+        private void GetBiayaBulanIni()
+        {
+            BuatKoneksi();
+            cmd = new SqlCommand("Select FORMAT(sum(biaya),'#0,0') as Biaya from BiayaLain where Month(tgl) = @Month and YEAR(tgl) = @Year ", con);
+            cmd.Parameters.AddWithValue("@Month", DateTime.Now.ToString("MM"));
+            cmd.Parameters.AddWithValue("@Year", DateTime.Now.ToString("yyyy"));
+            string resPengeluaran = Convert.ToString(cmd.ExecuteScalar());
+
+            //Condition Check
+            if (resPengeluaran != null)
+            {
+                lblPengeluaranBlnIni.Text = resPengeluaran;
+            }
+            else
+            {
+                lblPengeluaranBlnIni.Text = 0.ToString();
+            }
+            con.Close();
 
         }
-
         private void Tampil()
         {
             dgvHistoryBL.DataSource = ds.Tables["BiayaLain"];
             dgvHistoryBL.ColumnHeadersDefaultCellStyle.Font = new Font("Tahoma", 9, FontStyle.Bold);
             dgvHistoryBL.Columns[5].DefaultCellStyle.Format = "c";
             lblJlhRecord.Text = ds.Tables["BiayaLain"].Rows.Count.ToString();
+            GetBiayaBulanIni();
         }
 
         private void RefreshForm()
@@ -161,6 +183,11 @@ namespace PetShop
         {
             rptBiayaLainPreview frmReportBiayaLain = new rptBiayaLainPreview();
             frmReportBiayaLain.ShowDialog();
+        }
+
+        private void LblJlhRecord_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

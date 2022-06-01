@@ -230,6 +230,13 @@ select * from Penjualan_Detail
 --ambil data untuk RECEIPT
 select t1.id_penjualan,Convert(varchar,t1.tgl_transaksi,0) as tgl_transaksi,FORMAT(t1.total_harga,'Rp#,0.00')as total_harga,FORMAT(t1.potongan,'Rp#,0.00') as potongan,Format(t1.grand_total,'Rp#,0.00') as grand_total,Format(t1.dibayarkan,'Rp#,0.00') as Dibayarkan ,Format(t1.kembalian,'Rp#,0.00') as Kembalian,t2.id_barang, t3.nama_barang,sum(t2.qty_jual) as Qty, Format(t2.harga_jual,'Rp#,0.00' )as Harga, FORMAT(t2.sub_total,'Rp#,0.00') as SubTotal from Penjualan t1 inner join Penjualan_Detail t2 on t1.id_penjualan= t2.id_penjualan inner join Barang t3 ON t2.id_barang=t3.id_barang where t1.id_penjualan = 'PJ000002/29/05/2022' group by t1.id_penjualan, t1.tgl_transaksi,t1.total_harga,t1.potongan,t1.grand_total,t1.dibayarkan,t1.kembalian,t2.id_barang,t3.nama_barang,t2.harga_jual,t2.sub_total
 
+--Ambil pengeluaran Bulan Ini
+Select FORMAT(sum(biaya),'#0,0') as Biaya from BiayaLain where Month(tgl) = 6 and YEAR(tgl) = 2022 
+
+select * from BiayaLain
+
 select * from Penjualan
+
+use db_petshop
 
 select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian, t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier order by t1.tglPengurangan DESC

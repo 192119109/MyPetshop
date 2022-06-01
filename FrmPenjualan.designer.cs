@@ -46,7 +46,6 @@ namespace PetShop
             this.dtpTanggal = new System.Windows.Forms.DateTimePicker();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.txtInvoiceNum = new System.Windows.Forms.TextBox();
@@ -61,7 +60,6 @@ namespace PetShop
             this.label8 = new System.Windows.Forms.Label();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnClear = new System.Windows.Forms.Button();
-            this.btnAdmin = new System.Windows.Forms.Button();
             this.btnCari = new System.Windows.Forms.Button();
             this.btnCheckout = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -240,19 +238,6 @@ namespace PetShop
             this.label20.TabIndex = 36;
             this.label20.Text = "Cari\r\nBarang";
             // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.BackColor = System.Drawing.Color.BurlyWood;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.ForeColor = System.Drawing.Color.Navy;
-            this.label21.Location = new System.Drawing.Point(1287, 522);
-            this.label21.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(47, 15);
-            this.label21.TabIndex = 38;
-            this.label21.Text = "Admin";
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -272,7 +257,7 @@ namespace PetShop
             this.label24.BackColor = System.Drawing.Color.BurlyWood;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label24.ForeColor = System.Drawing.Color.Navy;
-            this.label24.Location = new System.Drawing.Point(1188, 624);
+            this.label24.Location = new System.Drawing.Point(1280, 523);
             this.label24.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(51, 15);
@@ -415,7 +400,7 @@ namespace PetShop
             this.btnHistory.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
             this.btnHistory.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
             this.btnHistory.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.btnHistory.Location = new System.Drawing.Point(1171, 554);
+            this.btnHistory.Location = new System.Drawing.Point(1263, 453);
             this.btnHistory.Margin = new System.Windows.Forms.Padding(2);
             this.btnHistory.Name = "btnHistory";
             this.btnHistory.Size = new System.Drawing.Size(73, 74);
@@ -439,22 +424,6 @@ namespace PetShop
             this.btnClear.TabIndex = 39;
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.BackColor = System.Drawing.Color.BurlyWood;
-            this.btnAdmin.BackgroundImage = global::PetShop.Properties.Resources.user;
-            this.btnAdmin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdmin.FlatAppearance.BorderSize = 0;
-            this.btnAdmin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.BurlyWood;
-            this.btnAdmin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.BurlyWood;
-            this.btnAdmin.Location = new System.Drawing.Point(1268, 452);
-            this.btnAdmin.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.Size = new System.Drawing.Size(73, 74);
-            this.btnAdmin.TabIndex = 37;
-            this.btnAdmin.UseVisualStyleBackColor = false;
             // 
             // btnCari
             // 
@@ -527,8 +496,6 @@ namespace PetShop
             this.Controls.Add(this.btnHistory);
             this.Controls.Add(this.label22);
             this.Controls.Add(this.btnClear);
-            this.Controls.Add(this.label21);
-            this.Controls.Add(this.btnAdmin);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.btnCari);
             this.Controls.Add(this.label19);
@@ -584,8 +551,6 @@ namespace PetShop
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button btnCari;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Button btnAdmin;
-        private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnClear;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Button btnHistory;

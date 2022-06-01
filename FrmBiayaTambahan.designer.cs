@@ -29,7 +29,6 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnCetak = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -52,6 +51,8 @@ namespace PetShop
             this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
+            this.lblPengeluaranBlnIni = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryBL)).BeginInit();
@@ -102,14 +103,16 @@ namespace PetShop
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblPengeluaranBlnIni);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.lblJlhRecord);
-            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.dtp2);
+            this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.dtp1);
             this.groupBox1.Controls.Add(this.dgvHistoryBL);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(363, 16);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(487, 395);
@@ -120,20 +123,23 @@ namespace PetShop
             // lblJlhRecord
             // 
             this.lblJlhRecord.AutoSize = true;
-            this.lblJlhRecord.Location = new System.Drawing.Point(449, 61);
+            this.lblJlhRecord.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJlhRecord.Location = new System.Drawing.Point(105, 348);
             this.lblJlhRecord.Name = "lblJlhRecord";
-            this.lblJlhRecord.Size = new System.Drawing.Size(19, 20);
+            this.lblJlhRecord.Size = new System.Drawing.Size(15, 16);
             this.lblJlhRecord.TabIndex = 5;
             this.lblJlhRecord.Text = "0";
+            this.lblJlhRecord.Click += new System.EventHandler(this.LblJlhRecord_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(315, 61);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(6, 348);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 20);
+            this.label3.Size = new System.Drawing.Size(93, 16);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Total Record";
+            this.label3.Text = "Total Record :";
             // 
             // label2
             // 
@@ -167,19 +173,10 @@ namespace PetShop
             // 
             this.dgvHistoryBL.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvHistoryBL.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvHistoryBL.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvHistoryBL.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvHistoryBL.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.dgvHistoryBL.Location = new System.Drawing.Point(3, 91);
+            this.dgvHistoryBL.Location = new System.Drawing.Point(3, 53);
             this.dgvHistoryBL.Name = "dgvHistoryBL";
-            this.dgvHistoryBL.Size = new System.Drawing.Size(481, 301);
+            this.dgvHistoryBL.Size = new System.Drawing.Size(481, 292);
             this.dgvHistoryBL.TabIndex = 0;
             // 
             // nudBiaya
@@ -315,6 +312,26 @@ namespace PetShop
             this.label18.TabIndex = 2;
             this.label18.Text = "Biaya Lainnya";
             // 
+            // lblPengeluaranBlnIni
+            // 
+            this.lblPengeluaranBlnIni.AutoSize = true;
+            this.lblPengeluaranBlnIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPengeluaranBlnIni.Location = new System.Drawing.Point(159, 370);
+            this.lblPengeluaranBlnIni.Name = "lblPengeluaranBlnIni";
+            this.lblPengeluaranBlnIni.Size = new System.Drawing.Size(15, 16);
+            this.lblPengeluaranBlnIni.TabIndex = 9;
+            this.lblPengeluaranBlnIni.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 370);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(147, 16);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Pengeluaran Bulan Ini : ";
+            // 
             // FrmBiayaTambahan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,5 +379,7 @@ namespace PetShop
         private System.Windows.Forms.Label lblJlhRecord;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCetak;
+        private System.Windows.Forms.Label lblPengeluaranBlnIni;
+        private System.Windows.Forms.Label label7;
     }
 }

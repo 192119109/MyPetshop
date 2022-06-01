@@ -183,6 +183,8 @@ namespace PetShop
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnHapusUser);
             this.Controls.Add(this.btnTambahUser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmManageUser";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Kelola Pengguna";
