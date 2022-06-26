@@ -46,8 +46,6 @@ namespace PetShop
         {
 
             this.appData1.Clear();
-            
-                for (int i = 0; i < nudJlh.Value; i++)
                     this.appData1.Barcode.AddBarcodeRow(lblResult.Text);
 
             using (frmReportBarcode frm = new frmReportBarcode(this.appData1.Barcode))

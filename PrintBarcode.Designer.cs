@@ -30,12 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.txtBarcode = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.nudJlh = new System.Windows.Forms.NumericUpDown();
             this.btnPrint = new System.Windows.Forms.Button();
             this.appData1 = new PetShop.AppData();
             this.lblResult = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.nudJlh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,24 +55,6 @@
             this.txtBarcode.Size = new System.Drawing.Size(206, 26);
             this.txtBarcode.TabIndex = 2;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(274, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Jumlah : ";
-            // 
-            // nudJlh
-            // 
-            this.nudJlh.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudJlh.Location = new System.Drawing.Point(362, 50);
-            this.nudJlh.Name = "nudJlh";
-            this.nudJlh.Size = new System.Drawing.Size(206, 26);
-            this.nudJlh.TabIndex = 4;
-            // 
             // btnPrint
             // 
             this.btnPrint.Location = new System.Drawing.Point(362, 82);
@@ -96,7 +75,7 @@
             this.lblResult.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblResult.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblResult.Font = new System.Drawing.Font("Code EAN13", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.lblResult.Location = new System.Drawing.Point(12, 12);
+            this.lblResult.Location = new System.Drawing.Point(11, 12);
             this.lblResult.Name = "lblResult";
             this.lblResult.Size = new System.Drawing.Size(256, 106);
             this.lblResult.TabIndex = 6;
@@ -110,14 +89,11 @@
             this.ClientSize = new System.Drawing.Size(594, 128);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnPrint);
-            this.Controls.Add(this.nudJlh);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.txtBarcode);
             this.Controls.Add(this.label1);
             this.Name = "PrintBarcode";
             this.Text = "PrintBarcode";
             this.Load += new System.EventHandler(this.PrintBarcode_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.nudJlh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.appData1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -128,8 +104,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtBarcode;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown nudJlh;
         private System.Windows.Forms.Button btnPrint;
         private AppData appData1;
         private System.Windows.Forms.Label lblResult;

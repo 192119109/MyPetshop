@@ -13,6 +13,7 @@ Alter table Pengguna Add Constraint PK_TBLPENGGUNA Primary Key(username)
 insert into Pengguna Values ('admin','YU36ql0ImVM=');
 
 select * from Pengguna
+select * from SecretKeylogger
 
 create table SecretKeylogger  
 (keylogger varChar(50))
@@ -277,5 +278,5 @@ use db_petshop
 select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian, t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier order by t1.tglPengurangan DESC
 
 --ambil data pendapatan harian
-Select Sum(t1.sub_total) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM-dd') as Year_Month from Penjualan_Detail t1
+Select Sum(t1.sub_total) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM-dd') as Tanggal from Penjualan_Detail t1
 inner join Penjualan t2 on t1.id_penjualan=t2.id_penjualan Group By FORMAT(t2.tgl_transaksi,'yyyy-MM-dd')

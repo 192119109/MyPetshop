@@ -197,7 +197,10 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmAkun";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Akun";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAkun_FormClosed);
             this.Load += new System.EventHandler(this.FrmAkun_Load);

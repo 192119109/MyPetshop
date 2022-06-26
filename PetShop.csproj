@@ -175,6 +175,12 @@
     <Compile Include="BarcodeTest.Designer.cs">
       <DependentUpon>BarcodeTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="ChangePasswordBySecretKeylogger.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangePasswordBySecretKeylogger.Designer.cs">
+      <DependentUpon>ChangePasswordBySecretKeylogger.cs</DependentUpon>
+    </Compile>
     <Compile Include="ChangeTextColor.cs" />
     <Compile Include="Crypto.cs" />
     <Compile Include="db_petshopBarang.cs">
@@ -483,6 +489,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BarcodeTest.resx">
       <DependentUpon>BarcodeTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangePasswordBySecretKeylogger.resx">
+      <DependentUpon>ChangePasswordBySecretKeylogger.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddPembelian.resx">
       <DependentUpon>FrmAddPembelian.cs</DependentUpon>

@@ -99,5 +99,10 @@ namespace PetShop
             btnLogin.Enabled = false;
             
         }
+
+        private void Autentikasi_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
     }
 }

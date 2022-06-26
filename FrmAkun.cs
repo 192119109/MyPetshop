@@ -80,58 +80,66 @@ namespace PetShop
             BuatKoneksi();
 
             //cek pengguna
-            cmd = new SqlCommand("select * from Pengguna where username=@username",con);
-            cmd.Parameters.AddWithValue("@username", txtUsername.Text);
-            reader = cmd.ExecuteReader();
-
-            if(reader.Read())
+            if(txtUsername.Text==Global.user)
             {
-                if (txtOldPass.Text == "")
-                {
-                    reader.Close();
-                    try
-                    {
-                        cmd = new SqlCommand("select keylogger from SecretKeylogger where keylogger = @key", con);
-                        cmd.Parameters.AddWithValue("@key", EncryptPassword(txtSecretKey.Text));
-                        reader = cmd.ExecuteReader();
+                cmd = new SqlCommand("select * from Pengguna where username=@username", con);
+                cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                reader = cmd.ExecuteReader();
 
-                        if (reader.Read())
+                if (reader.Read())
+                {
+                    if (txtOldPass.Text == "")
+                    {
+                        reader.Close();
+                        try
+                        {
+                            cmd = new SqlCommand("select keylogger from SecretKeylogger where keylogger = @key", con);
+                            cmd.Parameters.AddWithValue("@key", EncryptPassword(txtSecretKey.Text));
+                            reader = cmd.ExecuteReader();
+
+                            if (reader.Read())
+                            {
+                                reader.Close();
+                                UpdatePassword();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Secret Key salah ");
+                                reader.Close();
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            reader.Close();
+                        }
+                    }
+                    else
+                    {
+                        if (reader["pass"].ToString() == EncryptPassword(txtOldPass.Text))
                         {
                             reader.Close();
                             UpdatePassword();
                         }
                         else
                         {
-                            MessageBox.Show("Secret Key salah ");
-                            reader.Close();
+                            MessageBox.Show("Password Lama Belum Benar");
                         }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
                         reader.Close();
                     }
                 }
                 else
                 {
-                    if (reader["pass"].ToString() == EncryptPassword(txtOldPass.Text))
-                    {
-                        reader.Close();
-                        UpdatePassword();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Password Lama Belum Benar");
-                    }
+                    MessageBox.Show("Pengguna tidak ditemukan");
                     reader.Close();
                 }
+                con.Close();
             }
             else
             {
-                MessageBox.Show("Pengguna tidak ditemukan");
-                reader.Close();
+                MessageBox.Show("Anda tidak boleh mengubah password akun lain. Gunakan akun yang tertera");
             }
-            con.Close();
+            
         }
 
         private void TxtUsername_TextChanged(object sender, EventArgs e)

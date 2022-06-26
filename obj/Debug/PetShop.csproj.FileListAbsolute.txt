@@ -294,3 +294,4 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.csprojAssemblyReference.cache
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmRptBarangDetail.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBarangTersediaPreview.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBarangHabisPreview.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.ChangePasswordBySecretKeylogger.resources
