@@ -233,10 +233,49 @@ select t1.id_penjualan,Convert(varchar,t1.tgl_transaksi,0) as tgl_transaksi,FORM
 --Ambil pengeluaran Bulan Ini
 Select FORMAT(sum(biaya),'#0,0') as Biaya from BiayaLain where Month(tgl) = 6 and YEAR(tgl) = 2022 
 
-select * from BiayaLain
+--Ambil data total stock
+Select sum(stock) from Stock 
 
-select * from Penjualan
+--Ambil data stock yang terjual
+Select sum(qty_jual) as Stock_Terjual from Penjualan_Detail
+
+--Ambil data rata-rata stock terjual perbulan
+SELECT AVG(a.sum) AS avgStockTerjual 
+FROM ( SELECT sum(t1.qty_jual) AS sum, MONTH(t2.tgl_transaksi) as mnth
+       FROM Penjualan_Detail t1 inner join Penjualan t2 on t1.id_penjualan=t2.id_penjualan 
+       GROUP BY MONTH(t2.tgl_transaksi)) AS a
+
+
+--Ambil data total transaksi
+Select count(id_penjualan) as Total_Transaksi from Penjualan
+
+--Ambil data total transaksi bulan ini
+Select count(id_penjualan) as Total_Transaksi from Penjualan where Month(tgl_transaksi)=MONTH(GETDATE())
+
+--Ambil data rata-rata transaksi perbulan
+SELECT AVG(a.count) AS TransaksiRataRata 
+FROM ( SELECT count(*) AS count, MONTH(tgl_transaksi) as mnth
+       FROM Penjualan
+       GROUP BY MONTH(tgl_transaksi) ) AS a
+
+
+--Ambil data Pendapatan Setiap Bulan
+Select Sum(t1.sub_total) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM') as Year_Month from Penjualan_Detail t1
+inner join Penjualan t2 on t1.id_penjualan=t2.id_penjualan Group By FORMAT(t2.tgl_transaksi,'yyyy-MM')
+
+--ambil data biaya perbulan
+Select Sum(biaya) as biaya, FORMAT(tgl,'yyyy-MM') as blnThn from BiayaLain Group By FORMAT(tgl,'yyyy-MM')
+
+select * from Penjualan_Detail
+
+Select * from BiayaLain
+
+select Sum(t1.qty_jual) as sum from Penjualan_Detail t1 inner join Penjualan t2 on t1.id_penjualan=t2.id_penjualan where month(t2.tgl_transaksi)=5 
 
 use db_petshop
 
 select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian, t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier order by t1.tglPengurangan DESC
+
+--ambil data pendapatan harian
+Select Sum(t1.sub_total) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM-dd') as Year_Month from Penjualan_Detail t1
+inner join Penjualan t2 on t1.id_penjualan=t2.id_penjualan Group By FORMAT(t2.tgl_transaksi,'yyyy-MM-dd')

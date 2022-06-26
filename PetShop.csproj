@@ -177,6 +177,9 @@
     </Compile>
     <Compile Include="ChangeTextColor.cs" />
     <Compile Include="Crypto.cs" />
+    <Compile Include="db_petshopBarang.cs">
+      <DependentUpon>db_petshopBarang.xsd</DependentUpon>
+    </Compile>
     <Compile Include="db_petshopBarang.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -306,6 +309,12 @@
     <Compile Include="frmReportBarcode.Designer.cs">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRptBarangDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRptBarangDetail.Designer.cs">
+      <DependentUpon>FrmRptBarangDetail.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmStock.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +410,18 @@
     </Compile>
     <Compile Include="RestoreDB.Designer.cs">
       <DependentUpon>RestoreDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptBarangHabis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptBarangHabis.Designer.cs">
+      <DependentUpon>rptBarangHabis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="rptBarangTersediaPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="rptBarangTersediaPreview.Designer.cs">
+      <DependentUpon>rptBarangTersediaPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="rptBiayaLainPreview.cs">
       <SubType>Form</SubType>
@@ -514,6 +535,9 @@
     <EmbeddedResource Include="frmReportBarcode.resx">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRptBarangDetail.resx">
+      <DependentUpon>FrmRptBarangDetail.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
     </EmbeddedResource>
@@ -556,6 +580,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RestoreDB.resx">
       <DependentUpon>RestoreDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBarangHabis.resx">
+      <DependentUpon>rptBarangHabis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptBarangTersediaPreview.resx">
+      <DependentUpon>rptBarangTersediaPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptBiayaLain.rdlc" />
     <EmbeddedResource Include="rptBiayaLainPreview.resx">
@@ -738,6 +768,11 @@
     <None Include="Resources\minus.png" />
     <None Include="Resources\user_blur.png" />
     <None Include="Resources\cashless-payment.png" />
+    <None Include="Resources\payment-method.png" />
+    <None Include="Resources\box.png" />
+    <None Include="Resources\out-of-stock.png" />
+    <None Include="Resources\Square44x44Logo.targetsize-80.png" />
+    <None Include="Resources\ReadyStock.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -291,3 +291,6 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmBiayaTambahan.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBiayaLainPreview.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.rptReceiptPreview.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.csprojAssemblyReference.cache
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmRptBarangDetail.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBarangTersediaPreview.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBarangHabisPreview.resources

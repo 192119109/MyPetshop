@@ -133,6 +133,50 @@ SELECT id_barang, nama_barang, harga_jual, barcode, deskripsi, discontinued FROM
             </Mappings>
             <Sources />
           </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BarangTersediaTableAdapter" GeneratorDataComponentClassName="BarangTersediaTableAdapter" Name="BarangTersedia" UserDataComponentName="BarangTersediaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_petshopBarang (Settings)" DbObjectName="db_petshop.dbo.Barang" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select t1.id_barang, t1.nama_barang, t1.harga_jual, isnull(Sum(t2.stock),0) as stock ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 left outer join Stock t2 on t1.id_barang=t2.id_barang where stock&gt;0 Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_barang" DataSetColumn="id_barang" />
+              <Mapping SourceColumn="nama_barang" DataSetColumn="nama_barang" />
+              <Mapping SourceColumn="harga_jual" DataSetColumn="harga_jual" />
+              <Mapping SourceColumn="stock" DataSetColumn="stock" />
+              <Mapping SourceColumn="barcode" DataSetColumn="barcode" />
+              <Mapping SourceColumn="discontinued" DataSetColumn="discontinued" />
+              <Mapping SourceColumn="deskripsi" DataSetColumn="deskripsi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BarangHabisTableAdapter" GeneratorDataComponentClassName="BarangHabisTableAdapter" Name="BarangHabis" UserDataComponentName="BarangHabisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="db_petshopBarang (Settings)" DbObjectName="db_petshop.dbo.Barang" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>select t1.id_barang, t1.nama_barang, t1.harga_jual, isnull(Sum(t2.stock),0) as stock ,t1.barcode, t1.discontinued,t1.deskripsi from Barang t1 left outer join Stock t2 on t1.id_barang=t2.id_barang where stock=0 OR t1.discontinued=1 Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.discontinued,t1.deskripsi </CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_barang" DataSetColumn="id_barang" />
+              <Mapping SourceColumn="nama_barang" DataSetColumn="nama_barang" />
+              <Mapping SourceColumn="harga_jual" DataSetColumn="harga_jual" />
+              <Mapping SourceColumn="stock" DataSetColumn="stock" />
+              <Mapping SourceColumn="barcode" DataSetColumn="barcode" />
+              <Mapping SourceColumn="discontinued" DataSetColumn="discontinued" />
+              <Mapping SourceColumn="deskripsi" DataSetColumn="deskripsi" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -235,6 +279,80 @@ SELECT id_barang, nama_barang, harga_jual, barcode, deskripsi, discontinued FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="BarangTersedia" msprop:Generator_TableClassName="BarangTersediaDataTable" msprop:Generator_TableVarName="tableBarangTersedia" msprop:Generator_RowChangedName="BarangTersediaRowChanged" msprop:Generator_TablePropName="BarangTersedia" msprop:Generator_RowDeletingName="BarangTersediaRowDeleting" msprop:Generator_RowChangingName="BarangTersediaRowChanging" msprop:Generator_RowEvHandlerName="BarangTersediaRowChangeEventHandler" msprop:Generator_RowDeletedName="BarangTersediaRowDeleted" msprop:Generator_RowClassName="BarangTersediaRow" msprop:Generator_UserTableName="BarangTersedia" msprop:Generator_RowEvArgName="BarangTersediaRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_barang" msprop:Generator_ColumnVarNameInTable="columnid_barang" msprop:Generator_ColumnPropNameInRow="id_barang" msprop:Generator_ColumnPropNameInTable="id_barangColumn" msprop:Generator_UserColumnName="id_barang">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_barang" msprop:Generator_ColumnVarNameInTable="columnnama_barang" msprop:Generator_ColumnPropNameInRow="nama_barang" msprop:Generator_ColumnPropNameInTable="nama_barangColumn" msprop:Generator_UserColumnName="nama_barang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harga_jual" msprop:Generator_ColumnVarNameInTable="columnharga_jual" msprop:Generator_ColumnPropNameInRow="harga_jual" msprop:Generator_ColumnPropNameInTable="harga_jualColumn" msprop:Generator_UserColumnName="harga_jual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="stock" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnstock" msprop:Generator_ColumnPropNameInRow="stock" msprop:Generator_ColumnPropNameInTable="stockColumn" msprop:Generator_UserColumnName="stock" type="xs:int" minOccurs="0" />
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="discontinued" msprop:Generator_ColumnVarNameInTable="columndiscontinued" msprop:Generator_ColumnPropNameInRow="discontinued" msprop:Generator_ColumnPropNameInTable="discontinuedColumn" msprop:Generator_UserColumnName="discontinued" type="xs:boolean" minOccurs="0" />
+              <xs:element name="deskripsi" msprop:Generator_ColumnVarNameInTable="columndeskripsi" msprop:Generator_ColumnPropNameInRow="deskripsi" msprop:Generator_ColumnPropNameInTable="deskripsiColumn" msprop:Generator_UserColumnName="deskripsi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BarangHabis" msprop:Generator_TableClassName="BarangHabisDataTable" msprop:Generator_TableVarName="tableBarangHabis" msprop:Generator_TablePropName="BarangHabis" msprop:Generator_RowDeletingName="BarangHabisRowDeleting" msprop:Generator_RowChangingName="BarangHabisRowChanging" msprop:Generator_RowEvHandlerName="BarangHabisRowChangeEventHandler" msprop:Generator_RowDeletedName="BarangHabisRowDeleted" msprop:Generator_UserTableName="BarangHabis" msprop:Generator_RowChangedName="BarangHabisRowChanged" msprop:Generator_RowEvArgName="BarangHabisRowChangeEvent" msprop:Generator_RowClassName="BarangHabisRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_barang" msprop:Generator_ColumnVarNameInTable="columnid_barang" msprop:Generator_ColumnPropNameInRow="id_barang" msprop:Generator_ColumnPropNameInTable="id_barangColumn" msprop:Generator_UserColumnName="id_barang">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nama_barang" msprop:Generator_ColumnVarNameInTable="columnnama_barang" msprop:Generator_ColumnPropNameInRow="nama_barang" msprop:Generator_ColumnPropNameInTable="nama_barangColumn" msprop:Generator_UserColumnName="nama_barang" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harga_jual" msprop:Generator_ColumnVarNameInTable="columnharga_jual" msprop:Generator_ColumnPropNameInRow="harga_jual" msprop:Generator_ColumnPropNameInTable="harga_jualColumn" msprop:Generator_UserColumnName="harga_jual" type="xs:decimal" minOccurs="0" />
+              <xs:element name="stock" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnstock" msprop:Generator_ColumnPropNameInRow="stock" msprop:Generator_ColumnPropNameInTable="stockColumn" msprop:Generator_UserColumnName="stock" type="xs:int" minOccurs="0" />
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="discontinued" msprop:Generator_ColumnVarNameInTable="columndiscontinued" msprop:Generator_ColumnPropNameInRow="discontinued" msprop:Generator_ColumnPropNameInTable="discontinuedColumn" msprop:Generator_UserColumnName="discontinued" type="xs:boolean" minOccurs="0" />
+              <xs:element name="deskripsi" msprop:Generator_ColumnVarNameInTable="columndeskripsi" msprop:Generator_ColumnPropNameInRow="deskripsi" msprop:Generator_ColumnPropNameInTable="deskripsiColumn" msprop:Generator_UserColumnName="deskripsi" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -245,11 +363,21 @@ SELECT id_barang, nama_barang, harga_jual, barcode, deskripsi, discontinued FROM
       <xs:selector xpath=".//mstns:Barang1" />
       <xs:field xpath="mstns:id_barang" />
     </xs:unique>
+    <xs:unique name="BarangTersedia_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BarangTersedia" />
+      <xs:field xpath="mstns:id_barang" />
+    </xs:unique>
+    <xs:unique name="BarangHabis_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BarangHabis" />
+      <xs:field xpath="mstns:id_barang" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="FK_StockTblBarang" msdata:parent="Barang" msdata:child="Stock" msdata:parentkey="id_barang" msdata:childkey="id_barang" msprop:Generator_UserChildTable="Stock" msprop:Generator_ChildPropName="GetStockRows" msprop:Generator_UserRelationName="FK_StockTblBarang" msprop:Generator_RelationVarName="relationFK_StockTblBarang" msprop:Generator_UserParentTable="Barang" msprop:Generator_ParentPropName="BarangRow" />
       <msdata:Relationship name="FK_StockTblBarang1" msdata:parent="Barang1" msdata:child="Stock" msdata:parentkey="id_barang" msdata:childkey="id_barang" msprop:Generator_UserChildTable="Stock" msprop:Generator_ChildPropName="GetStockRows" msprop:Generator_UserRelationName="FK_StockTblBarang1" msprop:Generator_RelationVarName="relationFK_StockTblBarang1" msprop:Generator_UserParentTable="Barang1" msprop:Generator_ParentPropName="Barang1Row" />
+      <msdata:Relationship name="FK_StockTblBarang2" msdata:parent="BarangTersedia" msdata:child="Stock" msdata:parentkey="id_barang" msdata:childkey="id_barang" msprop:Generator_UserChildTable="Stock" msprop:Generator_ChildPropName="GetStockRows" msprop:Generator_UserRelationName="FK_StockTblBarang2" msprop:Generator_ParentPropName="BarangTersediaRow" msprop:Generator_RelationVarName="relationFK_StockTblBarang2" msprop:Generator_UserParentTable="BarangTersedia" />
+      <msdata:Relationship name="FK_StockTblBarang3" msdata:parent="BarangHabis" msdata:child="Stock" msdata:parentkey="id_barang" msdata:childkey="id_barang" msprop:Generator_UserChildTable="Stock" msprop:Generator_ChildPropName="GetStockRows" msprop:Generator_UserRelationName="FK_StockTblBarang3" msprop:Generator_RelationVarName="relationFK_StockTblBarang3" msprop:Generator_UserParentTable="BarangHabis" msprop:Generator_ParentPropName="BarangHabisRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

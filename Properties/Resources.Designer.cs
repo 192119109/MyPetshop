@@ -443,6 +443,16 @@ namespace PetShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap payment_method {
+            get {
+                object obj = ResourceManager.GetObject("payment_method", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap PenguranganStock {
             get {
                 object obj = ResourceManager.GetObject("PenguranganStock", resourceCulture);
@@ -506,6 +516,16 @@ namespace PetShop.Properties {
         public static System.Drawing.Bitmap printer {
             get {
                 object obj = ResourceManager.GetObject("printer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ReadyStock {
+            get {
+                object obj = ResourceManager.GetObject("ReadyStock", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -616,6 +636,16 @@ namespace PetShop.Properties {
         public static System.Drawing.Bitmap Square44x44Logo_targetsize_32 {
             get {
                 object obj = ResourceManager.GetObject("Square44x44Logo.targetsize-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Square44x44Logo_targetsize_80 {
+            get {
+                object obj = ResourceManager.GetObject("Square44x44Logo_targetsize_80", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
