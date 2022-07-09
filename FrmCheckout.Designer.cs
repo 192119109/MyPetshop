@@ -89,6 +89,7 @@
             this.btnBayarCetak.TabIndex = 1;
             this.btnBayarCetak.Text = "Bayar dan Cetak Struk";
             this.btnBayarCetak.UseVisualStyleBackColor = false;
+            this.btnBayarCetak.Click += new System.EventHandler(this.BtnBayarCetak_Click);
             // 
             // label3
             // 

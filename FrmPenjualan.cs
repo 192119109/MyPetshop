@@ -95,7 +95,7 @@ namespace PetShop
         private void Tampil()
         {
             dgvCheckoutItem.DataSource = ds.Tables["CheckoutItem"];
-            dgvCheckoutItem.Columns["Harga Beli"].Visible = true;
+            dgvCheckoutItem.Columns["Harga Beli"].Visible = false;
 
             if(ds.Tables["CheckoutItem"].Rows.Count >0)
             {
@@ -245,7 +245,7 @@ namespace PetShop
 
         private void BtnCheckout_Click(object sender, EventArgs e)
         {
-            FrmCheckout frmCheckout = new FrmCheckout(txtTotal.Text.ToString());
+            FrmCheckout frmCheckout = new FrmCheckout(txtTotal.Text.ToString(), txtInvoiceNum.Text.ToString());
             frmCheckout.ShowDialog();
 
             string TotalHarga = txtTotalHarga.Text.Replace("Rp", "");
@@ -368,6 +368,15 @@ namespace PetShop
                 nudPotongan.Value = 0;
                 Dibayarkan = 0;
                 Kembalian = 0;
+
+
+                if (Global.receiptInv!=null)
+                {
+                    rptReceiptPreview receiptPrint = new rptReceiptPreview();
+                    receiptPrint.Show();
+                }
+
+                btnCheckout.Enabled = false;
             }
 
         }

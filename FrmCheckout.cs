@@ -16,10 +16,13 @@ namespace PetShop
     {
         string totalHarga;
         bool checkOutVerified= false;
-        public FrmCheckout(string total)
+        bool btnCetakHit = false;
+        string invID = "";
+        public FrmCheckout(string total,string Inv)
         {
             InitializeComponent();
             totalHarga = total.Replace("Rp", "");
+            invID = Inv;
         }
 
         private void FrmCheckout_Load(object sender, EventArgs e)
@@ -43,15 +46,23 @@ namespace PetShop
             txtKembalian.Text = String.Format("{0:n0}", kembalian);
         }
 
-        private void BtnBayar_Click(object sender, EventArgs e)
+        private void checkOutProses()
         {
-            if(nudDibayarkan.Value>=int.Parse(totalHarga.Replace(".", "")))
+            if (nudDibayarkan.Value >= int.Parse(totalHarga.Replace(".", "")))
             {
 
                 MessageBox.Show("Pembayaran Berhasil");
                 Dibayarkan = Convert.ToInt32(nudDibayarkan.Value);
                 Kembalian = Convert.ToInt32(txtKembalian.Text.Replace(".", ""));
                 checkOutVerified = true;
+                if(btnCetakHit)
+                {
+                    receiptInv = invID;
+                }
+                else
+                {
+                    receiptInv = null;
+                }
                 this.Close();
             }
             else
@@ -60,9 +71,21 @@ namespace PetShop
             }
         }
 
+        private void BtnBayar_Click(object sender, EventArgs e)
+        {
+            checkOutProses();
+        }
+
         private void FrmCheckout_FormClosed(object sender, FormClosedEventArgs e)
         {
             Global.checkoutBerhasil = checkOutVerified;
+        }
+
+        private void BtnBayarCetak_Click(object sender, EventArgs e)
+        {
+            btnCetakHit = true;
+            checkOutProses();
+
         }
     }
 }
