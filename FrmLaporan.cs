@@ -187,5 +187,11 @@ namespace PetShop
             con.Close();
             Tampil();
         }
+
+        private void BtnLStockBarang_Click(object sender, EventArgs e)
+        {
+            FrmRptBarang frmRptBarang = new FrmRptBarang();
+            frmRptBarang.Show();
+        }
     }
 }

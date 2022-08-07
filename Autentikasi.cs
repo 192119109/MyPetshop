@@ -104,5 +104,21 @@ namespace PetShop
         {
             Environment.Exit(0);
         }
+
+        private void TxtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                BtnLogin_Click(null,null);
+            }
+        }
+
+        private void TxtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                BtnLogin_Click(null, null);
+            }
+        }
     }
 }

@@ -47,7 +47,7 @@
             this.rptPembelian.LocalReport.ReportEmbeddedResource = "PetShop.ReportPembelian.rdlc";
             this.rptPembelian.Location = new System.Drawing.Point(0, 0);
             this.rptPembelian.Name = "rptPembelian";
-            this.rptPembelian.ServerReport.BearerToken = null;
+            //this.rptPembelian.ServerReport.BearerToken = null;
             this.rptPembelian.Size = new System.Drawing.Size(800, 450);
             this.rptPembelian.TabIndex = 0;
             this.rptPembelian.Load += new System.EventHandler(this.RptPembelian_Load);

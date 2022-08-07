@@ -86,15 +86,13 @@
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.ConnectionInfo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.ConnectionInfoExtended, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.Smo, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
     <Reference Include="Microsoft.SqlServer.SmoExtended, Version=14.100.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -190,6 +188,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_petshopBarang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_petshopBiayaLain.cs">
+      <DependentUpon>db_petshopBiayaLain.xsd</DependentUpon>
     </Compile>
     <Compile Include="db_petshopBiayaLain.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -309,17 +310,35 @@
     <Compile Include="FrmPenjualan.designer.cs">
       <DependentUpon>FrmPenjualan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmReportBarangDiscontinued.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportBarangDiscontinued.Designer.cs">
+      <DependentUpon>FrmReportBarangDiscontinued.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportBarcode.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmReportBarcode.Designer.cs">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRptBarang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRptBarang.Designer.cs">
+      <DependentUpon>FrmRptBarang.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRptBarangDetail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRptBarangDetail.Designer.cs">
       <DependentUpon>FrmRptBarangDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRptBarangTersedia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRptBarangTersedia.Designer.cs">
+      <DependentUpon>frmRptBarangTersedia.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmStock.cs">
       <SubType>Form</SubType>
@@ -416,6 +435,12 @@
     </Compile>
     <Compile Include="RestoreDB.Designer.cs">
       <DependentUpon>RestoreDB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RptBarangDiscontinued.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RptBarangDiscontinued.Designer.cs">
+      <DependentUpon>RptBarangDiscontinued.cs</DependentUpon>
     </Compile>
     <Compile Include="rptBarangHabis.cs">
       <SubType>Form</SubType>
@@ -541,11 +566,20 @@
     <EmbeddedResource Include="FrmPenjualan.resx">
       <DependentUpon>FrmPenjualan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportBarangDiscontinued.resx">
+      <DependentUpon>FrmReportBarangDiscontinued.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportBarcode.resx">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRptBarang.resx">
+      <DependentUpon>FrmRptBarang.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRptBarangDetail.resx">
       <DependentUpon>FrmRptBarangDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRptBarangTersedia.resx">
+      <DependentUpon>frmRptBarangTersedia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStock.resx">
       <DependentUpon>FrmStock.cs</DependentUpon>
@@ -589,6 +623,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RestoreDB.resx">
       <DependentUpon>RestoreDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RptBarangDiscontinued.resx">
+      <DependentUpon>RptBarangDiscontinued.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="rptBarangHabis.resx">
       <DependentUpon>rptBarangHabis.cs</DependentUpon>

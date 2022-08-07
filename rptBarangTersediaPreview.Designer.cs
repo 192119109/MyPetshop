@@ -52,7 +52,7 @@
             this.rptBarangTersedia.LocalReport.ReportEmbeddedResource = "PetShop.ReportBarang.rdlc";
             this.rptBarangTersedia.Location = new System.Drawing.Point(0, 0);
             this.rptBarangTersedia.Name = "rptBarangTersedia";
-            this.rptBarangTersedia.ServerReport.BearerToken = null;
+            //this.rptBarangTersedia.ServerReport.BearerToken = null;
             this.rptBarangTersedia.Size = new System.Drawing.Size(832, 514);
             this.rptBarangTersedia.TabIndex = 0;
             this.rptBarangTersedia.Load += new System.EventHandler(this.RptBarangTersedia_Load);

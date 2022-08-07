@@ -220,26 +220,6 @@ D:\Project PetShop\PetShop\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.
 D:\Project PetShop\PetShop\bin\Debug\Microsoft.Build.Framework.dll
 D:\Project PetShop\PetShop\bin\Debug\VSLangProj2.dll
 D:\Project PetShop\PetShop\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
-D:\Project PetShop\PetShop\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
 D:\Project PetShop\PetShop\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
 D:\Project PetShop\PetShop\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
 D:\Project PetShop\PetShop\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
@@ -250,16 +230,6 @@ D:\Project PetShop\PetShop\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.
 D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
 D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
 D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
-D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Project PetShop\PetShop\obj\Debug\PetShop.frmReportBarcode.resources
 D:\Project PetShop\PetShop\obj\Debug\RdlCompile.cache
 D:\Project PetShop\PetShop\obj\Debug\RdlCompile.compiled
@@ -295,3 +265,336 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmRptBarangDetail.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBarangTersediaPreview.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.rptBarangHabisPreview.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.ChangePasswordBySecretKeylogger.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\SqlServerTypes\x64\msvcr120.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\SqlServerTypes\x86\msvcr120.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\SqlServerTypes\x86\SqlServerSpatial140.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\PetShop.exe.config
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\PetShop.exe
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\PetShop.pdb
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.Win32.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\netstandard.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.AppContext.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Collections.Concurrent.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Collections.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Collections.NonGeneric.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Collections.Specialized.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.ComponentModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.ComponentModel.EventBasedAsync.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.ComponentModel.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.ComponentModel.TypeConverter.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Console.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Data.Common.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.Contracts.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.Debug.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.FileVersionInfo.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.Process.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.StackTrace.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.TextWriterTraceListener.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.Tools.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.TraceSource.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Diagnostics.Tracing.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Drawing.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Dynamic.Runtime.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Globalization.Calendars.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Globalization.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Globalization.Extensions.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.Compression.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.Compression.ZipFile.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.FileSystem.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.FileSystem.DriveInfo.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.FileSystem.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.FileSystem.Watcher.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.IsolatedStorage.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.MemoryMappedFiles.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.Pipes.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.IO.UnmanagedMemoryStream.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Linq.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Linq.Expressions.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Linq.Parallel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Linq.Queryable.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.Http.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.NameResolution.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.NetworkInformation.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.Ping.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.Requests.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.Security.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.Sockets.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.WebHeaderCollection.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.WebSockets.Client.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Net.WebSockets.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.ObjectModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Reflection.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Reflection.Extensions.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Reflection.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Resources.Reader.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Resources.ResourceManager.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Resources.Writer.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.CompilerServices.VisualC.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.Extensions.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.Handles.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.InteropServices.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.Numerics.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.Serialization.Formatters.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.Serialization.Json.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.Serialization.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.Serialization.Xml.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.Claims.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.Cryptography.Algorithms.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.Cryptography.Csp.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.Cryptography.Encoding.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.Cryptography.Primitives.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.Cryptography.X509Certificates.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.Principal.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Security.SecureString.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Text.Encoding.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Text.Encoding.Extensions.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Text.RegularExpressions.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Overlapped.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Tasks.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Tasks.Parallel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Thread.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.ThreadPool.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Timer.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Xml.ReaderWriter.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Xml.XDocument.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Xml.XmlDocument.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Xml.XmlSerializer.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Xml.XPath.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Xml.XPath.XDocument.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\AForge.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\AForge.Video.DirectShow.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\AForge.Video.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\BarcodeStandard.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.CrystalReports.Engine.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportSource.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.Shared.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.Windows.Forms.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\EntityFramework.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\FlashControlV71.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.ReportViewer.Design.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.Smo.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Buffers.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Drawing.Common.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Memory.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Numerics.Vectors.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Text.Encodings.Web.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Text.Json.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Tasks.Extensions.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.ValueTuple.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zxing.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zxing.presentation.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.CommLayer.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ShockwaveFlashObjects.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\EnvDTE.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Shell.Interop.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Shell.Interop.8.0.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.SqlClrProvider.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.Dmf.Common.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.Diagnostics.STrace.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\stdole.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.OLE.Interop.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.VSHelp.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Shell.Interop.9.0.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.8.0.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.ProjectAggregator.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.ComponentModelHost.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Debugger.InteropA.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\EnvDTE80.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.Build.Tasks.Core.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Data.Services.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\VSLangProj.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Shell.Interop.11.0.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Data.Core.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Shell.Interop.10.0.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\VSLangProj80.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.ManagedInterfaces.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.Debugger.Interop.11.0.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.SqlServer.SqlTDiagM.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Tasks.Dataflow.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.GraphModel.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.MSXML.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.Build.Utilities.Core.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.TextManager.Interop.10.0.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.Build.Framework.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\VSLangProj2.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\AForge.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\AForge.Video.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\AForge.Video.DirectShow.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\EntityFramework.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Buffers.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Memory.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Numerics.Vectors.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Text.Encodings.Web.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Text.Json.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.Threading.Tasks.Extensions.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\System.ValueTuple.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zxing.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zxing.presentation.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Microsoft.VisualStudio.TemplateWizardInterface.xml
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\de\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\es\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\fr\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\it\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ja\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ko\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\pt\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ru\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHS\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHT\Microsoft.ReportViewer.Design.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\Interop.AcroPDFLib.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\bin\Debug\AxInterop.AcroPDFLib.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.csprojAssemblyReference.cache
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.exe.config
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\Interop.AcroPDFLib.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\AxInterop.AcroPDFLib.dll
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.csproj.ResolveComReference.cache
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.Autentikasi.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.BarcodeTest.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.ChangePasswordBySecretKeylogger.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmAddPembelian.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmAddSup.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmAdjustStock.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmBackupData.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmBiayaTambahan.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmBrowseBarang.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmBrowseSupplier.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmCari.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmCheckout.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmHistory.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmHistoryPengurangan.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmReport.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmManageUser.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmMoreDetail.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmPembelian.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmPenjualan.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.frmReportBarcode.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmRptBarangDetail.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmStock.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmSupplier.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.InputBarang.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmMenu.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmAkun.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.PrintBarcode.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.ProccesAnimate.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.Properties.Resources.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.ReportBarangViewer.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.ReportPembelianPreview.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.RestoreDB.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.rptBarangHabisPreview.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.rptBarangTersediaPreview.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.rptBiayaLainPreview.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.rptReceiptPreview.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.SampleBarcode.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.Scanner.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.Splash.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.Resources.SplashScreen.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.SecretKeyLogger.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.SupplierReportPreview.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.csproj.GenerateResource.cache
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\RdlCompile.cache
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\RdlCompile.compiled
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.csproj.CoreCompileInputs.cache
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.csproj.CopyComplete
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.exe
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.pdb
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.FrmRptBarang.resources
+D:\Project PetShop\Backup\Last Get\MyPetshop-main\obj\Debug\PetShop.RptBarangDiscontinued.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmRptBarang.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.RptBarangDiscontinued.resources
+D:\Project PetShop\PetShop\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\it\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ja\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ko\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\pt\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.Common.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\de\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\es\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\fr\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\it\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ja\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ko\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\pt\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.DataVisualization.resources.dll
+D:\Project PetShop\PetShop\obj\Debug\PetShop.frmRptBarangTersedia.resources
+D:\Project PetShop\PetShop\bin\Debug\de\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\es\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\fr\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\it\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ja\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ko\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\pt\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportBarangDiscontinued.resources

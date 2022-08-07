@@ -56,7 +56,7 @@
             this.rptReceipt.LocalReport.ReportEmbeddedResource = "PetShop.rptReceipt.rdlc";
             this.rptReceipt.Location = new System.Drawing.Point(0, 0);
             this.rptReceipt.Name = "rptReceipt";
-            this.rptReceipt.ServerReport.BearerToken = null;
+            //this.rptReceipt.ServerReport.BearerToken = null;
             this.rptReceipt.Size = new System.Drawing.Size(680, 536);
             this.rptReceipt.TabIndex = 0;
             // 

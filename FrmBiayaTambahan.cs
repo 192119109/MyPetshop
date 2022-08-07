@@ -181,7 +181,7 @@ namespace PetShop
 
         private void BtnCetak_Click(object sender, EventArgs e)
         {
-            rptBiayaLainPreview frmReportBiayaLain = new rptBiayaLainPreview();
+            rptBiayaLainPreview frmReportBiayaLain = new rptBiayaLainPreview(dtp1.Value,dtp2.Value);
             frmReportBiayaLain.ShowDialog();
         }
 

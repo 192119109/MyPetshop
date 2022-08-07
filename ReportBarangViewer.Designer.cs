@@ -47,7 +47,7 @@
             this.rptBarangViewer.LocalReport.ReportEmbeddedResource = "PetShop.ReportBarang.rdlc";
             this.rptBarangViewer.Location = new System.Drawing.Point(0, 0);
             this.rptBarangViewer.Name = "rptBarangViewer";
-            this.rptBarangViewer.ServerReport.BearerToken = null;
+            //this.rptBarangViewer.ServerReport.BearerToken = null;
             this.rptBarangViewer.Size = new System.Drawing.Size(800, 450);
             this.rptBarangViewer.TabIndex = 0;
             // 

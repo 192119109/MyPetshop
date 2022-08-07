@@ -280,3 +280,7 @@ select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian, t3.id_s
 --ambil data pendapatan harian
 Select Sum(t1.sub_total) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM-dd') as Tanggal from Penjualan_Detail t1
 inner join Penjualan t2 on t1.id_penjualan=t2.id_penjualan Group By FORMAT(t2.tgl_transaksi,'yyyy-MM-dd')
+
+select * from Barang
+
+select t1.id_barang, t1.nama_barang, t1.harga_jual, isnull(Sum(t2.stock),0) as 'stock' ,t1.barcode, t1.deskripsi, t1.discontinued  from Barang t1 left outer join Stock t2 on t1.id_barang=t2.id_barang where t1.discontinued=1 Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.deskripsi, t1.discontinued

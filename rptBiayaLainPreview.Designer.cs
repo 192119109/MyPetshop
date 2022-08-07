@@ -57,7 +57,7 @@
             this.rptBiayaLain.LocalReport.ReportEmbeddedResource = "PetShop.rptBiayaLain.rdlc";
             this.rptBiayaLain.Location = new System.Drawing.Point(0, 0);
             this.rptBiayaLain.Name = "rptBiayaLain";
-            this.rptBiayaLain.ServerReport.BearerToken = null;
+            //this.rptBiayaLain.ServerReport.BearerToken = null;
             this.rptBiayaLain.Size = new System.Drawing.Size(800, 450);
             this.rptBiayaLain.TabIndex = 0;
             // 

@@ -938,46 +938,46 @@ namespace PetShop.db_petshopBiayaLainTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[BiayaLain] WHERE (([id_biayalain] = @Original_id_biayalain) AND ((@IsNull_title = 1 AND [title] IS NULL) OR ([title] = @Original_title)) AND ((@IsNull_bulan = 1 AND [bulan] IS NULL) OR ([bulan] = @Original_bulan)) AND ((@IsNull_tgl = 1 AND [tgl] IS NULL) OR ([tgl] = @Original_tgl)) AND ((@IsNull_biaya = 1 AND [biaya] IS NULL) OR ([biaya] = @Original_biaya)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [BiayaLain] WHERE (([id_biayalain] = @Original_id_biayalain) AND ((@IsNull_title = 1 AND [title] IS NULL) OR ([title] = @Original_title)) AND ((@IsNull_tgl = 1 AND [tgl] IS NULL) OR ([tgl] = @Original_tgl)) AND ((@IsNull_bulan = 1 AND [bulan] IS NULL) OR ([bulan] = @Original_bulan)) AND ((@IsNull_biaya = 1 AND [biaya] IS NULL) OR ([biaya] = @Original_biaya)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_biayalain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_biayalain", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_title", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bulan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tgl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tgl", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bulan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_biaya", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "biaya", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_biaya", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "biaya", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[BiayaLain] ([id_biayalain], [title], [bulan], [tgl], [keterangan], [biaya]) VALUES (@id_biayalain, @title, @bulan, @tgl, @keterangan, @biaya);
-SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (id_biayalain = @id_biayalain)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [BiayaLain] ([id_biayalain], [title], [tgl], [bulan], [keterangan], [biaya]) VALUES (@id_biayalain, @title, @tgl, @bulan, @keterangan, @biaya);
+SELECT id_biayalain, title, tgl, bulan, keterangan, biaya FROM BiayaLain WHERE (id_biayalain = @id_biayalain) ORDER BY tgl";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_biayalain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_biayalain", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tgl", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@keterangan", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "keterangan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@biaya", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "biaya", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[BiayaLain] SET [id_biayalain] = @id_biayalain, [title] = @title, [bulan] = @bulan, [tgl] = @tgl, [keterangan] = @keterangan, [biaya] = @biaya WHERE (([id_biayalain] = @Original_id_biayalain) AND ((@IsNull_title = 1 AND [title] IS NULL) OR ([title] = @Original_title)) AND ((@IsNull_bulan = 1 AND [bulan] IS NULL) OR ([bulan] = @Original_bulan)) AND ((@IsNull_tgl = 1 AND [tgl] IS NULL) OR ([tgl] = @Original_tgl)) AND ((@IsNull_biaya = 1 AND [biaya] IS NULL) OR ([biaya] = @Original_biaya)));
-SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (id_biayalain = @id_biayalain)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [BiayaLain] SET [id_biayalain] = @id_biayalain, [title] = @title, [tgl] = @tgl, [bulan] = @bulan, [keterangan] = @keterangan, [biaya] = @biaya WHERE (([id_biayalain] = @Original_id_biayalain) AND ((@IsNull_title = 1 AND [title] IS NULL) OR ([title] = @Original_title)) AND ((@IsNull_tgl = 1 AND [tgl] IS NULL) OR ([tgl] = @Original_tgl)) AND ((@IsNull_bulan = 1 AND [bulan] IS NULL) OR ([bulan] = @Original_bulan)) AND ((@IsNull_biaya = 1 AND [biaya] IS NULL) OR ([biaya] = @Original_biaya)));
+SELECT id_biayalain, title, tgl, bulan, keterangan, biaya FROM BiayaLain WHERE (id_biayalain = @id_biayalain) ORDER BY tgl";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@id_biayalain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_biayalain", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@tgl", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@keterangan", global::System.Data.SqlDbType.Text, 0, global::System.Data.ParameterDirection.Input, 0, 0, "keterangan", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@biaya", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "biaya", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_id_biayalain", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "id_biayalain", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_title", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_title", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bulan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_tgl", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_tgl", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_bulan", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_bulan", global::System.Data.SqlDbType.VarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "bulan", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_biaya", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "biaya", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_biaya", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "biaya", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
@@ -995,16 +995,31 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM dbo.BiayaLain";
+            this._commandCollection[0].CommandText = "SELECT        id_biayalain, title, tgl, bulan, keterangan, biaya\r\nFROM           " +
+                " BiayaLain\r\nWHERE        (tgl >= @Param1) AND (tgl <= @Param2)\r\nORDER BY tgl";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "tgl", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_petshopBiayaLain.BiayaLainDataTable dataTable) {
+        public virtual int Fill(db_petshopBiayaLain.BiayaLainDataTable dataTable, global::System.Nullable<global::System.DateTime> Param1, global::System.Nullable<global::System.DateTime> Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Param1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Param2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Param2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -1016,8 +1031,20 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_petshopBiayaLain.BiayaLainDataTable GetData() {
+        public virtual db_petshopBiayaLain.BiayaLainDataTable GetData(global::System.Nullable<global::System.DateTime> Param1, global::System.Nullable<global::System.DateTime> Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Param1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Param2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Param2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             db_petshopBiayaLain.BiayaLainDataTable dataTable = new db_petshopBiayaLain.BiayaLainDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1056,7 +1083,7 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string Original_id_biayalain, string Original_title, string Original_bulan, global::System.Nullable<global::System.DateTime> Original_tgl, global::System.Nullable<decimal> Original_biaya) {
+        public virtual int Delete(string Original_id_biayalain, string Original_title, global::System.Nullable<global::System.DateTime> Original_tgl, string Original_bulan, global::System.Nullable<decimal> Original_biaya) {
             if ((Original_id_biayalain == null)) {
                 throw new global::System.ArgumentNullException("Original_id_biayalain");
             }
@@ -1071,21 +1098,21 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_title));
             }
-            if ((Original_bulan == null)) {
+            if ((Original_tgl.HasValue == true)) {
+                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((System.DateTime)(Original_tgl.Value));
+            }
+            else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_bulan));
-            }
-            if ((Original_tgl.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_tgl.Value));
-            }
-            else {
+            if ((Original_bulan == null)) {
                 this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_bulan));
             }
             if ((Original_biaya.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
@@ -1115,7 +1142,7 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string id_biayalain, string title, string bulan, global::System.Nullable<global::System.DateTime> tgl, string keterangan, global::System.Nullable<decimal> biaya) {
+        public virtual int Insert(string id_biayalain, string title, global::System.Nullable<global::System.DateTime> tgl, string bulan, string keterangan, global::System.Nullable<decimal> biaya) {
             if ((id_biayalain == null)) {
                 throw new global::System.ArgumentNullException("id_biayalain");
             }
@@ -1128,17 +1155,17 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
             else {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((string)(title));
             }
-            if ((bulan == null)) {
+            if ((tgl.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(tgl.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(bulan));
-            }
-            if ((tgl.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(tgl.Value));
-            }
-            else {
+            if ((bulan == null)) {
                 this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(bulan));
             }
             if ((keterangan == null)) {
                 this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1172,7 +1199,7 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string id_biayalain, string title, string bulan, global::System.Nullable<global::System.DateTime> tgl, string keterangan, global::System.Nullable<decimal> biaya, string Original_id_biayalain, string Original_title, string Original_bulan, global::System.Nullable<global::System.DateTime> Original_tgl, global::System.Nullable<decimal> Original_biaya) {
+        public virtual int Update(string id_biayalain, string title, global::System.Nullable<global::System.DateTime> tgl, string bulan, string keterangan, global::System.Nullable<decimal> biaya, string Original_id_biayalain, string Original_title, global::System.Nullable<global::System.DateTime> Original_tgl, string Original_bulan, global::System.Nullable<decimal> Original_biaya) {
             if ((id_biayalain == null)) {
                 throw new global::System.ArgumentNullException("id_biayalain");
             }
@@ -1185,17 +1212,17 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
             else {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(title));
             }
-            if ((bulan == null)) {
+            if ((tgl.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(tgl.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(bulan));
-            }
-            if ((tgl.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(tgl.Value));
-            }
-            else {
+            if ((bulan == null)) {
                 this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(bulan));
             }
             if ((keterangan == null)) {
                 this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
@@ -1223,21 +1250,21 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
                 this.Adapter.UpdateCommand.Parameters[7].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((string)(Original_title));
             }
-            if ((Original_bulan == null)) {
+            if ((Original_tgl.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_tgl.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[10].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((string)(Original_bulan));
-            }
-            if ((Original_tgl.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((System.DateTime)(Original_tgl.Value));
-            }
-            else {
+            if ((Original_bulan == null)) {
                 this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[12].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[11].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[12].Value = ((string)(Original_bulan));
             }
             if ((Original_biaya.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((object)(0));
@@ -1267,8 +1294,8 @@ SELECT id_biayalain, title, bulan, tgl, keterangan, biaya FROM BiayaLain WHERE (
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string title, string bulan, global::System.Nullable<global::System.DateTime> tgl, string keterangan, global::System.Nullable<decimal> biaya, string Original_id_biayalain, string Original_title, string Original_bulan, global::System.Nullable<global::System.DateTime> Original_tgl, global::System.Nullable<decimal> Original_biaya) {
-            return this.Update(Original_id_biayalain, title, bulan, tgl, keterangan, biaya, Original_id_biayalain, Original_title, Original_bulan, Original_tgl, Original_biaya);
+        public virtual int Update(string title, global::System.Nullable<global::System.DateTime> tgl, string bulan, string keterangan, global::System.Nullable<decimal> biaya, string Original_id_biayalain, string Original_title, global::System.Nullable<global::System.DateTime> Original_tgl, string Original_bulan, global::System.Nullable<decimal> Original_biaya) {
+            return this.Update(Original_id_biayalain, title, tgl, bulan, keterangan, biaya, Original_id_biayalain, Original_title, Original_tgl, Original_bulan, Original_biaya);
         }
     }
     

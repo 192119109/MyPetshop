@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.rptBarangHabis = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.db_petshopBarang = new PetShop.db_petshopBarang();
             this.barangHabisBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_petshopBarang = new PetShop.db_petshopBarang();
             this.barangHabisTableAdapter = new PetShop.db_petshopBarangTableAdapters.BarangHabisTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.db_petshopBarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.barangHabisBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_petshopBarang)).BeginInit();
             this.SuspendLayout();
             // 
             // rptBarangHabis
@@ -47,19 +47,19 @@
             this.rptBarangHabis.LocalReport.ReportEmbeddedResource = "PetShop.ReportBarang.rdlc";
             this.rptBarangHabis.Location = new System.Drawing.Point(0, 0);
             this.rptBarangHabis.Name = "rptBarangHabis";
-            this.rptBarangHabis.ServerReport.BearerToken = null;
+           // this.rptBarangHabis.ServerReport.BearerToken = null;
             this.rptBarangHabis.Size = new System.Drawing.Size(800, 450);
             this.rptBarangHabis.TabIndex = 0;
-            // 
-            // db_petshopBarang
-            // 
-            this.db_petshopBarang.DataSetName = "db_petshopBarang";
-            this.db_petshopBarang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // barangHabisBindingSource
             // 
             this.barangHabisBindingSource.DataMember = "BarangHabis";
             this.barangHabisBindingSource.DataSource = this.db_petshopBarang;
+            // 
+            // db_petshopBarang
+            // 
+            this.db_petshopBarang.DataSetName = "db_petshopBarang";
+            this.db_petshopBarang.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // barangHabisTableAdapter
             // 
@@ -74,8 +74,8 @@
             this.Name = "rptBarangHabisPreview";
             this.Text = "Laporan Barang Habis";
             this.Load += new System.EventHandler(this.RptBarangHabis_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.db_petshopBarang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.barangHabisBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_petshopBarang)).EndInit();
             this.ResumeLayout(false);
 
         }
