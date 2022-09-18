@@ -598,3 +598,5 @@ D:\Project PetShop\PetShop\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resource
 D:\Project PetShop\PetShop\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportBarangDiscontinued.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.frmLapBiayaLain.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportPenjualan.resources

@@ -29,9 +29,9 @@ namespace PetShop
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReport));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmReport));
             this.lblRata2Stock = new System.Windows.Forms.Label();
             this.lblRataRataTransaksi = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
@@ -41,29 +41,29 @@ namespace PetShop
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.btnLBiayaLain = new System.Windows.Forms.Button();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button3 = new System.Windows.Forms.Button();
             this.lblTStockTerjual = new System.Windows.Forms.Label();
             this.lblTotalStock = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnLStockBarang = new System.Windows.Forms.Button();
-            this.btnLTransaksi = new System.Windows.Forms.Button();
-            this.btnLPenjualan = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.dgvPendapatan = new System.Windows.Forms.DataGridView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dgvProfitHarian = new System.Windows.Forms.DataGridView();
+            this.btnLStockBarang = new System.Windows.Forms.Button();
+            this.btnLBiayaLain = new System.Windows.Forms.Button();
+            this.btnLTransaksi = new System.Windows.Forms.Button();
+            this.btnLPenjualan = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPendapatan)).BeginInit();
@@ -155,22 +155,6 @@ namespace PetShop
             this.label25.Text = "Laporan Biaya \r\nLainnya";
             this.label25.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // btnLBiayaLain
-            // 
-            this.btnLBiayaLain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLBiayaLain.BackgroundImage")));
-            this.btnLBiayaLain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLBiayaLain.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLBiayaLain.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLBiayaLain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLBiayaLain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLBiayaLain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLBiayaLain.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLBiayaLain.Location = new System.Drawing.Point(1181, 535);
-            this.btnLBiayaLain.Name = "btnLBiayaLain";
-            this.btnLBiayaLain.Size = new System.Drawing.Size(136, 140);
-            this.btnLBiayaLain.TabIndex = 33;
-            this.btnLBiayaLain.UseVisualStyleBackColor = true;
-            // 
             // label24
             // 
             this.label24.AutoSize = true;
@@ -231,20 +215,6 @@ namespace PetShop
             this.groupBox3.TabIndex = 28;
             this.groupBox3.TabStop = false;
             // 
-            // button4
-            // 
-            this.button4.BackgroundImage = global::PetShop.Properties.Resources.transaction;
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(175, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(45, 45);
-            this.button4.TabIndex = 12;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.BlanchedAlmond;
@@ -264,20 +234,6 @@ namespace PetShop
             this.groupBox2.Size = new System.Drawing.Size(536, 212);
             this.groupBox2.TabIndex = 23;
             this.groupBox2.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::PetShop.Properties.Resources.stock;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(176, 13);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(45, 45);
-            this.button3.TabIndex = 12;
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // lblTStockTerjual
             // 
@@ -332,69 +288,6 @@ namespace PetShop
             this.label7.Size = new System.Drawing.Size(114, 44);
             this.label7.TabIndex = 25;
             this.label7.Text = "Report";
-            // 
-            // btnLStockBarang
-            // 
-            this.btnLStockBarang.BackgroundImage = global::PetShop.Properties.Resources.warehouse;
-            this.btnLStockBarang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLStockBarang.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLStockBarang.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLStockBarang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLStockBarang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLStockBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLStockBarang.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLStockBarang.Location = new System.Drawing.Point(1181, 175);
-            this.btnLStockBarang.Name = "btnLStockBarang";
-            this.btnLStockBarang.Size = new System.Drawing.Size(136, 140);
-            this.btnLStockBarang.TabIndex = 29;
-            this.btnLStockBarang.UseVisualStyleBackColor = true;
-            this.btnLStockBarang.Click += new System.EventHandler(this.BtnLStockBarang_Click);
-            // 
-            // btnLTransaksi
-            // 
-            this.btnLTransaksi.BackgroundImage = global::PetShop.Properties.Resources.transaction_history;
-            this.btnLTransaksi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLTransaksi.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLTransaksi.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLTransaksi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLTransaksi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLTransaksi.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLTransaksi.Location = new System.Drawing.Point(1181, 362);
-            this.btnLTransaksi.Name = "btnLTransaksi";
-            this.btnLTransaksi.Size = new System.Drawing.Size(136, 140);
-            this.btnLTransaksi.TabIndex = 31;
-            this.btnLTransaksi.UseVisualStyleBackColor = true;
-            // 
-            // btnLPenjualan
-            // 
-            this.btnLPenjualan.BackgroundImage = global::PetShop.Properties.Resources.sales__2_;
-            this.btnLPenjualan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnLPenjualan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnLPenjualan.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
-            this.btnLPenjualan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLPenjualan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.btnLPenjualan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLPenjualan.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLPenjualan.Location = new System.Drawing.Point(1181, 5);
-            this.btnLPenjualan.Name = "btnLPenjualan";
-            this.btnLPenjualan.Size = new System.Drawing.Size(136, 140);
-            this.btnLPenjualan.TabIndex = 27;
-            this.btnLPenjualan.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::PetShop.Properties.Resources.report1;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(27, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(55, 60);
-            this.button2.TabIndex = 24;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // dgvPendapatan
             // 
@@ -463,6 +356,115 @@ namespace PetShop
             this.dgvProfitHarian.ReadOnly = true;
             this.dgvProfitHarian.Size = new System.Drawing.Size(482, 315);
             this.dgvProfitHarian.TabIndex = 35;
+            // 
+            // btnLStockBarang
+            // 
+            this.btnLStockBarang.BackgroundImage = global::PetShop.Properties.Resources.warehouse;
+            this.btnLStockBarang.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLStockBarang.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLStockBarang.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLStockBarang.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLStockBarang.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLStockBarang.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLStockBarang.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLStockBarang.Location = new System.Drawing.Point(1181, 175);
+            this.btnLStockBarang.Name = "btnLStockBarang";
+            this.btnLStockBarang.Size = new System.Drawing.Size(136, 140);
+            this.btnLStockBarang.TabIndex = 29;
+            this.btnLStockBarang.UseVisualStyleBackColor = true;
+            this.btnLStockBarang.Click += new System.EventHandler(this.BtnLStockBarang_Click);
+            // 
+            // btnLBiayaLain
+            // 
+            this.btnLBiayaLain.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnLBiayaLain.BackgroundImage")));
+            this.btnLBiayaLain.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLBiayaLain.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLBiayaLain.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLBiayaLain.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLBiayaLain.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLBiayaLain.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLBiayaLain.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLBiayaLain.Location = new System.Drawing.Point(1181, 535);
+            this.btnLBiayaLain.Name = "btnLBiayaLain";
+            this.btnLBiayaLain.Size = new System.Drawing.Size(136, 140);
+            this.btnLBiayaLain.TabIndex = 33;
+            this.btnLBiayaLain.UseVisualStyleBackColor = true;
+            this.btnLBiayaLain.Click += new System.EventHandler(this.BtnLBiayaLain_Click);
+            // 
+            // btnLTransaksi
+            // 
+            this.btnLTransaksi.BackgroundImage = global::PetShop.Properties.Resources.transaction_history;
+            this.btnLTransaksi.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLTransaksi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLTransaksi.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLTransaksi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLTransaksi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLTransaksi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLTransaksi.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLTransaksi.Location = new System.Drawing.Point(1181, 362);
+            this.btnLTransaksi.Name = "btnLTransaksi";
+            this.btnLTransaksi.Size = new System.Drawing.Size(136, 140);
+            this.btnLTransaksi.TabIndex = 31;
+            this.btnLTransaksi.UseVisualStyleBackColor = true;
+            // 
+            // btnLPenjualan
+            // 
+            this.btnLPenjualan.BackgroundImage = global::PetShop.Properties.Resources.sales__2_;
+            this.btnLPenjualan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnLPenjualan.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLPenjualan.FlatAppearance.BorderColor = System.Drawing.Color.DodgerBlue;
+            this.btnLPenjualan.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLPenjualan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.btnLPenjualan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLPenjualan.Font = new System.Drawing.Font("Minion Pro", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLPenjualan.Location = new System.Drawing.Point(1181, 5);
+            this.btnLPenjualan.Name = "btnLPenjualan";
+            this.btnLPenjualan.Size = new System.Drawing.Size(136, 140);
+            this.btnLPenjualan.TabIndex = 27;
+            this.btnLPenjualan.UseVisualStyleBackColor = true;
+            this.btnLPenjualan.Click += new System.EventHandler(this.BtnLPenjualan_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::PetShop.Properties.Resources.transaction;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(175, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(45, 45);
+            this.button4.TabIndex = 12;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::PetShop.Properties.Resources.stock;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(176, 13);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(45, 45);
+            this.button3.TabIndex = 12;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::PetShop.Properties.Resources.report1;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.PapayaWhip;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.PapayaWhip;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(27, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(55, 60);
+            this.button2.TabIndex = 24;
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // FrmReport
             // 

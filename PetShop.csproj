@@ -130,6 +130,7 @@
     </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -280,6 +281,12 @@
     <Compile Include="FrmHistoryPengurangan.Designer.cs">
       <DependentUpon>FrmHistoryPengurangan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLapBiayaLain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLapBiayaLain.Designer.cs">
+      <DependentUpon>frmLapBiayaLain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmLaporan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -321,6 +328,12 @@
     </Compile>
     <Compile Include="frmReportBarcode.Designer.cs">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportPenjualan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportPenjualan.Designer.cs">
+      <DependentUpon>FrmReportPenjualan.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRptBarang.cs">
       <SubType>Form</SubType>
@@ -551,6 +564,9 @@
     <EmbeddedResource Include="FrmHistoryPengurangan.resx">
       <DependentUpon>FrmHistoryPengurangan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLapBiayaLain.resx">
+      <DependentUpon>frmLapBiayaLain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmLaporan.resx">
       <DependentUpon>FrmLaporan.cs</DependentUpon>
     </EmbeddedResource>
@@ -571,6 +587,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportBarcode.resx">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportPenjualan.resx">
+      <DependentUpon>FrmReportPenjualan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmRptBarang.resx">
       <DependentUpon>FrmRptBarang.cs</DependentUpon>

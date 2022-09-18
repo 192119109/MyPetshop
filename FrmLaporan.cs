@@ -193,5 +193,17 @@ namespace PetShop
             FrmRptBarang frmRptBarang = new FrmRptBarang();
             frmRptBarang.Show();
         }
+
+        private void BtnLBiayaLain_Click(object sender, EventArgs e)
+        {
+            frmLapBiayaLain lapBiayaLain = new frmLapBiayaLain();
+            lapBiayaLain.ShowDialog();
+        }
+
+        private void BtnLPenjualan_Click(object sender, EventArgs e)
+        {
+            FrmReportPenjualan frmRptPenjualan = new FrmReportPenjualan();
+            frmRptPenjualan.ShowDialog();
+        }
     }
 }
