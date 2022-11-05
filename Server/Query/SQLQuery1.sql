@@ -281,6 +281,84 @@ select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian, t3.id_s
 Select Sum(t1.sub_total) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM-dd') as Tanggal from Penjualan_Detail t1
 inner join Penjualan t2 on t1.id_penjualan=t2.id_penjualan Group By FORMAT(t2.tgl_transaksi,'yyyy-MM-dd')
 
-select * from Barang
+use db_petshop
+----Get laba Keseluruhan----
+SELECT (select SUM(harga_jual*qty_jual) as laba from Penjualan_Detail ) - (SELECT SUM(biaya) as biaya FROM BiayaLain) - (SELECT SUM(grandTotal) FROM Pembelian) -
+(SELECT SUM(t2.[harga/pcs]*t1.jlhPengurangan) as Total_Pengurangan FROM Pengurangan_Stock t1 inner join Pembelian_Detail t2 on t1.id_pembelian = t2.id_pembelian AND t1.id_barang = t2.id_barang) AS 'Laba Keseluruhan'
+---Get laba Keseluruhan----
 
-select t1.id_barang, t1.nama_barang, t1.harga_jual, isnull(Sum(t2.stock),0) as 'stock' ,t1.barcode, t1.deskripsi, t1.discontinued  from Barang t1 left outer join Stock t2 on t1.id_barang=t2.id_barang where t1.discontinued=1 Group by t1.id_barang,t1.nama_barang,t1.harga_jual,t1.barcode,t1.deskripsi, t1.discontinued
+----Get laba Keseluruhan Per Month----
+SELECT (select SUM(harga_jual*qty_jual) as laba from Penjualan_Detail) - (SELECT SUM(biaya) as biaya FROM BiayaLain) - (SELECT SUM(grandTotal) FROM Pembelian) -
+(SELECT SUM(t2.[harga/pcs]*t1.jlhPengurangan) as Total_Pengurangan FROM Pengurangan_Stock t1 inner join Pembelian_Detail t2 on t1.id_pembelian = t2.id_pembelian AND t1.id_barang = t2.id_barang) AS 'Laba Keseluruhan'
+---Get laba Keseluruhan Per Month----
+
+CREATE FUNCTION vw_LabaBersihKeseluruhan (@month int, @year int)
+RETURNS TABLE
+AS
+RETURN
+	SELECT ISNULL((select SUM(grand_total) as laba from Penjualan where (MONTH(tgl_transaksi)=@month AND YEAR(tgl_transaksi)=@year)),0) - ISNULL((SELECT SUM(biaya) as biaya FROM BiayaLain where (MONTH(tgl)=@month AND YEAR(tgl)=@year)),0) - ISNULL((SELECT SUM(grandTotal) FROM Pembelian WHERE (MONTH(tgl_pembelian)=@month AND YEAR(tgl_pembelian)=@year)),0) -
+	ISNULL((SELECT SUM(t2.[harga/pcs]*t1.jlhPengurangan) as Total_Pengurangan FROM Pengurangan_Stock t1 inner join Pembelian_Detail t2 on t1.id_pembelian = t2.id_pembelian AND t1.id_barang = t2.id_barang WHERE (MONTH(tglPengurangan)=@month AND YEAR(tglPengurangan)=@year)),0) AS 'Laba_Keseluruhan' 
+
+DROP Function vw_LabaBersihKeseluruhan
+
+SELECT * FROM Penjualan where MONTH(tgl_transaksi)=2 AND Year(tgl_transaksi)=2022
+
+SELECT * FROM vw_LabaBersihKeseluruhan(2,2022)
+SELECT * FROM Penjualan
+SELECT * FROM Pengurangan_Stock
+SELECT * FROM BiayaLain
+SELECT  * FROM Penjualan_Detail
+SELECT * FROM Pembelian
+
+SELECT * FROM Penjualan
+
+SELECT t1.id_pengurangan, t1.id_barang, t1.id_pembelian, t1.jlhPengurangan, t2.[harga/pcs] FROM Pengurangan_Stock t1 inner join Pembelian_Detail t2 on t1.id_pembelian = t2.id_pembelian AND t1.id_barang = t2.id_barang
+
+--Get StartPeriod From All Transaction
+DECLARE @datePenjualan varchar(max), @datePembelian varchar(max)
+SET @datePenjualan = MAX(tgl_transaksi) from Penjualan 
+SET @datePembelian = MAX(tgl_pembelian) from Pembelian
+IF @datePenjualan=@datePembelian
+SELECT 'equal date'
+ELSE
+IF @datePenjualan<@datePembelian SELECT 'date2 is greater'
+ELSE SELECT 'date1 is greater';
+
+
+--Get LastPeriod From All Transaction
+
+use db_petshop
+
+SELECT ISNULL((select SUM(grand_total) as laba from Penjualan where (MONTH(tgl_transaksi)=2 AND YEAR(tgl_transaksi)=2022) ),0) - ISNULL((SELECT SUM(biaya) as biaya FROM BiayaLain where (MONTH(tgl)=2 AND YEAR(tgl)=2022)),0) - ISNULL((SELECT SUM(grandTotal) FROM Pembelian WHERE (MONTH(tgl_pembelian)=2 AND YEAR(tgl_pembelian)=2022)),0) -
+	ISNULL((SELECT SUM(t2.[harga/pcs]*t1.jlhPengurangan) as Total_Pengurangan FROM Pengurangan_Stock t1 inner join Pembelian_Detail t2 on t1.id_pembelian = t2.id_pembelian AND t1.id_barang = t2.id_barang WHERE (MONTH(tglPengurangan)=2 AND YEAR(tglPengurangan)=2022)),0) AS 'Laba_Keseluruhan' 
+
+	SELECT * FROM vw_LabaBersihKeseluruhan(1,2022)
+
+	SELECT * FROM Penjualan
+
+CREATE FUNCTION vw_sumItemTerjual (@startDate Date, @endDate Date)
+RETURNS TABLE
+AS
+RETURN
+Select t3.nama_barang, isNull(sum(t2.qty_jual),0) as terjual FROM Penjualan t1 inner join Penjualan_Detail t2 on t1.id_penjualan = t2.id_penjualan right outer join barang t3 on t2.id_barang=t3.id_barang where t1.tgl_transaksi between @startDate AND @endDate group by t3.nama_barang 
+
+SELECT * FROM vw_sumItemTerjual('1-1-2022','5-11-2022')
+
+drop Function vw_sumItemTerjual 
+
+Select t3.nama_barang, isNull(sum(t2.qty_jual),0) as terjual FROM Penjualan t1 left outer join Penjualan_Detail t2 on t1.id_penjualan = t2.id_penjualan left outer join barang t3 on t2.id_barang=t3.id_barang where (MONTH(t1.tgl_transaksi)=2 AND YEAR(t1.tgl_transaksi)=2022) group by t3.nama_barang 
+
+
+SELECT t1.nama_barang, isNull(sum(t2.qty_jual),0) as terjual from barang t1 left outer join Penjualan_Detail t2 on t1.id_barang=t2.id_barang inner join Penjualan t3 on t2.id_penjualan=t3.id_penjualan group by t1.nama_barang
+
+SELECT YEAR(getdate()) * 100
+
+SELECT * FROM Penjualan
+
+CREATE FUNCTION vw_labaKotor (@month int, @year int)
+RETURNS TABLE
+AS
+RETURN
+SELECT SUM(grand_total) as pendapatan_kotor FROM Penjualan where (MONTH(tgl_transaksi)=@month AND YEAR(tgl_transaksi)=@year)
+
+Drop Function vw_labaKotor
