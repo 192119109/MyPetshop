@@ -600,3 +600,6 @@ D:\Project PetShop\PetShop\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.reso
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportBarangDiscontinued.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.frmLapBiayaLain.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportPenjualan.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmPengeluaran.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportPenguranganBarangPreview.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportPembelianPreview.resources

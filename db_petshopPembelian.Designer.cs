@@ -5103,21 +5103,37 @@ SELECT id_supplier, nama, alamat, provinsi, kota, telp, email, deskripsi FROM Su
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT        Pembelian.id_pembelian, Pembelian.tgl_pembelian, Pembelian.id_supplier, Pembelian.grandTotal, Suppliers.nama, Pembelian_Detail.id_barang, Pembelian_Detail.[harga/pcs] as hargaPcs, Pembelian_Detail.subTotal, 
+            this._commandCollection[0].CommandText = @"SELECT        Pembelian.id_pembelian, Pembelian.tgl_pembelian, Pembelian.id_supplier, Pembelian.grandTotal, Suppliers.nama, Pembelian_Detail.id_barang, Pembelian_Detail.[harga/pcs] AS hargaPcs, Pembelian_Detail.subTotal, 
                          Pembelian_Detail.Qty, Barang.nama_barang
 FROM            Pembelian INNER JOIN
                          Pembelian_Detail ON Pembelian.id_pembelian = Pembelian_Detail.id_pembelian INNER JOIN
                          Suppliers ON Pembelian.id_supplier = Suppliers.id_supplier INNER JOIN
-                         Barang ON Pembelian_Detail.id_barang = Barang.id_barang Order By Pembelian.tgl_pembelian DESC";
+                         Barang ON Pembelian_Detail.id_barang = Barang.id_barang
+WHERE        (Pembelian.tgl_pembelian BETWEEN @Param1 AND @Param2)
+ORDER BY Pembelian.tgl_pembelian DESC";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param1", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "tgl_pembelian", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param2", global::System.Data.SqlDbType.DateTime, 8, global::System.Data.ParameterDirection.Input, 0, 0, "tgl_pembelian", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(db_petshopPembelian.DataTable1DataTable dataTable) {
+        public virtual int Fill(db_petshopPembelian.DataTable1DataTable dataTable, global::System.Nullable<global::System.DateTime> Param1, global::System.Nullable<global::System.DateTime> Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Param1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Param2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Param2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
             }
@@ -5129,8 +5145,20 @@ FROM            Pembelian INNER JOIN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual db_petshopPembelian.DataTable1DataTable GetData() {
+        public virtual db_petshopPembelian.DataTable1DataTable GetData(global::System.Nullable<global::System.DateTime> Param1, global::System.Nullable<global::System.DateTime> Param2) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((Param1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(Param1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((Param2.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(Param2.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             db_petshopPembelian.DataTable1DataTable dataTable = new db_petshopPembelian.DataTable1DataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;

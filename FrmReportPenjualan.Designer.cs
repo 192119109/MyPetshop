@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chartLaba = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
@@ -76,18 +76,18 @@
             // 
             // chartLaba
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartLaba.ChartAreas.Add(chartArea7);
+            chartArea4.Name = "ChartArea1";
+            this.chartLaba.ChartAreas.Add(chartArea4);
             this.chartLaba.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend7.Name = "Legend1";
-            this.chartLaba.Legends.Add(legend7);
+            legend4.Name = "Legend1";
+            this.chartLaba.Legends.Add(legend4);
             this.chartLaba.Location = new System.Drawing.Point(3, 16);
             this.chartLaba.Name = "chartLaba";
             this.chartLaba.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Laba Bersih";
-            this.chartLaba.Series.Add(series7);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Laba Bersih";
+            this.chartLaba.Series.Add(series4);
             this.chartLaba.Size = new System.Drawing.Size(852, 339);
             this.chartLaba.TabIndex = 0;
             this.chartLaba.Text = "Laba Bersih";
@@ -104,18 +104,18 @@
             // 
             // chartPendapatanKotor
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartPendapatanKotor.ChartAreas.Add(chartArea8);
+            chartArea5.Name = "ChartArea1";
+            this.chartPendapatanKotor.ChartAreas.Add(chartArea5);
             this.chartPendapatanKotor.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend8.Name = "Pendapatan Kotor";
-            this.chartPendapatanKotor.Legends.Add(legend8);
+            legend5.Name = "Pendapatan Kotor";
+            this.chartPendapatanKotor.Legends.Add(legend5);
             this.chartPendapatanKotor.Location = new System.Drawing.Point(3, 16);
             this.chartPendapatanKotor.Name = "chartPendapatanKotor";
             this.chartPendapatanKotor.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Pendapatan Kotor";
-            series8.Name = "Pendapatan Kotor";
-            this.chartPendapatanKotor.Series.Add(series8);
+            series5.ChartArea = "ChartArea1";
+            series5.Legend = "Pendapatan Kotor";
+            series5.Name = "Pendapatan Kotor";
+            this.chartPendapatanKotor.Series.Add(series5);
             this.chartPendapatanKotor.Size = new System.Drawing.Size(730, 289);
             this.chartPendapatanKotor.TabIndex = 0;
             this.chartPendapatanKotor.Text = "Total Penjualan";
@@ -132,18 +132,18 @@
             // 
             // chartItemTerjual
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartItemTerjual.ChartAreas.Add(chartArea9);
+            chartArea6.Name = "ChartArea1";
+            this.chartItemTerjual.ChartAreas.Add(chartArea6);
             this.chartItemTerjual.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend9.Name = "Legend1";
-            this.chartItemTerjual.Legends.Add(legend9);
+            legend6.Name = "Legend1";
+            this.chartItemTerjual.Legends.Add(legend6);
             this.chartItemTerjual.Location = new System.Drawing.Point(3, 16);
             this.chartItemTerjual.Name = "chartItemTerjual";
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series9.Legend = "Legend1";
-            series9.Name = "ItemTerjual";
-            this.chartItemTerjual.Series.Add(series9);
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series6.Legend = "Legend1";
+            series6.Name = "ItemTerjual";
+            this.chartItemTerjual.Series.Add(series6);
             this.chartItemTerjual.Size = new System.Drawing.Size(476, 369);
             this.chartItemTerjual.TabIndex = 0;
             this.chartItemTerjual.Text = "Item Terjual";
@@ -164,10 +164,15 @@
             // 
             // dgvData
             // 
+            this.dgvData.AllowUserToAddRows = false;
+            this.dgvData.AllowUserToDeleteRows = false;
+            this.dgvData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvData.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvData.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dgvData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvData.Location = new System.Drawing.Point(12, 69);
             this.dgvData.Name = "dgvData";
+            this.dgvData.ReadOnly = true;
             this.dgvData.Size = new System.Drawing.Size(586, 162);
             this.dgvData.TabIndex = 29;
             // 
@@ -189,8 +194,8 @@
             this.cboJenis.FormattingEnabled = true;
             this.cboJenis.Items.AddRange(new object[] {
             "Laba Keuntungan",
-            "Jumlah Item Terjual",
-            "Total Penjualan Item"});
+            "Pendapatan Kotor",
+            "Penjualan Item"});
             this.cboJenis.Location = new System.Drawing.Point(6, 16);
             this.cboJenis.Name = "cboJenis";
             this.cboJenis.Size = new System.Drawing.Size(228, 23);
@@ -265,7 +270,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FrmReportPenjualan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Report Penjualan";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmReportPenjualan_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartLaba)).EndInit();

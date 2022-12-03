@@ -44,7 +44,7 @@ namespace PetShop
             dgvProfitHarian.Columns[1].DefaultCellStyle.Format = "C2";
             dgvPendapatan.Columns[0].HeaderText = "Pendapatan Kotor";
             dgvPendapatan.Columns[1].HeaderText = "Pendapatan Bersih";
-            dgvPendapatan.Columns[2].HeaderText = "Tahun-Bulan-Tanggal";
+            dgvPendapatan.Columns[2].HeaderText = "Tahun-Bulan";
 
 
         }
@@ -156,7 +156,7 @@ namespace PetShop
             //GET PROFIT BULANAN DATA
             ds = new DataSet();
             if (ds.Tables["ProfitBulanan"] != null) ds.Tables["ProfitBulanan"].Clear();
-            ad = new SqlDataAdapter("Select Sum(t1.sub_total) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM') as Year_Month from Penjualan_Detail t1 inner join Penjualan t2 on t1.id_penjualan = t2.id_penjualan Group By FORMAT(t2.tgl_transaksi, 'yyyy-MM')", con);
+            ad = new SqlDataAdapter("Select Sum(t1.sub_total-t2.potongan) as Pendapatan_Kotor, sum(t1.harga_jual-t1.harga_beli-t2.potongan)as Pendapatan_Bersih, FORMAT(t2.tgl_transaksi,'yyyy-MM') as Year_Month from Penjualan_Detail t1 inner join Penjualan t2 on t1.id_penjualan = t2.id_penjualan Group By FORMAT(t2.tgl_transaksi, 'yyyy-MM')", con);
             ad.Fill(ds,"ProfitBulanan");
 
             //Get Biaya
@@ -196,8 +196,8 @@ namespace PetShop
 
         private void BtnLBiayaLain_Click(object sender, EventArgs e)
         {
-            frmLapBiayaLain lapBiayaLain = new frmLapBiayaLain();
-            lapBiayaLain.ShowDialog();
+            FrmPengeluaran frmPengeluaran = new FrmPengeluaran();
+            frmPengeluaran.ShowDialog();
         }
 
         private void BtnLPenjualan_Click(object sender, EventArgs e)

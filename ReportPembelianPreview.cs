@@ -13,24 +13,23 @@ namespace PetShop
 {
     public partial class ReportPembelianPreview : Form
     {
-        public ReportPembelianPreview()
+        DateTime startDate;
+        DateTime endDate;
+        public ReportPembelianPreview(DateTime Date1, DateTime Date2)
         {
             InitializeComponent();
+            startDate = Date1;
+            endDate = Date2;
         }
 
         private void ReportPembelianPreview_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'db_petshopPembelian.DataTable1' table. You can move, or remove it, as needed.
             this.db_petshopPembelian.EnforceConstraints = false;
-            this.DataTable1TableAdapter.Fill(this.db_petshopPembelian.DataTable1);
+            this.DataTable1TableAdapter.Fill(this.db_petshopPembelian.DataTable1, startDate, endDate);
             rptPembelian.SetDisplayMode(DisplayMode.PrintLayout);
 
             this.rptPembelian.RefreshReport();
-        }
-
-        private void RptPembelian_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

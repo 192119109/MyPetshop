@@ -17,7 +17,6 @@ namespace PetShop
         DataSet ds;
         SqlDataAdapter ad;
         int selectedIndex;
-        SqlCommand clb;
         
         public FrmPembelian()
         {
@@ -151,7 +150,7 @@ namespace PetShop
 
         private void BtnCetak_Click(object sender, EventArgs e)
         {
-            ReportPembelianPreview reportPembelianPreview = new ReportPembelianPreview();
+            ReportPembelianPreview reportPembelianPreview = new ReportPembelianPreview(dtpFilter1.Value,dtpFilter2.Value);
             reportPembelianPreview.ShowDialog();
         }
     }

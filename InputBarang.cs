@@ -48,6 +48,10 @@ namespace PetShop
             btnSimpan.Enabled = false;
             btnHapus.Enabled = false;
             btnUbah.Enabled = false;
+            nudHargaJual.Value = 0;
+            nudHargaJual.ThousandsSeparator = true;
+            nudHargaJual.Minimum = 0;
+            nudHargaJual.Increment = 1000;
 
             dgvBarang.AllowUserToAddRows = false;
         }
@@ -107,7 +111,7 @@ namespace PetShop
 
         private void ValidasiBtnSimpan()
         {
-            if(ds.Tables["Barang"].Rows.Count<1)
+            if(ds.Tables["Barang"].Rows.Count<1 || string.IsNullOrEmpty(txtBarcode.Text) || string.IsNullOrEmpty(txtNamaBarang.Text) || string.IsNullOrEmpty(txtIdBrg.Text))
             {
                 btnSimpan.Enabled = false;
             }
@@ -121,7 +125,7 @@ namespace PetShop
         {
             txtBarcode.Clear();
             txtDeskripsi.Clear();
-            txtHargaJual.Clear();
+            nudHargaJual.Value=0;
             txtIdBrg.Clear();
             txtNamaBarang.Clear();
             txtIdBrg.Focus();
@@ -132,7 +136,7 @@ namespace PetShop
             dr = ds.Tables["Barang"].NewRow();
             dr["id_barang"] = txtIdBrg.Text;
             dr["nama_barang"] = txtNamaBarang.Text;
-            dr["harga_jual"] = txtHargaJual.Text;
+            dr["harga_jual"] = nudHargaJual.Value;
             dr["barcode"] = txtBarcode.Text;
             dr["deskripsi"] = txtDeskripsi.Text;
             dr["discontinued"] = 0;
@@ -144,12 +148,20 @@ namespace PetShop
 
         private void BtnSimpan_Click(object sender, EventArgs e)
         {
-            ad = new SqlDataAdapter("Select * from Barang",con);
-            clb = new SqlCommandBuilder(ad);
-            ad = clb.DataAdapter;
-            ad.Update(ds, "Barang");
-            MessageBox.Show("Data Berhasil Disimpan");
-            this.Close();
+            try
+            {
+                ad = new SqlDataAdapter("Select * from Barang", con);
+                clb = new SqlCommandBuilder(ad);
+                ad = clb.DataAdapter;
+                ad.Update(ds, "Barang");
+                MessageBox.Show("Data Berhasil Disimpan");
+                this.Close();
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Data belum valid " + ex.Message);
+            }
+            
 
         }
 
@@ -183,7 +195,7 @@ namespace PetShop
                         btnHapus.Enabled = true;
                         btnUbah.Enabled = true;
                         txtNamaBarang.Text = arrRow[0]["nama_barang"].ToString();
-                        txtHargaJual.Text = string.Format("{0:n0}", float.Parse(arrRow[0]["harga_jual"].ToString()));
+                        nudHargaJual.Value = Convert.ToInt32(arrRow[0]["harga_jual"]);
                         txtBarcode.Text = arrRow[0]["barcode"].ToString();
                         txtDeskripsi.Text = arrRow[0]["deskripsi"].ToString();
                     }
@@ -198,7 +210,7 @@ namespace PetShop
             }
             catch
             {
-
+                
             }
             
 
@@ -219,7 +231,7 @@ namespace PetShop
                 {
                     arrRow[0]["barcode"] = txtBarcode.Text;
                     arrRow[0]["nama_barang"] = txtNamaBarang.Text;
-                    arrRow[0]["harga_jual"] = int.Parse(txtHargaJual.Text.Replace(".", ""));
+                    arrRow[0]["harga_jual"] = nudHargaJual.Value;
                     arrRow[0]["deskripsi"] = txtDeskripsi.Text;
                     MessageBox.Show("Data berhasil diubah");
                     Tampil();
@@ -244,7 +256,7 @@ namespace PetShop
                     txtNamaBarang.Clear();
                     txtBarcode.Clear();
                     txtDeskripsi.Clear();
-                    txtHargaJual.Clear();
+                    nudHargaJual.Value=0;
                     MessageBox.Show("Data berhasil dihapus");
                     Tampil();
                     btnHapus.Enabled = false;
@@ -258,7 +270,7 @@ namespace PetShop
         private void BtnClear_Click(object sender, EventArgs e)
         {
             txtNamaBarang.Clear();
-            txtHargaJual.Clear();
+            nudHargaJual.Value=0;
             txtDeskripsi.Clear();
             txtBarcode.Clear();
             dgvBarang.ClearSelection();

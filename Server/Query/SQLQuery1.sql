@@ -355,10 +355,37 @@ SELECT YEAR(getdate()) * 100
 
 SELECT * FROM Penjualan
 
-CREATE FUNCTION vw_labaKotor (@month int, @year int)
+CREATE FUNCTION vw_pendapatanKotor (@month int, @year int)
 RETURNS TABLE
 AS
 RETURN
-SELECT SUM(grand_total) as pendapatan_kotor FROM Penjualan where (MONTH(tgl_transaksi)=@month AND YEAR(tgl_transaksi)=@year)
+SELECT ISNULL(SUM(grand_total),0) as pendapatan_kotor FROM Penjualan where (MONTH(tgl_transaksi)=@month AND YEAR(tgl_transaksi)=@year)
 
 Drop Function vw_labaKotor
+
+
+---GET LAPORAN LABA KOTOR
+Select Sum(t1.sub_total-t2.potongan) AS Laba_Kotor, FORMAT(t2.tgl_transaksi,'yyyy-MM') as Year_Month from Penjualan_Detail t1 inner join Penjualan t2 on t1.id_penjualan = t2.id_penjualan Group By FORMAT(t2.tgl_transaksi, 'yyyy-MM')
+
+---GET LAPORAN BARANG
+SELECT * FROM vw_sumItemTerjual(@startDate,@endDate)
+
+--GET LAPORAN LABA
+SELECT * FROM vw_LabaBersihKeseluruhan(@month,@year)
+
+SELECT * FROM Penjualan_Detail
+
+SELECT * FROM vw_sumItemTerjual(@startDate,@endDate) 
+
+SELECT        Pembelian.id_pembelian, Pembelian.tgl_pembelian, Pembelian.id_supplier, Pembelian.grandTotal, Suppliers.nama, Pembelian_Detail.id_barang, Pembelian_Detail.[harga/pcs] as hargaPcs, Pembelian_Detail.subTotal, 
+                         Pembelian_Detail.Qty, Barang.nama_barang
+FROM            Pembelian INNER JOIN
+                         Pembelian_Detail ON Pembelian.id_pembelian = Pembelian_Detail.id_pembelian INNER JOIN
+                         Suppliers ON Pembelian.id_supplier = Suppliers.id_supplier INNER JOIN
+                         Barang ON Pembelian_Detail.id_barang = Barang.id_barang where  Order By Pembelian.tgl_pembelian DESC
+
+
+select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian,
+                 t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, 
+                t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 
+                on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier order by t1.tglPengurangan DESC

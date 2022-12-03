@@ -13,6 +13,10 @@ namespace PetShop
 {
     public partial class FrmReportPenjualan : Form
     {
+        DataSet ds = new DataSet();
+        DataTable dtKotor = new DataTable("Pendapatan_Kotor");
+        DataTable dtBersih = new DataTable("Laba_Bersih");
+        DataTable dtItem = new DataTable("Item_Terjual");
         public FrmReportPenjualan()
         {
             InitializeComponent();
@@ -21,6 +25,14 @@ namespace PetShop
         private void FrmReportPenjualan_Load(object sender, EventArgs e)
         {
             Global.BuatKoneksi();
+
+            //Set dt column
+            dtKotor.Columns.Add(new DataColumn("Pendapatan_Kotor", typeof(string)));
+            dtKotor.Columns.Add(new DataColumn("Year_Month", typeof(string)));
+            dtItem.Columns.Add(new DataColumn("Barang", typeof(string)));
+            dtItem.Columns.Add(new DataColumn("Terjual", typeof(int)));
+            dtBersih.Columns.Add(new DataColumn("Laba_Keseluruhan", typeof(string)));
+            dtBersih.Columns.Add(new DataColumn("Year_Month", typeof(string)));
 
             dtpPeriodeStart.Value = Convert.ToDateTime("12-1-" + DateTime.Now.Year);
             dtpPeriodeEnd.Value = Convert.ToDateTime($"{DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)}-{DateTime.Now.Month}-{DateTime.Now.Year}");
@@ -59,6 +71,8 @@ namespace PetShop
 
         private void showPendapatanKotor(DateTime startDate, DateTime endDate)
         {
+            dtKotor.Clear();
+            
             foreach (var series in chartPendapatanKotor.Series)
             {
                 series.Points.Clear();
@@ -72,6 +86,10 @@ namespace PetShop
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    DataRow dr = dtKotor.NewRow();
+                    dr["Pendapatan_Kotor"] = "Rp." + Convert.ToDecimal(reader["pendapatan_kotor"]).ToString("N", new System.Globalization.CultureInfo("is-IS"));
+                    dr["Year_Month"] = date.Year.ToString() + "-" + System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(date.Month));
+                    dtKotor.Rows.Add(dr);
                     //chartLaba.Series["Pendapatan"].Points.AddXY(i.ToString(),reader["Laba_Keseluruhan"]);
                     string total = "Rp." + Convert.ToDecimal(reader["pendapatan_kotor"]).ToString("N", new System.Globalization.CultureInfo("is-IS"));
                     chartPendapatanKotor.Series["Pendapatan Kotor"].Points.Add(Convert.ToDouble(reader["pendapatan_kotor"]));
@@ -86,6 +104,8 @@ namespace PetShop
 
         private void showItemTerjual(DateTime startDate, DateTime endDate)
         {
+
+            dtItem.Clear();
             foreach (var series in chartItemTerjual.Series)
             {
                 series.Points.Clear();
@@ -98,7 +118,11 @@ namespace PetShop
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                chartItemTerjual.Series["ItemTerjual"].Points.AddXY(reader["nama_barang"].ToString(),reader["terjual"]);
+                DataRow dr = dtItem.NewRow();
+                dr["Barang"] = reader["nama_barang"].ToString();
+                dr["Terjual"] = reader["terjual"];
+                dtItem.Rows.Add(dr);
+                chartItemTerjual.Series["ItemTerjual"].Points.AddXY(reader["nama_barang"].ToString(), reader["terjual"]);
             }
             reader.Close();
         }
@@ -118,6 +142,10 @@ namespace PetShop
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
+                    DataRow dr = dtBersih.NewRow();
+                    dr["Laba_Keseluruhan"] = "Rp." + Convert.ToDecimal(reader["Laba_Keseluruhan"]).ToString("N", new System.Globalization.CultureInfo("is-IS"));
+                    dr["Year_Month"] = date.Year.ToString() + "-" + System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(date.Month));
+                    dtBersih.Rows.Add(dr);
                     //chartLaba.Series["Pendapatan"].Points.AddXY(i.ToString(),reader["Laba_Keseluruhan"]);
                     string total = "Rp." + Convert.ToDecimal(reader["Laba_Keseluruhan"]).ToString("N", new System.Globalization.CultureInfo("is-IS"));
                     chartLaba.Series["Laba Bersih"].Points.Add(Convert.ToDouble(reader["Laba_Keseluruhan"]));
@@ -136,17 +164,15 @@ namespace PetShop
         {
             if (cboJenis.SelectedIndex == 0)
             {
-                showPendapatanKotor(Convert.ToDateTime(dtpPeriodeStart.Value).Date, Convert.ToDateTime(dtpPeriodeEnd.Value).Date);
-                showLabaKeuntungan(Convert.ToDateTime(dtpPeriodeStart.Value).Date, Convert.ToDateTime(dtpPeriodeEnd.Value).Date);
-                showItemTerjual(Convert.ToDateTime(dtpPeriodeStart.Value).Date, Convert.ToDateTime(dtpPeriodeEnd.Value));
+                dgvData.DataSource = dtBersih;
             }
             else if (cboJenis.SelectedIndex == 1)
             {
-
+                dgvData.DataSource = dtKotor;
             }
             else if (cboJenis.SelectedIndex == 2)
             {
-
+                dgvData.DataSource = dtItem;
             }
         }
 

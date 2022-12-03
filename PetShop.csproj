@@ -311,6 +311,12 @@
     <Compile Include="FrmPembelian.Designer.cs">
       <DependentUpon>FrmPembelian.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPengeluaran.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPengeluaran.Designer.cs">
+      <DependentUpon>FrmPengeluaran.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPenjualan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -328,6 +334,18 @@
     </Compile>
     <Compile Include="frmReportBarcode.Designer.cs">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportPembelianPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportPembelianPreview.Designer.cs">
+      <DependentUpon>FrmReportPembelianPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReportPenguranganBarangPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReportPenguranganBarangPreview.Designer.cs">
+      <DependentUpon>FrmReportPenguranganBarangPreview.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmReportPenjualan.cs">
       <SubType>Form</SubType>
@@ -579,6 +597,9 @@
     <EmbeddedResource Include="FrmPembelian.resx">
       <DependentUpon>FrmPembelian.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmPengeluaran.resx">
+      <DependentUpon>FrmPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmPenjualan.resx">
       <DependentUpon>FrmPenjualan.cs</DependentUpon>
     </EmbeddedResource>
@@ -587,6 +608,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportBarcode.resx">
       <DependentUpon>frmReportBarcode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportPembelianPreview.resx">
+      <DependentUpon>FrmReportPembelianPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReportPenguranganBarangPreview.resx">
+      <DependentUpon>FrmReportPenguranganBarangPreview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmReportPenjualan.resx">
       <DependentUpon>FrmReportPenjualan.cs</DependentUpon>
@@ -838,6 +865,19 @@
     <None Include="Resources\out-of-stock.png" />
     <None Include="Resources\Square44x44Logo.targetsize-80.png" />
     <None Include="Resources\ReadyStock.png" />
+    <None Include="Resources\pengeluaran-salary.png" />
+    <None Include="Resources\pengeluaran-packages.png" />
+    <None Include="Resources\pengeluaran-warehouse.png" />
+    <None Include="Resources\pengeluaran-buy.png" />
+    <None Include="Resources\pengeluaran-payment.png" />
+    <None Include="Resources\pengeluaran-analysis.png" />
+    <None Include="Resources\pengeluaran-analysis-71x71.png" />
+    <None Include="Resources\Square150x150Logo.scale-100.png" />
+    <None Include="Resources\pengeluaran-pembelian.png" />
+    <None Include="Resources\pengeluaran-biaya-lain.png" />
+    <None Include="Resources\pengeluaran_pengurangan.png" />
+    <None Include="Resources\Square44x44Logo.targetsize-16.png" />
+    <None Include="Resources\Square44x44Logo.targetsize-48.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -30,13 +30,23 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.rptPembelian = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.db_petshopPembelian = new PetShop.db_petshopPembelian();
             this.DataTable1BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.db_petshopPembelian = new PetShop.db_petshopPembelian();
+            this.rptPembelian = new Microsoft.Reporting.WinForms.ReportViewer();
             this.DataTable1TableAdapter = new PetShop.db_petshopPembelianTableAdapters.DataTable1TableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.db_petshopPembelian)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_petshopPembelian)).BeginInit();
             this.SuspendLayout();
+            // 
+            // DataTable1BindingSource
+            // 
+            this.DataTable1BindingSource.DataMember = "DataTable1";
+            this.DataTable1BindingSource.DataSource = this.db_petshopPembelian;
+            // 
+            // db_petshopPembelian
+            // 
+            this.db_petshopPembelian.DataSetName = "db_petshopPembelian";
+            this.db_petshopPembelian.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // rptPembelian
             // 
@@ -47,20 +57,9 @@
             this.rptPembelian.LocalReport.ReportEmbeddedResource = "PetShop.ReportPembelian.rdlc";
             this.rptPembelian.Location = new System.Drawing.Point(0, 0);
             this.rptPembelian.Name = "rptPembelian";
-            //this.rptPembelian.ServerReport.BearerToken = null;
+            this.rptPembelian.ServerReport.BearerToken = null;
             this.rptPembelian.Size = new System.Drawing.Size(800, 450);
             this.rptPembelian.TabIndex = 0;
-            this.rptPembelian.Load += new System.EventHandler(this.RptPembelian_Load);
-            // 
-            // db_petshopPembelian
-            // 
-            this.db_petshopPembelian.DataSetName = "db_petshopPembelian";
-            this.db_petshopPembelian.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DataTable1BindingSource
-            // 
-            this.DataTable1BindingSource.DataMember = "DataTable1";
-            this.DataTable1BindingSource.DataSource = this.db_petshopPembelian;
             // 
             // DataTable1TableAdapter
             // 
@@ -77,8 +76,8 @@
             this.Text = "ReportPembelianPreview";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ReportPembelianPreview_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.db_petshopPembelian)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTable1BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.db_petshopPembelian)).EndInit();
             this.ResumeLayout(false);
 
         }

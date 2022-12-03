@@ -231,6 +231,7 @@
             this.dtpFilter2.Name = "dtpFilter2";
             this.dtpFilter2.Size = new System.Drawing.Size(200, 26);
             this.dtpFilter2.TabIndex = 1;
+            this.dtpFilter2.ValueChanged += new System.EventHandler(this.DtpFilter1_ValueChanged);
             // 
             // dtpFilter1
             // 

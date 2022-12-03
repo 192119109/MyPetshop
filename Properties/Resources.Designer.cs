@@ -453,6 +453,46 @@ namespace PetShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap pengeluaran_biaya_lain {
+            get {
+                object obj = ResourceManager.GetObject("pengeluaran_biaya_lain", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pengeluaran_pembelian {
+            get {
+                object obj = ResourceManager.GetObject("pengeluaran_pembelian", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pengeluaran_pengurangan {
+            get {
+                object obj = ResourceManager.GetObject("pengeluaran_pengurangan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap pengeluaran_summary {
+            get {
+                object obj = ResourceManager.GetObject("pengeluaran-summary", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap PenguranganStock {
             get {
                 object obj = ResourceManager.GetObject("PenguranganStock", resourceCulture);
@@ -626,6 +666,16 @@ namespace PetShop.Properties {
         public static System.Drawing.Bitmap Splash {
             get {
                 object obj = ResourceManager.GetObject("Splash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Square44x44Logo_targetsize_16 {
+            get {
+                object obj = ResourceManager.GetObject("Square44x44Logo_targetsize_16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
