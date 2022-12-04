@@ -38,10 +38,10 @@
             this.btnSearch = new System.Windows.Forms.Button();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnPrint = new System.Windows.Forms.Button();
-            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.dtpEndDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpStartDate = new System.Windows.Forms.DateTimePicker();
+            this.btnPrint = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryPengurangan)).BeginInit();
             this.gbSearchProduct.SuspendLayout();
@@ -175,22 +175,14 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Print";
             // 
-            // btnPrint
+            // label1
             // 
-            this.btnPrint.Location = new System.Drawing.Point(813, 23);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(141, 35);
-            this.btnPrint.TabIndex = 0;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = true;
-            // 
-            // dtpStartDate
-            // 
-            this.dtpStartDate.Location = new System.Drawing.Point(16, 28);
-            this.dtpStartDate.Name = "dtpStartDate";
-            this.dtpStartDate.Size = new System.Drawing.Size(264, 29);
-            this.dtpStartDate.TabIndex = 1;
-            this.dtpStartDate.ValueChanged += new System.EventHandler(this.DtpStartDate_ValueChanged);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(295, 28);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 24);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "s/d";
             // 
             // dtpEndDate
             // 
@@ -200,14 +192,23 @@
             this.dtpEndDate.TabIndex = 2;
             this.dtpEndDate.ValueChanged += new System.EventHandler(this.DtpStartDate_ValueChanged);
             // 
-            // label1
+            // dtpStartDate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 24);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "s/d";
+            this.dtpStartDate.Location = new System.Drawing.Point(16, 28);
+            this.dtpStartDate.Name = "dtpStartDate";
+            this.dtpStartDate.Size = new System.Drawing.Size(264, 29);
+            this.dtpStartDate.TabIndex = 1;
+            this.dtpStartDate.ValueChanged += new System.EventHandler(this.DtpStartDate_ValueChanged);
+            // 
+            // btnPrint
+            // 
+            this.btnPrint.Location = new System.Drawing.Point(813, 23);
+            this.btnPrint.Name = "btnPrint";
+            this.btnPrint.Size = new System.Drawing.Size(141, 35);
+            this.btnPrint.TabIndex = 0;
+            this.btnPrint.Text = "Print";
+            this.btnPrint.UseVisualStyleBackColor = true;
+            this.btnPrint.Click += new System.EventHandler(this.BtnPrint_Click);
             // 
             // FrmReportPenguranganBarangPreview
             // 

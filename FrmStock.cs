@@ -55,7 +55,7 @@ namespace PetShop
             bool tersedia;
 
             arRecord = ds.Tables["Barang"].Select("id_barang='" + txtIdBarang.Text + "'");
-            if(arRecord.Length!=0)
+            if (arRecord.Length != 0)
             {
                 tersedia = true;
             }
@@ -63,7 +63,7 @@ namespace PetShop
             {
                 tersedia = false;
             }
-            if (string.IsNullOrEmpty(txtIdBarang.Text)||!tersedia)
+            if (string.IsNullOrEmpty(txtIdBarang.Text) || !tersedia)
             {
                 btnDelete.Enabled = false;
                 btnUpdate.Enabled = false;
@@ -87,7 +87,7 @@ namespace PetShop
                     txtBarcode.Text = arRecord[0]["barcode"].ToString();
                     txtHargaJual.Text = string.Format("{0:n0}", float.Parse(arRecord[0]["harga_jual"].ToString()));
                     txtDeskripsi.Text = arRecord[0]["deskripsi"].ToString();
-                    if(arRecord[0]["discontinued"].ToString()=="True")
+                    if (arRecord[0]["discontinued"].ToString() == "True")
                     {
                         txtDiscontinued.Text = "Ya";
                         btnDelete.Enabled = false;
@@ -130,7 +130,7 @@ namespace PetShop
 
         private void BtnRefresh_Click(object sender, EventArgs e)
         {
-             MuatUlang();
+            MuatUlang();
         }
 
 
@@ -177,7 +177,7 @@ namespace PetShop
             {
 
             }
-            
+
         }
 
         private void BtnClear_Click(object sender, EventArgs e)
@@ -222,8 +222,8 @@ namespace PetShop
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Barang yang dihapus tetap ada dalam database tetapi status akan menjadi discontinued. Apakah ingin melanjutkan ?",this.Text, MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question)==DialogResult.Yes)
+            if (MessageBox.Show("Barang yang dihapus tetap ada dalam database tetapi status akan menjadi discontinued. Apakah ingin melanjutkan ?", this.Text, MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 BuatKoneksi();
                 cmd = new SqlCommand("update Barang set discontinued = 1 where id_barang=@id", con);
@@ -265,9 +265,17 @@ namespace PetShop
         {
             arRecord = ds.Tables["Barang"].Select("id_barang = '" + txtIdBarang.Text + "'");
             if (arRecord.Length != 0)
-            { 
-                PrintBarcode frmBarcode = new PrintBarcode (arRecord[0]["barcode"].ToString());
-                frmBarcode.ShowDialog();
+            {
+                if (arRecord[0]["barcode"].ToString().Length == 13)
+                {
+                    PrintBarcode frmBarcode = new PrintBarcode(arRecord[0]["barcode"].ToString());
+                    frmBarcode.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Barcode tidak memenuhi syarat EAN 13");
+                }
+
             }
         }
 

@@ -603,3 +603,4 @@ D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportPenjualan.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmPengeluaran.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportPenguranganBarangPreview.resources
 D:\Project PetShop\PetShop\obj\Debug\PetShop.FrmReportPembelianPreview.resources
+D:\Project PetShop\PetShop\obj\Debug\PetShop.ReportPenguranganBarangPreview.resources

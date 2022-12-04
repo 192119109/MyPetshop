@@ -384,8 +384,13 @@ FROM            Pembelian INNER JOIN
                          Suppliers ON Pembelian.id_supplier = Suppliers.id_supplier INNER JOIN
                          Barang ON Pembelian_Detail.id_barang = Barang.id_barang where  Order By Pembelian.tgl_pembelian DESC
 
+select * from Pembelian_Detail where id_pembelian = 'PB000003/20/02/2022' AND id_barang='BRG0001'
+
+SELECT * FROM Pengurangan_Stock
+
 
 select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian,
-                 t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, 
+                 t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, (t1.jlhPengurangan * t5.[harga/pcs]) as jlhKerugian,
                 t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 
-                on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier order by t1.tglPengurangan DESC
+                on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier inner join pembelian_detail t5 on (t1.id_pembelian=t5.id_pembelian AND  t1.id_barang=t5.id_barang) where t1.tglPengurangan between '' AND ''order by t1.tglPengurangan DESC
+

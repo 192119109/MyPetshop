@@ -35,10 +35,10 @@ namespace PetShop
         {
             BuatKoneksi();
             if (ds.Tables["Pengurangan"] != null) ds.Tables["Pengurangan"].Clear();
-            ad = new SqlDataAdapter("select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian," +
-                " t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, " +
-                "t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 " +
-                "on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier order by t1.tglPengurangan DESC", con);
+            ad = new SqlDataAdapter(@"select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian,
+                 t3.id_supplier, t4.nama as nama_supplier, t1.tglPengurangan, t1.qtyAwal, t1. qtyAkhir,t1.jlhPengurangan, (t1.jlhPengurangan * t5.[harga/pcs]) as jlhKerugian,
+                t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 
+                on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier inner join pembelian_detail t5 on (t1.id_pembelian=t5.id_pembelian AND  t1.id_barang=t5.id_barang) order by t1.tglPengurangan DESC", con);
             ad.Fill(ds, "Pengurangan");
             con.Close();
         }
@@ -56,7 +56,9 @@ namespace PetShop
             dgvHistoryPengurangan.Columns[7].HeaderText = "Qty Awal";
             dgvHistoryPengurangan.Columns[8].HeaderText = "Qty Akhir";
             dgvHistoryPengurangan.Columns[9].HeaderText = "Jumlah Pengurangan";
-            dgvHistoryPengurangan.Columns[10].HeaderText = "Keterangan";
+            dgvHistoryPengurangan.Columns[10].HeaderText = "Kerugian (Rp.)";
+            dgvHistoryPengurangan.Columns[11].HeaderText = "Keterangan";
+            dgvHistoryPengurangan.Columns[10].DefaultCellStyle.Format = "N";
         }
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
@@ -77,6 +79,12 @@ namespace PetShop
         private void DtpStartDate_ValueChanged(object sender, EventArgs e)
         {
             ds.Tables["Pengurangan"].DefaultView.RowFilter = $" tglPengurangan >= '{dtpStartDate.Value}' AND tglPengurangan<='{dtpEndDate.Value}'";
+        }
+
+        private void BtnPrint_Click(object sender, EventArgs e)
+        {
+            ReportPenguranganBarangPreview rptPenguranganBarang = new ReportPenguranganBarangPreview(dtpStartDate.Value, dtpEndDate.Value);
+            rptPenguranganBarang.ShowDialog();
         }
     }
 }

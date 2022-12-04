@@ -206,6 +206,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
     </Compile>
+    <Compile Include="db_petshopPenguranganStock.cs">
+      <DependentUpon>db_petshopPenguranganStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="db_petshopPenguranganStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_petshopPenguranganStock.xsd</DependentUpon>
+    </Compile>
     <Compile Include="db_petshopReceipt.cs">
       <DependentUpon>db_petshopReceipt.xsd</DependentUpon>
     </Compile>
@@ -461,6 +469,12 @@
     <Compile Include="ReportPembelianPreview.Designer.cs">
       <DependentUpon>ReportPembelianPreview.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReportPenguranganBarangPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportPenguranganBarangPreview.Designer.cs">
+      <DependentUpon>ReportPenguranganBarangPreview.cs</DependentUpon>
+    </Compile>
     <Compile Include="RestoreDB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -667,6 +681,10 @@
     <EmbeddedResource Include="ReportPembelianPreview.resx">
       <DependentUpon>ReportPembelianPreview.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportPenguranganBarang.rdlc" />
+    <EmbeddedResource Include="ReportPenguranganBarangPreview.resx">
+      <DependentUpon>ReportPenguranganBarangPreview.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="RestoreDB.resx">
       <DependentUpon>RestoreDB.cs</DependentUpon>
     </EmbeddedResource>
@@ -753,6 +771,17 @@
     </None>
     <None Include="db_petshopPembelian.xss">
       <DependentUpon>db_petshopPembelian.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopPenguranganStock.xsc">
+      <DependentUpon>db_petshopPenguranganStock.xsd</DependentUpon>
+    </None>
+    <None Include="db_petshopPenguranganStock.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_petshopPenguranganStock.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_petshopPenguranganStock.xss">
+      <DependentUpon>db_petshopPenguranganStock.xsd</DependentUpon>
     </None>
     <None Include="db_petshopReceipt.xsc">
       <DependentUpon>db_petshopReceipt.xsd</DependentUpon>
@@ -963,6 +992,9 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
