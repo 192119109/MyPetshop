@@ -40,5 +40,11 @@ namespace PetShop
             frmPenguranganBarangPreview.ShowDialog();
             
         }
+
+        private void BtnSummary_Click(object sender, EventArgs e)
+        {
+            FrmPengeluaranSummary frmPengeluaranSummary = new FrmPengeluaranSummary();
+            frmPengeluaranSummary.ShowDialog();
+        }
     }
 }

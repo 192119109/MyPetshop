@@ -394,3 +394,30 @@ select t1.id_pengurangan, t1.id_barang, t2.nama_barang, t1.id_pembelian,
                 t1.Keterangan from Pengurangan_Stock t1 inner join Barang t2 on t1.id_barang = t2.id_barang inner join Pembelian t3 
                 on t1.id_pembelian=t3.id_pembelian inner join Suppliers t4 on t3.id_supplier=t4.id_supplier inner join pembelian_detail t5 on (t1.id_pembelian=t5.id_pembelian AND  t1.id_barang=t5.id_barang) where t1.tglPengurangan between '' AND ''order by t1.tglPengurangan DESC
 
+use db_petshop
+
+select sum(biaya) as totalBiayaLain from BiayaLain 
+
+select sum(grandTotal) as totalPembelian from Pembelian
+
+select * from Pengurangan_Stock
+
+Select sum(t1.jlhPengurangan * t2.[harga/pcs]) as totalPenguranganBarang from Pengurangan_Stock t1 inner join Pembelian_Detail t2 on (t1.id_pembelian=t2.id_pembelian AND t1.id_barang = t2.id_barang) where t1.tglPengurangan BETWEEN '2022-03-01' and '2022-05-10'
+
+select * from Pengurangan_Stock t1 inner join Pembelian_Detail t2 on (t1.id_pembelian=t2.id_pembelian AND t1.id_barang = t2.id_barang) where t1.tglPengurangan BETWEEN '2022-03-01' and '2022-05-10'
+
+select * from Pembelian_Detail
+
+create function f_showSummaryPengeluaran (
+	@startDate Date,
+	@endDate date
+)
+returns table
+as return 
+SELECT (Select isnull(sum(t1.jlhPengurangan * t2.[harga/pcs]),0) as totalPenguranganBarang from Pengurangan_Stock t1 inner join Pembelian_Detail t2 on (t1.id_pembelian=t2.id_pembelian AND t1.id_barang = t2.id_barang) where t1.tglPengurangan Between @startDate and @endDate) as totalPenguranganBarang, 
+(select isnull(sum(grandTotal),0) as totalPembelian from Pembelian where tgl_pembelian BETWEEN @startDate and @endDate) as totalPembelian, 
+(select isnull(sum(biaya),0) as totalBiayaLain from BiayaLain where tgl between @startDate and @endDate) as totalBiayaLain
+
+select * from BiayaLain
+
+drop function f_showSummaryPengeluaran

@@ -133,6 +133,9 @@
   <data name="Square71x71Logo.scale-125" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Square71x71Logo.scale-125.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Square44x44Logo_targetsize_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Square44x44Logo.targetsize-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="plus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\plus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -184,6 +187,9 @@
   <data name="report1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\report1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Square44x44Logo_targetsize_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Square44x44Logo.targetsize-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="petshop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\petshop.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -195,6 +201,9 @@
   </data>
   <data name="kittyAccount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kittyAccount1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PenguranganStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PenguranganStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="transaction-history" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\transaction-history.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -229,11 +238,17 @@
   <data name="files" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\files1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cashless_payment" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cashless-payment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Help" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Help.pdf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="checkout1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkout2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="payment_method" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\payment-method.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventory" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inventory.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -244,6 +259,9 @@
   <data name="add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="budget" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\budget.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -252,6 +270,15 @@
   </data>
   <data name="Splash" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Splash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pengeluaran_pengurangan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pengeluaran_pengurangan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pengeluaran_pembelian" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pengeluaran-pembelian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_blur" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_blur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="stock" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\stock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,6 +295,9 @@
   <data name="backup_file_blur" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\backup-file_blur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ReadyStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReadyStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="supplier" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\supplier.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -282,6 +312,9 @@
   </data>
   <data name="data-recovery" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\data-recovery.ico;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pengeluaran-summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Square44x44Logo.targetsize-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="pet-shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\pet-shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -307,6 +340,9 @@
   <data name="BebasNeueBold" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BebasNeueBold.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="pengeluaran_biaya_lain" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pengeluaran-biaya-lain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -319,40 +355,7 @@
   <data name="restore (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\restore (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="PenguranganStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PenguranganStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cashless_payment" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cashless-payment.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="minus" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\minus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_blur" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_blur.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="payment_method" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\payment-method.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ReadyStock" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ReadyStock.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Square44x44Logo_targetsize_80" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Square44x44Logo.targetsize-80.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pengeluaran_pembelian" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pengeluaran-pembelian.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pengeluaran-summary" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Square44x44Logo.targetsize-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pengeluaran_biaya_lain" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pengeluaran-biaya-lain.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="pengeluaran_pengurangan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\pengeluaran_pengurangan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Square44x44Logo_targetsize_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Square44x44Logo.targetsize-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Square44x44Logo.targetsize-256" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Square44x44Logo.targetsize-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

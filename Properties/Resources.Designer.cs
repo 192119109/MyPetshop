@@ -683,6 +683,16 @@ namespace PetShop.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Square44x44Logo_targetsize_256 {
+            get {
+                object obj = ResourceManager.GetObject("Square44x44Logo.targetsize-256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap Square44x44Logo_targetsize_32 {
             get {
                 object obj = ResourceManager.GetObject("Square44x44Logo.targetsize-32", resourceCulture);

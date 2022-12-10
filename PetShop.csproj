@@ -325,6 +325,12 @@
     <Compile Include="FrmPengeluaran.Designer.cs">
       <DependentUpon>FrmPengeluaran.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPengeluaranSummary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPengeluaranSummary.Designer.cs">
+      <DependentUpon>FrmPengeluaranSummary.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPenjualan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -613,6 +619,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPengeluaran.resx">
       <DependentUpon>FrmPengeluaran.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPengeluaranSummary.resx">
+      <DependentUpon>FrmPengeluaranSummary.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPenjualan.resx">
       <DependentUpon>FrmPenjualan.cs</DependentUpon>
@@ -907,6 +916,7 @@
     <None Include="Resources\pengeluaran_pengurangan.png" />
     <None Include="Resources\Square44x44Logo.targetsize-16.png" />
     <None Include="Resources\Square44x44Logo.targetsize-48.png" />
+    <None Include="Resources\Square44x44Logo.targetsize-256.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

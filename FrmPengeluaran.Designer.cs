@@ -87,6 +87,7 @@
             this.btnSummary.TabIndex = 39;
             this.btnSummary.Text = "Summary";
             this.btnSummary.UseVisualStyleBackColor = false;
+            this.btnSummary.Click += new System.EventHandler(this.BtnSummary_Click);
             // 
             // btnBiayaLain
             // 
@@ -161,7 +162,10 @@
             this.Controls.Add(this.btnPengurangan);
             this.Controls.Add(this.btnPembelian);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmPengeluaran";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laporan Pengeluaran";
             this.Load += new System.EventHandler(this.FrmPengeluaran_Load);
             this.panel1.ResumeLayout(false);

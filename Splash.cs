@@ -16,11 +16,11 @@ namespace PetShop
         {
             InitializeComponent();
         }
-
+        int stopper = 0;
         private void Timer1_Tick(object sender, EventArgs e)
         {
-            panel2.Width += 20;
-            if (panel2.Width >= 700)
+            stopper += 4;
+            if (stopper>99)
             {
                 timer1.Stop();
                 Autentikasi Auth = new Autentikasi();
@@ -28,6 +28,15 @@ namespace PetShop
                 Auth.Show();
                 this.Hide();
             }
+            //panel2.Width += 20;
+            //if (panel2.Width >= 700)
+            //{
+            //    timer1.Stop();
+            //    Autentikasi Auth = new Autentikasi();
+            //    Auth.FormClosed += new FormClosedEventHandler(f_FormClosed);
+            //    Auth.Show();
+            //    this.Hide();
+            //}
         }
         
         void f_FormClosed(object sender, FormClosedEventArgs e)
