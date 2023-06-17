@@ -420,4 +420,14 @@ SELECT (Select isnull(sum(t1.jlhPengurangan * t2.[harga/pcs]),0) as totalPengura
 
 select * from BiayaLain
 
-drop function f_showSummaryPengeluaran
+--drop function f_showSummaryPengeluaran
+
+use db_petshop
+
+SELECT * FROM Pengguna
+
+ALTER Table Pengguna ADD 
+
+SELECT * FROm Pengguna
+
+SELECT * From SecretKeylogger

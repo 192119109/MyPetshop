@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.nudHargaJual = new System.Windows.Forms.NumericUpDown();
             this.txtDeskripsi = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnUbah = new System.Windows.Forms.Button();
@@ -45,10 +46,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.dgvBarang = new System.Windows.Forms.DataGridView();
             this.btnClear = new System.Windows.Forms.Button();
-            this.nudHargaJual = new System.Windows.Forms.NumericUpDown();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHargaJual)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -93,6 +93,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Informasi Barang";
             // 
+            // nudHargaJual
+            // 
+            this.nudHargaJual.Location = new System.Drawing.Point(151, 159);
+            this.nudHargaJual.Name = "nudHargaJual";
+            this.nudHargaJual.Size = new System.Drawing.Size(266, 26);
+            this.nudHargaJual.TabIndex = 28;
+            // 
             // txtDeskripsi
             // 
             this.txtDeskripsi.Location = new System.Drawing.Point(150, 194);
@@ -100,7 +107,7 @@
             this.txtDeskripsi.Name = "txtDeskripsi";
             this.txtDeskripsi.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
             this.txtDeskripsi.Size = new System.Drawing.Size(266, 72);
-            this.txtDeskripsi.TabIndex = 38;
+            this.txtDeskripsi.TabIndex = 29;
             // 
             // label1
             // 
@@ -122,7 +129,7 @@
             this.btnUbah.Location = new System.Drawing.Point(164, 313);
             this.btnUbah.Name = "btnUbah";
             this.btnUbah.Size = new System.Drawing.Size(123, 40);
-            this.btnUbah.TabIndex = 35;
+            this.btnUbah.TabIndex = 31;
             this.btnUbah.Text = "Ubah";
             this.btnUbah.UseVisualStyleBackColor = false;
             this.btnUbah.Click += new System.EventHandler(this.BtnUbah_Click);
@@ -136,7 +143,7 @@
             this.btnHapus.Location = new System.Drawing.Point(293, 313);
             this.btnHapus.Name = "btnHapus";
             this.btnHapus.Size = new System.Drawing.Size(123, 40);
-            this.btnHapus.TabIndex = 34;
+            this.btnHapus.TabIndex = 32;
             this.btnHapus.Text = "Hapus";
             this.btnHapus.UseVisualStyleBackColor = false;
             this.btnHapus.Click += new System.EventHandler(this.BtnHapus_Click);
@@ -164,7 +171,7 @@
             this.btnTambah.Location = new System.Drawing.Point(35, 313);
             this.btnTambah.Name = "btnTambah";
             this.btnTambah.Size = new System.Drawing.Size(123, 40);
-            this.btnTambah.TabIndex = 32;
+            this.btnTambah.TabIndex = 30;
             this.btnTambah.Text = "Tambah";
             this.btnTambah.UseVisualStyleBackColor = false;
             this.btnTambah.Click += new System.EventHandler(this.BtnTambah_Click);
@@ -261,13 +268,6 @@
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.BtnClear_Click);
             // 
-            // nudHargaJual
-            // 
-            this.nudHargaJual.Location = new System.Drawing.Point(151, 159);
-            this.nudHargaJual.Name = "nudHargaJual";
-            this.nudHargaJual.Size = new System.Drawing.Size(266, 26);
-            this.nudHargaJual.TabIndex = 39;
-            // 
             // InputBarang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,8 +283,8 @@
             this.Load += new System.EventHandler(this.InputBarang_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudHargaJual)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBarang)).EndInit();
             this.ResumeLayout(false);
 
         }

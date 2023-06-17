@@ -220,7 +220,10 @@
             this.Controls.Add(this.dgvHistoryPengurangan);
             this.Controls.Add(this.gbSearchProduct);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmReportPenguranganBarangPreview";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Laporan Pengurangan Barang";
             this.Load += new System.EventHandler(this.FrmReportPenguranganBarangPreview_Load);
             this.panel1.ResumeLayout(false);

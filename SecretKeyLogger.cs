@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using static PetShop.Global;
 using static PetShop.Crypto;
+using System.Net;
+using System.Net.Mail;
 
 
 namespace PetShop
@@ -24,14 +26,42 @@ namespace PetShop
             authForm = parentForm;
         }
 
+        private string sendKeyViaEmail(string key, string name)
+        {
+            string message = "";
+            if(!string.IsNullOrEmpty(key)&&!string.IsNullOrEmpty(name))
+            {
+                if(IsConnectedToInternet())
+                {
+                    if (sendMail("davidrussel7771@gmail.com", "David Steven", $"Kode Autentikasi Anda = {key}", "Kode Autentikasi MyPetshop"))
+                    {
+                        message = "Berhasil Mengirimkan Kode Autentikasi";
+                    }
+                    else
+                    {
+                        message = "Gagal Mengirimkan Kode Autentikasi";
+                    }
+                }
+                else
+                {
+                    message = "Kamu belum terhubung ke internet, pastikan kamu terhubung dengan internet";
+                }
+            }
+
+            return message;
+        }
+
         private void SecretKeyLogger_Load(object sender, EventArgs e)
         {
             txtUsername.Focus();
         }
 
+
+
         private void BtnOK_Click(object sender, EventArgs e)
         {
-            BuatKoneksi();
+            openConnection(true);
+
             if(txtUsername.Text!=""||txtUsername.Text!=null)
             {
                 cmd = new SqlCommand("select * from Pengguna where username=@username", con);
@@ -41,25 +71,46 @@ namespace PetShop
                 //Validasi Username
                 if (reader.Read())
                 {
+                    string key = reader["key"].ToString();
                     reader.Close();
                     try
                     {
-                        cmd = new SqlCommand("select keylogger from SecretKeylogger where keylogger = @key", con);
-                        cmd.Parameters.AddWithValue("@key", EncryptPassword(txtSecretKey.Text));
-                        reader = cmd.ExecuteReader();
-
-                        if (reader.Read())
+                        if(txtUsername.Text.Trim().ToUpper()=="ADMIN")
                         {
-                            reader.Close();
-                            authForm.Hide();
-                            Form lupaPassword = new ChangePasswordBySecretKeylogger(txtUsername.Text);
-                            lupaPassword.Show();
-                            this.Close();
+                            cmd = new SqlCommand("select keylogger from SecretKeylogger where keylogger = @key", con);
+                            cmd.Parameters.AddWithValue("@key", EncryptPassword(txtSecretKey.Text));
+                            reader = cmd.ExecuteReader();
+                            if (reader.Read())
+                            {
+                                reader.Close();
+                                authForm.Hide();
+                                Form lupaPassword = new ChangePasswordBySecretKeylogger(txtUsername.Text);
+                                lupaPassword.Show();
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Secret Key salah ");
+                                reader.Close();
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Secret Key salah ");
-                            reader.Close();
+                            if(string.IsNullOrEmpty(key))
+                            {
+                                DialogResult dialogResult = MessageBox.Show("Key belum ada, request key sekarang", "Perhatian", MessageBoxButtons.YesNo);
+
+                                if (dialogResult == DialogResult.Yes)
+                                {
+                                    string keyy = Guid.NewGuid().ToString();
+                                    cmd = new SqlCommand($"update pengguna set [key] = @key where username = @username", con);
+                                    cmd.Parameters.AddWithValue("@username", txtUsername.Text);
+                                    cmd.Parameters.AddWithValue("@key", keyy);
+                                    cmd.ExecuteNonQuery();
+
+                                    MessageBox.Show(sendKeyViaEmail(keyy, txtUsername.Text));
+                                }
+                            }
                         }
                     }
                     catch (Exception ex)
@@ -76,6 +127,7 @@ namespace PetShop
             {
                 MessageBox.Show("Username Tidak Boleh Kosong");
             }
+            openConnection(false);
         }
     }
 }

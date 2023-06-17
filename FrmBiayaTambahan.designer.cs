@@ -32,10 +32,12 @@ namespace PetShop
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.btnCetak = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblPengeluaranBlnIni = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.lblJlhRecord = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dtp2 = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
             this.dtp1 = new System.Windows.Forms.DateTimePicker();
             this.dgvHistoryBL = new System.Windows.Forms.DataGridView();
             this.nudBiaya = new System.Windows.Forms.NumericUpDown();
@@ -51,8 +53,6 @@ namespace PetShop
             this.label16 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.label18 = new System.Windows.Forms.Label();
-            this.lblPengeluaranBlnIni = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.groupBox4.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistoryBL)).BeginInit();
@@ -96,7 +96,7 @@ namespace PetShop
             this.btnCetak.Location = new System.Drawing.Point(13, 364);
             this.btnCetak.Name = "btnCetak";
             this.btnCetak.Size = new System.Drawing.Size(332, 38);
-            this.btnCetak.TabIndex = 24;
+            this.btnCetak.TabIndex = 7;
             this.btnCetak.Text = "Cetak Laporan";
             this.btnCetak.UseVisualStyleBackColor = false;
             this.btnCetak.Click += new System.EventHandler(this.BtnCetak_Click);
@@ -120,6 +120,26 @@ namespace PetShop
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "History";
             // 
+            // lblPengeluaranBlnIni
+            // 
+            this.lblPengeluaranBlnIni.AutoSize = true;
+            this.lblPengeluaranBlnIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPengeluaranBlnIni.Location = new System.Drawing.Point(159, 370);
+            this.lblPengeluaranBlnIni.Name = "lblPengeluaranBlnIni";
+            this.lblPengeluaranBlnIni.Size = new System.Drawing.Size(15, 16);
+            this.lblPengeluaranBlnIni.TabIndex = 9;
+            this.lblPengeluaranBlnIni.Text = "0";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(6, 370);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(147, 16);
+            this.label7.TabIndex = 8;
+            this.label7.Text = "Pengeluaran Bulan Ini : ";
+            // 
             // lblJlhRecord
             // 
             this.lblJlhRecord.AutoSize = true;
@@ -131,6 +151,25 @@ namespace PetShop
             this.lblJlhRecord.Text = "0";
             this.lblJlhRecord.Click += new System.EventHandler(this.LblJlhRecord_Click);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(229, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(27, 16);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "s/d";
+            // 
+            // dtp2
+            // 
+            this.dtp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtp2.Location = new System.Drawing.Point(264, 24);
+            this.dtp2.Name = "dtp2";
+            this.dtp2.Size = new System.Drawing.Size(200, 22);
+            this.dtp2.TabIndex = 9;
+            this.dtp2.ValueChanged += new System.EventHandler(this.Dtp1_ValueChanged);
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -141,32 +180,13 @@ namespace PetShop
             this.label3.TabIndex = 4;
             this.label3.Text = "Total Record :";
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(225, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(27, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "s/d";
-            // 
-            // dtp2
-            // 
-            this.dtp2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtp2.Location = new System.Drawing.Point(264, 25);
-            this.dtp2.Name = "dtp2";
-            this.dtp2.Size = new System.Drawing.Size(200, 22);
-            this.dtp2.TabIndex = 2;
-            this.dtp2.ValueChanged += new System.EventHandler(this.Dtp1_ValueChanged);
-            // 
             // dtp1
             // 
             this.dtp1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtp1.Location = new System.Drawing.Point(19, 25);
             this.dtp1.Name = "dtp1";
             this.dtp1.Size = new System.Drawing.Size(200, 22);
-            this.dtp1.TabIndex = 1;
+            this.dtp1.TabIndex = 8;
             this.dtp1.ValueChanged += new System.EventHandler(this.Dtp1_ValueChanged);
             // 
             // dgvHistoryBL
@@ -185,7 +205,7 @@ namespace PetShop
             this.nudBiaya.Location = new System.Drawing.Point(145, 277);
             this.nudBiaya.Name = "nudBiaya";
             this.nudBiaya.Size = new System.Drawing.Size(200, 26);
-            this.nudBiaya.TabIndex = 22;
+            this.nudBiaya.TabIndex = 5;
             // 
             // label1
             // 
@@ -205,7 +225,7 @@ namespace PetShop
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(200, 26);
-            this.txtID.TabIndex = 20;
+            this.txtID.TabIndex = 1;
             // 
             // label20
             // 
@@ -225,7 +245,7 @@ namespace PetShop
             this.txtKet.Multiline = true;
             this.txtKet.Name = "txtKet";
             this.txtKet.Size = new System.Drawing.Size(200, 81);
-            this.txtKet.TabIndex = 18;
+            this.txtKet.TabIndex = 4;
             // 
             // btnSimpan
             // 
@@ -235,7 +255,7 @@ namespace PetShop
             this.btnSimpan.Location = new System.Drawing.Point(145, 309);
             this.btnSimpan.Name = "btnSimpan";
             this.btnSimpan.Size = new System.Drawing.Size(200, 37);
-            this.btnSimpan.TabIndex = 14;
+            this.btnSimpan.TabIndex = 6;
             this.btnSimpan.Text = "Simpan";
             this.btnSimpan.UseVisualStyleBackColor = false;
             this.btnSimpan.Click += new System.EventHandler(this.btnSimpan_Click);
@@ -247,7 +267,7 @@ namespace PetShop
             this.cmbBln.Location = new System.Drawing.Point(145, 149);
             this.cmbBln.Name = "cmbBln";
             this.cmbBln.Size = new System.Drawing.Size(200, 34);
-            this.cmbBln.TabIndex = 15;
+            this.cmbBln.TabIndex = 3;
             // 
             // label17
             // 
@@ -276,7 +296,7 @@ namespace PetShop
             this.cmbBiayaLain.Location = new System.Drawing.Point(145, 109);
             this.cmbBiayaLain.Name = "cmbBiayaLain";
             this.cmbBiayaLain.Size = new System.Drawing.Size(200, 34);
-            this.cmbBiayaLain.TabIndex = 13;
+            this.cmbBiayaLain.TabIndex = 2;
             // 
             // label16
             // 
@@ -311,26 +331,6 @@ namespace PetShop
             this.label18.Size = new System.Drawing.Size(126, 26);
             this.label18.TabIndex = 2;
             this.label18.Text = "Biaya Lainnya";
-            // 
-            // lblPengeluaranBlnIni
-            // 
-            this.lblPengeluaranBlnIni.AutoSize = true;
-            this.lblPengeluaranBlnIni.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPengeluaranBlnIni.Location = new System.Drawing.Point(159, 370);
-            this.lblPengeluaranBlnIni.Name = "lblPengeluaranBlnIni";
-            this.lblPengeluaranBlnIni.Size = new System.Drawing.Size(15, 16);
-            this.lblPengeluaranBlnIni.TabIndex = 9;
-            this.lblPengeluaranBlnIni.Text = "0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(6, 370);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(147, 16);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Pengeluaran Bulan Ini : ";
             // 
             // FrmBiayaTambahan
             // 

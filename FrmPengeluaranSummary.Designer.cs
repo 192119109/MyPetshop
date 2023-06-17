@@ -54,7 +54,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dtpEndPeriod = new System.Windows.Forms.DateTimePicker();
             this.dtpStartPeriod = new System.Windows.Forms.DateTimePicker();
-            this.btnPrint = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -330,10 +329,9 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dtpEndPeriod);
             this.groupBox1.Controls.Add(this.dtpStartPeriod);
-            this.groupBox1.Controls.Add(this.btnPrint);
             this.groupBox1.Location = new System.Drawing.Point(16, 377);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(536, 49);
+            this.groupBox1.Size = new System.Drawing.Size(426, 49);
             this.groupBox1.TabIndex = 42;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
@@ -363,16 +361,6 @@
             this.dtpStartPeriod.TabIndex = 1;
             this.dtpStartPeriod.ValueChanged += new System.EventHandler(this.DtpStartPeriod_ValueChanged);
             // 
-            // btnPrint
-            // 
-            this.btnPrint.BackColor = System.Drawing.Color.MediumOrchid;
-            this.btnPrint.Location = new System.Drawing.Point(425, 14);
-            this.btnPrint.Name = "btnPrint";
-            this.btnPrint.Size = new System.Drawing.Size(105, 27);
-            this.btnPrint.TabIndex = 0;
-            this.btnPrint.Text = "Print";
-            this.btnPrint.UseVisualStyleBackColor = false;
-            // 
             // FrmPengeluaranSummary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -388,7 +376,10 @@
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "FrmPengeluaranSummary";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Summary Pengeluaran";
             this.Load += new System.EventHandler(this.FrmPengeluaranSummary_Load);
             this.panel1.ResumeLayout(false);
@@ -435,6 +426,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtpEndPeriod;
         private System.Windows.Forms.DateTimePicker dtpStartPeriod;
-        private System.Windows.Forms.Button btnPrint;
     }
 }
